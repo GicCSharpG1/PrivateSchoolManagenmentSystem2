@@ -1,0 +1,446 @@
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\HomeASP.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\HomeASP.pdb
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\EntityFramework.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\System.Web.Providers.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\WebGrease.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\EntityFramework.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\HomeASP.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\HomeASP.pdb
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\EntityFramework.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\System.Web.Providers.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\WebGrease.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\EntityFramework.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\AyeThin\Documents\Visual Studio 2012\Projects\HomeASP_CSS\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS.git\trunk\HomeASP\obj\Debug\HomeASP.pdb
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\HomeASP.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\HomeASP.pdb
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\Antlr3.Runtime.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\EntityFramework.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\System.Web.Optimization.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\System.Web.Providers.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\WebGrease.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\EntityFramework.xml
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\obj\Debug\HomeASP.dll
+D:\PrivateSchoolManagementSystem.git\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\Acer Pc\Desktop\PrivateSchoolManagementSystemProject\BackUpASP_PSMS\ASP_PSMS2142017Latest.git\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\Acer Pc\Desktop\ASP_PSMS2142017Latest.git\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\Design_Final_PSMS.git\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\Acer Pc\Desktop\DesignFinal\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\AyeThin\Desktop\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\acer\Desktop\backup\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\AyeThin\Desktop\10042017\PSMSSemiFinal.git\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\Acer Pc\Desktop\PSMSSemiFinal_20170424\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\E5-574G\Desktop\PSMS_Final201755\trunk\HomeASP\obj\Debug\HomeASP.pdb
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\HomeASP.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\HomeASP.pdb
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\Antlr3.Runtime.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\EntityFramework.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\System.Web.Optimization.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\System.Web.Providers.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\WebGrease.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\EntityFramework.xml
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\PSMS project\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+D:\PSMS project\PSMS_Final\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+D:\PSMS project\PSMS_Final\trunk\HomeASP\obj\Debug\HomeASP.dll
+D:\PSMS project\PSMS_Final\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\HomeASP.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\HomeASP.pdb
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\EntityFramework.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\System.Web.Providers.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\WebGrease.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\EntityFramework.xml
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache

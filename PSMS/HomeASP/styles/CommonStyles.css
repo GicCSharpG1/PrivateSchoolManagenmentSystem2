@@ -1,0 +1,252 @@
+﻿/*Form*/
+#centerForm {
+    box-shadow: 0 0 2px #1DA18C,  
+                0 1px 1px #1DA18C,
+                0 3px 0 #fff,
+                0 4px 0 #1DA18C,
+                0 6px 0 #fff,  
+                0 7px 0 #1DA18C;
+}
+
+#centerForm {
+    position: absolute;
+    z-index: 0;
+    width: 987px;
+    margin:10px 5px 5px 5px;
+    padding: 15px 5px 5px 5px;
+}
+
+#centerForm:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: 0.17em dashed #074959;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    box-shadow: 0 0 0 1px #fff;
+}
+
+/*Elements*/
+.dropdownlist {
+    padding: 3px 3px 3px 3px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    width:149px;
+    background: #D2EEEA no-repeat;
+    border: 1px solid #1DA18C;
+    border-radius: 5px;
+    }
+
+.textbox {
+    background: #D2EEEA no-repeat;
+    padding: 3px 3px 3px 3px;
+    border: 1px solid #1DA18C;
+    width:142px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+}
+
+.textbox:focus
+{
+    background-color: #fff;
+    border-color: #1DA18C;
+    outline: none;
+    -moz-box-shadow: 0 0 0 1px #e8c291 inset;
+    -webkit-box-shadow: 0 0 0 1px #e8c291 inset;
+    box-shadow: 0 0 0 1px #1DA18C inset;
+}
+
+.btn {
+    border: 1px solid #074959;
+    background-color: #074959;
+    background-image: linear-gradient(top, #074959, #1DA18C);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-shadow: 0 1px 0 #1DA18C;
+    -moz-box-shadow: 0 0 1px #1DA18C, 0 1px 0 #1DA18C inset;
+    -webkit-box-shadow: 0 0 1px #1DA18C, 0 1px 0 #1DA18C inset;
+    box-shadow: 0 0 1px #1DA18C, 0 1px 0 #1DA18C inset;
+    float: left;
+    padding: 0;
+    cursor: pointer;
+    font: bold 15px Verdana, Helveticaall-petite-caps;
+    color: #ffffff;
+    width: 90px;
+    height: 30px;
+}
+
+.label {
+    font: 16px Verdana, Helveticaall-petite-caps;
+    color: #074959;
+}
+
+input[type="submit"]:disabled {
+    background-color: #074959;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#074959), to(#1DA18C));
+    background-image: -webkit-linear-gradient(top, #074959, #1DA18C);
+    background-image: -moz-linear-gradient(top, #074959, #1DA18C);
+    background-image: -ms-linear-gradient(top, #074959, #1DA18C);
+    background-image: -o-linear-gradient(top, #074959, #1DA18C);
+    background-image: linear-gradient(top, #074959, #1DA18C);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    text-shadow: 0 1px 0 #1DA18C;
+    -moz-box-shadow: 0 0 1px #1DA18C, 0 1px 0 #1DA18C inset;
+    -webkit-box-shadow: 0 0 1px #1DA18C, 0 1px 0 #1DA18C inset;
+    box-shadow: 0 0 1px #1DA18C, 0 1px 0 #1DA18C inset;
+    border-width: 1px;
+    float: left;
+    height: 30px;
+    padding: 0;
+    width: 90px;
+    cursor: pointer;
+    font: bold 15px Verdana, Helveticaall-petite-caps;
+    color: #ccc;
+    
+}
+
+.gridDiv {
+    height:270px;
+    padding:2px 2px 2px 2px;
+}
+
+.gridview {
+    Width: 960px;
+    color: #333333;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;
+
+}
+    .gridview th {
+        font: 17px Verdana, Helveticaall-petite-caps;
+        height:13px;   
+    }
+    .gridview td {
+        font: 15px Verdana, Helveticaall-petite-caps; 
+        height:10px;  
+    }
+
+.gridview th, .gridview td {
+    border: 1px solid #074959;
+}
+
+.errLabel {
+    color:red;
+    Font-Size:15px;
+    float: left; 
+    margin-left: 22px;
+}
+
+.salarytxt {
+    background: #D2EEEA no-repeat;
+    padding: 5px 5px 5px 5px;
+    height: 20px;
+    width: 70px;
+    border: 1px solid #1DA18C;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+}
+/*Cash*/
+Legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: inherit;
+    color: #333;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+    .pa-Format {
+    width: 380px;
+    height: 230px;
+    background-color: #33a48f;
+    border-radius: 3px 3px;
+    padding: 20px 7px 10px 40px;
+}
+.linklb {
+    float: right;
+    padding-right:20px;
+    padding-top:10px;
+    font: 15px Verdana, Helveticaall-petite-caps;
+    color: #074959;
+}
+
+/*Attendance*/
+.template-checkbox {
+   text-align:center;
+   border: 1px solid #074959;
+}
+
+.hiddencol
+  {
+    display: none;
+  }
+
+/*Exam Result*/
+#tblShowResult {
+    color: #333333;
+    margin: 0 0 10px 10px;
+    padding: 25px 5px 30px 0;
+    font: 15px Verdana, Helveticaall-petite-caps;    
+}
+
+#tblShowResult th, #tblShowResult td {
+    border: 1px solid #074959;
+}
+
+.failmark {
+    font: 19px Verdana, Helveticaall-petite-caps;
+    color: red;
+}
+
+/* Grade Subject */
+.column {
+    padding: 0 0 0 10px;
+}
+
+.GSgridview {
+    Width: 770px;
+    color: #333333;
+    margin: 0 0 30px 5px;
+    padding: 25px 5px 25px 0;
+    font: 15px Verdana, Helveticaall-petite-caps;    
+}
+
+.GSgridview th, .gridview td {
+    border: 1px solid #074959;
+}
+
+.GSgridview th {
+    height: 31px;
+}
+
+.selectSubject {
+    margin: 0 0 0 10px;
+    font: 15px Verdana, Helveticaall-petite-caps;    
+}
+
+/*classTimetable*/
+.radiosalary {
+    margin-right:10px;
+}
+
+.tdisplay_width 
+{ 
+    width: 60px;
+}
