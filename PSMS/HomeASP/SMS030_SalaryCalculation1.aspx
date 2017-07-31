@@ -91,7 +91,7 @@
                                         <td>
                                             <asp:Button ID="btnViewExcel" runat="server" Text="Open File" CssClass="btn" OnClick="btnViewExcel_Click" Enabled="False" /></td>--%>
                                         <td>
-                                            <asp:Button ID="btnMarkSave" runat="server" Text="Salary Save & Show" CssClass="btn" OnClick="BtnSalarySave_Click"/></td>
+                                            <asp:Button ID="btnMarkSave" runat="server" Width="250px" Text="Salary Save & Show" CssClass="btn" OnClick="BtnSalarySave_Click"/></td>
                                        <%-- <td>
                                             <asp:Button CssClass="btn" ID="btnShowAll" runat="server" Text="Show All" OnClick="btnShowAll_Click" /></td>--%>
                                     </tr>
@@ -104,7 +104,7 @@
                                 <div class="gridDiv">
                                     <asp:GridView ID="gvsalarylist" runat="server" CssClass="gridview" AutoGenerateColumns="false" AllowPaging="True" GridLines="None"
                                         PageSize="6" ShowHeaderWhenEmpty="true">
-                                        <EditRowStyle BackColor="#7C6F57" />
+                                        <EditRowStyle BackColor="#7C6F57"/>
                                         <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                                         <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                                         <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
@@ -121,55 +121,62 @@
                                             <asp:BoundField DataField="YEAR" HeaderText="Year" />
                                             --%>
                                             <asp:BoundField DataField="STAFF_ID" HeaderText="Id" />
-                                            <asp:BoundField DataField="STAFF_NAME" HeaderText="Name" />
+                                            <asp:BoundField DataField="STAFF_NAME" HeaderText="Name"/>
                                             <asp:BoundField DataField="SALARY" HeaderText="Basic Salary" />
                                             <%--<asp:BoundField DataField="LEAVE_TIMES" HeaderText="Leave Times" />--%>
-                                            <asp:TemplateField HeaderText="LeaveTime">
-                                                <HeaderTemplate></HeaderTemplate>
+
+                                            <asp:TemplateField HeaderText="Leave<br>Time">
+                                                <%--<HeaderTemplate></HeaderTemplate>--%>
+                                               
                                                 <ItemTemplate>
-                                                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="TextBox1" runat="server" Width="80px"></asp:TextBox>
+                                                </ItemTemplate>
+                                               
+                                            </asp:TemplateField>
+                                          
+                                             <%-- <asp:BoundField DataField="LEAVE_AMOUNT" HeaderText="Leave<br>Amount" />--%>
+                                             <asp:TemplateField HeaderText="Leave<br>Amount">
+                                                <%--<HeaderTemplate></HeaderTemplate>--%>
+                                                <ItemTemplate>
+                                                    <asp:TextBox ID="TextBox2" runat="server" Width="80px"></asp:TextBox>
+                                                </ItemTemplate>
+                                                 
+                                            </asp:TemplateField>
+                                            <%--<asp:BoundField DataField="LATE_TIMES" HeaderText="Late<br>Times" />--%>
+                                             <asp:TemplateField HeaderText="Late<br>Times">
+                                                <%--<HeaderTemplate></HeaderTemplate>--%>
+                                                <ItemTemplate>
+                                                    <asp:TextBox ID="TextBox3" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                           <%-- <asp:BoundField DataField="LEAVE_AMOUNT" HeaderText="Leave Amount" />--%>
-                                             <asp:TemplateField HeaderText="LeaveAmount">
-                                                <HeaderTemplate></HeaderTemplate>
+                                            <%--<asp:BoundField DataField="LATE_AMOUNT" HeaderText="Late<br>Amount" />--%>
+                                             <asp:TemplateField HeaderText="Late<br>Amount">
+                                                <%--<HeaderTemplate></HeaderTemplate>--%>
                                                 <ItemTemplate>
-                                                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <%--<asp:BoundField DataField="LATE_TIMES" HeaderText="Late Times" />--%>
-                                             <asp:TemplateField HeaderText="LateTimes">
-                                                <HeaderTemplate></HeaderTemplate>
-                                                <ItemTemplate>
-                                                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <%--<asp:BoundField DataField="LATE_AMOUNT" HeaderText="Late Amount" />--%>
-                                             <asp:TemplateField HeaderText="LateAmount">
-                                                <HeaderTemplate></HeaderTemplate>
-                                                <ItemTemplate>
-                                                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="TextBox4" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                            <%-- <asp:BoundField DataField="OT_AMOUNT" HeaderText="OT Amount" />--%>
-                                            <asp:TemplateField HeaderText="OTAmount">
-                                                <HeaderTemplate></HeaderTemplate>
+                                            <asp:TemplateField HeaderText="OT<br>Amount">
+                                                <%--<HeaderTemplate></HeaderTemplate>--%>
+                                                <HeaderStyle Width="20px" />
                                                 <ItemTemplate>
-                                                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="TextBox5" runat="server" Width="70px"></asp:TextBox>
                                                 </ItemTemplate>
+                                                <ItemStyle Width="20px" />
                                             </asp:TemplateField>
                                             <%--<asp:BoundField DataField="SALARY_AMOUNT" HeaderText="Salary" />--%>
                                             <asp:TemplateField HeaderText="Salary">
-                                                <HeaderTemplate></HeaderTemplate>
+                                                <%--<HeaderTemplate></HeaderTemplate>--%>
                                                 <ItemTemplate>
-                                                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="TextBox6" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <%--<asp:BoundField DataField="REMARK" HeaderText="Remark" />--%>
                                             <asp:TemplateField HeaderText="Remark">
-                                                <HeaderTemplate></HeaderTemplate>
+                                                <%--<HeaderTemplate></HeaderTemplate>--%>
                                                 <ItemTemplate>
-                                                    <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="TextBox7" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField>
