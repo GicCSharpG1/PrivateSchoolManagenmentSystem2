@@ -28,23 +28,19 @@
                                 <h2>Salary Calculation</h2>
                                 <table style="margin-left: 20px">
                                     <tr>
-                                        <td colspan="3"></td>
                                         <td>
-                                            <asp:Label ID="lblerrorsalary" runat="server" CssClass="errLable1" Visible="False">Please select month !</asp:Label></td>
+                                            <asp:Label ID="lbStaffType" CssClass="label" runat="server">Staff Type*</asp:Label></td>
                                         <td><span style="margin-left: 2em"></span></td>
-                                        <td colspan="2">
-                                            <asp:Label ID="lblerroryear" runat="server" CssClass="errLable1" Visible="False" /></td>
-                                    </tr>
-                                    <tr>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="comboPos"  AutoPostBack="true" AppendDataBoundItems="true" runat="server">
-                                            <asp:ListItem Text="--Select One ---" Value="       ">    </asp:ListItem>
+                                            <asp:DropDownList CssClass="dropdownlist" ID="comboPos" AutoPostBack="true" AppendDataBoundItems="true" runat="server">
+                                                <asp:ListItem Text="--Select One ---" Value="       ">    </asp:ListItem>
                                             </asp:DropDownList></td>
                                         <td><span style="margin-left: 2em"></span></td>
                                         <td class="td_width">
-                                            <asp:Label ID="Label3" CssClass="label" runat="server">Month</asp:Label></td>
+                                            <asp:Label ID="Label3" CssClass="label" runat="server">Month*</asp:Label></td>
+                                        <td><span style="margin-left: 2em"></span></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlmonthList" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlMonth" runat="server">
                                                 <asp:ListItem Value="0">Choose  Month</asp:ListItem>
                                                 <asp:ListItem Value="1">January</asp:ListItem>
                                                 <asp:ListItem Value="2">February</asp:ListItem>
@@ -61,16 +57,11 @@
                                             </asp:DropDownList></td>
                                         <td><span style="margin-left: 2em"></span></td>
                                         <td class="td_width">
-                                            <asp:Label ID="Label1" CssClass="label" runat="server" Text="Education Year"></asp:Label></td>
+                                            <asp:Label ID="Label1" CssClass="label" runat="server" Text="Education Year*"></asp:Label></td>
+                                        <td><span style="margin-left: 2em"></span></td>
                                         <td>
-                                            <asp:DropDownList ID="education" runat="server" ForeColor="Black" CssClass="dropdownlist">
-                                                <asp:ListItem>Select Education Year</asp:ListItem>
-                                                <asp:ListItem>2011 - 2012</asp:ListItem>
-                                                <asp:ListItem>2012 - 2013</asp:ListItem>
-                                                <asp:ListItem>2013 - 2014</asp:ListItem>
-                                                <asp:ListItem>2014 - 2015</asp:ListItem>
-                                                <asp:ListItem>2015 - 2016</asp:ListItem>
-                                                <asp:ListItem>2016 - 2017</asp:ListItem>
+                                            <asp:DropDownList ID="ddlEducation" runat="server" ForeColor="Black" CssClass="dropdownlist">
+                                                <asp:ListItem>Select Year</asp:ListItem>
                                                 <asp:ListItem>2017 - 2018</asp:ListItem>
                                                 <asp:ListItem>2018 - 2019</asp:ListItem>
                                                 <asp:ListItem>2019 - 2020</asp:ListItem>
@@ -79,6 +70,10 @@
                                                 <asp:ListItem></asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                        <asp:Label ID="lblErroSms" runat="server" CssClass="errLabel" Visible="False" Text="Please fill required data !!" /></td>
                                     </tr>
                                 </table>
                                 <br />
@@ -91,7 +86,7 @@
                                         <td>
                                             <asp:Button ID="btnViewExcel" runat="server" Text="Open File" CssClass="btn" OnClick="btnViewExcel_Click" Enabled="False" /></td>--%>
                                         <td>
-                                            <asp:Button ID="btnMarkSave" runat="server" Width="250px" Text="Salary Save & Show" CssClass="btn" OnClick="BtnSalarySave_Click"/></td>
+                                            <asp:Button ID="btnSalarySave" runat="server" Text="Save" CssClass="btn" OnClick="BtnSalarySave_Click"/></td>
                                        <%-- <td>
                                             <asp:Button CssClass="btn" ID="btnShowAll" runat="server" Text="Show All" OnClick="btnShowAll_Click" /></td>--%>
                                     </tr>
@@ -179,7 +174,7 @@
                                                     <asp:TextBox ID="TextBox7" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField>
+                                            <%--<asp:TemplateField>
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="btnDetail" runat="server" Text="Detail" CommandName="DetailCol" CommandArgument="<%#((GridViewRow)Container).RowIndex%>"></asp:LinkButton>
                                                 </ItemTemplate>
@@ -188,9 +183,12 @@
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="btnDelete" runat="server" Text="Delete" CommandName="DeleteCol" CommandArgument="<%#((GridViewRow)Container).RowIndex%>"></asp:LinkButton>
                                                 </ItemTemplate>
-                                            </asp:TemplateField>
+                                            </asp:TemplateField>--%>
                                         </Columns>
                                     </asp:GridView>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="errSms" runat="server" CssClass="errLabel" Visible="False" Text="Please fill required data !!" />
                                 </div>
                             </form>
                             &nbsp;

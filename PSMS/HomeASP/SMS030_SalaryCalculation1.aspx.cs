@@ -22,6 +22,8 @@ namespace HomeASP
         protected void Page_Load(object sender, EventArgs e)
         {
             this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+            if (!IsPostBack)
+                btnSalarySave.Enabled = false;
             if (Session["LOGIN_USER_ID"] != null)
             {
                 userId = (string)(Session["LOGIN_USER_ID"] ?? "  ");
@@ -44,10 +46,18 @@ namespace HomeASP
         protected void btnSearchSarlary_Click(object sender, EventArgs e)
         {
             DataSet.DsPSMS.ST_SALARYDataTable resultDt = new DataSet.DsPSMS.ST_SALARYDataTable();
-            int posId = int.Parse(comboPos.SelectedItem.Value);
-            DataSet.DsPSMS.ST_STAFF_DATADataTable teachers = salarySerivce.getStaffData(posId, out msg);
-            gvsalarylist.DataSource = teachers;
-            gvsalarylist.DataBind();
+            if (ddlMonth.SelectedIndex > 0 && ddlEducation.SelectedIndex > 0)
+            {
+                int posId = int.Parse(comboPos.SelectedItem.Value);
+                DataSet.DsPSMS.ST_STAFF_DATADataTable teachers = salarySerivce.getStaffData(posId, out msg);
+                gvsalarylist.DataSource = teachers;
+                gvsalarylist.DataBind();
+                btnSalarySave.Enabled = true;
+            }
+            else
+            {
+                lblErroSms.Visible = true;
+            }
 
             // Bining data
             //resultDt = salarySerivce.getAllSalaryData();
@@ -60,39 +70,49 @@ namespace HomeASP
         {
             int rowIndex = 0;
 
-            for (int i = 1; i <= gvsalarylist.Rows.Count; i++)
+            try
             {
-                //extract the TextBox values
-                salaryDr.EDU_YEAR = education.Text;
-                salaryDr.YEAR = 2016;
-                salaryDr.MONTH = ddlmonthList.Text;
-                salaryDr.STAFF_ID = gvsalarylist.Rows[rowIndex].Cells[0].Text;
+                for (int i = 1; i <= gvsalarylist.Rows.Count; i++)
+                {
+                    //extract the TextBox values
+                    salaryDr.EDU_YEAR = ddlEducation.Text;
+                    salaryDr.YEAR = 2016;
+                    salaryDr.MONTH = ddlMonth.Text;
+                    salaryDr.STAFF_ID = gvsalarylist.Rows[rowIndex].Cells[0].Text;
 
-                TextBox box1 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[3].FindControl("TextBox1");
-                salaryDr.LEAVE_TIMES = Convert.ToInt32(box1.Text);
-                TextBox box2 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[4].FindControl("TextBox2");
-                salaryDr.LEAVE_AMOUNT = Convert.ToInt32(box2.Text);
-                TextBox box3 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[5].FindControl("TextBox3");
-                salaryDr.LATE_TIMES = Convert.ToInt32(box3.Text);
-                TextBox box4 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[6].FindControl("TextBox4");
-                salaryDr.LATE_AMOUNT = Convert.ToInt32(box4.Text);
-                TextBox box5 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[7].FindControl("TextBox5");
-                salaryDr.OT_AMOUNT = Convert.ToInt32(box5.Text);
+                    TextBox box1 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[3].FindControl("TextBox1");
+                    salaryDr.LEAVE_TIMES = Convert.ToInt32(box1.Text);
+                    TextBox box2 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[4].FindControl("TextBox2");
+                    salaryDr.LEAVE_AMOUNT = Convert.ToInt32(box2.Text);
+                    TextBox box3 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[5].FindControl("TextBox3");
+                    salaryDr.LATE_TIMES = Convert.ToInt32(box3.Text);
+                    TextBox box4 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[6].FindControl("TextBox4");
+                    salaryDr.LATE_AMOUNT = Convert.ToInt32(box4.Text);
+                    TextBox box5 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[7].FindControl("TextBox5");
+                    salaryDr.OT_AMOUNT = Convert.ToInt32(box5.Text);
 
-                int totalSalary = calculateSalary(salaryDr, gvsalarylist.Rows[rowIndex].Cells[2].Text);
-                TextBox box6 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[8].FindControl("TextBox6");
-                salaryDr.SALARY_AMOUNT = Convert.ToInt32(box6.Text);
+                    int totalSalary = calculateSalary(salaryDr, gvsalarylist.Rows[rowIndex].Cells[2].Text);
+                    TextBox box6 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[8].FindControl("TextBox6");
+                    salaryDr.SALARY_AMOUNT = Convert.ToInt32(box6.Text);
 
-                TextBox box7 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[9].FindControl("TextBox7");
-                salaryDr.REMARK = box7.Text;
-                salaryDr.CRT_DT_TM = DateTime.Now;
-                salaryDr.CRT_USER_ID = "2";
-                salaryDr.UPD_DT_TM = DateTime.Now;
-                salaryDr.UPD_USER_ID = "";
+                    TextBox box7 = (TextBox)gvsalarylist.Rows[rowIndex].Cells[9].FindControl("TextBox7");
+                    salaryDr.REMARK = box7.Text;
+                    salaryDr.CRT_DT_TM = DateTime.Now;
+                    salaryDr.CRT_USER_ID = "2";
+                    salaryDr.UPD_DT_TM = DateTime.Now;
+                    salaryDr.UPD_USER_ID = "";
 
-                salarySerivce.saveSalaryData(salaryDr, out msg);
-                rowIndex++;
-
+                    salarySerivce.saveSalaryData(salaryDr, out msg);
+                    rowIndex++;
+                }
+                Session["Staff_Type"] = comboPos.Text;
+                Session["Salary_Month"] = ddlMonth.Text;
+                Session["Salary_EduYear"] = ddlEducation.Text;
+               // Response.Redirect("SM0037_SalaryCalculationDisplay.aspx");
+            }
+            catch
+            {
+                errSms.Text = "Insert Fail !!";
             }
 
         }

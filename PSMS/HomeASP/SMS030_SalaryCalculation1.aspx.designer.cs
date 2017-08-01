@@ -22,22 +22,13 @@ namespace HomeASP {
         protected global::System.Web.UI.HtmlControls.HtmlForm centerForm;
         
         /// <summary>
-        /// lblerrorsalary control.
+        /// lbStaffType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblerrorsalary;
-        
-        /// <summary>
-        /// lblerroryear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblerroryear;
+        protected global::System.Web.UI.WebControls.Label lbStaffType;
         
         /// <summary>
         /// comboPos control.
@@ -58,13 +49,13 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// ddlmonthList control.
+        /// ddlMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlmonthList;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMonth;
         
         /// <summary>
         /// Label1 control.
@@ -76,13 +67,22 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// education control.
+        /// ddlEducation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList education;
+        protected global::System.Web.UI.WebControls.DropDownList ddlEducation;
+        
+        /// <summary>
+        /// lblErroSms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErroSms;
         
         /// <summary>
         /// btnSearchSarlary control.
@@ -94,13 +94,13 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.Button btnSearchSarlary;
         
         /// <summary>
-        /// btnMarkSave control.
+        /// btnSalarySave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMarkSave;
+        protected global::System.Web.UI.WebControls.Button btnSalarySave;
         
         /// <summary>
         /// lblsalarybtnclick control.
@@ -119,5 +119,14 @@ namespace HomeASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvsalarylist;
+        
+        /// <summary>
+        /// errSms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errSms;
     }
 }
