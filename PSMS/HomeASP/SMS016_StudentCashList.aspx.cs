@@ -16,11 +16,11 @@ namespace HomeASP
         int index;
         StudentInfoService stuService = new StudentInfoService();
         StudentCashInfoService stuCashService = new StudentCashInfoService();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             showCashList();
-           
+
         }
 
         protected void showCashList()
@@ -47,7 +47,7 @@ namespace HomeASP
         protected void CoboSelect_Change(object sender, EventArgs e)
         {
             DsPSMS.ST_STUDENT_CASHRow stuCashDr = new DsPSMS.ST_STUDENT_CASHDataTable().NewST_STUDENT_CASHRow();
-            DsPSMS.ST_STUDENT_DATARow stuDataDr = new DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow(); 
+            DsPSMS.ST_STUDENT_DATARow stuDataDr = new DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
 
             if (TxtStudID.Text.Trim().Length != 0)
             {
@@ -68,7 +68,7 @@ namespace HomeASP
         {
             DsPSMS.ST_STUDENT_CASHDataTable stuCashDt = new DsPSMS.ST_STUDENT_CASHDataTable();
 
-            stuCashDt = stuCashService.getCashData(dr,out msg);
+            stuCashDt = stuCashService.getCashData(dr, out msg);
             if (stuCashDt != null)
             {
                 stuCashDt.Columns.Remove(stuCashDt.Columns[7]);
@@ -107,6 +107,10 @@ namespace HomeASP
 
         protected void showAll_Click(object sender, EventArgs e)
         {
+            TxtStudID.Text = "";
+            LabStuNameVal.Text = "";
+            CoboYear.SelectedIndex = -1;
+
             DsPSMS.ST_STUDENT_CASHDataTable stuCashDt = new DsPSMS.ST_STUDENT_CASHDataTable();
             stuCashDt = stuCashService.getCashAllData(out msg);
             if (stuCashDt != null && stuCashDt.Rows.Count != 0)
@@ -145,7 +149,7 @@ namespace HomeASP
                 else if (e.CommandName == "DeleteCol")
                 {
                     DsPSMS.ST_STUDENT_CASHRow stuCashDr = new DsPSMS.ST_STUDENT_CASHDataTable().NewST_STUDENT_CASHRow();
-                    stuCashDr.CASH_ID = cashList.Rows[index].Cells[1].Text;
+                    stuCashDr.CASH_ID = Convert.ToInt16(cashList.Rows[index].Cells[1].Text);
                     stuCashService.deleteCashData(stuCashDr, out msg);
                     alertMsg.Text = msg;
                     showCashList();
