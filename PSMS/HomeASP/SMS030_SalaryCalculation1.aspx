@@ -73,7 +73,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="6">
-                                        <asp:Label ID="lblErroSms" runat="server" CssClass="errLabel" Visible="False" Text="Please fill required data !!" /></td>
+                                            <asp:Label ID="lblErroSms" runat="server" CssClass="errLabel" Visible="False" Text="Please fill required data !!" /></td>
                                     </tr>
                                 </table>
                                 <br />
@@ -86,8 +86,8 @@
                                         <td>
                                             <asp:Button ID="btnViewExcel" runat="server" Text="Open File" CssClass="btn" OnClick="btnViewExcel_Click" Enabled="False" /></td>--%>
                                         <td>
-                                            <asp:Button ID="btnSalarySave" runat="server" Text="Save" CssClass="btn" OnClick="BtnSalarySave_Click"/></td>
-                                       <%-- <td>
+                                            <asp:Button ID="btnSalarySave" runat="server" Text="Save" CssClass="btn" OnClick="BtnSalarySave_Click" /></td>
+                                        <%-- <td>
                                             <asp:Button CssClass="btn" ID="btnShowAll" runat="server" Text="Show All" OnClick="btnShowAll_Click" /></td>--%>
                                     </tr>
                                     <tr>
@@ -99,7 +99,7 @@
                                 <div class="gridDiv">
                                     <asp:GridView ID="gvsalarylist" runat="server" CssClass="gridview" AutoGenerateColumns="false" AllowPaging="True" GridLines="None"
                                         PageSize="6" ShowHeaderWhenEmpty="true">
-                                        <EditRowStyle BackColor="#7C6F57"/>
+                                        <EditRowStyle BackColor="#7C6F57" />
                                         <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                                         <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                                         <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
@@ -112,78 +112,46 @@
                                         <AlternatingRowStyle BackColor="White" />
 
                                         <Columns>
-                                            <%--<asp:BoundField DataField="SALARY_ID" HeaderText="Salary Id" />
-                                            <asp:BoundField DataField="YEAR" HeaderText="Year" />
-                                            --%>
                                             <asp:BoundField DataField="STAFF_ID" HeaderText="Id" />
-                                            <asp:BoundField DataField="STAFF_NAME" HeaderText="Name"/>
+                                            <asp:BoundField DataField="STAFF_NAME" HeaderText="Name" />
                                             <asp:BoundField DataField="SALARY" HeaderText="Basic Salary" />
-                                            <%--<asp:BoundField DataField="LEAVE_TIMES" HeaderText="Leave Times" />--%>
-
                                             <asp:TemplateField HeaderText="Leave<br>Time">
-                                                <%--<HeaderTemplate></HeaderTemplate>--%>
-                                               
                                                 <ItemTemplate>
                                                     <asp:TextBox ID="TextBox1" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
-                                               
                                             </asp:TemplateField>
-                                          
-                                             <%-- <asp:BoundField DataField="LEAVE_AMOUNT" HeaderText="Leave<br>Amount" />--%>
-                                             <asp:TemplateField HeaderText="Leave<br>Amount">
-                                                <%--<HeaderTemplate></HeaderTemplate>--%>
+                                            <asp:TemplateField HeaderText="Leave<br>Amount">
                                                 <ItemTemplate>
                                                     <asp:TextBox ID="TextBox2" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
-                                                 
                                             </asp:TemplateField>
-                                            <%--<asp:BoundField DataField="LATE_TIMES" HeaderText="Late<br>Times" />--%>
-                                             <asp:TemplateField HeaderText="Late<br>Times">
-                                                <%--<HeaderTemplate></HeaderTemplate>--%>
+                                            <asp:TemplateField HeaderText="Late<br>Times">
                                                 <ItemTemplate>
                                                     <asp:TextBox ID="TextBox3" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <%--<asp:BoundField DataField="LATE_AMOUNT" HeaderText="Late<br>Amount" />--%>
-                                             <asp:TemplateField HeaderText="Late<br>Amount">
-                                                <%--<HeaderTemplate></HeaderTemplate>--%>
+                                            <asp:TemplateField HeaderText="Late<br>Amount">
                                                 <ItemTemplate>
                                                     <asp:TextBox ID="TextBox4" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                           <%-- <asp:BoundField DataField="OT_AMOUNT" HeaderText="OT Amount" />--%>
                                             <asp:TemplateField HeaderText="OT<br>Amount">
-                                                <%--<HeaderTemplate></HeaderTemplate>--%>
                                                 <HeaderStyle Width="20px" />
                                                 <ItemTemplate>
                                                     <asp:TextBox ID="TextBox5" runat="server" Width="70px"></asp:TextBox>
                                                 </ItemTemplate>
                                                 <ItemStyle Width="20px" />
                                             </asp:TemplateField>
-                                            <%--<asp:BoundField DataField="SALARY_AMOUNT" HeaderText="Salary" />--%>
                                             <asp:TemplateField HeaderText="Salary">
-                                                <%--<HeaderTemplate></HeaderTemplate>--%>
                                                 <ItemTemplate>
                                                     <asp:TextBox ID="TextBox6" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <%--<asp:BoundField DataField="REMARK" HeaderText="Remark" />--%>
                                             <asp:TemplateField HeaderText="Remark">
-                                                <%--<HeaderTemplate></HeaderTemplate>--%>
                                                 <ItemTemplate>
                                                     <asp:TextBox ID="TextBox7" runat="server" Width="80px"></asp:TextBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <%--<asp:TemplateField>
-                                                <ItemTemplate>
-                                                    <asp:LinkButton ID="btnDetail" runat="server" Text="Detail" CommandName="DetailCol" CommandArgument="<%#((GridViewRow)Container).RowIndex%>"></asp:LinkButton>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField>
-                                                <ItemTemplate>
-                                                    <asp:LinkButton ID="btnDelete" runat="server" Text="Delete" CommandName="DeleteCol" CommandArgument="<%#((GridViewRow)Container).RowIndex%>"></asp:LinkButton>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>--%>
                                         </Columns>
                                     </asp:GridView>
                                     <br />
