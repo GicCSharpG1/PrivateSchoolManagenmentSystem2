@@ -108,7 +108,7 @@ namespace HomeASP
                 Session["Staff_Type"] = comboPos.Text;
                 Session["Salary_Month"] = ddlMonth.Text;
                 Session["Salary_EduYear"] = ddlEducation.Text;
-               // Response.Redirect("SM0037_SalaryCalculationDisplay.aspx");
+                Response.Redirect("SM0037_SalaryCalculationDisplay.aspx");
             }
             catch
             {
