@@ -93,7 +93,7 @@ namespace HomeASP.DbAccess
 
         public DataSet.DsPSMS.ST_SALARYDataTable selectAllSalaryData()
         {
-            string query = "SELECT * FROM ST_SALARY WHERE  ORDER BY SALARY_ID";
+            string query = "SELECT * FROM ST_SALARY ORDER BY SALARY_ID";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet.DsPSMS.ST_SALARYDataTable dt = new DataSet.DsPSMS.ST_SALARYDataTable();
