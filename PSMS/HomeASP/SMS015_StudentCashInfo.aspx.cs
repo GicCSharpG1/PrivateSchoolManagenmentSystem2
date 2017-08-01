@@ -136,7 +136,7 @@ namespace HomeASP
                 stDr.EDU_YEAR = CoboYear.Text;
                 stDr.STUDENT_ID = TxtStudID.Text;
                 stDr.STUDENT_NAME = TxtStuName.Text;
-                stDr.GRADE_ID =int.Parse(CoboGrade.SelectedItem.Value);
+                stDr.GRADE_ID = int.Parse(CoboGrade.SelectedItem.Value);
                 stDr = stuService.getCashType(stDr, out msg);
 
                 // show Cash Type
@@ -159,7 +159,7 @@ namespace HomeASP
             DsPSMS.ST_GRADE_MSTRow grdDr = new DsPSMS.ST_GRADE_MSTDataTable().NewST_GRADE_MSTRow();
 
             // select GRADE_ID and CASH_AMOUNT
-            grdDr.GRADE_ID =int.Parse(CoboGrade.SelectedItem.Text.Substring(6,1));
+            grdDr.GRADE_ID = int.Parse(CoboGrade.SelectedItem.Text.Substring(6, 1));
             grdDt = grdSubService.selectGradeByID(grdDr, out msg);
 
             //get cash data and calculate paid amount
@@ -184,6 +184,40 @@ namespace HomeASP
             CoboGrade.SelectedIndex = -1;
             CoboYear.SelectedIndex = -1;
             cashDate.Text = "";
+            LabCashTypeVal.Text = "";
+            txtAccNoVal.Text = "";
+            TxtAmountVal.Text = "";
+            insertComp.Text = "";
+            LabMonVal.Text = "";
+            LabKyatVal.Text = "";
+            LabPaidVal.Text = "";
+            LabRemainVal.Text = "";
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            DsPSMS.ST_STUDENT_DATARow stDr = new DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
+            if (TxtStudID.Text.Trim().Length != 0 && TxtStuName.Text.Trim().Length != 0 && CoboGrade.SelectedIndex != 0 && CoboYear.SelectedIndex != 0)
+            {
+
+                // select Cash Type
+                stDr.EDU_YEAR = CoboYear.Text;
+                stDr.STUDENT_ID = TxtStudID.Text;
+                stDr.STUDENT_NAME = TxtStuName.Text;
+                stDr.GRADE_ID = int.Parse(CoboGrade.SelectedItem.Value);
+                stDr = stuService.getCashType(stDr, out msg);
+
+                // show Cash Type
+                if (stDr != null)
+                {
+                    LabCashTypeVal.Text = stDr.CASH_TYPE1;
+                    calculation();
+                }
+                else
+                    alert.Text = "This student is not registered Please check information!!!";
+            }
+            else
+                alert.Text = "Please fill required data!!";
         }
     }
 }

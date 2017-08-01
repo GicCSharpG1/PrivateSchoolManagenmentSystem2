@@ -71,19 +71,19 @@
                                             </td>
                                             <td><span style="margin-left: 1em"></span></td>
                                             <td>
-                                                <asp:RequiredFieldValidator runat="server" ValidationGroup="pay" ID="rfvgradeId" ControlToValidate="TxtStudID" ErrorMessage="Please Enter Student's ID!" ForeColor="Red" /></td>
+                                                <asp:RequiredFieldValidator runat="server" ValidationGroup="search" ID="rfvgradeId" ControlToValidate="TxtStudID" ErrorMessage="Please Enter Student's ID!" ForeColor="Red" /></td>
                                             <td><span style="margin-left: 1em"></span></td>
                                             <td>
                                                 <asp:Label ID="Label3" CssClass="Lab-format" runat="server"></asp:Label></td>
                                             <td><span style="margin-left: 1em"></span></td>
                                             <td>
-                                                <asp:RequiredFieldValidator runat="server" ValidationGroup="pay" ID="errName" ControlToValidate="TxtStuName" ErrorMessage="Please enter student name!" ForeColor="Red" /></td>
+                                                <asp:RequiredFieldValidator runat="server" ValidationGroup="search" ID="errName" ControlToValidate="TxtStuName" ErrorMessage="Please enter student name!" ForeColor="Red" /></td>
                                             <td><span style="margin-left: 2em"></span></td>
                                             <td>
                                                 <asp:Label ID="Label4" CssClass="Lab-format" runat="server"></asp:Label></td>
                                             <td><span style="margin-left: 1em"></span></td>
                                             <td>
-                                                <asp:RequiredFieldValidator runat="server" ValidationGroup="pay" ID="errDate" ControlToValidate="cashDate" ErrorMessage="Please chose the date!" ForeColor="Red" /></td>
+                                                <asp:RequiredFieldValidator runat="server" ValidationGroup="search" ID="errDate" ControlToValidate="cashDate" ErrorMessage="Please chose the date!" ForeColor="Red" /></td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -100,12 +100,6 @@
                                             <td>
                                                 <asp:DropDownList ID="CoboYear" CssClass="dropdownlist" runat="server" AutoPostBack="true" OnSelectedIndexChanged="CoboSelect_Change" OnTextChanged="CoboSelect_Change">
                                                     <asp:ListItem>Select Education Year</asp:ListItem>
-                                                    <asp:ListItem>2011 - 2012</asp:ListItem>
-                                                    <asp:ListItem>2012 - 2013</asp:ListItem>
-                                                    <asp:ListItem>2013 - 2014</asp:ListItem>
-                                                    <asp:ListItem>2014 - 2015</asp:ListItem>
-                                                    <asp:ListItem>2015 - 2016</asp:ListItem>
-                                                    <asp:ListItem>2016 - 2017</asp:ListItem>
                                                     <asp:ListItem>2017 - 2018</asp:ListItem>
                                                     <asp:ListItem>2018 - 2019</asp:ListItem>
                                                     <asp:ListItem>2019 - 2020</asp:ListItem>
@@ -119,13 +113,13 @@
                                                 <asp:Label ID="Label5" CssClass="Lab-format" runat="server"></asp:Label></td>
                                             <td><span style="margin-left: 1em"></span></td>
                                             <td>
-                                                <asp:RequiredFieldValidator runat="server" ID="errGrade" ControlToValidate="CoboGrade" ErrorMessage="Please choose the grade!" ForeColor="Red" /></td>
+                                                <asp:RequiredFieldValidator runat="server" ID="errGrade" ControlToValidate="CoboGrade" ValidationGroup="search" ErrorMessage="Please choose the grade!" ForeColor="Red" /></td>
                                             <td><span style="margin-left: 1em"></span></td>
                                             <td>
                                                 <asp:Label ID="Label7" CssClass="Lab-format" runat="server"></asp:Label></td>
                                             <td><span style="margin-left: 1em"></span></td>
                                             <td>
-                                                <asp:RequiredFieldValidator runat="server" ID="errYear" ControlToValidate="CoboYear" ErrorMessage="Please choose the year!" ForeColor="Red" />
+                                                <asp:RequiredFieldValidator runat="server" ID="errYear" ControlToValidate="CoboYear" ValidationGroup="search" ErrorMessage="Please choose the year!" ForeColor="Red" />
                                             </td>
                                         </tr>
                                         <tr>
@@ -133,8 +127,10 @@
                                                 <asp:Label runat="server" ID="alert" Style="color: red; font-size: 15px"></asp:Label></td>
                                         </tr>
                                         <tr>
-                                            <td colspan="6">
+                                            <td colspan="3">
                                                 <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn" Style="float: right" OnClick="btnClear_Click" /></td>
+                                            <td colspan="4">
+                                                <asp:Button ID="btnSearch" runat="server" ValidationGroup="search" Text="Search" CssClass="btn" Style="float:right" OnClick="btnSearch_Click" /></td>
                                         </tr>
                                     </table>
                                 </div>
