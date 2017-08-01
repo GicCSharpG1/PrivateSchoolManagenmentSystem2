@@ -214,7 +214,44 @@ namespace HomeASP
 
         protected void gvsalarylist_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            int index;
+            try
+            {
+                index = Convert.ToInt32(e.CommandArgument);
+                if (e.CommandName == "DetailCol")
+                {
 
+                }
+                else if (e.CommandName == "UpdateCol")
+                {
+                    //BtnConfirm.Enabled = true;
+                    //BtnPay.Enabled = false;
+
+                    ////txtExpIDVal.Text = expDetList.Rows[index].Cells[0].Text;
+                    //TxtExpSubTitle.Text = expDetList.Rows[index].Cells[1].Text;
+                    //TxtAmt.Text = expDetList.Rows[index].Cells[2].Text;
+                    //temp.Text = expDetList.Rows[index].Cells[0].Text;
+                }
+
+                //else if (e.CommandName == "DeleteCol")
+                //{
+
+                //    expDetDr.EXP_ID = Convert.ToInt16(expDetList.Rows[index].Cells[0].Text);
+                //    expDetDr.EXP_SUB_TITLE = expDetList.Rows[index].Cells[1].Text;
+                //    expDetDr.AMOUNT = expDetList.Rows[index].Cells[2].Text;
+                //    expService.deleteExpDet(expDetDr, out msg);
+
+                //    DataTable ds = new DataTable();
+                //    ds = null;
+                //    expDetList.DataSource = ds;
+                //    expDetList.DataBind();
+
+                //    showExpHedGv();
+                //}
+            }
+            catch
+            {
+            }
         }
 
         protected void gvsalarylist_PageIndexChanging1(object sender, GridViewPageEventArgs e)

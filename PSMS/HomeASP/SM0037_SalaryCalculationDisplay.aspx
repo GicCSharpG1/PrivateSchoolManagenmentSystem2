@@ -117,11 +117,35 @@
                                         <asp:BoundField DataField="REMARK" HeaderText="Remark" />
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="btnUpdate" runat="server" Text="Update" CommandName="Update" CommandArgument="<%#((GridViewRow)Container).RowIndex%>"></asp:LinkButton>
+                                                <asp:LinkButton ID="btnUpdate" runat="server" Text="Update" CommandName="UpdateCol" CommandArgument="<%#((GridViewRow)Container).RowIndex%>"></asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+
+                                        </tr>
+                                    </table>
+                                </div>
                             </form>
                         </div>
                     </div>
