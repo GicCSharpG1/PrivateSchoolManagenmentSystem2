@@ -136,6 +136,36 @@ namespace HomeASP.Service
             return result;
         }
 
+        public DataSet.DsPSMS.ST_SALARYDataTable getSalaryDataByCondition(DataSet.DsPSMS.ST_SALARYRow dr)
+        {
+            DataSet.DsPSMS.ST_SALARYDataTable result = new DataSet.DsPSMS.ST_SALARYDataTable();
+            try
+            {
+                salaryDB.Open();
+                result = salaryDB.selectSalaryDataByCondition(dr);
+                if (result != null && result.Rows.Count > 0)
+                {
+                  //  msg = result.Rows.Count + " user found";
+                }
+
+                else
+                {
+                    result = null;
+                  //  msg = "user not found";
+                }
+            }
+            catch
+            {
+               // msg = "error has occure when insert data";
+                return null;
+            }
+            finally
+            {
+                salaryDB.Close();
+            }
+            return result;
+        }
+
         public bool saveSalaryData(DataSet.DsPSMS.ST_SALARYRow dr, out string msg)
         {
             bool isOk = true;

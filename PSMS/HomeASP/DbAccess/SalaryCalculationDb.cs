@@ -101,6 +101,16 @@ namespace HomeASP.DbAccess
             return dt;
         }
 
+        public DataSet.DsPSMS.ST_SALARYDataTable selectSalaryDataByCondition(DataSet.DsPSMS.ST_SALARYRow dr)
+        {
+            string query = "SELECT * FROM ST_SALARY WHERE EDU_YEAR = '" + dr.EDU_YEAR +"' AND MONTH = '" + dr.MONTH + "' ORDER BY SALARY_ID";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet.DsPSMS.ST_SALARYDataTable dt = new DataSet.DsPSMS.ST_SALARYDataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
         public DataSet.DsPSMS.ST_STAFF_DATARow selectStaffByid(int id)
         {
             //conn.Open();

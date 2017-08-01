@@ -28,24 +28,21 @@
                         <div class="right_b" style="height: 520px; width: 965px; clear: both">
                             <form id="centerForm" runat="server" style="height: 485px;">
                                 <h2>Salary Display</h2>
-                                <table id="table_style">
+                                <table style="margin-left: 20px">
                                     <tr>
-                                        <td colspan="3"></td>
-                                        <td>
-                                            <asp:Label ID="lblerrorsalary" runat="server" CssClass="errlable1" Visible="False">Please select month !</asp:Label></td>
+                                        <%--<td>
+                                            <asp:Label ID="lbStaffType" CssClass="label" runat="server">Staff Type*</asp:Label></td>
                                         <td><span style="margin-left: 2em"></span></td>
-                                        <td colspan="2">
-                                            <asp:Label ID="lblerroryear" runat="server" CssClass="errlable1" Visible="False" /></td>
-                                    </tr>
-                                    <tr>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddltypelist" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="comboPos" AutoPostBack="true" AppendDataBoundItems="true" runat="server">
+                                                <asp:ListItem Text="--Select One ---" Value="       ">    </asp:ListItem>
                                             </asp:DropDownList></td>
-                                        <td><span style="margin-left: 2em"></span></td>
+                                        <td><span style="margin-left: 2em"></span></td>--%>
                                         <td class="td_width">
-                                            <asp:Label ID="Label3" CssClass="label" runat="server">Month</asp:Label></td>
+                                            <asp:Label ID="Label3" CssClass="label" runat="server">Month*</asp:Label></td>
+                                        <td><span style="margin-left: 2em"></span></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlmonthList" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlMonth" runat="server">
                                                 <asp:ListItem Value="0">Choose  Month</asp:ListItem>
                                                 <asp:ListItem Value="1">January</asp:ListItem>
                                                 <asp:ListItem Value="2">February</asp:ListItem>
@@ -62,16 +59,11 @@
                                             </asp:DropDownList></td>
                                         <td><span style="margin-left: 2em"></span></td>
                                         <td class="td_width">
-                                            <asp:Label ID="Label1" CssClass="label" runat="server" Text="EDU Year"></asp:Label></td>
+                                            <asp:Label ID="Label1" CssClass="label" runat="server" Text="Education Year*"></asp:Label></td>
+                                        <td><span style="margin-left: 2em"></span></td>
                                         <td>
-                                            <asp:DropDownList ID="education" runat="server" ForeColor="Black" CssClass="dropdownlist">
-                                                <asp:ListItem>Select Education Year</asp:ListItem>
-                                                <asp:ListItem>2011 - 2012</asp:ListItem>
-                                                <asp:ListItem>2012 - 2013</asp:ListItem>
-                                                <asp:ListItem>2013 - 2014</asp:ListItem>
-                                                <asp:ListItem>2014 - 2015</asp:ListItem>
-                                                <asp:ListItem>2015 - 2016</asp:ListItem>
-                                                <asp:ListItem>2016 - 2017</asp:ListItem>
+                                            <asp:DropDownList ID="ddlEducation" runat="server" ForeColor="Black" CssClass="dropdownlist">
+                                                <asp:ListItem>Select Year</asp:ListItem>
                                                 <asp:ListItem>2017 - 2018</asp:ListItem>
                                                 <asp:ListItem>2018 - 2019</asp:ListItem>
                                                 <asp:ListItem>2019 - 2020</asp:ListItem>
@@ -81,11 +73,18 @@
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <asp:Label ID="lblErroSms" runat="server" CssClass="errLabel" Visible="False" Text="Please fill required data !!" /></td>
+                                    </tr>
                                 </table>
                                 <table>
                                     <tr>
                                         <td>
                                             <asp:Button CssClass="btn" ID="btnSearchSarlary" runat="server" Text="Search" OnClick="btnSearchSarlary_Click" /></td>
+                                    <td><span style="margin-left: 2em"></span></td>
+                                        <td>
+                                            <asp:Button CssClass="btn" ID="btnShowAllSalary" runat="server" Text="Show All" OnClick="btnShowAllSalary_Click" /></td>
                                     </tr>
                                     <tr>
                                         <td colspan="4">
@@ -94,28 +93,33 @@
                                 </table>
                                 <br />
                                 <asp:GridView ID="gvsalarylist" runat="server" CssClass="gridview" AutoGenerateColumns="false" AllowPaging="True" GridLines="None"
-                                        PageSize="6" ShowHeaderWhenEmpty="true">
-                                        <EditRowStyle BackColor="#7C6F57" />
-                                        <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
-                                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                                        <RowStyle BackColor="#D2EEEA" />
-                                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                                        <SortedAscendingHeaderStyle BackColor="#246B61" />
-                                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                                        <SortedDescendingHeaderStyle BackColor="#15524A" />
-                                        <AlternatingRowStyle BackColor="White" />
+                                    PageSize="6" ShowHeaderWhenEmpty="true" OnRowCommand="gvsalarylist_RowCommand" OnPageIndexChanging="gvsalarylist_PageIndexChanging1">
+                                    <EditRowStyle BackColor="#7C6F57" />
+                                    <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
+                                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#D2EEEA" />
+                                    <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                                    <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                                    <SortedAscendingHeaderStyle BackColor="#246B61" />
+                                    <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                                    <SortedDescendingHeaderStyle BackColor="#15524A" />
+                                    <AlternatingRowStyle BackColor="White" />
                                     <Columns>
                                         <asp:BoundField DataField="SALARY_ID" HeaderText="SalaryId" />
                                         <asp:BoundField DataField="STAFF_ID" HeaderText="Name" />
-                                        <asp:BoundField DataField="LEAVE_TIMES" HeaderText="Leave times" />
-                                        <asp:BoundField DataField="LEAVE_AMOUNT" HeaderText="Leave Deduction" />
-                                        <asp:BoundField DataField="LATE_TIMES" HeaderText="Late times" />
-                                        <asp:BoundField DataField="LEAVE_AMOUNT" HeaderText="Late Deduction" />
+                                        <asp:BoundField DataField="LEAVE_TIMES" HeaderText="Leave<br/>times" HtmlEncode="False" />
+                                        <asp:BoundField DataField="LEAVE_AMOUNT" HeaderText="Leave<br/> Deduction" HtmlEncode="False"/>
+                                        <asp:BoundField DataField="LATE_TIMES" HeaderText="Late<br/> times" HtmlEncode="False"/>
+                                        <asp:BoundField DataField="LEAVE_AMOUNT" HeaderText="Late<br/> Deduction" HtmlEncode="False"/>
                                         <asp:BoundField DataField="OT_AMOUNT" HeaderText="OT Pay" />
                                         <asp:BoundField DataField="SALARY_AMOUNT" HeaderText="TotalSalary" />
                                         <asp:BoundField DataField="REMARK" HeaderText="Remark" />
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="btnUpdate" runat="server" Text="Update" CommandName="Update" CommandArgument="<%#((GridViewRow)Container).RowIndex%>"></asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
                             </form>
