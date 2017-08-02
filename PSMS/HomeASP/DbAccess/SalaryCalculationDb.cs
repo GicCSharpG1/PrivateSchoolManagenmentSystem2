@@ -75,7 +75,7 @@ namespace HomeASP.DbAccess
             data += ", SALARY_AMOUNT = " + dr.SALARY_AMOUNT + "";
             data += ", UPD_DT_TM = '" + dr.UPD_DT_TM + "'";
             data += ", UPD_USER_ID = '" + dr.UPD_USER_ID + "'";
-            query += data + " WHERE SALARY_ID =" + dr.SALARY_ID;
+            query += data + " WHERE SALARY_ID =" + dr.SALARY_ID +" AND STAFF_ID ='" + dr.STAFF_ID +"'";
             SqlCommand cmd = new SqlCommand(query, conn);
             result = cmd.ExecuteNonQuery();
             return result;

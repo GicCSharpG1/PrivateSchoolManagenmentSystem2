@@ -82,7 +82,7 @@
                                     <tr>
                                         <td>
                                             <asp:Button CssClass="btn" ID="btnSearchSarlary" runat="server" Text="Search" OnClick="btnSearchSarlary_Click" /></td>
-                                    <td><span style="margin-left: 2em"></span></td>
+                                        <td><span style="margin-left: 2em"></span></td>
                                         <td>
                                             <asp:Button CssClass="btn" ID="btnShowAllSalary" runat="server" Text="Show All" OnClick="btnShowAllSalary_Click" /></td>
                                     </tr>
@@ -93,7 +93,7 @@
                                 </table>
                                 <br />
                                 <asp:GridView ID="gvsalarylist" runat="server" CssClass="gridview" AutoGenerateColumns="false" AllowPaging="True" GridLines="None"
-                                    PageSize="6" ShowHeaderWhenEmpty="true" OnRowCommand="gvsalarylist_RowCommand" OnPageIndexChanging="gvsalarylist_PageIndexChanging1">
+                                    PageSize="6" ShowHeaderWhenEmpty="true" OnPageIndexChanging="gvsalarylist_PageIndexChanging">
                                     <EditRowStyle BackColor="#7C6F57" />
                                     <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -105,16 +105,47 @@
                                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                                     <AlternatingRowStyle BackColor="White" />
+
                                     <Columns>
                                         <asp:BoundField DataField="SALARY_ID" HeaderText="SalaryId" />
                                         <asp:BoundField DataField="STAFF_ID" HeaderText="Name" />
-                                        <asp:BoundField DataField="LEAVE_TIMES" HeaderText="Leave<br/>times" HtmlEncode="False" />
-                                        <asp:BoundField DataField="LEAVE_AMOUNT" HeaderText="Leave<br/> Deduction" HtmlEncode="False"/>
-                                        <asp:BoundField DataField="LATE_TIMES" HeaderText="Late<br/> times" HtmlEncode="False"/>
-                                        <asp:BoundField DataField="LEAVE_AMOUNT" HeaderText="Late<br/> Deduction" HtmlEncode="False"/>
-                                        <asp:BoundField DataField="OT_AMOUNT" HeaderText="OT Pay" />
-                                        <asp:BoundField DataField="SALARY_AMOUNT" HeaderText="TotalSalary" />
-                                        <asp:BoundField DataField="REMARK" HeaderText="Remark" />
+                                        <asp:TemplateField HeaderText="Leave<br>Time">
+                                            <ItemTemplate>
+                                                <asp:TextBox ID="TextBox1" runat="server" Width="85px"></asp:TextBox>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Leave<br>Amount">
+                                            <ItemTemplate>
+                                                <asp:TextBox ID="TextBox2" runat="server" Width="85px"></asp:TextBox>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Late<br>Times">
+                                            <ItemTemplate>
+                                                <asp:TextBox ID="TextBox3" runat="server" Width="85px"></asp:TextBox>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Late<br>Amount">
+                                            <ItemTemplate>
+                                                <asp:TextBox ID="TextBox4" runat="server" Width="85px"></asp:TextBox>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="OT<br>Amount">
+                                            <HeaderStyle />
+                                            <ItemTemplate>
+                                                <asp:TextBox ID="TextBox5" runat="server" Width="85px"></asp:TextBox>
+                                            </ItemTemplate>
+                                            <ItemStyle />
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Salary">
+                                            <ItemTemplate>
+                                                <asp:TextBox ID="TextBox6" runat="server" Width="85px"></asp:TextBox>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Remark">
+                                            <ItemTemplate>
+                                                <asp:TextBox ID="TextBox7" runat="server" Width="85px"></asp:TextBox>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="btnUpdate" runat="server" Text="Update" CommandName="UpdateCol" CommandArgument="<%#((GridViewRow)Container).RowIndex%>"></asp:LinkButton>
@@ -122,30 +153,57 @@
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
-                                <div>
+                                <br />
+                                <br />
+                                <asp:Label ID="errSMS" Font-Size="Small" ForeColor="Red" runat="server"></asp:Label>
+                                <%--<div>
                                     <table>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>
+                                                <asp:Label ID="lbLeT" CssClass="label" runat="server" Text="Leave Time" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:TextBox CssClass="textbox" ID="txtLeT" Style="color: black; margin-left: 0px" runat="server" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:Label ID="lbLeAm" CssClass="label" runat="server" Text="Leave Time" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:TextBox CssClass="textbox" ID="txtLeAm" Style="color: black; margin-left: 0px" runat="server" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:Label ID="lbLaT" CssClass="label" runat="server" Text="Leave Time" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:TextBox CssClass="textbox" ID="txtLaT" Style="color: black; margin-left: 0px" runat="server" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:Label ID="lbLaAm" CssClass="label" runat="server" Text="Leave Time" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:TextBox CssClass="textbox" ID="txtLaAm" Style="color: black; margin-left: 0px" runat="server" /></td>
                                         </tr>
                                         <tr>
-
+                                            <td>
+                                                <asp:Label ID="lbOT" CssClass="label" runat="server" Text="Leave Time" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:TextBox CssClass="textbox" ID="txtOT" Style="color: black; margin-left: 0px" runat="server" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:Label ID="lbSa" CssClass="label" runat="server" Text="Leave Time" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:TextBox CssClass="textbox" ID="txtSa" Style="color: black; margin-left: 0px" runat="server" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:Label ID="lbRem" CssClass="label" runat="server" Text="Leave Time" /></td>
+                                            <td><span style="margin-left: 2em"></span></td>
+                                            <td>
+                                                <asp:TextBox CssClass="textbox" ID="txtRem" Style="color: black; margin-left: 0px" runat="server" /></td>
                                         </tr>
                                     </table>
-                                </div>
+                                </div>--%>
                             </form>
                         </div>
                     </div>

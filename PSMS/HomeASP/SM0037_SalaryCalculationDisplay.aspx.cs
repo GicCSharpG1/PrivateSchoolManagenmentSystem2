@@ -23,18 +23,17 @@ namespace HomeASP
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataSet.DsPSMS.ST_SALARYDataTable resultDt = new DataSet.DsPSMS.ST_SALARYDataTable();
-            DataSet.DsPSMS.ST_SALARYRow resultDr = new DataSet.DsPSMS.ST_SALARYDataTable().NewST_SALARYRow();
             this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
-
+           
             if (Session["LOGIN_USER_ID"] != null)
             {
                 userId = (string)(Session["LOGIN_USER_ID"] ?? "  ");
             }
-            //  FillPositionListCombo();  // binding position to comboBox
 
+            //  FillPositionListCombo();  // binding position to comboBox
             //if (Session["Staff_Type"] != null)
             //    comboPos.Text = (string)(Session["Staff_Type"] ?? "");
+
             if (Session["Salary_Month"] != null)
                 ddlMonth.Text = (string)(Session["Salary_Month"] ?? "");
             if (Session["Salary_EduYear"] != null)
@@ -48,7 +47,6 @@ namespace HomeASP
             {
                 btnSearchSarlary_Click(sender, e);
             }
-
         }
 
         //void FillPositionListCombo()
@@ -63,47 +61,40 @@ namespace HomeASP
         //    comboPos.Items.Insert(0, new ListItem("Choose Position", "0"));
         //}
 
-        protected void bindBasicSalary(DataSet.DsPSMS.ST_SALARYDataTable salarys)
-        {
-            int rw;
-            int pgCount = gvsalarylist.PageSize - 1;
-            int pgIndex = gvsalarylist.PageIndex;
-            if (pgIndex == 0)
-            {
-                rw = 0;
-            }
-            else
-            {
-                rw = (pgIndex * pgCount) + 1;
-            }
-
-            foreach (GridViewRow row in gvsalarylist.Rows)
-            {
-                Label lblSalary = (Label)row.FindControl("lblBasicSalary");
-                string staffName = salarys.Rows[rw]["STAFF_ID"].ToString();
-                int remark = int.Parse(salarys.Rows[rw]["REMARK"].ToString());
-                if (remark == 0)
-                {
-                    DataSet.DsPSMS.ST_TEACHER_DATARow teacher = salarySerivce.getTeacherByName(staffName);
-                    lblSalary.Text = Convert.ToString(teacher.SALARY);
-                }
-                else
-                {
-                    DataSet.DsPSMS.ST_STAFF_DATARow staff = salarySerivce.getStaffByName(staffName);
-                    lblSalary.Text = Convert.ToString(staff.SALARY);
-                }
-
-                rw++;
-            }
-        }
-
-        //protected void gvsalarylist_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        //protected void bindBasicSalary(DataSet.DsPSMS.ST_SALARYDataTable salarys)
         //{
+        //    int rw;
+        //    int pgCount = gvsalarylist.PageSize - 1;
+        //    int pgIndex = gvsalarylist.PageIndex;
+        //    if (pgIndex == 0)
+        //    {
+        //        rw = 0;
+        //    }
+        //    else
+        //    {
+        //        rw = (pgIndex * pgCount) + 1;
+        //    }
 
-        //    gvsalarylist.PageIndex = e.NewPageIndex;
-        //   // displayGridData(reFlag);
+        //    foreach (GridViewRow row in gvsalarylist.Rows)
+        //    {
+        //        Label lblSalary = (Label)row.FindControl("lblBasicSalary");
+        //        string staffName = salarys.Rows[rw]["STAFF_ID"].ToString();
+        //        int remark = int.Parse(salarys.Rows[rw]["REMARK"].ToString());
+        //        if (remark == 0)
+        //        {
+        //            DataSet.DsPSMS.ST_TEACHER_DATARow teacher = salarySerivce.getTeacherByName(staffName);
+        //            lblSalary.Text = Convert.ToString(teacher.SALARY);
+        //        }
+        //        else
+        //        {
+        //            DataSet.DsPSMS.ST_STAFF_DATARow staff = salarySerivce.getStaffByName(staffName);
+        //            lblSalary.Text = Convert.ToString(staff.SALARY);
+        //        }
+
+        //        rw++;
+        //    }
         //}
-
+        
         protected int calculateSalary(DataSet.DsPSMS.ST_SALARYRow temp, string salaryATM)
         {
             int resultAmt = 0;
@@ -133,6 +124,7 @@ namespace HomeASP
 
         protected void btnSearchSarlary_Click(object sender, EventArgs e)
         {
+            int i = 0;
             DataSet.DsPSMS.ST_SALARYDataTable resultDt = new DataSet.DsPSMS.ST_SALARYDataTable();
             DataSet.DsPSMS.ST_SALARYRow resultDr = new DataSet.DsPSMS.ST_SALARYDataTable().NewST_SALARYRow();
 
@@ -142,6 +134,91 @@ namespace HomeASP
                 resultDr.EDU_YEAR = ddlEducation.SelectedValue;
                 resultDr.MONTH = ddlMonth.SelectedValue;
                 resultDt = salarySerivce.getSalaryDataByCondition(resultDr);
+                if (resultDt != null && resultDt.Rows.Count != 0)
+                {
+                    resultDt.Columns.Remove(resultDt.Columns[0]);
+                    //resultDt.Columns.Remove(resultDt.Columns[0]);
+                    resultDt.Columns.Remove(resultDt.Columns[1]);
+                    resultDt.Columns.Remove(resultDt.Columns[1]);
+                    resultDt.Columns.Remove(resultDt.Columns[9]);
+                    resultDt.Columns.Remove(resultDt.Columns[9]);
+                    resultDt.Columns.Remove(resultDt.Columns[9]);
+                    resultDt.Columns.Remove(resultDt.Columns[9]);
+                    gvsalarylist.DataSource = resultDt;
+                    gvsalarylist.DataBind();
+
+                    foreach (GridViewRow grdRow in gvsalarylist.Rows)
+                    {
+                        TextBox LeTime = (TextBox)grdRow.FindControl("TextBox1");
+                        LeTime.Text = resultDt.Rows[i][2].ToString();
+                        TextBox LeAmo = (TextBox)grdRow.FindControl("TextBox2");
+                        LeAmo.Text = resultDt.Rows[i][3].ToString();
+                        TextBox LaTime = (TextBox)grdRow.FindControl("TextBox3");
+                        LaTime.Text = resultDt.Rows[i][4].ToString();
+                        TextBox LaAmo = (TextBox)grdRow.FindControl("TextBox4");
+                        LaAmo.Text = resultDt.Rows[i][5].ToString();
+                        TextBox OTAm = (TextBox)grdRow.FindControl("TextBox5");
+                        OTAm.Text = resultDt.Rows[i][6].ToString();
+                        TextBox SalaryA = (TextBox)grdRow.FindControl("TextBox6");
+                        SalaryA.Text = resultDt.Rows[i][7].ToString();
+                        TextBox Rema = (TextBox)grdRow.FindControl("TextBox7");
+                        Rema.Text = resultDt.Rows[i][8].ToString();
+                        i++;
+                    }
+                }
+            }
+        }
+
+        protected void gvsalarylist_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index;
+            DataSet.DsPSMS.ST_SALARYRow resultDr = new DataSet.DsPSMS.ST_SALARYDataTable().NewST_SALARYRow();
+            try
+            {
+                index = Convert.ToInt32(e.CommandArgument);
+                if (e.CommandName == "UpdateCol")
+                {
+                    resultDr.SALARY_ID = Convert.ToInt16((gvsalarylist.Rows[index].Cells[0].ToString());
+                    resultDr.STAFF_ID = gvsalarylist.Rows[index].Cells[1].ToString();
+
+                    TextBox LeTime = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox1");
+                    resultDr.LEAVE_TIMES = Convert.ToInt16(LeTime.Text);
+
+                    TextBox LeAmo = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox2");
+                    resultDr.LEAVE_AMOUNT = Convert.ToInt16(LeAmo.Text);
+
+                    TextBox LaTime = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox3");
+                    resultDr.LATE_TIMES = Convert.ToInt16(LaTime.Text);
+
+                    TextBox LaAmo = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox4");
+                    resultDr.LATE_AMOUNT = Convert.ToInt16(LaAmo.Text);
+
+                    TextBox OTAm = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox5");
+                    resultDr.OT_AMOUNT = Convert.ToInt16(OTAm.Text);
+
+                    TextBox SalaryA = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox6");
+                    resultDr.SALARY_AMOUNT = Convert.ToInt16(SalaryA.Text);
+
+                    TextBox Rema = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox7");
+                    resultDr.REMARK = Rema.Text;
+
+                    salarySerivce.updateSalaryData(resultDr, out msg);
+                    errSMS.Text = msg;
+                }
+                
+            }
+            catch
+            {
+            }
+        }
+
+        protected void btnShowAllSalary_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            DataSet.DsPSMS.ST_SALARYDataTable resultDt = new DataSet.DsPSMS.ST_SALARYDataTable();
+            resultDt = salarySerivce.getAllSalaryData();
+            if (resultDt != null && resultDt.Rows.Count != 0)
+            {
                 resultDt.Columns.Remove(resultDt.Columns[0]);
                 //resultDt.Columns.Remove(resultDt.Columns[0]);
                 resultDt.Columns.Remove(resultDt.Columns[1]);
@@ -152,128 +229,30 @@ namespace HomeASP
                 resultDt.Columns.Remove(resultDt.Columns[9]);
                 gvsalarylist.DataSource = resultDt;
                 gvsalarylist.DataBind();
-            }
-           
-        }
-
-        //protected void gvsalarylist_RowEditing(object sender, GridViewEditEventArgs e)
-        //{
-        //    gvsalarylist.EditIndex = e.NewEditIndex;
-        //   // displayGridData(reFlag);   
-        //}
-
-        //protected void gvsalarylist_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        //{
-        //    e.Cancel = true;
-        //    gvsalarylist.EditIndex = -1;
-        //   // displayGridData(reFlag);  
-        //}
-
-        //protected void gvsalarylist_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        //{
-        //    GridViewRow row = gvsalarylist.Rows[e.RowIndex];
-        //    int updateId = Int32.Parse(gvsalarylist.DataKeys[e.RowIndex].Value.ToString());
-
-        //    DataSet.DsPSMS.ST_SALARYRow salary = new DataSet.DsPSMS.ST_SALARYDataTable().NewST_SALARYRow();
-
-        //    salary.SALARY_ID = updateId;
-        //    string salaryAMT =((Label)(row.FindControl("lblBasicSalary"))).Text.ToString();
-
-        //    TextBox tb1 = (TextBox)(row.FindControl("txtLeaveTime"));
-        //    salary.LEAVE_TIMES = int.Parse(tb1.Text);
-
-        //    TextBox tb2 = (TextBox)(row.FindControl("txtLeaveAmt"));
-        //    salary.LEAVE_AMOUNT = int.Parse(tb2.Text);
-
-        //    TextBox tb3 = (TextBox)(row.FindControl("txtlateTime"));
-        //    salary.LATE_TIMES = int.Parse(tb3.Text);
-
-
-        //    TextBox tb4 = (TextBox)(row.FindControl("txtLateAmt"));
-        //    salary.LATE_AMOUNT = int.Parse(tb4.Text);
-
-        //    TextBox tb5 = (TextBox)(row.FindControl("txtOtAmt"));
-        //    salary.OT_AMOUNT = int.Parse(tb5.Text);
-        //    salary.REMARK =Convert.ToString(reFlag);
-        //    salary.SALARY_AMOUNT = calculateSalary(salary, salaryAMT);
-        //    salary.MONTH = ddlMonth.SelectedItem.Value;
-        //    salary.UPD_DT_TM = DateTime.Now;
-        //    salary.UPD_USER_ID = this.userId;
-        //    bool isOK = salarySerivce.updateSalaryData(salary, out msg);
-        //    if (isOK)
-        //    {
-        //        lblsalarybtnclick.Text = "Data Update Succesful !";
-        //        gvsalarylist.EditIndex = -1;
-        //    }
-        //    else
-        //    {
-        //        lblsalarybtnclick.Text = "Data Update Fail !";
-        //    }
-        //  //  displayGridData(reFlag);
-        //}
-
-        protected void gvsalarylist_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            int index;
-            try
-            {
-                index = Convert.ToInt32(e.CommandArgument);
-                if (e.CommandName == "DetailCol")
+                foreach (GridViewRow grdRow in gvsalarylist.Rows)
                 {
-
+                    TextBox LeTime = (TextBox)grdRow.FindControl("TextBox1");
+                    LeTime.Text = resultDt.Rows[i][2].ToString();
+                    TextBox LeAmo = (TextBox)grdRow.FindControl("TextBox2");
+                    LeAmo.Text = resultDt.Rows[i][3].ToString();
+                    TextBox LaTime = (TextBox)grdRow.FindControl("TextBox3");
+                    LaTime.Text = resultDt.Rows[i][4].ToString();
+                    TextBox LaAmo = (TextBox)grdRow.FindControl("TextBox4");
+                    LaAmo.Text = resultDt.Rows[i][5].ToString();
+                    TextBox OTAm = (TextBox)grdRow.FindControl("TextBox5");
+                    OTAm.Text = resultDt.Rows[i][6].ToString();
+                    TextBox SalaryA = (TextBox)grdRow.FindControl("TextBox6");
+                    SalaryA.Text = resultDt.Rows[i][7].ToString();
+                    TextBox Rema = (TextBox)grdRow.FindControl("TextBox7");
+                    Rema.Text = resultDt.Rows[i][8].ToString();
+                    i++;
                 }
-                else if (e.CommandName == "UpdateCol")
-                {
-                    //BtnConfirm.Enabled = true;
-                    //BtnPay.Enabled = false;
-
-                    ////txtExpIDVal.Text = expDetList.Rows[index].Cells[0].Text;
-                    //TxtExpSubTitle.Text = expDetList.Rows[index].Cells[1].Text;
-                    //TxtAmt.Text = expDetList.Rows[index].Cells[2].Text;
-                    //temp.Text = expDetList.Rows[index].Cells[0].Text;
-                }
-
-                //else if (e.CommandName == "DeleteCol")
-                //{
-
-                //    expDetDr.EXP_ID = Convert.ToInt16(expDetList.Rows[index].Cells[0].Text);
-                //    expDetDr.EXP_SUB_TITLE = expDetList.Rows[index].Cells[1].Text;
-                //    expDetDr.AMOUNT = expDetList.Rows[index].Cells[2].Text;
-                //    expService.deleteExpDet(expDetDr, out msg);
-
-                //    DataTable ds = new DataTable();
-                //    ds = null;
-                //    expDetList.DataSource = ds;
-                //    expDetList.DataBind();
-
-                //    showExpHedGv();
-                //}
-            }
-            catch
-            {
             }
         }
 
-        protected void gvsalarylist_PageIndexChanging1(object sender, GridViewPageEventArgs e)
+        protected void gvsalarylist_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvsalarylist.PageIndex = e.NewPageIndex;
-            // displayGridData(reFlag);
-        }
-
-        protected void btnShowAllSalary_Click(object sender, EventArgs e)
-        {
-            DataSet.DsPSMS.ST_SALARYDataTable resultDt = new DataSet.DsPSMS.ST_SALARYDataTable();
-            resultDt = salarySerivce.getAllSalaryData();
-            resultDt.Columns.Remove(resultDt.Columns[0]);
-            //resultDt.Columns.Remove(resultDt.Columns[0]);
-            resultDt.Columns.Remove(resultDt.Columns[1]);
-            resultDt.Columns.Remove(resultDt.Columns[1]);
-            resultDt.Columns.Remove(resultDt.Columns[9]);
-            resultDt.Columns.Remove(resultDt.Columns[9]);
-            resultDt.Columns.Remove(resultDt.Columns[9]);
-            resultDt.Columns.Remove(resultDt.Columns[9]);
-            gvsalarylist.DataSource = resultDt;
-            gvsalarylist.DataBind();
         }
     }
 }
