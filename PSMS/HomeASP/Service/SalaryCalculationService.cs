@@ -207,11 +207,14 @@ namespace HomeASP.Service
             {
                 salaryDB.Open();
                 int result = salaryDB.updateSalaryData(dr);
-                msg = "insert complete";
+                if (result > 0)
+                    msg = "Update complete";
+                else
+                    msg = "Update Fail";
             }
             catch
             {
-                msg = "error occurs when inserting data to ST_SALARY table";
+                msg = "error occurs when updating the data of ST_SALARY table";
                 return false;
             }
             finally

@@ -75,7 +75,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="6">
-                                            <asp:Label ID="lblErroSms" runat="server" CssClass="errLabel" Visible="False" Text="Please fill required data !!" /></td>
+                                            <asp:Label ID="lblErroSms" runat="server" CssClass="errLabel" /></td>
                                     </tr>
                                 </table>
                                 <table>
@@ -88,12 +88,13 @@
                                     </tr>
                                     <tr>
                                         <td colspan="4">
-                                            <asp:Label ID="lblsalarybtnclick" CssClass="errlabel" runat="server" /></td>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <asp:Label ID="lblsalarybtnclick" CssClass="errlabel" ForeColor="Red" runat="server" /></td>
                                     </tr>
                                 </table>
                                 <br />
                                 <asp:GridView ID="gvsalarylist" runat="server" CssClass="gridview" AutoGenerateColumns="false" AllowPaging="True" GridLines="None"
-                                    PageSize="6" ShowHeaderWhenEmpty="true" OnPageIndexChanging="gvsalarylist_PageIndexChanging">
+                                    PageSize="6" ShowHeaderWhenEmpty="true" OnPageIndexChanging="gvsalarylist_PageIndexChanging" OnRowCommand="gvsalarylist_RowCommand1">
                                     <EditRowStyle BackColor="#7C6F57" />
                                     <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -155,6 +156,7 @@
                                 </asp:GridView>
                                 <br />
                                 <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:Label ID="errSMS" Font-Size="Small" ForeColor="Red" runat="server"></asp:Label>
                                 <%--<div>
                                     <table>

@@ -24,7 +24,7 @@ namespace HomeASP
         protected void Page_Load(object sender, EventArgs e)
         {
             this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
-           
+
             if (Session["LOGIN_USER_ID"] != null)
             {
                 userId = (string)(Session["LOGIN_USER_ID"] ?? "  ");
@@ -38,14 +38,16 @@ namespace HomeASP
                 ddlMonth.Text = (string)(Session["Salary_Month"] ?? "");
             if (Session["Salary_EduYear"] != null)
                 ddlEducation.Text = (string)(Session["Salary_EduYear"] ?? "");
-
-            if (ddlMonth.SelectedIndex <= 0 && ddlEducation.SelectedIndex <= 0)
+            if (!IsPostBack)
             {
-                btnShowAllSalary_Click(sender, e);
-            }
-            else
-            {
-                btnSearchSarlary_Click(sender, e);
+                if (ddlMonth.SelectedIndex <= 0 && ddlEducation.SelectedIndex <= 0)
+                {
+                    btnShowAllSalary_Click(sender, e);
+                }
+                else
+                {
+                    btnSearchSarlary_Click(sender, e);
+                }
             }
         }
 
@@ -94,7 +96,7 @@ namespace HomeASP
         //        rw++;
         //    }
         //}
-        
+
         protected int calculateSalary(DataSet.DsPSMS.ST_SALARYRow temp, string salaryATM)
         {
             int resultAmt = 0;
@@ -166,50 +168,15 @@ namespace HomeASP
                         i++;
                     }
                 }
-            }
-        }
-
-        protected void gvsalarylist_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            int index;
-            DataSet.DsPSMS.ST_SALARYRow resultDr = new DataSet.DsPSMS.ST_SALARYDataTable().NewST_SALARYRow();
-            try
-            {
-                index = Convert.ToInt32(e.CommandArgument);
-                if (e.CommandName == "UpdateCol")
+                else
                 {
-                    resultDr.SALARY_ID = Convert.ToInt16((gvsalarylist.Rows[index].Cells[0].ToString()));
-                    resultDr.STAFF_ID = gvsalarylist.Rows[index].Cells[1].ToString();
-
-                    TextBox LeTime = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox1");
-                    resultDr.LEAVE_TIMES = Convert.ToInt16(LeTime.Text);
-
-                    TextBox LeAmo = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox2");
-                    resultDr.LEAVE_AMOUNT = Convert.ToInt16(LeAmo.Text);
-
-                    TextBox LaTime = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox3");
-                    resultDr.LATE_TIMES = Convert.ToInt16(LaTime.Text);
-
-                    TextBox LaAmo = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox4");
-                    resultDr.LATE_AMOUNT = Convert.ToInt16(LaAmo.Text);
-
-                    TextBox OTAm = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox5");
-                    resultDr.OT_AMOUNT = Convert.ToInt16(OTAm.Text);
-
-                    TextBox SalaryA = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox6");
-                    resultDr.SALARY_AMOUNT = Convert.ToInt16(SalaryA.Text);
-
-                    TextBox Rema = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox7");
-                    resultDr.REMARK = Rema.Text;
-
-                    salarySerivce.updateSalaryData(resultDr, out msg);
-                    errSMS.Text = msg;
+                    gvsalarylist.DataSource = resultDt;
+                    gvsalarylist.DataBind();
+                    lblsalarybtnclick.Text = "There is not record !!!";
                 }
-                
             }
-            catch
-            {
-            }
+            else
+                lblErroSms.Text = "Please Fill the Required Data !!";
         }
 
         protected void btnShowAllSalary_Click(object sender, EventArgs e)
@@ -253,6 +220,53 @@ namespace HomeASP
         protected void gvsalarylist_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvsalarylist.PageIndex = e.NewPageIndex;
+        }
+
+        protected void gvsalarylist_RowCommand1(object sender, GridViewCommandEventArgs e)
+        {
+            int index;
+            DataSet.DsPSMS.ST_SALARYRow resultDr = new DataSet.DsPSMS.ST_SALARYDataTable().NewST_SALARYRow();
+            try
+            {
+                index = Convert.ToInt32(e.CommandArgument);
+                if (e.CommandName == "UpdateCol")
+                {
+                    string aa = gvsalarylist.Rows[index].Cells[0].Text;
+                    resultDr.SALARY_ID = Convert.ToInt32((gvsalarylist.Rows[index].Cells[0].Text));
+                    resultDr.STAFF_ID = gvsalarylist.Rows[index].Cells[1].Text;
+
+                    TextBox LeTime = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox1");
+                    resultDr.LEAVE_TIMES = Convert.ToInt16(LeTime.Text);
+
+                    TextBox LeAmo = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox2");
+                    resultDr.LEAVE_AMOUNT = Convert.ToInt16(LeAmo.Text);
+
+                    TextBox LaTime = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox3");
+                    resultDr.LATE_TIMES = Convert.ToInt16(LaTime.Text);
+
+                    TextBox LaAmo = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox4");
+                    resultDr.LATE_AMOUNT = Convert.ToInt16(LaAmo.Text);
+
+                    TextBox OTAm = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox5");
+                    resultDr.OT_AMOUNT = Convert.ToInt16(OTAm.Text);
+
+                    TextBox SalaryA = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox6");
+                    resultDr.SALARY_AMOUNT = Convert.ToInt32(SalaryA.Text);
+
+                    TextBox Rema = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox7");
+                    resultDr.REMARK = Rema.Text;
+
+                    resultDr.UPD_DT_TM = System.DateTime.Now;
+                    resultDr.UPD_USER_ID = userId;
+
+                    salarySerivce.updateSalaryData(resultDr, out msg);
+                    errSMS.Text = msg;
+                }
+
+            }
+            catch
+            {
+            }
         }
     }
 }
