@@ -178,7 +178,7 @@ namespace HomeASP
                 index = Convert.ToInt32(e.CommandArgument);
                 if (e.CommandName == "UpdateCol")
                 {
-                    resultDr.SALARY_ID = Convert.ToInt16((gvsalarylist.Rows[index].Cells[0].ToString());
+                    resultDr.SALARY_ID = Convert.ToInt16((gvsalarylist.Rows[index].Cells[0].ToString()));
                     resultDr.STAFF_ID = gvsalarylist.Rows[index].Cells[1].ToString();
 
                     TextBox LeTime = (TextBox)gvsalarylist.Rows[index].FindControl("TextBox1");
