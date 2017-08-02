@@ -20,9 +20,14 @@
             $(".datepicker").datepicker();
         });
     </script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 612px;
+        }
+    </style>
 </head>
 
-<body style="background-image: url(Images/bg.jpg);" >
+<body style="background-image: url(Images/bg.jpg);">
     <div id="main_bot" style="background-image: url(Images/bottom.gif)">
         <div id="main" style="background-image: url(Images/top.gif)">
 
@@ -37,14 +42,14 @@
                         <div class="right_b" style="height: 520px; width: 965px; clear: both">
                             <form id="centerForm" runat="server" style="height: 485px;">
                                 <h2>Attendance Entry</h2>
-                                <table style="border-collapse:separate; border-spacing:0 10px;margin:0px 10px 0px 15px">
+                                <table style="border-collapse: separate; border-spacing: 0 10px; margin: 0px 10px 0px 15px">
                                     <tr>
                                         <td class="column">
-                                            <asp:Label ID="year" runat="server" Text="EDU Year" CssClass="label"></asp:Label>
+                                            <asp:Label ID="year" runat="server" Text="Education Year*" CssClass="label"></asp:Label>
                                         </td>
                                         <td class="column">
                                             <asp:DropDownList ID="eduYearGrade" CssClass="dropdownlist" runat="server">
-                                                 <asp:ListItem Text="Select Year" Value="Select Year" />
+                                                <asp:ListItem Text="Select Year" Value="Select Year" />
                                                 <asp:ListItem Text="2011 - 2012" Value="2011 - 2012" />
                                                 <asp:ListItem Text="2012 - 2013" Value="2012 - 2013" />
                                                 <asp:ListItem Text="2013 - 2014" Value="2013 - 2014" />
@@ -55,17 +60,18 @@
                                                 <asp:ListItem Text="2018 - 2019" Value="2018 - 2019" />
                                                 <asp:ListItem Text="2019 - 2020" Value="2019 - 2020" />
                                                 <asp:ListItem Text="2020 - 2021" Value="2020 - 2021" />
+                                                <asp:ListItem Text="2021 - 2022" Value="2021 - 2022" />
                                             </asp:DropDownList>
                                         </td>
                                         <td class="column">
-                                            <asp:Label ID="grade" runat="server" Text="Grade" CssClass="label"></asp:Label>
+                                            <asp:Label ID="grade" runat="server" Text="Grade*" CssClass="label"></asp:Label>
                                         </td>
                                         <td class="column">
                                             <asp:DropDownList ID="gradeList" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist">
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
-                                   <%-- <tr>
+                                    <%-- <tr>
                                         <td></td>
                                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvYearList" InitialValue="Select Year" ControlToValidate="eduYearGrade" ErrorMessage="Please Choose Year!" ForeColor="Red" />
                                         </td>
@@ -75,18 +81,17 @@
                                     </tr>--%>
                                     <tr>
                                         <td class="column">
-                                            <asp:Label ID="room" runat="server" Text="Room" CssClass="label"></asp:Label>
+                                            <asp:Label ID="room" runat="server" Text="Room*" CssClass="label"></asp:Label>
                                         </td>
                                         <td class="column">
                                             <asp:DropDownList ID="roomList" runat="server" CssClass="dropdownlist">
-                                               
                                             </asp:DropDownList>
                                         </td>
                                         <td class="column">
                                             <asp:Label ID="date" runat="server" Text="Date" CssClass="label"></asp:Label>
                                         </td>
                                         <td class="column">
-                                            <asp:TextBox CssClass="datepicker textbox" ID="attendDate" runat="server" OnTextChanged="fillDate" AutoPostBack="true" />
+                                            <asp:TextBox CssClass="datepicker textbox" ID="attendDate" runat="server" Enabled="false" AutoPostBack="true" />
                                         </td>
                                     </tr>
                                     <%--<tr>
@@ -102,9 +107,9 @@
                                         </td>
                                     </tr>
                                 </table>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label runat="server" ID="errExist" Visible="false" ForeColor="Red" Text="Data Already Exists! Choose another date." /><br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label runat="server" ID="errDate" Visible="false" ForeColor="Red" Text="Please Enter Date!" />
-                                <div class="table-responsive" style="padding:10px 15px 10px 15px;height:270px">
+                                <asp:Label ID="errReqData" runat="server" CssClass="errLabel"></asp:Label>
+                                <br />
+                                <div class="table-responsive" style="padding: 10px 15px 10px 15px; height: 190px">
                                     <asp:GridView ID="gridViewAttendance" AutoGenerateColumns="false" runat="server" CssClass="gridview" BorderColor="#1DA18C" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gvAttendance_PageIndexChanging">
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
@@ -127,11 +132,11 @@
                                                     <asp:CheckBox ID="PM" runat="server"></asp:CheckBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Date">
+                                            <%--<asp:TemplateField HeaderText="Date">
                                                 <ItemTemplate>
                                                     <asp:Label ID="date" runat="server"></asp:Label>
                                                 </ItemTemplate>
-                                            </asp:TemplateField>
+                                            </asp:TemplateField>--%>
                                         </Columns>
                                         <EditRowStyle BackColor="#7C6F57" />
                                         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -145,13 +150,24 @@
                                         <SortedDescendingHeaderStyle BackColor="#15524A" />
                                     </asp:GridView>
                                 </div>
-                                <asp:Button class="btn" ID="btnCheckAM" runat="server" Text="Check(AM)" OnClick="btnCheckAllAM_Click" />
-                                <asp:Button class="btn" ID="btnCheckPM" runat="server" Text="Check(PM)" OnClick="btnCheckAllPM_Click" />
-                                <asp:Button class="btn" ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
-                                <asp:Button class="btn" ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
                                 <br />
-                               <asp:Label runat="server" ID="Label0" Visible="true" ForeColor="Red"/>
-                           
+                                <table>
+                                    <tr>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td><asp:Button class="btn" ID="btnCheckAM" runat="server" Text="Check(AM)" OnClick="btnCheckAllAM_Click" Width="100px" /></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td><asp:Button class="btn" ID="btnCheckPM" runat="server" Text="Check(PM)" OnClick="btnCheckAllPM_Click" Width="115px" /></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td><asp:Button class="btn" ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="74px" /></td>
+                                        </tr>
+                                    </table>
+                                    <div style="float:right">
+                                        <asp:Label  ID="ShAll" runat="server" CssClass="linklb"><a href="SMS010_AttendanceList.aspx">Show Attendance List</a></asp:Label>
+                                    </div>
+                                    <div style="float:left">
+                                        <asp:Label runat="server" ID="errSms" CssClass="errLabel" ForeColor="Red" Height="20px" />
+                                    </div>
+                                
                             </form>
                         </div>
                     </div>

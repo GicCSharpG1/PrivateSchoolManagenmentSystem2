@@ -103,22 +103,13 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// errExist control.
+        /// errReqData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errExist;
-        
-        /// <summary>
-        /// errDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errDate;
+        protected global::System.Web.UI.WebControls.Label errReqData;
         
         /// <summary>
         /// gridViewAttendance control.
@@ -157,21 +148,21 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
-        /// btnUpdate control.
+        /// ShAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        protected global::System.Web.UI.WebControls.Label ShAll;
         
         /// <summary>
-        /// Label0 control.
+        /// errSms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label0;
+        protected global::System.Web.UI.WebControls.Label errSms;
     }
 }

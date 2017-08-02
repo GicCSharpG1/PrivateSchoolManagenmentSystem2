@@ -24,8 +24,6 @@ namespace HomeASP
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            errDate.Visible = false;
-            errExist.Visible = false;
             if (Session["LOGIN_USER_ID"] != null)
             {
                 loginUserId = (string)(Session["LOGIN_USER_ID"] ?? "  ");
@@ -45,11 +43,15 @@ namespace HomeASP
             {
                 gridViewAttendance.DataSource = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
                 gridViewAttendance.DataBind();
-            }            
-            btnAdd.Visible = false;
-            btnUpdate.Visible = false;
-            btnCheckAM.Visible = false;
-            btnCheckPM.Visible = false;
+            }
+            attendDate.Text = System.DateTime.Now.ToString();
+            if (!IsPostBack)
+            {
+                btnAdd.Visible = false;
+                //btnUpdate.Visible = false;
+                btnCheckAM.Visible = false;
+                btnCheckPM.Visible = false;
+            }
         }
         public void bindStudentRoom()
         {
@@ -63,7 +65,6 @@ namespace HomeASP
         private void showAllButton()
         {
             btnAdd.Visible = true;
-            btnUpdate.Visible = true;
             btnCheckAM.Visible = true;
             btnCheckPM.Visible = true;
         }
@@ -84,17 +85,17 @@ namespace HomeASP
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            gridViewAttendance.DataSource = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
-            gridViewAttendance.DataBind();
-            studentRow = new DataSet.DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
-            studentRow.EDU_YEAR = eduYearGrade.Text;
-            studentRow.GRADE_ID =int.Parse(gradeList.Text);
-            studentRow.ROOM_ID = roomList.Text;
-            studentRow.ROLL_NO = "";
-            studentRow.STUDENT_NAME = "";
-
-            if (attendDate.Text.Trim().Length == 0)
+            DataSet.DsPSMS.ST_STUDENT_DATARow studentRow = new DataSet.DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
+            if (eduYearGrade.SelectedIndex <= 0 || gradeList.SelectedIndex <= 0 || roomList.SelectedIndex <= 0)
             {
+                errReqData.Text = "Please Enter Required Data !!";
+            }
+            else
+            {
+                studentRow.EDU_YEAR = eduYearGrade.Text;
+                studentRow.GRADE_ID = Convert.ToInt16(gradeList.SelectedValue);
+                studentRow.ROOM_ID = roomList.SelectedValue;
+
                 DataSet.DsPSMS.ST_STUDENT_DATADataTable resultDt = stuentry.getDataOption(studentRow);
                 if (resultDt == null || resultDt.Count == 0)
                 {
@@ -102,44 +103,68 @@ namespace HomeASP
                     gridViewAttendance.DataBind();
                 }
                 else
-                {                       
-                    gridViewAttendance.DataSource = resultDt;
-                    gridViewAttendance.DataBind();
-                    for (int i = 0; i < resultDt.Count; i++)
-                    {
-                        CheckBox chkAM = (CheckBox)gridViewAttendance.Rows[i].FindControl("AM");
-                        if (chkAM != null && chkAM.Checked == true)
-                        {
-                            chkAM.Checked = false;
-                        }
-                        CheckBox chkPM = (CheckBox)gridViewAttendance.Rows[i].FindControl("PM");
-                        if (chkPM != null && chkPM.Checked == true)
-                        {
-                            chkPM.Checked = false;
-                        }
-                    }
-                    showAllButton();
-                    Label0.Text = "";
-                  
-                }
-            }
-            else
-            {
-                DataSet.DsPSMS.ST_ATTENDANCE_DATARow adr = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
-                adr.ATTENDANCE_DATE = attendDate.Text;
-                DataSet.DsPSMS.ATTENDANCE_RESULTDataTable resultDt = attService.selectAttendanceData(studentRow, adr, out msg);
-
-                if (resultDt.Count != 0)
                 {
                     gridViewAttendance.DataSource = resultDt;
                     gridViewAttendance.DataBind();
-                    showChecked(resultDt);                    
-                    //swap data to attResultList to show checkbox if data is over 5 records
-                    if (attResultList.Count == 0)
-                        attResultList = resultDt;
                     showAllButton();
                 }
-            }            
+            }
+            //gridViewAttendance.DataSource = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
+            //gridViewAttendance.DataBind();
+            //studentRow = new DataSet.DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
+            //studentRow.EDU_YEAR = eduYearGrade.Text;
+            //studentRow.GRADE_ID =int.Parse(gradeList.DataValueField);
+            //studentRow.ROOM_ID = roomList.Text;
+            //studentRow.ROLL_NO = "";
+            //studentRow.STUDENT_NAME = "";
+
+            //if (attendDate.Text.Trim().Length == 0)
+            //{
+            //    DataSet.DsPSMS.ST_STUDENT_DATADataTable resultDt = stuentry.getDataOption(studentRow);
+            //    if (resultDt == null || resultDt.Count == 0)
+            //    {
+            //        gridViewAttendance.DataSource = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
+            //        gridViewAttendance.DataBind();
+            //    }
+            //    else
+            //    {                       
+            //        gridViewAttendance.DataSource = resultDt;
+            //        gridViewAttendance.DataBind();
+            //        for (int i = 0; i < resultDt.Count; i++)
+            //        {
+            //            CheckBox chkAM = (CheckBox)gridViewAttendance.Rows[i].FindControl("AM");
+            //            if (chkAM != null && chkAM.Checked == true)
+            //            {
+            //                chkAM.Checked = false;
+            //            }
+            //            CheckBox chkPM = (CheckBox)gridViewAttendance.Rows[i].FindControl("PM");
+            //            if (chkPM != null && chkPM.Checked == true)
+            //            {
+            //                chkPM.Checked = false;
+            //            }
+            //        }
+            //        showAllButton();
+            //        Label0.Text = "";
+                  
+            //    }
+            //}
+            //else
+            //{
+            //    DataSet.DsPSMS.ST_ATTENDANCE_DATARow adr = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
+            //    adr.ATTENDANCE_DATE = attendDate.Text;
+            //    DataSet.DsPSMS.ATTENDANCE_RESULTDataTable resultDt = attService.selectAttendanceData(studentRow, adr, out msg);
+
+            //    if (resultDt.Count != 0)
+            //    {
+            //        gridViewAttendance.DataSource = resultDt;
+            //        gridViewAttendance.DataBind();
+            //        showChecked(resultDt);                    
+            //        //swap data to attResultList to show checkbox if data is over 5 records
+            //        if (attResultList.Count == 0)
+            //            attResultList = resultDt;
+            //        showAllButton();
+            //    }
+            //}            
         }
 
         protected void gvAttendance_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -196,18 +221,18 @@ namespace HomeASP
             }
         }
 
-        protected void fillDate(object sender, EventArgs e)
-        {
-            if (gridViewAttendance.Rows.Count != 0 && attendDate.Text.Trim().Length != 0)
-            {
-                foreach(GridViewRow row in gridViewAttendance.Rows)
-                {
-                    Label date = (Label)row.FindControl("Date");
-                    date.Text = attendDate.Text;
-                }
-                showAllButton();
-            }            
-        }
+        //protected void fillDate(object sender, EventArgs e)
+        //{
+        //    if (gridViewAttendance.Rows.Count != 0 && attendDate.Text.Trim().Length != 0)
+        //    {
+        //        foreach(GridViewRow row in gridViewAttendance.Rows)
+        //        {
+        //            Label date = (Label)row.FindControl("Date");
+        //            date.Text = attendDate.Text;
+        //        }
+        //        showAllButton();
+        //    }            
+        //}
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
@@ -243,14 +268,14 @@ namespace HomeASP
                         row.EVENING = "1";
                     }
                     resultDt = attService.saveAttendanceRecord(row, out msg);
-                    Label0.Text = "SAVE!";
-                    showAllButton();
+                    errSms.Text = msg;
+                    //showAllButton();
                 }
             }
             else
             {
-                showAllButton();
-                Label0.Text = "";
+                //showAllButton();
+                errSms.Text = msg;
             }
         }
 
@@ -265,8 +290,8 @@ namespace HomeASP
                 if (attendDate.Text.Trim().Length == 0)
                 {
                     alreadyExist = true;
-                    errDate.Visible = true;
-                    errExist.Visible = false;
+                    // errDate.Visible = true;
+                    // errExist.Visible = false;
                 }
                 else
                 {
@@ -275,8 +300,8 @@ namespace HomeASP
                     if (result != null && result.Rows.Count > 0)
                     {
                         alreadyExist = true;
-                        errDate.Visible = false;
-                        errExist.Visible = true;
+                        //  errDate.Visible = false;
+                        //  errExist.Visible = true;
                     }
                     else
                     {
@@ -287,43 +312,43 @@ namespace HomeASP
             return alreadyExist;
         }
 
-        protected void btnUpdate_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < gridViewAttendance.Rows.Count; i++)
-            {
-                int resultDt = 0;
-                DataSet.DsPSMS.ST_ATTENDANCE_DATARow row = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
-                row.EDU_YEAR = eduYearGrade.Text;
-                row.STUDENT_ID = gridViewAttendance.Rows[i].Cells[0].Text;
-                row.ATTENDANCE_DATE = attendDate.Text;
-                row.UPD_USER_ID = loginUserId;
-                row.UPD_DT_TM = DateTime.Now;
-                row.DEL_FLG = 0;
+        //protected void btnUpdate_Click(object sender, EventArgs e)
+        //{
+        //    for (int i = 0; i < gridViewAttendance.Rows.Count; i++)
+        //    {
+        //        int resultDt = 0;
+        //        DataSet.DsPSMS.ST_ATTENDANCE_DATARow row = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
+        //        row.EDU_YEAR = eduYearGrade.Text;
+        //        row.STUDENT_ID = gridViewAttendance.Rows[i].Cells[0].Text;
+        //        row.ATTENDANCE_DATE = attendDate.Text;
+        //        row.UPD_USER_ID = loginUserId;
+        //        row.UPD_DT_TM = DateTime.Now;
+        //        row.DEL_FLG = 0;
 
-                CheckBox chkAM = (CheckBox)gridViewAttendance.Rows[i].FindControl("AM");
-                if (chkAM != null && chkAM.Checked == false)
-                {
-                    row.MORNING = "0";
-                }
-                else
-                {
-                    row.MORNING = "1";
-                }
+        //        CheckBox chkAM = (CheckBox)gridViewAttendance.Rows[i].FindControl("AM");
+        //        if (chkAM != null && chkAM.Checked == false)
+        //        {
+        //            row.MORNING = "0";
+        //        }
+        //        else
+        //        {
+        //            row.MORNING = "1";
+        //        }
 
-                CheckBox chkPM = (CheckBox)gridViewAttendance.Rows[i].FindControl("PM");
-                if (chkPM != null && chkPM.Checked == false)
-                {
-                    row.EVENING = "0";
-                }
-                else
-                {
-                    row.EVENING = "1";
-                }
-                resultDt = attService.updateAttendanceRecord(row, out msg);
-                Label0.Text = "Update!";
-                showAllButton();
-            }
-        }
+        //        CheckBox chkPM = (CheckBox)gridViewAttendance.Rows[i].FindControl("PM");
+        //        if (chkPM != null && chkPM.Checked == false)
+        //        {
+        //            row.EVENING = "0";
+        //        }
+        //        else
+        //        {
+        //            row.EVENING = "1";
+        //        }
+        //        resultDt = attService.updateAttendanceRecord(row, out msg);
+        //        Label0.Text = "Update!";
+        //        showAllButton();
+        //    }
+        //}
 
         protected void btnCheckAllAM_Click(object sender, EventArgs e)
         {
@@ -339,9 +364,8 @@ namespace HomeASP
                     chk.Checked = false;
                 }
             }
-            showAllButton();
-            Label0.Text = "";
-         
+            //showAllButton();
+            //Label0.Text = "";
         }
 
         protected void btnCheckAllPM_Click(object sender, EventArgs e)
@@ -358,9 +382,8 @@ namespace HomeASP
                     chk.Checked = false;
                 }
             }
-            showAllButton();
-            Label0.Text = "";
-           
+            //showAllButton();
+            //Label0.Text = "";
         }
     }
 }
