@@ -95,21 +95,24 @@ namespace HomeASP
                         equipDr.QUANTITY = TxtQty.Text;
                         if (checkExitRecord(equipDr))
                         {
-               //             errExitmsg.Text = "Already Exist ! Please choose other data !";
+                          //  errorSeach.Text = "Already Exist ! Please choose other data !";
                         }
 
                         else
                         {
                  //           errExitmsg.Text = " ";
                             equipService.SaveEquipmentData(equipDr, out msg);
+                            alertMsg.Text = msg;
+                            errQty.Visible = false;
                             resetForm();    
                         }
                     }
                     else
                     {
-              //          errNum.Text = "Only number";
+                         errQty.Text = "Only Numbers Allowed!";
                     }
                    
+
                 }
                 else
                 {
@@ -133,46 +136,25 @@ namespace HomeASP
         public bool checkValidation()
         {
             bool chkFlag = true;
-
-            if (CoboYear1.SelectedIndex == 0)
+            if(CoboYear1.SelectedIndex == 0 && CoboEquipName.SelectedIndex == 0 && EqpDate.Text.Trim().Length == 0 && TxtQty.Text.Trim().Length == 0 && TxtRemark.Text.Trim().Length == 0)
             {
-      //          errYear.Text = "Please choose the year";
+                errorSeach.Text = "Please enter all data!";
+                errorSeach.Visible = true;
                 chkFlag = false;
             }
-            else
+            
+            else if(CoboYear1.SelectedIndex == 0 || CoboEquipName.SelectedIndex == 0 || EqpDate.Text.Trim().Length == 0 || TxtQty.Text.Trim().Length == 0 || TxtRemark.Text.Trim().Length == 0)
             {
-     //           errYear.Text = " ";
-            }
-
-            if (CoboEquipName.SelectedIndex == 0)
-            {
-     //           errEqN.Text = "Please choose Equipment Name";
+                errorSeach.Text = "Please fill all data!";
+                alertMsg.Visible = false;
+                errorSeach.Visible = true;
                 chkFlag = false;
             }
-            else
-            {
-     //           errEqN.Text = " ";
+            
+            else{
+                 errorSeach.Visible = false;
             }
-            if (EqpDate.Text.Trim().Length == 0)
-            {
-     //           errDate.Text = "Please choose the date";
-                chkFlag = false;
-            }
-            else
-            {
-     //           errDate.Text = " ";
-            }
-
-            if (TxtQty.Text.Trim().Length == 0)
-            {
-      //          errQty.Text = "Please Enter the quantity";
-                chkFlag = false;
-            }
-            else
-            {
-      //          errQty.Text = " ";
-            }
-
+           
             return chkFlag;
         }
 
@@ -256,6 +238,8 @@ namespace HomeASP
             }
             
             return alreadyExist;
+         
+
         }
     }
 }

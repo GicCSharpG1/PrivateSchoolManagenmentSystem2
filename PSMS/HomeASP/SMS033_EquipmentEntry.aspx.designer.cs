@@ -103,6 +103,15 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.TextBox TxtQty;
         
         /// <summary>
+        /// errQty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errQty;
+        
+        /// <summary>
         /// LabType control.
         /// </summary>
         /// <remarks>
@@ -157,15 +166,6 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.GridView EqpList;
         
         /// <summary>
-        /// errQty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator errQty;
-        
-        /// <summary>
         /// errorSeach control.
         /// </summary>
         /// <remarks>
@@ -173,6 +173,15 @@ namespace HomeASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label errorSeach;
+        
+        /// <summary>
+        /// alertMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label alertMsg;
         
         /// <summary>
         /// BtnSave control.

@@ -43,6 +43,8 @@ namespace HomeASP
             userRow.DEL_FLG = 0;
 
             bool isOk = service.saveUser(userRow, tbname, out msg);
+            textClear();
+
             DisplayUser();
         }
 
@@ -55,6 +57,13 @@ namespace HomeASP
                 GridViewUser.DataSource = resultDt;
                 GridViewUser.DataBind();
             }
+        }
+        public void textClear()
+        {
+            txtUname.Text = "";
+            txtPassword.Text = "";
+            txtCpassword.Text = "";
+            ddlUserLevel.SelectedIndex = 0;
         }
 
         protected void btnClear_Click(object sender, EventArgs e)

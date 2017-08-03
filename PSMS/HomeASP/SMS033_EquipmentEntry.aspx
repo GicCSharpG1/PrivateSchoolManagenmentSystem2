@@ -22,6 +22,7 @@
     <style type="text/css">
         .auto-style1 {
             width: 65px;
+            height: 46px;
         }
         .auto-style2 {
 
@@ -29,6 +30,17 @@
         }
         .auto-style3 {
             width: 22px;
+        }
+        .auto-style4 {
+            height: 46px;
+        }
+        .auto-style5 {
+            width: 26px;
+            height: 46px;
+        }
+        .auto-style6 {
+            width: 22px;
+            height: 46px;
         }
     </style>
 </head>
@@ -53,10 +65,10 @@
                                             <asp:Label ID="errExitmsg" CssClass="errlabel" runat="server"></asp:Label></td>
                                     </tr>--%>
                                     <tr>
-                                        <td>
+                                        <td class="auto-style4">
                                             <asp:Label ID="Label3" CssClass="label" runat="server">Education Year</asp:Label></td>
-                                        <td class="auto-style2"><span style="margin-left: 1em"></span></td>
-                                        <td>
+                                        <td class="auto-style5"><span style="margin-left: 1em"></span></td>
+                                        <td class="auto-style4">
                                             <asp:DropDownList ID="CoboYear1" CssClass="dropdownlist" runat="server" AutoPostBack="true">
                                                 <asp:ListItem>Select Year</asp:ListItem>
                                                 <asp:ListItem>2010 - 2011</asp:ListItem>
@@ -70,17 +82,17 @@
                                                 <asp:ListItem>2018 - 2019</asp:ListItem>
                                                 <asp:ListItem>2019 - 2020</asp:ListItem>
                                             </asp:DropDownList></td>
-                                        <td class="auto-style2"><span style="margin-left: 1em"></span></td>
-                                        <td>
+                                        <td class="auto-style5"><span style="margin-left: 1em"></span></td>
+                                        <td class="auto-style4">
                                             <asp:Label ID="Label6" CssClass="label" runat="server">Date</asp:Label></td>
-                                        <td class="auto-style2"><span style="margin-left: 1em"></span></td>
-                                        <td>
+                                        <td class="auto-style5"><span style="margin-left: 1em"></span></td>
+                                        <td class="auto-style4">
                                             <asp:TextBox CssClass="datetextbox textbox" ID="EqpDate" runat="server"/></td>
-                                        <td class="auto-style3"><span style="margin-left: 1em"></span></td>
-                                        <td>
+                                        <td class="auto-style6"><span style="margin-left: 1em"></span></td>
+                                        <td class="auto-style4">
                                             <asp:Label ID="LabEqpName" CssClass="label" runat="server">Equipment Name</asp:Label></td>
-                                        <td class="auto-style2"><span style="margin-left: 1em"></span></td>
-                                        <td>
+                                        <td class="auto-style5"><span style="margin-left: 1em"></span></td>
+                                        <td class="auto-style4">
                                             <asp:DropDownList ID="CoboEquipName" CssClass="dropdownlist" runat="server" AutoPostBack="true" AppendDataBoundItems="true">
                                                 <asp:ListItem Value="  " Text="    "></asp:ListItem>
                                             </asp:DropDownList></td>
@@ -101,7 +113,8 @@
                                         <td class="auto-style2"><span style="margin-left: 1em"></span></td>
                                         <td>
                                             <asp:TextBox ID="TxtQty" CssClass="textbox" AutoPostBack="true" OnTextChanged="removeErrorMsg" runat="server"></asp:TextBox></td>
-                                         <td class="auto-style2"><span style="margin-left: 1em"></span></td>
+                                         <td class="auto-style2"><span style="margin-left: 1em"><asp:Label ID="errQty" cssClass="errLabel" runat="server"></asp:Label></span>
+                                             </td>
                                          <td>
                                             <asp:Label ID="LabType" CssClass="label" runat="server">Type</asp:Label></td>
                                         <td class="auto-style2"><span style="margin-left: 1em"></span></td>
@@ -112,7 +125,8 @@
                                             <asp:Label ID="LabRemark" CssClass="label" runat="server">Remark</asp:Label></td>
                                         <td class="auto-style2"><span style="margin-left: 1em"></span></td>
                                         <td>
-                                            <asp:TextBox ID="TxtRemark" CssClass="textbox" runat="server"></asp:TextBox></td>
+                                            <asp:TextBox ID="TxtRemark" CssClass="textbox" runat="server"></asp:TextBox> </td>
+                                        
                                     </tr>
                                     <%--<tr>
                                         <td colspan="2">
@@ -141,7 +155,7 @@
                                         <Columns>
                                             <asp:BoundField HeaderText="DATE"
                                                 DataField="DATE"
-                                                SortExpression="DATE"></asp:BoundField>
+                                                SortExpression="DATE" DataFormatString="{0:MM/dd/yyyy}" HtmlEncode="false"></asp:BoundField>
                                             <asp:BoundField HeaderText="EQUIPMENT"
                                                 DataField="EQUIPMENT_ID"
                                                 SortExpression="EQUIPMENT_ID"></asp:BoundField>
@@ -165,8 +179,11 @@
                                     </asp:GridView>
                                 </div>
                                 <div>
-                                    <asp:RequiredFieldValidator runat="server" ID="errQty" ControlToValidate="TxtQty" ErrorMessage="Please enter Quantity" cssClass="errLabel"></asp:RequiredFieldValidator>
-                                    <asp:Label ID="errorSeach" cssClass="errLabel" runat="server">Please Put Error Sms here!!!</asp:Label>
+                                    <%--<asp:RequiredFieldValidator runat="server" ID="errYear" ControlToValidate="TxtQty" ErrorMessage="Please enter Quantity" cssClass="errLabel"></asp:RequiredFieldValidator>--%>
+                                    <asp:Label ID="errorSeach" cssClass="errLabel" runat="server"></asp:Label>
+                                    <asp:Label ID="alertMsg" cssClass="errLabel" runat="server"></asp:Label>
+                                     
+                                  <%--  <asp:RequiredFieldValidator runat="server" ID="errQty" ControlToValidate="TxtQty" ErrorMessage="Please Choose " cssClass="errLabel"></asp:RequiredFieldValidator>--%>
                                     &nbsp;
                                 </div>
                                 <div style="padding-left:670px">
