@@ -29,6 +29,8 @@ namespace HomeASP
                 userId = "";
             }
 
+           
+
             showRoomGv();
         }
 
@@ -51,13 +53,18 @@ namespace HomeASP
         {
             try
             {
+                RoomErrorMessage.Visible = false;
+                YearErrorMessage.Visible = false;
                 int index = Convert.ToInt32(e.CommandArgument);
                 if (e.CommandName == "EditCol")
                 {
+                    RoomErrorMessage.Visible = false;
+                    YearErrorMessage.Visible = false;
                     BtnRoomSave.Text = "Edit";
                     ddlRoomyearlist.Text = gvRoomList.Rows[index].Cells[0].Text;
                     updateId = gvRoomList.Rows[index].Cells[1].Text;
                     TxtRoomName.Text = gvRoomList.Rows[index].Cells[2].Text;
+
                 }
 
                 else if (e.CommandName == "DeleteCol")
@@ -67,6 +74,8 @@ namespace HomeASP
 
                     //// to write for confirm message
                     roomService.removeRoomMST(roomRow, out msg);
+                    alertMsg.Text = msg;
+                    alertMsg.Visible = true;
                     showRoomGv();
                 }
             }
@@ -86,15 +95,17 @@ namespace HomeASP
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            RoomErrorMessage.Visible = false;
+            YearErrorMessage.Visible = false;
             ResetForm();
         }
 
         protected void ResetForm()
         {
             ddlRoomyearlist.SelectedIndex = 0;
-            TxtRoomName.Text = " ";
+            TxtRoomName.Text = "";
             BtnRoomSave.Text = "Save";
-            alertMsg.Text = " ";
+            //alertMsg.Text = " ";
         }
 
         private bool ChkValidation(DsPSMS.ST_ROOM_MSTRow roomDr)
@@ -122,25 +133,109 @@ namespace HomeASP
             roomRow.CRT_DT_TM = DateTime.Now;
             roomRow.CRT_USER_ID = this.userId;
 
-            if (BtnRoomSave.Text.Equals("Save"))
-            {
-                if (!ChkValidation(roomRow))
+            String edu_y = ddlRoomyearlist.Text;
+            String room_n = TxtRoomName.Text.Trim();
+                
+
+
+                if (BtnRoomSave.Text.Equals("Save"))
                 {
-                    roomService.SaveRoomMST(roomRow, out msg);
-                    alertMsg.Text = msg;
+                    alertMsg.Visible = false;
+
+                    if (edu_y == "Select Year" && room_n == "")
+                    {
+                        RoomErrorMessage.Visible = true;
+                        YearErrorMessage.Visible = true;
+
+                    }
+
+                    else if (edu_y == "Select Year")
+                    {
+                        RoomErrorMessage.Visible = false;
+                        YearErrorMessage.Visible = true;
+
+                    }
+
+
+                    else if (room_n == "")
+                    {
+                        RoomErrorMessage.Visible = true;
+                        YearErrorMessage.Visible = false;
+
+                    }
+
+
+                    else if (!ChkValidation(roomRow))
+                    {
+                        RoomErrorMessage.Visible = false;
+                        YearErrorMessage.Visible = false;
+
+                        roomService.SaveRoomMST(roomRow, out msg);
+                        alertMsg.Text = msg;
+                        alertMsg.Visible = true;
+                        ResetForm();
+                        showRoomGv();
+                    }
+                    else
+                    {
+                        alertMsg.Text = "Record is already exist!!";
+                    }
+
+
+                  
+                    showRoomGv();
                 }
                 else
-                    alertMsg.Text = "Record is already exist!!";
-            }
-            else
-            {
-                roomRow.ROOM_ID = int.Parse(updateId);
-                roomService.editRoomMST(roomRow, out msg);
-                alertMsg.Text = msg;
-            }
+                {
 
-            ResetForm();
-            showRoomGv();
+                    if (edu_y == "Select Year" && room_n == "")
+                    {
+                        RoomErrorMessage.Visible = true;
+                        YearErrorMessage.Visible = true;
+
+                    }
+
+                    else if (edu_y == "Select Year")
+                    {
+                        RoomErrorMessage.Visible = false;
+                        YearErrorMessage.Visible = true;
+
+                    }
+
+
+                    else if (room_n == "")
+                    {
+                        RoomErrorMessage.Visible = true;
+                        YearErrorMessage.Visible = false;
+
+                    }
+                    else if (!ChkValidation(roomRow))
+                    {
+                        RoomErrorMessage.Visible = false;
+                        YearErrorMessage.Visible = false;
+
+                        roomRow.ROOM_ID = int.Parse(updateId);
+                        roomService.editRoomMST(roomRow, out msg);
+                        alertMsg.Text = msg;
+                        ResetForm();
+                        showRoomGv();
+                    }
+
+                    else {
+
+                        alertMsg.Text = "Record is already exist!!";
+                    }
+
+                    showRoomGv();
+
+                }
+            
+
+        }
+
+        protected void gvRoomList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

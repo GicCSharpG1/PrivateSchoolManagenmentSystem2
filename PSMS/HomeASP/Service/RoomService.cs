@@ -128,7 +128,7 @@ namespace HomeASP.Service
             {
                 Open();
                 int result = roomDb.deleteRoomMST(dr);
-                msg = "deleted";
+                msg = "It is successfully deleted";
             }
             catch
             {

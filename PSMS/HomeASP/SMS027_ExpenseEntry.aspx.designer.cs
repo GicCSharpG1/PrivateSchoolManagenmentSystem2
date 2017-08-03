@@ -49,6 +49,15 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.DropDownList CoboYear;
         
         /// <summary>
+        /// ErrorYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorYear;
+        
+        /// <summary>
         /// id control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace HomeASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox cashDate;
+        
+        /// <summary>
+        /// ErrorDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorDate;
         
         /// <summary>
         /// LabExpTitle control.
@@ -137,15 +155,6 @@ namespace HomeASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label errEgd;
-        
-        /// <summary>
-        /// errSMS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errSMS;
         
         /// <summary>
         /// BtnPay control.

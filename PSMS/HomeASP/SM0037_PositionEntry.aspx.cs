@@ -67,6 +67,8 @@ namespace HomeASP
         {
             try
             {
+                ErrorYear.Visible = false;
+                ErrorPosition.Visible = false;
                 int index = Convert.ToInt32(e.CommandArgument);
                 alertMsg.Text = "";
                 if (e.CommandName == "EditCol")
@@ -85,6 +87,8 @@ namespace HomeASP
                     //// to write for confirm message
                     
                     posService.removePosMst(posMstRow, out msg);
+                    alertMsg.Text = msg;
+
                     showPosGrid();
 
                     
@@ -95,6 +99,14 @@ namespace HomeASP
             {
                 string message = ee.Message;
             }
+        }
+        protected void ResetForm()
+        {
+            
+           poEducation.SelectedIndex = 0;
+           poName.Text = "";
+           
+            //alertMsg.Text = " ";
         }
 
         protected void save_Click(object sender, EventArgs e)
@@ -107,36 +119,111 @@ namespace HomeASP
             posDr.EDU_YEAR = poEducation.SelectedItem.Value;
             posDr.POSITION_NAME = poName.Text;
 
-            
+            String edu_y = poEducation.Text;
+            String position_n = poName.Text.Trim();
+
 
             if (Validation(posDr) != true)
             {
                 if (BtnEquipSave.Text.Equals("Save"))
                 {
-                    posDr.CRT_DT_TM = DateTime.Now;
-                    posDr.CRT_USER_ID = this.userId;
-                    posDr.UPD_DT_TM = DateTime.Now;
-                    posDr.UPD_USER_ID = this.userId;
-                    posService.SavePositionMST(posDr, out msg);
-                    alertMsg.Text = msg;
+                    if (edu_y == "Choose Education Year" && position_n == "")
+                    {
+                        ErrorYear.Visible = true;
+                        ErrorPosition.Visible = true;
+
+                    }
+
+                    else if (edu_y == "Choose Education Year")
+                    {
+
+                        ErrorYear.Visible = true;
+                        ErrorPosition.Visible = false;
+
+                    }
+
+                    else if (position_n == "")
+                    {
+
+                        ErrorYear.Visible = false;
+                        ErrorPosition.Visible = true;
+
+                    }
+                    else
+                    {
+                        alertMsg.Visible = false;
+                        ErrorYear.Visible = false;
+                        ErrorPosition.Visible = false;
+
+                        posDr.CRT_DT_TM = DateTime.Now;
+                        posDr.CRT_USER_ID = this.userId;
+                        posDr.UPD_DT_TM = DateTime.Now;
+                        posDr.UPD_USER_ID = this.userId;
+                        posService.SavePositionMST(posDr, out msg);
+                        alertMsg.Text = msg;
+                        alertMsg.Visible = true;
+
+                        ResetForm();
+                    }
+
+
                 }
                 else
                 {
-                    posDr.POSITION_ID = Convert.ToInt32(LabelID.Text);
-                    posDr.UPD_DT_TM = DateTime.Now;
-                    posDr.UPD_USER_ID = this.userId;
-                    posService.editPositionMST(posDr, out msg);
-                } 
+                    if (edu_y == "Choose Education Year" && position_n == "")
+                    {
+                        ErrorYear.Visible = true;
+                        ErrorPosition.Visible = true;
+
+                    }
+
+                    else if (edu_y == "Choose Education Year")
+                    {
+
+                        ErrorYear.Visible = true;
+                        ErrorPosition.Visible = false;
+
+                    }
+
+                    else if (position_n == "")
+                    {
+
+                        ErrorYear.Visible = false;
+                        ErrorPosition.Visible = true;
+
+                    }
+
+
+
+                    else
+                    {
+                        ErrorYear.Visible = false;
+                        ErrorPosition.Visible = false;
+
+                        posDr.POSITION_ID = Convert.ToInt32(LabelID.Text);
+                        posDr.UPD_DT_TM = DateTime.Now;
+                        posDr.UPD_USER_ID = this.userId;
+                        posService.editPositionMST(posDr, out msg);
+                        alertMsg.Text = msg;
+                        BtnEquipSave.Text = "Save";
+                        ResetForm();
+                    }
+                }
             }
             else
+            {
+                ErrorYear.Visible = false;
+                ErrorPosition.Visible = false;
                 alertMsg.Text = "Record is already exist!!";
-
+            }
             showPosGrid();
         }
 
 
         protected void confirm_Click(object sender, EventArgs e)
         {
+            ErrorYear.Visible = false;
+            ErrorPosition.Visible = false;
             BtnEquipSave.Text = "Save";
             LabelID.Text = "";
             poEducation.SelectedIndex = 0;

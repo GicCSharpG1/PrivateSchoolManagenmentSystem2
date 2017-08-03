@@ -60,6 +60,7 @@
                                                 <asp:ListItem></asp:ListItem>
                                             </asp:DropDownList>
                                                   </td>
+                                                 <td> <asp:Label ID="ErrorYear" runat="server" Visible="false" ForeColor="Red">Please Choose Education Year!!</asp:Label></td>
                                               </tr>  
                                                
                                                <tr>
@@ -70,6 +71,8 @@
                                                    <td>
                                                        <asp:TextBox ID="poName" runat="server" ForeColor="Black" CssClass="textbox"></asp:TextBox>
                                                    </td>
+                                                    <td>  <asp:Label ID="ErrorPosition" runat="server" Visible="false" ForeColor="Red">Please Enter Position Name!!</asp:Label></td>
+
                                                    <td><asp:Label ID="LabelID" CssClass="label" Visible="false" runat="server">ID</asp:Label></td>
                                                </tr>
                                                 
@@ -80,7 +83,7 @@
                                                 <asp:Button ID="btnConfirm" ValidationGroup="SaveConfirm" Text="Cancel" CssClass="btn" Style="margin-left: 15px" runat="server" OnClick="confirm_Click" />
                                             </div>
                                             <br /><br />
-                                            <asp:Label runat="server" ID="alertMsg" Font-Size="Medium" style="margin-left:10px;color:red"></asp:Label>
+                                            <asp:Label runat="server" ID="alertMsg" Font-Size="Medium"  style="margin-left:10px;color:red"></asp:Label>
                                         </div>
                                         <div id="Div2" style="margin-bottom: 25px; margin-left:30px" runat="server">
                                             <asp:GridView ID="PosMstList" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" EmptyDataText="No expense entry!!" AllowPaging="True" PageSize="5" OnPageIndexChanging="PosList_PageIndexChanging" ReadOnly="false" CssClass="gridview1" OnRowCommand="PosList_RowCommand" runat="server" Width="70%" CellPadding="6" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellSpacing="3" Style="margin-top: 15px">

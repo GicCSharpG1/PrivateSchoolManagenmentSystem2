@@ -42,11 +42,15 @@
                                             <table id="cashTbl" runat="server" style="border-collapse:separate; border-spacing:0 10px;">
                                                 <tr>
                                                     <td>
-                                                        <asp:Label ID="LabYear" CssClass="label" runat="server">Education Year*</asp:Label></td>
+                                                        <asp:Label ID="LabYear" CssClass="label" runat="server">Education Year*</asp:Label>
+
+                                                       
+                                                    </td>
+                                                     
                                                     <td><span style="margin-left: 2em"></span></td>
                                                     <td>
                                                         <asp:DropDownList ID="CoboYear" CssClass="dropdownlist" runat="server" AutoPostBack="false">
-                                                            <asp:ListItem></asp:ListItem>
+                                                            <asp:ListItem>Choose Education Year</asp:ListItem>
                                                             <asp:ListItem>2010 - 2011</asp:ListItem>
                                                             <asp:ListItem>2011 - 2012</asp:ListItem>
                                                             <asp:ListItem>2012 - 2013</asp:ListItem>
@@ -59,12 +63,25 @@
                                                             <asp:ListItem>2019 - 2020</asp:ListItem>
                                                         </asp:DropDownList></td>
                                                     <td><span style="margin-left: 2em">
+                                                          <asp:Label ID="ErrorYear" runat="server" Visible="false" ForeColor="Red">Please Choose Education Year!!</asp:Label>
                                                         <asp:Label runat="server" Visible="false" ID="id"></asp:Label></span></td>
                                                     <td>
                                                         <asp:Label ID="LblExpDate" CssClass="label" runat="server">Date*</asp:Label></td>
                                                     <td><span style="margin-left: 2em"></span></td>
                                                     <td>
-                                                        <asp:TextBox CssClass="datepicker textbox" ID="cashDate" Style="color: black; margin-left: 0px" runat="server" /></td>
+                                                        <asp:TextBox CssClass="datepicker textbox" ID="cashDate" Style="color: black; margin-left: 0px" runat="server" />
+                                                                                                                 <asp:Label ID="ErrorDate" runat="server" Visible="false" ForeColor="Red">Please Choose Date!!</asp:Label>
+
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+                                                  
+
+                                                    
+                                                   
+
                                                 </tr>
                                                <%-- <tr>
                                                     <td>
@@ -84,7 +101,7 @@
                                                         <asp:Label ID="LabExpTitle" CssClass="label" runat="server">Expense Title </asp:Label></td>
                                                     <td><span style="margin-left: 2em"></span></td>
                                                     <td>
-                                                        <asp:TextBox ID="TxtExpTitle" Style="margin-left: 0px" CssClass="textbox" runat="server" ForeColor="Black"></asp:TextBox></td>
+                                                        <asp:TextBox ID="TxtExpTitle" AutoPostBack="false" Style="margin-left: 0px" CssClass="textbox" runat="server" ForeColor="Black"></asp:TextBox></td>
                                                     <td><span style="margin-left: 2em"></span></td>
                                                     <td>
                                                         <asp:Label ID="LabRe" CssClass="label" runat="server">Remark</asp:Label></td>
@@ -144,8 +161,8 @@
                                             </asp:GridView>
                                         </div>
                                         <div>
-                                            <asp:Label ID="errEgd" Style="font-size: medium; color: red" runat="server"></asp:Label>
-                                            <asp:Label ID="errSMS" Font-Size="Small" ForeColor="Red" runat="server">Please Put All error sms</asp:Label>
+                                            <asp:Label ID="errEgd" Style="font-size: medium; color: red" runat="server" ></asp:Label>
+                                           <%-- <asp:Label ID="errSMS" Font-Size="Small" ForeColor="Red" runat="server">Please Put All error sms</asp:Label>--%>
                                         </div>
                                         <div style="margin-left: 420px;">
                                             <asp:Button ID="BtnPay" ValidationGroup="group1" CssClass="btn" runat="server" Text="Save" Style="text-align: center; border-radius: 3px 3px; margin-right:15px;" OnClick="BtnSave_Click" />

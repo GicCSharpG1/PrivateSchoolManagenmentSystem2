@@ -40,11 +40,12 @@
                                             <td>
                                                 <asp:TextBox ID="TxtRoomName" CssClass="textbox" runat="server" ForeColor="Black" /></td>
                                             <td>
-                                                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" ValidationGroup="SaveConfirm" ControlToValidate="TxtRoomName" ErrorMessage="Please enter Room's name !!" ForeColor="Red" /></td>
+                                              <asp:Label ID="RoomErrorMessage" runat="server" Visible="false" ForeColor="Red">Please Enter Room Name</asp:Label>
+                                                 <%-- <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator1" ValidationGroup="SaveConfirm" ControlToValidate="TxtRoomName" ErrorMessage="Please enter Room's name !!" ForeColor="Red" /></td>--%>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <asp:Label ID="LabYear" CssClass="label" runat="server">Education Year*</asp:Label></td>
+                                                <asp:Label ID="LabYear" CssClass="label" runat="server" >Education Year*</asp:Label></td>
                                             <td><span style="margin-left: 2em"></span></td>
                                             <td>
                                                 <asp:DropDownList ID="ddlRoomyearlist" CssClass="dropdownlist" runat="server" AutoPostBack="true">
@@ -62,7 +63,9 @@
                                                 </asp:DropDownList>
                                             </td>
                                             <td>
-                                                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator2" ValidationGroup="SaveConfirm" ControlToValidate="ddlRoomyearlist" ErrorMessage="Please choose Education Year !!" ForeColor="Red" /></td>
+                                                  <asp:Label ID="YearErrorMessage" runat="server" Visible="false" ForeColor="Red">Please Choose Education Year</asp:Label>
+
+<%--                                                <asp:RequiredFieldValidator runat="server" ID="RequiredFieldValidator2" ValidationGroup="SaveConfirm" ControlToValidate="ddlRoomyearlist" ErrorMessage="Please choose Education Year !!" ForeColor="Red" /></td>--%>
                                         </tr>
                                         <tr>
                                             <td>
@@ -78,7 +81,7 @@
                                     </table>
                                 </div>
                                 <div id="Div2" style="margin-bottom: 25px" runat="server">
-                                    <asp:GridView ID="gvRoomList" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" EmptyDataText="There is no record." AllowPaging="True" PageSize="5" OnPageIndexChanging="gvRoomList_PageIndexChanging" ReadOnly="false" CssClass="gridview1" OnRowCommand="gvRoomList_RowCommand" runat="server" Width="100%" CellPadding="6" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellSpacing="3" Style="margin-top: 15px">
+                                    <asp:GridView ID="gvRoomList" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" EmptyDataText="There is no record." AllowPaging="True" PageSize="5" OnPageIndexChanging="gvRoomList_PageIndexChanging" ReadOnly="false" CssClass="gridview1" OnRowCommand="gvRoomList_RowCommand" runat="server" Width="100%" CellPadding="6" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellSpacing="3" Style="margin-top: 15px" OnSelectedIndexChanged="gvRoomList_SelectedIndexChanged">
                                         <AlternatingRowStyle Wrap="False" BackColor="White" />
                                         <EditRowStyle BackColor="#7C6F57" />
                                         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

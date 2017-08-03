@@ -120,7 +120,7 @@
                             <br />
                         </div>
                         <div id="left">
-                            <h3>About as</h3>
+                            <h3>About us</h3>
                             <div class="right_b">
                                 <span class="col_b">Until recently, education in most western countries has been almost fully administered and paid by central governments. </span>
                                 <br />

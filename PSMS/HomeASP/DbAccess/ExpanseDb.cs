@@ -188,10 +188,10 @@ namespace HomeASP.DbAccess
             DsPSMS.ST_EXP_DETAILDataTable expDetDt = new DsPSMS.ST_EXP_DETAILDataTable();
                 Open();
                 string query = "";
-                query = "UPDATE ST_EXP_DETAIL SET DEL_FLG =" + 1 + " WHERE EXP_ID = " + dr.EXP_ID + " AND EXP_SUB_TITLE='" + dr.EXP_SUB_TITLE + "' AND AMOUNT='"+ dr.AMOUNT +"'";
+                query = "UPDATE ST_EXP_DETAIL SET (DEL_FLG =" + 1 + ") WHERE EXP_ID = " + dr.EXP_ID + " AND EXP_SUB_TITLE='" + dr.EXP_SUB_TITLE + "' AND AMOUNT='"+ dr.AMOUNT +"'";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                cmd.ExecuteNonQuery();
+                int testtt = cmd.ExecuteNonQuery();
                 Close();
         }
     }

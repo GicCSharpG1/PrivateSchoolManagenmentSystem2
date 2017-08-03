@@ -31,6 +31,15 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.DropDownList poEducation;
         
         /// <summary>
+        /// ErrorYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorYear;
+        
+        /// <summary>
         /// poName control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace HomeASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox poName;
+        
+        /// <summary>
+        /// ErrorPosition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorPosition;
         
         /// <summary>
         /// LabelID control.

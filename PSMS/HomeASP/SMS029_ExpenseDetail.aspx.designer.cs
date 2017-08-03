@@ -49,6 +49,15 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.DropDownList CoboYear;
         
         /// <summary>
+        /// ErroRYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErroRYear;
+        
+        /// <summary>
         /// LblExpId control.
         /// </summary>
         /// <remarks>
@@ -85,13 +94,13 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.TextBox TxtExpSubTitle;
         
         /// <summary>
-        /// LabAmt control.
+        /// LblAmt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabAmt;
+        protected global::System.Web.UI.WebControls.Label LblAmt;
         
         /// <summary>
         /// TxtAmt control.

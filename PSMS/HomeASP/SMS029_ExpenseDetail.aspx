@@ -41,7 +41,7 @@
                                                     <td><span style="margin-left: 2em"></span></td>
                                                     <td>
                                                         <asp:DropDownList ID="CoboYear" CssClass="dropdownlist" Style="margin-left: 0px" runat="server" AutoPostBack="true">
-                                                            <asp:ListItem></asp:ListItem>
+                                                            <asp:ListItem>Choose Education Year</asp:ListItem>
                                                             <asp:ListItem>2010-2011</asp:ListItem>
                                                             <asp:ListItem>2011-2012</asp:ListItem>
                                                             <asp:ListItem>2012-2013</asp:ListItem>
@@ -53,7 +53,9 @@
                                                             <asp:ListItem>2018-2019</asp:ListItem>
                                                             <asp:ListItem>2019-2020</asp:ListItem>
                                                         </asp:DropDownList></td>
-                                                    <td><span style="margin-left: 2em"></span></td>
+                                                    <td>
+                                                         <asp:Label ID="ErroRYear"  ForeColor="Red" runat="server">Choose Education Year!</asp:Label>
+                                                        <span style="margin-left: 2em"></span></td>
                                                     <td>
                                                         <asp:Label ID="LblExpId" CssClass="label" runat="server">Expance ID</asp:Label></td>
                                                     <td><span style="margin-left: 2em"></span></td>
@@ -82,8 +84,13 @@
                                                         <asp:TextBox ID="TxtExpSubTitle" CssClass="textbox" Style="margin-left: 0px" runat="server" ForeColor="Black"></asp:TextBox></td>
                                                     <td><span style="margin-left: 2em"></span></td>
                                                     <td>
-                                                        <asp:Label ID="LabAmt" CssClass="label" runat="server">Amount</asp:Label></td>
-                                                    <td><span style="margin-left: 2em"></span></td>
+                                                       
+                                                        <asp:Label ID="LblAmt" CssClass="label" runat="server">Amount</asp:Label>
+                                                         
+                                                    </td>
+                                                    <td>
+                                                     
+                                                        <span style="margin-left: 2em"></span></td>
                                                     <td>
                                                         <asp:TextBox ID="TxtAmt" CssClass="textbox" Style="margin-left: 0px" runat="server"></asp:TextBox></td>
                                                     <td>
@@ -105,7 +112,7 @@
                                             </table>
                                         </div>
                                         <div id="Div2" style="height: 270px" runat="server">
-                                            <asp:GridView ID="expDetList" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" EmptyDataText="There is no record." AllowPaging="true" PageSize="5" OnRowCommand="gv_RowCommand" CssClass="gridview1" runat="server" Width="100%" CellPadding="6" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellSpacing="3" ShowFooter="True">
+                                            <asp:GridView ID="expDetList" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" EmptyDataText="There is no record." AllowPaging="true" PageSize="5" OnRowCommand="gv_RowCommand" OnPageIndexChanging="expDetList_PageIndexChanging" CssClass="gridview1" runat="server" Width="100%" CellPadding="6" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellSpacing="3" ShowFooter="True" OnSelectedIndexChanged="expDetList_SelectedIndexChanged">
                                                 <AlternatingRowStyle Wrap="False" BackColor="White" />
                                                 <EditRowStyle BackColor="#7C6F57" />
                                                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

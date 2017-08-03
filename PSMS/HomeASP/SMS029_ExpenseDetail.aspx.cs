@@ -24,9 +24,11 @@ namespace HomeASP
         protected void Page_Load(object sender, EventArgs e)
         {
             this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
-            BtnConfirm.Enabled = false;
-
-
+            if (!IsPostBack)
+            { BtnConfirm.Enabled = false; }
+            errSMS.Visible = false;
+           txtExpIDVal.Enabled = false;
+           ErroRYear.Visible = false;
 
             if (Session["LOGIN_USER_ID"] != null)
             {
@@ -66,9 +68,18 @@ namespace HomeASP
                 {
                     BtnConfirm.Enabled = true;
                     BtnPay.Enabled = false;
-
+                    errNum.Visible = false;
                     //txtExpIDVal.Text = expDetList.Rows[index].Cells[0].Text;
-                    TxtExpSubTitle.Text = expDetList.Rows[index].Cells[1].Text;
+                   
+                    if (expDetList.Rows[index].Cells[1].Text == "&nbsp;")
+                    {
+
+                        TxtExpSubTitle.Text = "";
+                    }
+                    else {
+                        TxtExpSubTitle.Text = expDetList.Rows[index].Cells[1].Text;
+                    
+                    }
                     TxtAmt.Text = expDetList.Rows[index].Cells[2].Text;
                     temp.Text = expDetList.Rows[index].Cells[0].Text;
                 }
@@ -80,7 +91,8 @@ namespace HomeASP
                     expDetDr.EXP_SUB_TITLE = expDetList.Rows[index].Cells[1].Text;
                     expDetDr.AMOUNT = expDetList.Rows[index].Cells[2].Text;
                     expService.deleteExpDet(expDetDr, out msg);
-
+                    errNum.Text = msg;
+                    errNum.Visible = true;
                     DataTable ds = new DataTable();
                     ds = null;
                     expDetList.DataSource = ds;
@@ -104,26 +116,66 @@ namespace HomeASP
             expDetDr.UPD_DT_TM = DateTime.Now;
             expDetDr.UPD_USER_ID = "";
             expDetDr.DEL_FLG = 0;
-
             int result;
-            if (int.TryParse(TxtAmt.Text, out result))
+            String error_y;
+            String error_a;
+            error_y = CoboYear.Text;
+            error_a = TxtAmt.Text;
+
+            if (error_y == "Choose Education Year" && error_a == "")
             {
-                if (Validation(expDetDr) != true)
-                {
-                    expService.SaveExpDetInfo(expDetDr, out msg);
-                    showExpHedGv();
-                }
-                else
-                {
-                    errSMS.Text = "This record already exist in this vouncher!!!";
-                    showExpHedGv();
-                }
+                ErroRYear.Visible = true;
+                errNum.Text = "Add Amount";
+                errNum.Visible = true;
+
+
             }
+
+            else if(error_a==""){
+
+                ErroRYear.Visible = false;
+
+                errNum.Text = "Add Amount";
+                errNum.Visible = true;
+            }
+            else if (error_y == "Choose Education Year")
+            {
+
+                ErroRYear.Visible = true;
+
+                errNum.Visible = false;
+            }
+
+
+
             else
             {
-                errNum.Text = "Please Enter Number only!!";
-            }
+                if (int.TryParse(TxtAmt.Text, out result))
+                {
+                    if (Validation(expDetDr) != true)
+                    {
+                        expService.SaveExpDetInfo(expDetDr, out msg);
+                        CoboYear.Text = null ;
+                        TxtAmt.Text = "";
+                        TxtExpSubTitle.Text = "";
+                        errNum.Text = msg;
+                        errNum.Visible = true;
+                        showExpHedGv();
+                    }
+                    else
+                    {
+                        errSMS.Text = "This record already exist in this vouncher!!!";
+                        errSMS.Visible = true;
+                        showExpHedGv();
+                    }
+                }
 
+
+                else
+                {
+                    errNum.Text = "Please Enter Number only!!";
+                }
+            }
         }
 
         protected void showExpHedGv()
@@ -165,22 +217,72 @@ namespace HomeASP
             expDetDr.UPD_DT_TM = DateTime.Now;
             expDetDr.UPD_USER_ID = this.userId;
 
-            if (Validation(expDetDr) != true)
+            String error_y;
+            String error_a;
+            error_y = CoboYear.Text;
+            error_a = TxtAmt.Text;
+
+            if (error_y == "Choose Education Year" && error_a == "")
             {
-                expService.updateExpDetInfo(expDetDr, id, out msg);
-                showExpHedGv();
-                BtnPay.Enabled = true;
-                BtnConfirm.Enabled = false;
-            }
-            else
-            {
-                errSMS.Text = "This record already exist in this vouncher!!!";
-                showExpHedGv();
+                ErroRYear.Visible = true;
+                errNum.Text = "Add Amount";
+                errNum.Visible = true;
+               
+
             }
 
-            CoboYear.Text = "";
-            TxtExpSubTitle.Text = "";
-            TxtAmt.Text = "";
+            else if (error_a == "")
+            {
+
+                ErroRYear.Visible = false;
+
+                errNum.Text = "Add Amount";
+                errNum.Visible = true;
+            }
+            else if (error_y == "Choose Education Year")
+            {
+
+                ErroRYear.Visible = true;
+
+                errNum.Visible = false;
+            }
+
+
+            else
+            {
+                if (Validation(expDetDr) != true)
+                {
+                    expService.updateExpDetInfo(expDetDr, id, out msg);
+                    showExpHedGv();
+                    errNum.Text = msg;
+                    errNum.Visible = true;
+                    BtnPay.Enabled = true;
+                    BtnConfirm.Enabled = false;
+                    CoboYear.Text = null;
+                    TxtExpSubTitle.Text = "";
+                    TxtAmt.Text = "";
+                }
+                     
+                else
+                {
+                    errSMS.Text = "This record already exist in this vouncher!!!";
+                    showExpHedGv();
+                }
+               
+            }
+            
+        }
+
+        protected void expDetList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void expDetList_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            showExpHedGv();
+              expDetList.PageIndex=e.NewPageIndex;
+           expDetList.DataBind();
         }
 
 
