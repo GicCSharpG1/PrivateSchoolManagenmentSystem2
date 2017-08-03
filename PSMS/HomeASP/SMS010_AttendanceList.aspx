@@ -10,7 +10,6 @@
     <link href="styles/HomeStyle.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
     <link href="styles/CommonStyles.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
     <link href="styles/LoginStyles.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
-    <link href="styles/AttendanceStyle.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
     <link href="styles/jquery-ui.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
 
     <script type="text/javascript" src="Scripts/jquery-1.7.1.js"></script>
@@ -20,14 +19,6 @@
             $(".datepicker").datepicker();
         });
     </script>
-    <style type="text/css">
-        .auto-style1 {
-            height: 13px;
-        }
-        .auto-style2 {
-            height: 46px;
-        }
-    </style>
 </head>
 
 <body style="background-image: url(Images/bg.jpg)">
@@ -53,87 +44,52 @@
                             <form id="centerForm" runat="server" style="height: 485px;">
                                 <h2>Attendance List</h2>
                                 <table>
-                                    <tr>
-                                        <td class="column">
-                                            <asp:Label ID="lblgrade" runat="server" Text="Grade" CssClass="label"></asp:Label>
-                                        </td>
-                                        <td class="column">
-                                            <asp:DropDownList ID="ddlGrade" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist">
-                                            </asp:DropDownList>
-                                        </td>
-                                        <td class="column">
-                                            <asp:Label ID="lblClass" runat="server" Text="Class" CssClass="label"></asp:Label>
-                                        </td>
-                                        <td class="column">
+                                    <tr >
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:Label ID="lblDay" runat="server" Text="Day" CssClass="label"></asp:Label></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlDay" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseDay" AutoPostBack="true">
+                                            </asp:DropDownList></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:Label ID="lblClass" runat="server" Text="Class" CssClass="label"></asp:Label></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
                                             <asp:DropDownList ID="ddlClass" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist">
-                                               
-                                            </asp:DropDownList>
-                                        </td>
+                                            </asp:DropDownList></td>
+                                        <td><span style="margin-left: 3em"></span></td>
+                                        <td>
+                                            <asp:Label ID="lblEduYear1" CssClass="label" runat="server" Text="Education Year"></asp:Label></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:DropDownList ID="eduYearGrade" CssClass="dropdownlist" runat="server">
+                                                <asp:ListItem Text="2016 - 2017" Value="2016 - 2017" />
+                                                <asp:ListItem Text="2017 - 2018" Value="2017 - 2018" />
+                                                <asp:ListItem Text="2018 - 2019" Value="2018 - 2019" />
+                                                <asp:ListItem Text="2019 - 2020" Value="2019 - 2020" />
+                                                <asp:ListItem Text="2020 - 2021" Value="2020 - 2021" />
+                                                <asp:ListItem Text="2021 - 2022" Value="2021 - 2022"/>
+                                            </asp:DropDownList></td>
                                     </tr>
                                     <tr>
+                                        <td colspan="12" style="border-top: 0.5em solid transparent; border-bottom: 0.5em solid transparent;"></td>
+                                    </tr>
+
+                                    <%--<tr>
                                         <td></td>
                                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvDdlGrade" InitialValue="Select Grade" ControlToValidate="ddlGrade" ErrorMessage="Please Choose Grade!" ForeColor="Red" />
                                         </td>
                                         <td></td>
                                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvDdlClass" InitialValue="Select Room" ControlToValidate="ddlClass" ErrorMessage="Please Choose Room!" ForeColor="Red" />
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="column">
-                                            <asp:Label ID="lblName" runat="server" Text="Name" CssClass="label"></asp:Label>
-                                        </td>
-                                        <td class="column">
-                                            <asp:TextBox ID="txtName" runat="server" CssClass="textbox"></asp:TextBox>
-                                        </td>
-                                         <td class="column">
-                                            <asp:Label ID="lblEduYear1" CssClass="label" runat="server" Text="Education Year"></asp:Label>
-                                        </td>
-                                        <td class="column">
-                                            <asp:DropDownList ID="eduYearGrade" CssClass="dropdownlist" runat="server">
-                                                 <asp:ListItem Text="Select Year" Value="Select Year" />
-                                                <asp:ListItem Text="2011 - 2012" Value="2011 - 2012" />
-                                                <asp:ListItem Text="2012 - 2013" Value="2012 - 2013" />
-                                                <asp:ListItem Text="2013 - 2014" Value="2013 - 2014" />
-                                                <asp:ListItem Text="2014 - 2015" Value="2014 - 2015" />
-                                                <asp:ListItem Text="2015 - 2016" Value="2015 - 2016" />
-                                                <asp:ListItem Text="2016 - 2017" Value="2016 - 2017" />
-                                                <asp:ListItem Text="2017 - 2018" Value="2017 - 2018" />
-                                                <asp:ListItem Text="2018 - 2019" Value="2018 - 2019" />
-                                                <asp:ListItem Text="2019 - 2020" Value="2019 - 2020" />
-                                                <asp:ListItem Text="2020 - 2021" Value="2020 - 2021" />
-                                            </asp:DropDownList>
-                                        </td>
-                                        </tr>
-                                       
-                                        
-                                    
-                                    <tr>
-                                        <td class="auto-style1"></td>
-                                        <td class="auto-style1"><%--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvTxtName" ControlToValidate="txtName" ErrorMessage="Please Enter Name!" ForeColor="Red" />--%>
-                                        </td>
-
-                                        <td class="auto-style1"></td>
-                                        <td class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvYearList" InitialValue="Select Year" ControlToValidate="eduYearGrade" ErrorMessage="Please Choose Year!" ForeColor="Red" />
-                                        </td>
-                                    </tr>
-                                 
-                                    <td colspan="6" >
-                                            <asp:Button class="btn" ID="btnSearch" runat="server" Text="Search" CssClass="btn" Style="float: right; margin-right:50px" OnClick="btnSearch_Click" Width="76px" /> </td>
-                                   
-                                    
-                                      <tr>
-                                        <td class="column">
-                                            <asp:Label ID="lblDay" runat="server" Text="Day" CssClass="label"></asp:Label>
-                                        </td>
-                                        <td class="column">
-                                            <asp:DropDownList ID="ddlDay" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseDay" AutoPostBack="true">
-                                            </asp:DropDownList>
-                                        </td>
-                                        <td class="column">
-                                            <asp:Label ID="lblMonth" runat="server" Text="Month" CssClass="label"></asp:Label>
-                                        </td>
-                                        <td class="column">
-                                            <asp:DropDownList ID="ddlMonth" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseMonthYear" AutoPostBack="true">
+                                    </tr>--%>
+                                    <tr >
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td><asp:Label ID="lblMonth" runat="server" Text="Month" CssClass="label"></asp:Label></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td><asp:DropDownList ID="ddlMonth" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseMonthYear" AutoPostBack="true">
                                                 <Items>
                                                     <asp:ListItem Text="Select Month" Value="" />
                                                     <asp:ListItem Text="01" Value="01" />
@@ -149,21 +105,46 @@
                                                     <asp:ListItem Text="11" Value="11" />
                                                     <asp:ListItem Text="12" Value="12" />
                                                 </Items>
-                                            </asp:DropDownList>
+                                            </asp:DropDownList></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        
+                                        <td>
+                                            <asp:Label ID="lblgrade" runat="server" Text="Grade" CssClass="label"></asp:Label></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlGrade" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist">
+                                            </asp:DropDownList></td>
+                                         
+                                        <td><span style="margin-left: 3em"></span></td>
+                                        <td>
+                                            <asp:Label ID="lblName" runat="server" Text="Name" CssClass="label"></asp:Label></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:TextBox ID="txtName" runat="server" CssClass="textbox"></asp:TextBox></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="12" style="border-top: 0.5em solid transparent; border-bottom: 0.5em solid transparent;"></td>
+                                    </tr>
+                                    <%--<tr>
+                                        <td colSpan="4"></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td colSpan="3"></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td colSpan="3"></td>
+                                        <td class="auto-style1"><%--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvTxtName" ControlToValidate="txtName" ErrorMessage="Please Enter Name!" ForeColor="Red" />
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="column"></td>
-                                        <td class="column"></td>
-                                        <td class="column"></td>
-                                        <td class="column"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="column">
+
+                                        <td class="auto-style1"></td>
+                                        <td class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvYearList" InitialValue="Select Year" ControlToValidate="eduYearGrade" ErrorMessage="Please Choose Year!" ForeColor="Red" />
+                                        </td>
+                                    </tr>--%>
+                                    <tr >
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
                                             <asp:Label ID="lblYear" runat="server" Text="Year" CssClass="label"></asp:Label>
                                         </td>
-                                        <td class="column">
-                                            <asp:DropDownList ID="ddlYear" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseMonthYear" AutoPostBack="true">
+                                        <td><span style="margin-left: 3em"></span></td>
+                                        <td><asp:DropDownList ID="ddlYear" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseMonthYear" AutoPostBack="true">
                                                 <Items>
                                                     <asp:ListItem Text="Select Year" Value="" />
                                                     <asp:ListItem Text="2016" Value="2016" />
@@ -177,14 +158,21 @@
                                                     <asp:ListItem Text="2024" Value="2024" />
                                                     <asp:ListItem Text="2025" Value="2025" />
                                                 </Items>
-                                            </asp:DropDownList>
-                                        </td>
-                                        <td colspan="2" class="column">
-                                            <asp:Button class="btn" ID="btnClear" style="float:right;margin-right:35px" runat="server" Text="Clear" Width="78px" OnClick="btnClear_Click" />
-                                        </td>
-                                        <td class="column"></td>
+                                            </asp:DropDownList></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="12" style="border-top: 0.5em solid transparent; border-bottom: 0.5em solid transparent;"></td>
                                     </tr>
                                 </table>
+                                <div style="float:left; margin-bottom:15px">
+                                    <asp:Label ID="errSer" runat="server" ForeColor="Red" CssClass="errLabel"></asp:Label>
+                                </div>
+                                <div style="float:right; margin-bottom:15px">
+                                    <asp:Button ID="btnSearch" CssClass="btn" runat="server" Text="Search" Style="margin-right: 35px" OnClick="btnSearch_Click" Width="76px" />
+                                    <asp:Button ID="btnShoAll" CssClass="btn"  runat="server" Text="Show All" Style="margin-right: 35px" OnClick="btnShoAll_Click"/>
+                                    <asp:Button ID="btnClear" CssClass="btn" runat="server" Text="Clear" OnClick="btnClear_Click" Style="margin-right: 25px" />
+                                </div>
+                                
                                 <div class="table-responsive">
                                     <asp:GridView ID="gvAttendanceList" AutoGenerateColumns="False" runat="server" CssClass="gridview" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="True" EmptyDataText="There is no record." OnPageIndexChanging="gvAttendance_PageIndexChanging">
                                         <AlternatingRowStyle BackColor="White" />

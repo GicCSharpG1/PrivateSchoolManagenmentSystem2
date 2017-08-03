@@ -134,76 +134,85 @@ namespace HomeASP
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            studentRow = new DataSet.DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
-            stdResult = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
-            studentRow.GRADE_ID = int.Parse(ddlGrade.Text);
-            studentRow.EDU_YEAR = eduYearGrade.Text;
-            studentRow.ROOM_ID = ddlClass.Text;
-            studentRow.STUDENT_NAME = txtName.Text;
-            stdResult = stuentry.getDataOption(studentRow);
+            if (ddlDay.SelectedIndex > 0 || ddlMonth.SelectedIndex > 0 || ddlYear.SelectedIndex > 0 || ddlGrade.SelectedIndex > 0 || ddlClass.SelectedIndex > 0 || txtName.Text.Trim().Length != 0 || eduYearGrade.SelectedIndex > 0)
+            {
+                studentRow = new DataSet.DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
+                stdResult = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
+                attRow = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
+                attResult = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
 
-            attRow = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
-            attResult = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
+                if (ddlGrade.SelectedIndex > 0)
+                    studentRow.GRADE_ID = int.Parse(ddlGrade.Text);
+                if(eduYearGrade.SelectedIndex > 0)
+                    studentRow.EDU_YEAR = eduYearGrade.Text;
+                if(ddlClass.SelectedIndex > 0)
+                    studentRow.ROOM_ID = ddlClass.Text;
+                if(txtName.Text.Trim().Length != 0)
+                    studentRow.STUDENT_NAME = txtName.Text;
+                stdResult = stuentry.getDataOption(studentRow);
 
-            if (ddlDay.SelectedIndex != 0)
-            {
-                attRow.ATTENDANCE_DATE = ddlDay.Text + "/";
-            }
-            else
-            {
-                attRow.ATTENDANCE_DATE = "00/";
-            }
-
-            if (ddlMonth.SelectedIndex != 0)
-            {
-                attRow.ATTENDANCE_DATE += ddlMonth.Text + "/";
-            }
-            else
-            {
-                attRow.ATTENDANCE_DATE += "00/";
-            }
-
-            if (ddlYear.SelectedIndex != 0)
-            {
-                attRow.ATTENDANCE_DATE += ddlYear.Text;
-            }
-            else
-            {
-                attRow.ATTENDANCE_DATE += "0000";
-            }
-
-            if (stdResult.Count > 0)
-            {
-                if (stdResult.Count == 1)
+                if (ddlDay.SelectedIndex != 0)
                 {
-                    attRow.STUDENT_ID = stdResult.Rows[0]["STUDENT_ID"].ToString();
+                    attRow.ATTENDANCE_DATE = ddlDay.Text + "/";
                 }
                 else
                 {
-                    attRow.STUDENT_ID = "";
-                    for (int i = 0; i < stdResult.Count; i++)
-                    {
-                        attRow.STUDENT_ID += stdResult.Rows[i]["STUDENT_ID"] + ",";
-                    }
-                    attRow.STUDENT_ID = attRow.STUDENT_ID.Substring(0, attRow.STUDENT_ID.Length - 1);
+                    attRow.ATTENDANCE_DATE = "00/";
                 }
-                attResult = attService.selectAttendanceList(attRow);
 
-                if (attResult.Count == 0)
+                if (ddlMonth.SelectedIndex != 0)
                 {
-                    ModelState.AddModelError(string.Empty, "Data does not exist!");
+                    attRow.ATTENDANCE_DATE += ddlMonth.Text + "/";
                 }
-                //Label aaa = new Label();
-                //TemplateField tfObject = new TemplateField();
-                //tfObject.HeaderText = "Header Text";
-                //tfObject.HeaderStyle.Width = Unit.Percentage(30);
-                //tfObject.ItemTemplate = aaa;
-                //gvAttendanceList.Columns.Add(tfObject);
+                else
+                {
+                    attRow.ATTENDANCE_DATE += "00/";
+                }
 
-                attResultList = attResult;
-                gvAttendanceList.DataSource = attResult;
-                gvAttendanceList.DataBind();
+                if (ddlYear.SelectedIndex != 0)
+                {
+                    attRow.ATTENDANCE_DATE += ddlYear.Text;
+                }
+                else
+                {
+                    attRow.ATTENDANCE_DATE += "0000";
+                }
+
+                if (stdResult.Count > 0)
+                {
+                    if (stdResult.Count == 1)
+                    {
+                        attRow.STUDENT_ID = stdResult.Rows[0]["STUDENT_ID"].ToString();
+                    }
+                    else
+                    {
+                        attRow.STUDENT_ID = "";
+                        for (int i = 0; i < stdResult.Count; i++)
+                        {
+                            attRow.STUDENT_ID += stdResult.Rows[i]["STUDENT_ID"] + ",";
+                        }
+                        attRow.STUDENT_ID = attRow.STUDENT_ID.Substring(0, attRow.STUDENT_ID.Length - 1);
+                    }
+                    attResult = attService.selectAttendanceList(attRow);
+
+                    if (attResult.Count == 0)
+                    {
+                        ModelState.AddModelError(string.Empty, "Data does not exist!");
+                    }
+                    //Label aaa = new Label();
+                    //TemplateField tfObject = new TemplateField();
+                    //tfObject.HeaderText = "Header Text";
+                    //tfObject.HeaderStyle.Width = Unit.Percentage(30);
+                    //tfObject.ItemTemplate = aaa;
+                    //gvAttendanceList.Columns.Add(tfObject);
+
+                    attResultList = attResult;
+                    gvAttendanceList.DataSource = attResult;
+                    gvAttendanceList.DataBind();
+                }
             }
+            else
+                errSer.Text = "Please Fill you want to search !!";
         }
 
       
@@ -285,6 +294,14 @@ namespace HomeASP
                 gvAttendanceList.DataSource = attResult;
                 gvAttendanceList.DataBind();
             }
+        }
+
+        protected void btnShoAll_Click(object sender, EventArgs e)
+        {
+            attResult = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
+            attResult = attService.selectAllAttendance();
+            gvAttendanceList.DataSource = attResult;
+            gvAttendanceList.DataBind();
         }
     }
 }

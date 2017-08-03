@@ -48,6 +48,36 @@ namespace HomeASP.Service
             return result;
         }
 
+        public DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable selectAllAttendance()
+        {
+            DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable result = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
+           
+            try
+            {
+                db.Open();
+                result = db.selectAllAttendance();
+                if (result != null)
+                {
+                    return result;
+                }
+                else
+                {
+                    result = null;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return result;
+        }
+
+
         public int saveAttendanceRecord(DataSet.DsPSMS.ST_ATTENDANCE_DATARow adr, out string msg)
         {
             int resultDt = 0;

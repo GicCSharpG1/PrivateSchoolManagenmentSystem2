@@ -97,6 +97,16 @@ namespace HomeASP.DbAccess
             return dt;
         }
 
+        public DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable selectAllAttendance()
+        {
+            string query = "SELECT * FROM ST_ATTENDANCE_DATA ";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable dt = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
         public int updateAttendanceRecord(DataSet.DsPSMS.ST_ATTENDANCE_DATARow adr)
         {
             if (adr == null)
