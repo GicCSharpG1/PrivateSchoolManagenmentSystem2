@@ -71,14 +71,6 @@
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
-                                    <%-- <tr>
-                                        <td></td>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvYearList" InitialValue="Select Year" ControlToValidate="eduYearGrade" ErrorMessage="Please Choose Year!" ForeColor="Red" />
-                                        </td>
-                                        <td></td>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvGradeList" InitialValue="Select Grade" ControlToValidate="gradeList" ErrorMessage="Please Choose Grade!" ForeColor="Red" />
-                                        </td>
-                                    </tr>--%>
                                     <tr>
                                         <td class="column">
                                             <asp:Label ID="room" runat="server" Text="Room*" CssClass="label"></asp:Label>
@@ -94,13 +86,6 @@
                                             <asp:TextBox CssClass="datepicker textbox" ID="attendDate" runat="server" Enabled="false" AutoPostBack="true" />
                                         </td>
                                     </tr>
-                                    <%--<tr>
-                                        <td></td>
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator runat="server" ID="rfvRoomList" InitialValue="Select Room" ControlToValidate="roomList" ErrorMessage="Please Choose Room!" ForeColor="Red" />
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>--%>
                                     <tr>
                                         <td class="column">
                                             <asp:Button class="btn" ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
@@ -112,6 +97,16 @@
                                 <div class="table-responsive" style="padding: 10px 15px 10px 15px; height: 190px">
                                     <asp:GridView ID="gridViewAttendance" AutoGenerateColumns="false" runat="server" CssClass="gridview" BorderColor="#1DA18C" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gvAttendance_PageIndexChanging">
                                         <AlternatingRowStyle BackColor="White" />
+                                        <EditRowStyle BackColor="#7C6F57" />
+                                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="#1C5E55" ForeColor="White" HorizontalAlign="Center" />
+                                        <RowStyle BackColor="#D2EEEA" />
+                                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                                        <SortedAscendingHeaderStyle BackColor="#246B61" />
+                                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                                        <SortedDescendingHeaderStyle BackColor="#15524A" />
                                         <Columns>
                                             <asp:BoundField HeaderText="ID"
                                                 DataField="STUDENT_ID"
@@ -132,22 +127,7 @@
                                                     <asp:CheckBox ID="PM" runat="server"></asp:CheckBox>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <%--<asp:TemplateField HeaderText="Date">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="date" runat="server"></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>--%>
                                         </Columns>
-                                        <EditRowStyle BackColor="#7C6F57" />
-                                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                                        <PagerStyle BackColor="#1C5E55" ForeColor="White" HorizontalAlign="Center" />
-                                        <RowStyle BackColor="#D2EEEA" />
-                                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                                        <SortedAscendingHeaderStyle BackColor="#246B61" />
-                                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                                        <SortedDescendingHeaderStyle BackColor="#15524A" />
                                     </asp:GridView>
                                 </div>
                                 <br />

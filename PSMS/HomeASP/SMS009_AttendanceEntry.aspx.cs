@@ -109,62 +109,7 @@ namespace HomeASP
                     showAllButton();
                 }
             }
-            //gridViewAttendance.DataSource = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
-            //gridViewAttendance.DataBind();
-            //studentRow = new DataSet.DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
-            //studentRow.EDU_YEAR = eduYearGrade.Text;
-            //studentRow.GRADE_ID =int.Parse(gradeList.DataValueField);
-            //studentRow.ROOM_ID = roomList.Text;
-            //studentRow.ROLL_NO = "";
-            //studentRow.STUDENT_NAME = "";
-
-            //if (attendDate.Text.Trim().Length == 0)
-            //{
-            //    DataSet.DsPSMS.ST_STUDENT_DATADataTable resultDt = stuentry.getDataOption(studentRow);
-            //    if (resultDt == null || resultDt.Count == 0)
-            //    {
-            //        gridViewAttendance.DataSource = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
-            //        gridViewAttendance.DataBind();
-            //    }
-            //    else
-            //    {                       
-            //        gridViewAttendance.DataSource = resultDt;
-            //        gridViewAttendance.DataBind();
-            //        for (int i = 0; i < resultDt.Count; i++)
-            //        {
-            //            CheckBox chkAM = (CheckBox)gridViewAttendance.Rows[i].FindControl("AM");
-            //            if (chkAM != null && chkAM.Checked == true)
-            //            {
-            //                chkAM.Checked = false;
-            //            }
-            //            CheckBox chkPM = (CheckBox)gridViewAttendance.Rows[i].FindControl("PM");
-            //            if (chkPM != null && chkPM.Checked == true)
-            //            {
-            //                chkPM.Checked = false;
-            //            }
-            //        }
-            //        showAllButton();
-            //        Label0.Text = "";
-                  
-            //    }
-            //}
-            //else
-            //{
-            //    DataSet.DsPSMS.ST_ATTENDANCE_DATARow adr = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
-            //    adr.ATTENDANCE_DATE = attendDate.Text;
-            //    DataSet.DsPSMS.ATTENDANCE_RESULTDataTable resultDt = attService.selectAttendanceData(studentRow, adr, out msg);
-
-            //    if (resultDt.Count != 0)
-            //    {
-            //        gridViewAttendance.DataSource = resultDt;
-            //        gridViewAttendance.DataBind();
-            //        showChecked(resultDt);                    
-            //        //swap data to attResultList to show checkbox if data is over 5 records
-            //        if (attResultList.Count == 0)
-            //            attResultList = resultDt;
-            //        showAllButton();
-            //    }
-            //}            
+                   
         }
 
         protected void gvAttendance_PageIndexChanging(object sender, GridViewPageEventArgs e)
