@@ -34,6 +34,7 @@ namespace HomeASP.DbAccess
             return dt;
         }
 
+
         public int insertGrade(DataSet.DsPSMS.ST_GRADE_MSTRow dr)
         {
             int result;
@@ -87,7 +88,16 @@ namespace HomeASP.DbAccess
 
         public DataSet.DsPSMS.ST_SUBJECT_MSTDataTable selectSubjectByID(DataSet.DsPSMS.ST_SUBJECT_MSTRow dr)
         {
-            string query = "SELECT * FROM ST_SUBJECT_MST where SUBJECT_ID= '" + dr.SUBJECT_ID + "' AND DEL_FLG=" +0;
+            string query = "SELECT * FROM ST_SUBJECT_MST where SUBJECT_ID= '" + dr.SUBJECT_ID + "' AND DEL_FLG=" + 0;
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet.DsPSMS.ST_SUBJECT_MSTDataTable dt = new DataSet.DsPSMS.ST_SUBJECT_MSTDataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public DataSet.DsPSMS.ST_SUBJECT_MSTDataTable selectSubjectByIDWithNOflag(DataSet.DsPSMS.ST_SUBJECT_MSTRow dr)
+        {
+            string query = "SELECT * FROM ST_SUBJECT_MST where SUBJECT_ID= '" + dr.SUBJECT_ID + "'";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet.DsPSMS.ST_SUBJECT_MSTDataTable dt = new DataSet.DsPSMS.ST_SUBJECT_MSTDataTable();
@@ -118,7 +128,7 @@ namespace HomeASP.DbAccess
 
         public DataSet.DsPSMS.ST_SUBJECT_MSTDataTable selectAllSubjectData()
         {
-            string query = "SELECT * FROM ST_SUBJECT_MST WHERE DEL_FLG = 0";
+            string query = "SELECT * FROM ST_SUBJECT_MST  WHERE DEL_FLG = 0 ";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet.DsPSMS.ST_SUBJECT_MSTDataTable dt = new DataSet.DsPSMS.ST_SUBJECT_MSTDataTable();
@@ -158,7 +168,7 @@ namespace HomeASP.DbAccess
         public int insertGradeSubjectDetail(DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILRow dr, string sub)
         {
             int result;
-            string query = "INSERT INTO ST_GRADE_SUBJECT_DETAIL (EDU_YEAR, ID, GRADE_ID, SUBJECT_ID_LIST, CRT_DT_TM, CRT_USER_ID, DEL_FLG) VALUES ('" + dr.EDU_YEAR + "'," + dr.ID + ", '" + dr.GRADE_ID + "', '" + sub + "', '" + dr.CRT_DT_TM + "', " + dr.CRT_USER_ID + ", " + dr.DEL_FLG  + ")";
+            string query = "INSERT INTO ST_GRADE_SUBJECT_DETAIL (EDU_YEAR, ID, GRADE_ID, SUBJECT_ID_LIST, CRT_DT_TM, CRT_USER_ID, DEL_FLG) VALUES ('" + dr.EDU_YEAR + "'," + dr.ID + ", '" + dr.GRADE_ID + "', '" + sub + "', '" + dr.CRT_DT_TM + "', " + dr.CRT_USER_ID + ", " + dr.DEL_FLG + ")";
             SqlCommand cmd = new SqlCommand(query, conn);
             result = cmd.ExecuteNonQuery();
             return result;
@@ -166,14 +176,22 @@ namespace HomeASP.DbAccess
 
         public DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable selectGradeSubjectByID(DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILRow dr)
         {
-            string query = "SELECT * FROM ST_GRADE_SUBJECT_DETAIL where ID= '" + dr.ID + "' AND DEL_FLG="+0;
+            string query = "SELECT * FROM ST_GRADE_SUBJECT_DETAIL where ID= '" + dr.ID + "' AND DEL_FLG=" + 0;
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable dt = new DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable();
             da.Fill(dt);
             return dt;
         }
-
+        public DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable selectGradeSubjectByIDWithNOflat(DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILRow dr)
+        {
+            string query = "SELECT * FROM ST_GRADE_SUBJECT_DETAIL where ID= '" + dr.ID + "'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable dt = new DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable();
+            da.Fill(dt);
+            return dt;
+        }
         public DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable getAllGradeSubjectData()
         {
             string query = "SELECT * FROM ST_GRADE_SUBJECT_DETAIL WHERE DEL_FLG = 0";
@@ -186,7 +204,7 @@ namespace HomeASP.DbAccess
 
         public DataSet.DsPSMS.ST_SUBJECT_MSTDataTable getAllSubjectName(String subjectID)
         {
-            string query = "SELECT * FROM ST_SUBJECT_MST WHERE SUBJECT_ID IN (" + subjectID + ") AND DEL_FLG="+0;
+            string query = "SELECT * FROM ST_SUBJECT_MST WHERE SUBJECT_ID IN (" + subjectID + ") AND DEL_FLG=" + 0;
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet.DsPSMS.ST_SUBJECT_MSTDataTable dt = new DataSet.DsPSMS.ST_SUBJECT_MSTDataTable();
@@ -228,5 +246,5 @@ namespace HomeASP.DbAccess
         }
     }
 }
-   
+
 
