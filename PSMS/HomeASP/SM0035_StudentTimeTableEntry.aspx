@@ -27,11 +27,11 @@
                     <div class="cmtit_bot" style="background-image: url(Images/form_bg.jpg)">
                         <div class="right_b" style="height: 585px; width: 965px; clear: both">
                             <form id="centerForm" runat="server" style="height: 545px;">
-                                    <h2>Class Timetable Entry</h2>
+                                     <h2>Class Timetable Entry</h2>
 
-                                <table id="table_style">
+                                <table  style="margin:31px 50px 50px 50px">
                                     <tr>
-                                        <td colspan="3"><asp:Label ID="errmsgexist" runat="server" CssClass="errlable1" Text="Already Exist ! Please choose other data !" Visible="False"></asp:Label></td>
+                                        <td colspan="3"><asp:Label ID="errmsgexist" runat="server" CssClass="errlable1" Text="Already Exist ! Please choose other data !" Visible="False" ForeColor="Red"></asp:Label></td>
                                     </tr>
                                     <tr>
                                         <td class="stutd_width"><asp:Label ID="Label4" CssClass="label" runat="server" Text="EDU Year"></asp:Label></td>
@@ -46,7 +46,7 @@
                                             </asp:DropDownList>
                                         </td>
                                         <td>
-                                             <asp:Label ID="errmsgeduyear" runat="server" Text="Please select year !"  CssClass="errlable1" Visible="False"></asp:Label>
+                                             <asp:Label ID="errmsgeduyear" runat="server" Text="Please select required field !"  CssClass="errlable1" Visible="False" ForeColor="red"></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
@@ -54,31 +54,35 @@
                                         <td><asp:DropDownList CssClass="dropdownlist" ID="ddlentrygradelist" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
                                             </asp:DropDownList></td>
                                         <td class="auto-style1">
-                                            <asp:Label ID="errmsggradelist" runat="server" Text="Please select grade !"  CssClass="errlable1" Visible="False"></asp:Label>
+                                            <asp:Label ID="errmsggradelist" runat="server" Text="Please select grade !"  CssClass="errlable1" Visible="False" ForeColor="red"></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="stutd_width"><asp:Label ID="Label1" CssClass="label" runat="server" Text="Class*"></asp:Label></td>
                                         <td><asp:DropDownList CssClass="dropdownlist" ID="ddlentryclasslist" runat="server" AppendDataBoundItems="True">
                                         </asp:DropDownList></td>
-                                        <td class="auto-style1"><asp:Label ID="errmsgclasslist" runat="server" Text="Please select class!"  CssClass="errlable1" Visible="False"></asp:Label></td>
+                                        <td class="auto-style1"><asp:Label ID="errmsgclasslist" runat="server" Text="Please select class!"  CssClass="errlable1" Visible="False" ForeColor="red"></asp:Label></td>
                                     </tr>
                                     <tr>
                                         <td class="stutd_width"><asp:Label ID="Label2" CssClass="label" runat="server" Text="Room Teacher*"></asp:Label></td>
                                         <td><asp:DropDownList CssClass="dropdownlist" ID="ddlentryteacherlist" runat="server" AppendDataBoundItems="True">
                                         </asp:DropDownList></td>
-                                        <td class="auto-style1"><asp:Label ID="errmsgteaacherlist" runat="server" Text="Please select Room Teacher !" CssClass="errlable1" Visible="False"></asp:Label></td>
+                                        <td class="auto-style1"><asp:Label ID="errmsgteaacherlist" runat="server" Text="Please select Room Teacher !" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label></td>
                                     </tr>
+                                 <tr>
+                                     <td height="30px"></td>
+                                      
+                                 </tr>
                                     <tr>
+                                       
                                         <td class="column"><asp:Button ID="btnRoomteaSave" runat="server"  Text="Save" OnClick="btnRoomteaSave_Click" CssClass="btn"/>
                                         </td>
                                         <td><asp:Button ID="btnroomteaCancel" runat="server" Text="Cancel" OnClick="btnroomteaCancel_Click" CssClass="btn"/></td>
                                     </tr>
                                 </table>
-                                   
-                                <br />
-                                <asp:GridView ID="gvRoomTeacher" runat="server" CellPadding="4" AutoGenerateColumns="False" GridLines="None" ForeColor="#333333" ShowHeaderWhenEmpty="True" EmptyDataText="There is no record." AllowPaging="True" 
-                                   PageSize="8" OnPageIndexChanging="gvRoomTeacher_PageIndexChanging">
+                                
+        <asp:GridView ID="gvRoomTeacher"  style="margin-left:auto; margin-right:auto; margin-top: 50px;"  runat="server" Width="900px" CellPadding="4" AutoGenerateColumns="False" ForeColor="#333333" ShowHeaderWhenEmpty="True" EmptyDataText="There is no record." AllowPaging="True" 
+                                   PageSize="5" OnPageIndexChanging="gvRoomTeacher_PageIndexChanging" Font-Overline="False" Font-Size="Medium" OnSelectedIndexChanged="gvRoomTeacher_SelectedIndexChanged">
                                     <EditRowStyle BackColor="#7C6F57" />
                                     <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -112,6 +116,8 @@
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
+                                   
+                                <br />
                             </form>
                         </div>
                     </div>

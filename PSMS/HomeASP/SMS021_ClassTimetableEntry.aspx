@@ -36,8 +36,8 @@
                     <div class="cmtit_bot" style="background-image: url(Images/form_bg.jpg)">
                         <div class="right_b" style="height: 520px; width: 965px; clear: both">
                             <form id="centerForm" runat="server" style="height: 485px;">
-                                <h2>Teacher Timetable Entry</h2>
-                                <table class="table_style">
+                                 <h2>Teacher Timetable Entry</h2>
+                                <table class="table_style" style="margin:15px">
                                     <%--<tr>
                                         <td colspan="2" class="td_width">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="validatorgrade" runat="server" ControlToValidate="ddltimegradelist" ErrorMessage="Please select grade !" InitialValue="0" CssClass="errlabel"></asp:RequiredFieldValidator></td>
                                         <td><span style="margin-left: 5em"></span></td>
@@ -45,7 +45,8 @@
                                     </tr>--%>
                                     <tr>
                                         <td>
-                                            <asp:Label ID="Label3" CssClass="label" runat="server" Text="Grade*"></asp:Label></td>
+                                            <asp:Label ID="Label3" CssClass="label" runat="server" Text="Grade*" Width="100px"></asp:Label></td>
+                                       
                                         <td>
                                             <asp:DropDownList CssClass="dropdownlist" ID="ddltimegradelist" runat="server" AppendDataBoundItems="True" ForeColor="#003300" OnSelectedIndexChanged="ddltimegradelist_SelectedIndexChanged" AutoPostBack="True">
                                             </asp:DropDownList></td>
@@ -55,6 +56,7 @@
                                         <td>
                                             <asp:DropDownList CssClass="dropdownlist" ID="ddlTeacherList" runat="server" ForeColor="Black" AppendDataBoundItems="True">
                                             </asp:DropDownList></td>
+
                                     </tr>
                                     <%--<tr>
                                         <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="validatorsubject" runat="server" ControlToValidate="ddlsubjectlist" ErrorMessage="Please select subject !" InitialValue="0" CssClass="errlabel"></asp:RequiredFieldValidator></td>
@@ -82,14 +84,15 @@
                                                 <asp:ListItem>2017 - 2018</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
+                                       
                                     </tr>
                                 </table>
-                                <table class="table_style">
+                                <table class="table_style" style="margin:15px">
                                     <tr>
-                                        <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="rfvTimetableDate" runat="server" ControlToValidate="txttimetabledate" ErrorMessage="Please select Date !" CssClass="errlabel"></asp:RequiredFieldValidator></td>
+                                        <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="rfvTimetableDate" runat="server" ControlToValidate="txttimetabledate" ErrorMessage="Please select Date !" CssClass="errlabel" ForeColor="Red"></asp:RequiredFieldValidator></td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="auto-style3"></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label4" CssClass="label" runat="server" Text="Date"></asp:Label></td>
                                         <td>
@@ -97,13 +100,13 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3">
+                                        <td colspan="3" class="auto-style1">
                                             <asp:CustomValidator ID="cvPeriod" runat="server" OnServerValidate="ValidatePeriod"
-                                                ErrorMessage="Please Select at least one period!" CssClass="errlabel"></asp:CustomValidator>
+                                                ErrorMessage="Please Select at least one period!" CssClass="errlabel" ForeColor="red"></asp:CustomValidator>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="auto-style3"></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label6" CssClass="label" runat="server" Text="Period 1"></asp:Label></td>
                                         <td>
@@ -115,9 +118,9 @@
                                                 <asp:ListItem>Class D</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
-                                        <td><span style="margin-left: 2em" /></td>
+                                        <td><span style="margin-left: 60px" /></td>
                                         <td class="td_width">
-                                            <asp:Label ID="Label10" CssClass="label" runat="server" Text="Period 5"></asp:Label></td>
+                                            <asp:Label ID="Label10" CssClass="label" runat="server" Text="Period 5" Width="130px"></asp:Label></td>
                                         <td>
                                             <asp:DropDownList CssClass="dropdownlist" ID="ddlclass5" runat="server">
                                                 <asp:ListItem>Select Class</asp:ListItem>
@@ -129,7 +132,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="auto-style1"></td>
+                                        <td class="auto-style4"></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label7" CssClass="label" runat="server" Text="Period 2"></asp:Label></td>
                                         <td class="auto-style1">
@@ -155,7 +158,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="auto-style3"></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label8" CssClass="label" runat="server" Text="Period 3"></asp:Label></td>
                                         <td>
@@ -181,7 +184,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td class="auto-style3"></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label9" CssClass="label" runat="server" Text="Period 4"></asp:Label></td>
                                         <td>
@@ -194,17 +197,20 @@
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>
+                                    <tr >
+                                        <td class="auto-style2"></td>
+                                       
+                                        <td class="auto-style2">
+
+                                           
                                             <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="Button1_Click" CssClass="btn" />
                                             <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="Update" Visible="False" CssClass="btn" /></td>
-                                        <td>
+                                        <td class="auto-style2">
                                             <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="Button2_Click" CssClass="btn" CausesValidation="false" /></td>
                                     </tr>
                                 </table>
-                                <br />
-                                <asp:GridView ID="dvtimetable" runat="server" CssClass="gridview" GridLines="None" AllowPaging="True" PageSize="2"
+                                
+                                <asp:GridView ID="dvtimetable" runat="server" CssClass="gridview" GridLines="None" AllowPaging="True" PageSize="5"
                                     DataKeyNames="ID" OnRowDeleting="Delete" OnSelectedIndexChanging="Edit" OnPageIndexChanging="dvtimetable_PageIndexChanging" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" EmptyDataText="There is no record." CellPadding="4" ForeColor="#333333">
                                     <EditRowStyle BackColor="#7C6F57" />
                                     <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
