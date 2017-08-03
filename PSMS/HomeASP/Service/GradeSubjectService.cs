@@ -39,6 +39,32 @@ namespace HomeASP.Service
             }
             return selectedGrade;
         }
+        public DataSet.DsPSMS.ST_GRADE_MSTDataTable selectGradeByIDWithNOflate(DataSet.DsPSMS.ST_GRADE_MSTRow dr, out string msg)
+        {
+            msg = null;
+            DataSet.DsPSMS.ST_GRADE_MSTDataTable selectedGrade = new DataSet.DsPSMS.ST_GRADE_MSTDataTable();
+            if (dr == null)
+            {
+                msg = "data is empty ";
+                return selectedGrade;
+            }
+            try
+            {
+                db.Open();
+                if (dr.GRADE_ID != null)
+                    selectedGrade = db.selectGradeByID(dr);
+            }
+            catch
+            {
+                msg = "error has occure when insert data";
+                return selectedGrade;
+            }
+            finally
+            {
+                db.Close();
+            }
+            return selectedGrade;
+        }
 
         public bool saveGrade(DataSet.DsPSMS.ST_GRADE_MSTRow dr, out string msg)
         {
@@ -138,7 +164,7 @@ namespace HomeASP.Service
                     db.Open();
                     result = db.deleteGrade(dr);
                     msg = "grade deleted";
-                }             
+                }
             }
             catch
             {
@@ -149,6 +175,33 @@ namespace HomeASP.Service
             {
                 db.Close();
             }
+            return result;
+        }
+
+        public DataSet.DsPSMS.ST_SUBJECT_MSTDataTable selectSubjectByIDWithNOflag(DataSet.DsPSMS.ST_SUBJECT_MSTRow subject, out string msg)
+        {
+            DataSet.DsPSMS.ST_SUBJECT_MSTDataTable result = new DataSet.DsPSMS.ST_SUBJECT_MSTDataTable();
+            if (subject == null)
+            {
+                msg = "data is empty ";
+                return result;
+            }
+            try
+            {
+                db.Open();
+                if (subject.SUBJECT_ID != null)
+                    result = db.selectSubjectByIDWithNOflag(subject);
+            }
+            catch
+            {
+                msg = "error has occure when insert data";
+                return result;
+            }
+            finally
+            {
+                db.Close();
+            }
+            msg = "exist user";
             return result;
         }
 
@@ -164,7 +217,7 @@ namespace HomeASP.Service
             {
                 db.Open();
                 if (subject.SUBJECT_ID != null)
-                    result = db.selectSubjectByID(subject);                
+                    result = db.selectSubjectByID(subject);
             }
             catch
             {
@@ -331,8 +384,36 @@ namespace HomeASP.Service
             try
             {
                 db.Open();
-                if(dr.ID != null)
+                if (dr.ID != null)
                     selectedUser = db.selectGradeSubjectByID(dr);
+                msg = "complete";
+            }
+            catch
+            {
+                msg = "error has occure when insert data";
+                return selectedUser;
+            }
+            finally
+            {
+                db.Close();
+            }
+            return selectedUser;
+        }
+
+        public DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable selectGradeSubjectByIDWithNOflate(DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILRow dr, out string msg)
+        {
+            msg = null;
+            DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable selectedUser = new DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable();
+            if (dr == null)
+            {
+                msg = "data is empty ";
+                return selectedUser;
+            }
+            try
+            {
+                db.Open();
+                if (dr.ID != null)
+                    selectedUser = db.selectGradeSubjectByIDWithNOflat(dr);
                 msg = "complete";
             }
             catch
