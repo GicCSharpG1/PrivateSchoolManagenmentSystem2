@@ -14,7 +14,6 @@ using System.Web.UI.WebControls;
 using HomeASP.Service;
 using HomeASP.DataSet;
 using System.Drawing;
-
 namespace HomeASP
 {
     public partial class SMS003 : Page
@@ -92,7 +91,7 @@ namespace HomeASP
             DataSet.DsPSMS.ST_ROOM_MSTDataTable stuRoom = roSer.getAllRoomMST();
             roomid.DataSource = stuRoom;
             roomid.DataTextField = "ROOM_NAME";
-            roomid.DataValueField = "ROOM_NAME";
+            roomid.DataValueField = "ROOM_ID";
             roomid.DataBind();
         }
 
@@ -189,7 +188,7 @@ namespace HomeASP
 
                 dr.ADDRESS = address.Text;
 
-                dr.CONTACT_PHONE = phone.Text;
+                dr.CONTACT_PHONE = contactPhno.Text;
 
                 bool isOk = isValidEmail(email.Text);
                 if (email.Text.Trim().Length != 0)
@@ -224,28 +223,28 @@ namespace HomeASP
         protected Boolean checkValidation()
         {
             bool checksign = false;
-            
-            
 
-            if (education.SelectedIndex == 0 && stuid.Text.Trim().Length == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && Male.Checked == false && Female.Checked == false && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0 && email.Text.Trim().Length == 0 && password.Text.Trim().Length == 0 && stuphone.Text.Trim().Length == 0)
+
+
+            if (education.SelectedIndex == 0 && stuid.Text.Trim().Length == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && Male.Checked == false && Female.Checked == false && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0 && email.Text.Trim().Length == 0 && password.Text.Trim().Length == 0 && stuphone.Text.Trim().Length == 0)
             {
                 AllErrSMS.Text = "Please enter all student info !!";
                 AllErrSMS.Visible = true;
                 checksign = true;
             }
-            if (education.SelectedIndex != 0 && stuid.Text.Trim().Length != 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length != 0 && Male.Checked == true && Female.Checked == true && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+            if (education.SelectedIndex != 0 && stuid.Text.Trim().Length != 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length != 0 && Male.Checked == true && Female.Checked == true && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
             {
                
                 AllErrSMS.Visible = false;
               
             }
-            if (education.SelectedIndex == 0 && stuid.Text.Trim().Length == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && Male.Checked == false && Female.Checked == false && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+            if (education.SelectedIndex == 0 && stuid.Text.Trim().Length == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && Male.Checked == false && Female.Checked == false && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
             {
                 AllErrSMS.Text = "Please enter all star student info !!";
                 AllErrSMS.Visible = true;
                 checksign = true;
             }
-            if (education.SelectedIndex == 0 || stuid.Text.Trim().Length == 0 || stuname.Text.Trim().Length == 0 || rollno.Text.Trim().Length == 0 || (Male.Checked == false && Female.Checked == false) || dob.Text.Trim().Length == 0 || grade.SelectedIndex == 0 || roomid.SelectedIndex == 0 || cashtype.SelectedIndex == 0 || father.Text.Trim().Length == 0 || mother.Text.Trim().Length == 0 || address.Text.Trim().Length == 0 || phone.Text.Trim().Length == 0)
+            if (education.SelectedIndex == 0 || stuid.Text.Trim().Length == 0 || stuname.Text.Trim().Length == 0 || rollno.Text.Trim().Length == 0 || (Male.Checked == false && Female.Checked == false) || dob.Text.Trim().Length == 0 || grade.SelectedIndex == 0 || roomid.SelectedIndex == 0 || cashtype.SelectedIndex == 0 || father.Text.Trim().Length == 0 || mother.Text.Trim().Length == 0 || address.Text.Trim().Length == 0 || contactPhno.Text.Trim().Length == 0)
             {
                 AllErrSMS.Text = "Please enter all star student info !!";
                 AllErrSMS.Visible = true;
@@ -258,149 +257,149 @@ namespace HomeASP
 
             if (stuid.Text.Trim().Length != 0 )
             {
-                if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-               
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length != 0)
+
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter Education, Name & Roll No. !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter Education & Name !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter Education !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
 
-                    
-                
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length != 0)
+
+
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length != 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length != 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex != 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex != 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
@@ -410,149 +409,149 @@ namespace HomeASP
             }
             else
             {
-                
-                
-                
-                
-                if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length != 0)
+
+
+
+
+                if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter Id, Education, Name & Roll No. !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter Id, Education & Name !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter Id & Education !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex != 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex != 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length != 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter Id !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length != 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length != 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length != 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length != 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length != 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length != 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex != 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex != 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex != 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length != 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length != 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == true || Female.Checked == true) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length != 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex == 0 && stuname.Text.Trim().Length != 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
                     checksign = true;
                 }
-                else if (education.SelectedIndex != 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && phone.Text.Trim().Length == 0)
+                else if (education.SelectedIndex != 0 && stuname.Text.Trim().Length == 0 && rollno.Text.Trim().Length == 0 && (Male.Checked == false && Female.Checked == false) && dob.Text.Trim().Length == 0 && grade.SelectedIndex == 0 && roomid.SelectedIndex == 0 && cashtype.SelectedIndex == 0 && father.Text.Trim().Length == 0 && mother.Text.Trim().Length == 0 && address.Text.Trim().Length == 0 && contactPhno.Text.Trim().Length == 0)
                 {
                     AllErrSMS.Text = "Please enter all Data !!";
                     AllErrSMS.Visible = true;
@@ -588,9 +587,9 @@ namespace HomeASP
                 { dr.GENDER = "Male"; }
 
                 string upFile = (string)(Session["PHOTO_PATH"] ?? " ");
-                if (strFileName == "")
+                if (strFileName ==null)
                 {
-                    dr.PHOTO_PATH = upFile;
+                    dr.PHOTO_PATH = studentpicture.ImageUrl;
                 }
                 else
                 {
@@ -658,7 +657,7 @@ namespace HomeASP
 
                 dr.ADDRESS = address.Text;
 
-                dr.CONTACT_PHONE = phone.Text;
+                dr.CONTACT_PHONE = contactPhno.Text;
 
                 bool isOk = isValidEmail(email.Text);
                 if (email.Text != null)
@@ -706,7 +705,7 @@ namespace HomeASP
             rollno.Text = String.Empty;
             father.Text = String.Empty;
             mother.Text = String.Empty;
-            phone.Text = String.Empty;
+            contactPhno.Text = String.Empty;
             email.Text = String.Empty;
             password.Text = String.Empty;
             stuphone.Text = String.Empty;
@@ -762,7 +761,8 @@ namespace HomeASP
 
             grade.SelectedIndex = grade.Items.IndexOf(grade.Items.FindByValue(editStudent.GRADE_ID.ToString()));
 
-            roomid.Text = editStudent.ROOM_ID;
+            roomid.SelectedIndex = roomid.Items.IndexOf(roomid.Items.FindByValue(editStudent.ROOM_ID.ToString()));
+            //roomid.Text = editStudent.ROOM_ID;
 
             father.Text = editStudent.FATHER_NAME;
 
@@ -770,7 +770,7 @@ namespace HomeASP
 
             address.Text = editStudent.ADDRESS;
 
-            phone.Text = editStudent.CONTACT_PHONE;
+            contactPhno.Text = editStudent.CONTACT_PHONE;
 
             email.Text = editStudent.EMAIL;
 

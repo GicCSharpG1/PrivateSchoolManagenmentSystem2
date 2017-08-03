@@ -31,7 +31,7 @@ namespace HomeASP
         StaffService service = new StaffService();
         PositionService pService = new PositionService();
         DataSet.DsPSMS.ST_STAFF_DATADataTable dt;
-        DataSet.DsPSMS.ST_STAFF_DATARow dr;
+        DataSet.DsPSMS.ST_STAFF_DATARow dr=new DsPSMS.ST_STAFF_DATADataTable().NewST_STAFF_DATARow();
 
         protected void Page_Load(object sender, EventArgs e)
         {

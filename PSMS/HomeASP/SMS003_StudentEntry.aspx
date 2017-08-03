@@ -196,7 +196,7 @@
                                         <td class="label">
                                             <asp:Label ID="Label8" CssClass="label" runat="server">Contact Phone</asp:Label><asp:Label ID="Label18" runat="server" Text="*" ForeColor="red"></asp:Label></td>
                                         <td>
-                                            <asp:TextBox ID="phone" runat="server" ForeColor="Black" CssClass="textbox"></asp:TextBox>
+                                            <asp:TextBox ID="contactPhno" runat="server" ForeColor="Black" CssClass="textbox"></asp:TextBox>
                                         </td>
                                         <td>
                                             &nbsp;</td>

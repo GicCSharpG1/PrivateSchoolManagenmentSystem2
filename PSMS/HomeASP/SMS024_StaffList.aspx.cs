@@ -65,6 +65,8 @@ namespace HomeASP
 
         protected void btnStaffUpdate_Click(object sender, EventArgs e)
         {
+        
+
             LinkButton btn = (LinkButton)(sender);
             string staffId = btn.CommandName;
 
@@ -124,18 +126,8 @@ namespace HomeASP
                 if (resultDt != null)
                 {
 
-                    foreach (DataSet.DsPSMS.ST_STAFF_DATARow row in resultDt.Rows)
-                    {
-                        DsPSMS.ST_POSITION_MSTRow sp = new DsPSMS.ST_POSITION_MSTDataTable().NewST_POSITION_MSTRow();
-                        sp.POSITION_ID = Convert.ToInt16(row.POSITION_ID);
-                        DataSet.DsPSMS.ST_POSITION_MSTDataTable result = service.getPosMstById(sp);
-
-                        row.POSITION_ID = result.Rows[0]["POSITION_NAME"].ToString();
-                        //resultDt.Columns.Remove(resultDt.Columns[1]);
-                        GridView1.DataSource = resultDt;
-                        GridView1.DataBind();
-                    }
-
+                    GridView1.DataSource = resultDt;
+                    GridView1.DataBind();
                 }
 
             }
@@ -177,6 +169,7 @@ namespace HomeASP
 
         protected void btnPrevious_Click1(object sender, EventArgs e)
         {
+            Session["STAFF_ID"] = null;
             Response.Redirect("SMS023_StaffEntry.aspx");
         }
 

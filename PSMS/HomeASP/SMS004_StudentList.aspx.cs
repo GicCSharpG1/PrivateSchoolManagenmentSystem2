@@ -141,6 +141,7 @@ namespace HomeASP
 
         protected void btnAdd_Click1(object sender, EventArgs e)
         {
+            Session["STUDENT_ID"] = null;
             Response.Redirect("SMS003_StudentEntry.aspx");
         }
 
