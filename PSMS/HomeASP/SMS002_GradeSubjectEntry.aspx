@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SMS002_GradeSubjectEntry.aspx.cs" Inherits="HomeASP.SMS002" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SMS002_GradeSubjectEntry.aspx.cs" Inherits="HomeASP.SMS002" MaintainScrollPositionOnPostback="true" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,7 +12,16 @@
     <link href="styles/CommonStyles.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
     <link href="styles/LoginStyles.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
     <link href="styles/GradeSubjectStyle.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
-
+  <script type="text/javascript">  function allowOnlyNumber(evt) {
+      var charCode = (evt.which) ? evt.which : event.keyCode
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+          alert("Only Number Allowed!");
+          return false;
+      } else {
+          return true;
+      }
+  }
+      </script>
 </head>
 <body style="background-image: url(Images/bg.jpg)">
     <div id="main_bot" style="background-image: url(Images/bottom.gif)">
@@ -27,7 +36,7 @@
                 <div id="cmright">
                     <div class="cmtit_bot" style="background-image: url(Images/form_bg.jpg)">
                         <div class="right_b" style="height: 1140px; width: 965px; clear: both">
-                            <form id="centerForm" runat="server" style="height: 1100px;">
+                            <form id="centerForm" runat="server" style="height: 1100px;" autocomplete="off">
                                 <h2>Grade And Subject Entry</h2>
                                     <asp:ValidationSummary id="errSum" 
                                          DisplayMode="List"
@@ -37,10 +46,10 @@
                                 <table style="border-collapse:separate; border-spacing:0 10px;">
                                     <tr>
                                         <td class="column">
-                                            <asp:Label ID="lblEduYear1" CssClass="label" runat="server" Text="Education Year"></asp:Label>
+                                            <asp:Label ID="lblEduYear1" CssClass="label" runat="server"  Text="Education Year"></asp:Label>
                                         </td>
                                         <td class="column">
-                                            <asp:DropDownList ID="eduYearGrade" CssClass="dropdownlist" runat="server">
+                                            <asp:DropDownList ID="eduYearGrade" CssClass="dropdownlist" runat="server" >
                                                 <asp:ListItem Text="Select Year" Value="Select Year" />
                                                 <asp:ListItem Text="2011 - 2012" Value="2011 - 2012" />
                                                 <asp:ListItem Text="2012 - 2013" Value="2012 - 2013" />
@@ -58,7 +67,10 @@
                                             <asp:Label ID="id" CssClass="label" runat="server" Text="ID"></asp:Label>
                                         </td>
                                         <td class="column">
-                                            <asp:TextBox ID="gradeId" CssClass="textbox" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="gradeId" CssClass="textbox" runat="server" onkeypress="return allowOnlyNumber(event);"></asp:TextBox>
+                                        </td>
+                                        <td>
+<asp:Label ID="Lbl" CssClass="label" runat="server" Text="ID" ForeColor="Red" ></asp:Label>
                                         </td>
                                     </tr>
                                    <%-- <tr>
@@ -108,7 +120,7 @@
                                             <asp:BoundField HeaderText="Year"
                                                 DataField="EDU_YEAR"
                                                 SortExpression="EDU_YEAR"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Id"
+                                            <asp:BoundField HeaderText="ID"
                                                 DataField="GRADE_ID"
                                                 SortExpression="GRADE_ID"></asp:BoundField>
                                             <asp:BoundField HeaderText="Grade"
@@ -164,7 +176,7 @@
                                             <asp:Label ID="Label2" CssClass="label" runat="server" Text="ID"></asp:Label>
                                         </td>
                                         <td class="column">
-                                            <asp:TextBox ID="subjectId" CssClass="textbox" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="subjectId" CssClass="textbox" runat="server" onkeypress="return allowOnlyNumber(event);"></asp:TextBox>
                                         </td>
                                         <td class="column">
                                             <asp:Label ID="subject" CssClass="label" runat="server" Text="Subject"></asp:Label>
@@ -194,15 +206,15 @@
                                     </tr>
                                 </table>
                                 <div class="GSgridview" style="padding-left: 20px;height:100px">
-                                    <asp:GridView ID="gridViewSubject" AutoGenerateColumns="False" runat="server" CssClass="GSgridview" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gridViewSubject_PageIndexChanging">
+                                    <asp:GridView ID="gridViewSubject" AutoGenerateColumns="False"  class="GSgridview"  runat="server"  AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gridViewSubject_PageIndexChanging" >
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
                                             <asp:BoundField HeaderText="Year"
                                                 DataField="EDU_YEAR"
                                                 SortExpression="EDU_YEAR"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Id"
+                                            <asp:BoundField HeaderText="ID"
                                                 DataField="SUBJECT_ID"
-                                                SortExpression="SUBJECT_ID"></asp:BoundField>
+                                                SortExpression="SUBJECT_ID" ></asp:BoundField>
                                             <asp:BoundField HeaderText="Subject"
                                                 DataField="SUBJECT_NAME"
                                                 SortExpression="SUBJECT_NAME"></asp:BoundField>
@@ -228,6 +240,11 @@
                                         <SortedDescendingCellStyle BackColor="#D4DFE1" />
                                         <SortedDescendingHeaderStyle BackColor="#15524A" />
                                     </asp:GridView>
+
+
+
+
+
                                 </div >
                                 <table style="border-collapse:separate; border-spacing:0 10px;">
                                     <tr>
@@ -253,7 +270,7 @@
                                             <asp:Label ID="Label3" CssClass="label" runat="server" Text="ID"></asp:Label>
                                         </td>
                                         <td class="column">
-                                            <asp:TextBox ID="gradeSubjectId" CssClass="textbox" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="gradeSubjectId" CssClass="textbox" runat="server" onkeypress="return allowOnlyNumber(event);"></asp:TextBox>
                                         </td>
                                         <td class="column">
                                             <asp:Label ID="Label4" CssClass="label" runat="server" Text="Grade"></asp:Label>
@@ -278,12 +295,14 @@
                                             <asp:Button class="btn" ID="gradeSubjectAdd" runat="server" Text="Save" OnClick="btnAddGradeSubject_Click" />
                                         </td>
                                         <td class="column">
-                                            <asp:Button class="btn" ID="gradeSubjectShowAll" runat="server" Text="Show All" OnClick="btnSelectGradeSubject_Click" />
+                                            <asp:Button class="btn" ID="gradeSubjectShowAll" runat="server" Text="Show All" OnClick="btnSelectGradeSubject_Click"  />
                                         </td>
                                     </tr>
                                 </table>
                                 <div class="selectSubject" style="padding-left: 20px;height:100px">
                                     <asp:Label runat="server" ID="errSubjectList" Visible="false" ForeColor="Red" Text="Please Choose Subject!" Font-Size="12px" />
+                                    
+                                    <div style="width: 320px; height: 100px; overflow:auto;">
                                     <asp:GridView ID="subjectGridView" AutoGenerateColumns="false" runat="server" BackColor="#1C5E55" Width="300px" Visible="true" ForeColor="White">
                                         <Columns>
                                             <asp:TemplateField HeaderText="Select" ItemStyle-CssClass="template-checkbox" HeaderStyle-CssClass="template-checkbox">
@@ -299,9 +318,11 @@
                                                 SortExpression="SUBJECT_ID" ItemStyle-CssClass="hiddencol" HeaderStyle-CssClass="hiddencol"></asp:BoundField>
                                         </Columns>
                                     </asp:GridView>
+                                        </div>
+
                                 </div>
                                 <div class="GSgridview" style="padding-left: 20px">
-                                    <asp:GridView ID="gradeSubjectGridView" AutoGenerateColumns="False" runat="server" class="GSgridview" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gridViewGradeSubject_PageIndexChanging">
+                                    <asp:GridView ID="gradeSubjectGridView" AutoGenerateColumns="False" runat="server" class="GSgridview" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gridViewGradeSubject_PageIndexChanging" >
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
                                             <asp:BoundField ReadOnly="True"

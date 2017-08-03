@@ -61,12 +61,13 @@ namespace HomeASP
             Boolean isError = false;
             if (gradeId.Text.Trim().Length == 0)
             {
-                //errGradeId.Visible = true;
+                Lbl.Text = "Please Enter required field";
+                Lbl.Visible = true;
                 isError = true;
             }
             else
             {
-                //errGradeId.Visible = false;
+                Lbl.Visible = false;
             }
             if (gradeName.Text.Trim().Length == 0)
             {
@@ -130,7 +131,7 @@ namespace HomeASP
                     gradeRow.CRT_USER_ID = loginUserId;
                     gradeRow.CRT_DT_TM = DateTime.Now;
                     gradeRow.DEL_FLG = 0;
-                    gradeRow.GRADE_ID =int.Parse(gradeId.Text);
+                    gradeRow.GRADE_ID = Convert.ToInt16(gradeId.Text);
                     gradeRow.GRADE_NAME = gradeName.Text;
                     gradeRow.EDU_YEAR = eduYearGrade.Text;
                     gradeRow.MONTHLY_FEE = Convert.ToInt32(price.Text);
@@ -139,7 +140,10 @@ namespace HomeASP
                     if (gradeData != null && gradeData.Rows.Count > 0)
                     {
 
-                        ModelState.AddModelError(string.Empty, "Data already exists for this Grade!");
+                        //  ModelState.AddModelError(string.Empty, "Data already exists for this Grade!");
+                        string script = "alert(\"Data already exists for this ID!\");";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                              "ServerControlScript", script, true);
                         errSum.Visible = true;
                     }
                     else
@@ -155,7 +159,7 @@ namespace HomeASP
                     gradeRow.UPD_USER_ID = loginUserId;
                     gradeRow.UPD_DT_TM = DateTime.Now;
                     gradeRow.GRADE_NAME = gradeName.Text;
-                    gradeRow.GRADE_ID = int.Parse(gradeId.Text);
+                    gradeRow.GRADE_ID = Convert.ToInt32(gradeId.Text);
                     gradeRow.EDU_YEAR = eduYearGrade.Text;
                     gradeRow.MONTHLY_FEE = Convert.ToInt32(price.Text);
                     service.updateGrade(gradeRow, out msg);
@@ -224,10 +228,10 @@ namespace HomeASP
         {
             displayGradeData();
             FillGradeListCombo();
-           // errEduYear1.Visible = false;
-           // errGradeId.Visible = false;
-           // errGradeName.Visible = false;
-           // errPrice.Visible = false;
+            // errEduYear1.Visible = false;
+            // errGradeId.Visible = false;
+            // errGradeName.Visible = false;
+            // errPrice.Visible = false;
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
@@ -251,30 +255,30 @@ namespace HomeASP
             Boolean isError = false;
             if (subjectId.Text.Trim().Length == 0)
             {
-              //  errSubjectId.Visible = true;
+                errSum.Visible = true;
                 isError = true;
             }
             else
             {
-              //  errSubjectId.Visible = false;
+                errSum.Visible = false;
             }
             if (subjectName.Text.Trim().Length == 0)
             {
-              //  errSubjectName.Visible = true;
+                //  errSubjectName.Visible = true;
                 isError = true;
             }
             else
             {
-              //  errSubjectName.Visible = false;
+                //  errSubjectName.Visible = false;
             }
             if (eduYearSubject.SelectedIndex == 0)
             {
-              //  errEduYear2.Visible = true;
+                //  errEduYear2.Visible = true;
                 isError = true;
             }
             else
             {
-              //  errEduYear2.Visible = false;
+                //  errEduYear2.Visible = false;
             }
             return isError;
         }
@@ -290,14 +294,17 @@ namespace HomeASP
                     subjectRow.CRT_USER_ID = loginUserId;
                     subjectRow.CRT_DT_TM = DateTime.Now;
                     subjectRow.DEL_FLG = 0;
-                    subjectRow.SUBJECT_ID = subjectId.Text;
+                    subjectRow.SUBJECT_ID = Convert.ToInt32(subjectId.Text);
                     subjectRow.SUBJECT_NAME = subjectName.Text;
                     subjectRow.EDU_YEAR = eduYearSubject.Text;
-                    DataSet.DsPSMS.ST_SUBJECT_MSTDataTable subjectData = service.selectSubjectByID(subjectRow, out msg);
+                    DataSet.DsPSMS.ST_SUBJECT_MSTDataTable subjectData = service.selectSubjectByIDWithNOflag(subjectRow, out msg);
 
                     if (subjectData != null && subjectData.Rows.Count > 0)
                     {
-                        ModelState.AddModelError(string.Empty, "Data already exists for this Subject!");
+                        //ModelState.AddModelError(string.Empty, "Data already exists for this Subject!");
+                        string script = "alert(\"Data already exists for this ID!\");";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                              "ServerControlScript", script, true);
                         errSum.Visible = true;
                     }
                     else
@@ -312,7 +319,7 @@ namespace HomeASP
                     subjectRow.UPD_DT_TM = DateTime.Now;
                     subjectRow.DEL_FLG = 0;
                     subjectRow.SUBJECT_NAME = subjectName.Text;
-                    subjectRow.SUBJECT_ID = subjectId.Text;
+                    subjectRow.SUBJECT_ID = Convert.ToInt32(subjectId.Text);
                     subjectRow.EDU_YEAR = eduYearSubject.Text;
                     service.updateSubject(subjectRow, out msg);
                     //Response.Write("<script>alert('Update Successfully!')</script>");
@@ -360,7 +367,7 @@ namespace HomeASP
 
             subjectRow = new DataSet.DsPSMS.ST_SUBJECT_MSTDataTable().NewST_SUBJECT_MSTRow();
             if (editSubjectId != null)
-                subjectRow.SUBJECT_ID = editSubjectId;
+                subjectRow.SUBJECT_ID = Convert.ToInt32(editSubjectId);
             DataSet.DsPSMS.ST_SUBJECT_MSTDataTable subjectData = service.selectSubjectByID(subjectRow, out msg);
             subjectName.Text = subjectData.Rows[0]["SUBJECT_NAME"].ToString();
             eduYearSubject.Text = subjectData.Rows[0]["EDU_YEAR"].ToString();
@@ -373,9 +380,9 @@ namespace HomeASP
         {
             displaySubjectData();
             displaySubjectInGridView();
-           // errEduYear2.Visible = false;
-          //  errSubjectId.Visible = false;
-          //  errSubjectName.Visible = false;
+            // errEduYear2.Visible = false;
+            //  errSubjectId.Visible = false;
+            //  errSubjectName.Visible = false;
         }
 
         protected void btnDeleteSubject_Click(object sender, EventArgs e)
@@ -384,13 +391,14 @@ namespace HomeASP
             string editSubjectId = btn.CommandName;
             msg = "";
             subjectRow = new DataSet.DsPSMS.ST_SUBJECT_MSTDataTable().NewST_SUBJECT_MSTRow();
-            subjectRow.SUBJECT_ID = editSubjectId;
+            subjectRow.SUBJECT_ID = Convert.ToInt32(editSubjectId);
             DataSet.DsPSMS.ST_SUBJECT_MSTDataTable subjectData = service.selectSubjectByID(subjectRow, out msg);
 
             if (subjectData != null && subjectData.Rows.Count > 0)
             {
                 service.deleteSubject(subjectRow, out msg);
                 displaySubjectData();
+                displaySubjectInGridView();
             }
         }
 
@@ -405,16 +413,19 @@ namespace HomeASP
                     gradeSubjectRow.CRT_USER_ID = loginUserId;
                     gradeSubjectRow.CRT_DT_TM = DateTime.Now;
                     gradeSubjectRow.DEL_FLG = 0;
-                    gradeSubjectRow.ID = gradeSubjectId.Text;
+                    gradeSubjectRow.ID = Convert.ToInt32(gradeSubjectId.Text);
                     gradeSubjectRow.GRADE_ID = gradeList.Text;
                     gradeSubjectRow.EDU_YEAR = eduYearGradeSubject.Text;
 
                     string subjectId = getSubjectIdList();
-                    DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable resultDt = service.selectGradeSubjectByID(gradeSubjectRow, out msg);
+                    DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable resultDt = service.selectGradeSubjectByIDWithNOflate(gradeSubjectRow, out msg);
 
                     if (resultDt != null && resultDt.Rows.Count > 0)
                     {
-                        ModelState.AddModelError(string.Empty, "Data already exists for this Grade and Subject!");
+                        // ModelState.AddModelError(string.Empty, "Data already exists for this Grade and Subject!");
+                        string script = "alert(\"Data already exists for this ID!\");";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                              "ServerControlScript", script, true);
                         errSum.Visible = true;
                     }
                     else
@@ -428,7 +439,7 @@ namespace HomeASP
                     gradeSubjectRow.UPD_USER_ID = loginUserId;
                     gradeSubjectRow.UPD_DT_TM = DateTime.Now;
                     gradeSubjectRow.DEL_FLG = 0;
-                    gradeSubjectRow.ID = gradeSubjectId.Text;
+                    gradeSubjectRow.ID = Convert.ToInt32(gradeSubjectId.Text);
                     gradeSubjectRow.GRADE_ID = gradeList.Text;
                     gradeSubjectRow.EDU_YEAR = eduYearGradeSubject.Text;
                     gradeSubjectRow.SUBJECT_ID_LIST = getSubjectIdList();
@@ -459,17 +470,17 @@ namespace HomeASP
             Boolean isError = false;
             if (gradeSubjectId.Text.Trim().Length == 0)
             {
-             //   errGradeSubjectId.Visible = true;
+                //   errGradeSubjectId.Visible = true;
                 isError = true;
             }
             if (gradeList.SelectedIndex == 0)
             {
-              //  errGradeList.Visible = true;
+                //  errGradeList.Visible = true;
                 isError = true;
             }
             if (eduYearGradeSubject.SelectedIndex == 0)
             {
-             //   errEduYear3.Visible = true;
+                //   errEduYear3.Visible = true;
                 isError = true;
             }
             int count = 0;
@@ -530,23 +541,27 @@ namespace HomeASP
                     }
 
                     DataSet.DsPSMS.ST_SUBJECT_MSTDataTable subject = service.getAllSubjectName(subjectIdList, out msg);
-
-                    foreach (DataSet.DsPSMS.ST_SUBJECT_MSTRow subjectRow in subject.Rows)
+                    if (subject != null)
                     {
-                        subjectName += subjectRow.SUBJECT_NAME.ToString();
-                        subjectName += ",";
+                        foreach (DataSet.DsPSMS.ST_SUBJECT_MSTRow subjectRow in subject.Rows)
+                        {
+                            subjectName += subjectRow.SUBJECT_NAME.ToString();
+                            subjectName += ",";
+                        }
+                        subjectName = subjectName.Substring(0, subjectName.Length - 1);
+
+                        row.SUBJECT_ID_LIST = subjectName;
+
+                        DataSet.DsPSMS.ST_GRADE_MSTRow grade = new DataSet.DsPSMS.ST_GRADE_MSTDataTable().NewST_GRADE_MSTRow();
+                        //grade.GRADE_ID = int.Parse(row.GRADE_ID);
+                        //DataSet.DsPSMS.ST_GRADE_MSTDataTable result = service.selectGradeByID(grade, out msg);
+                        //row.GRADE_ID = result.Rows[0]["GRADE_NAME"].ToString();
                     }
-                    subjectName = subjectName.Substring(0, subjectName.Length - 1);
-
-                    row.SUBJECT_ID_LIST = subjectName;
-
-                    DataSet.DsPSMS.ST_GRADE_MSTRow grade = new DataSet.DsPSMS.ST_GRADE_MSTDataTable().NewST_GRADE_MSTRow();
-                    grade.GRADE_ID = int.Parse(row.GRADE_ID);
-                    DataSet.DsPSMS.ST_GRADE_MSTDataTable result = service.selectGradeByID(grade, out msg);
-                    row.GRADE_ID = result.Rows[0]["GRADE_NAME"].ToString();
                 }
                 gradeSubjectGridView.DataSource = resultDt;
+
                 gradeSubjectGridView.DataBind();
+
             }
         }
 
@@ -559,7 +574,7 @@ namespace HomeASP
 
             gradeSubjectRow = new DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable().NewST_GRADE_SUBJECT_DETAILRow();
             if (editId != null)
-                gradeSubjectRow.ID = editId;
+                gradeSubjectRow.ID = Convert.ToInt32(editId);
             DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable subjectGradeData = service.selectGradeSubjectByID(gradeSubjectRow, out msg);
             eduYearGradeSubject.Text = subjectGradeData.Rows[0]["EDU_YEAR"].ToString();
             gradeSubjectAdd.Text = "Update";
@@ -569,9 +584,9 @@ namespace HomeASP
         protected void btnSelectGradeSubject_Click(object sender, EventArgs e)
         {
             displayGradeSubjectData();
-          //  errEduYear3.Visible = false;
-          //  errGradeSubjectId.Visible = false;
-          //  errGradeList.Visible = false;
+            //  errEduYear3.Visible = false;
+            //  errGradeSubjectId.Visible = false;
+            //  errGradeList.Visible = false;
             errSubjectList.Visible = false;
         }
 
@@ -582,7 +597,7 @@ namespace HomeASP
             msg = "";
             gradeSubjectRow = new DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable().NewST_GRADE_SUBJECT_DETAILRow();
 
-            gradeSubjectRow.ID = editId;
+            gradeSubjectRow.ID = Convert.ToInt32(editId);
             DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable resultDt = service.selectGradeSubjectByID(gradeSubjectRow, out msg);
 
             if (resultDt != null && resultDt.Rows.Count > 0)
@@ -590,6 +605,11 @@ namespace HomeASP
                 service.deleteGradeSubject(gradeSubjectRow, out msg);
                 displayGradeSubjectData();
             }
+        }
+
+        protected void gradeSubjectGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
