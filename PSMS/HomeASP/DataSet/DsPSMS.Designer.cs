@@ -40,13 +40,9 @@ namespace HomeASP.DataSet {
         
         private ST_GRADE_MSTDataTable tableST_GRADE_MST;
         
-        private ST_GRADE_SUBJECT_DETAILDataTable tableST_GRADE_SUBJECT_DETAIL;
-        
         private ST_MENU_MSTDataTable tableST_MENU_MST;
         
         private ST_STAFF_DATADataTable tableST_STAFF_DATA;
-        
-        private ST_SUBJECT_MSTDataTable tableST_SUBJECT_MST;
         
         private ST_TEACHER_GRADEDataTable tableST_TEACHER_GRADE;
         
@@ -79,6 +75,10 @@ namespace HomeASP.DataSet {
         private ST_SALARYDataTable tableST_SALARY;
         
         private ST_STUDENT_CASHDataTable tableST_STUDENT_CASH;
+        
+        private ST_GRADE_SUBJECT_DETAILDataTable tableST_GRADE_SUBJECT_DETAIL;
+        
+        private ST_SUBJECT_MSTDataTable tableST_SUBJECT_MST;
         
         private ATTENDANCE_RESULTDataTable tableATTENDANCE_RESULT;
         
@@ -134,17 +134,11 @@ namespace HomeASP.DataSet {
                 if ((ds.Tables["ST_GRADE_MST"] != null)) {
                     base.Tables.Add(new ST_GRADE_MSTDataTable(ds.Tables["ST_GRADE_MST"]));
                 }
-                if ((ds.Tables["ST_GRADE_SUBJECT_DETAIL"] != null)) {
-                    base.Tables.Add(new ST_GRADE_SUBJECT_DETAILDataTable(ds.Tables["ST_GRADE_SUBJECT_DETAIL"]));
-                }
                 if ((ds.Tables["ST_MENU_MST"] != null)) {
                     base.Tables.Add(new ST_MENU_MSTDataTable(ds.Tables["ST_MENU_MST"]));
                 }
                 if ((ds.Tables["ST_STAFF_DATA"] != null)) {
                     base.Tables.Add(new ST_STAFF_DATADataTable(ds.Tables["ST_STAFF_DATA"]));
-                }
-                if ((ds.Tables["ST_SUBJECT_MST"] != null)) {
-                    base.Tables.Add(new ST_SUBJECT_MSTDataTable(ds.Tables["ST_SUBJECT_MST"]));
                 }
                 if ((ds.Tables["ST_TEACHER_GRADE"] != null)) {
                     base.Tables.Add(new ST_TEACHER_GRADEDataTable(ds.Tables["ST_TEACHER_GRADE"]));
@@ -193,6 +187,12 @@ namespace HomeASP.DataSet {
                 }
                 if ((ds.Tables["ST_STUDENT_CASH"] != null)) {
                     base.Tables.Add(new ST_STUDENT_CASHDataTable(ds.Tables["ST_STUDENT_CASH"]));
+                }
+                if ((ds.Tables["ST_GRADE_SUBJECT_DETAIL"] != null)) {
+                    base.Tables.Add(new ST_GRADE_SUBJECT_DETAILDataTable(ds.Tables["ST_GRADE_SUBJECT_DETAIL"]));
+                }
+                if ((ds.Tables["ST_SUBJECT_MST"] != null)) {
+                    base.Tables.Add(new ST_SUBJECT_MSTDataTable(ds.Tables["ST_SUBJECT_MST"]));
                 }
                 if ((ds.Tables["ATTENDANCE_RESULT"] != null)) {
                     base.Tables.Add(new ATTENDANCE_RESULTDataTable(ds.Tables["ATTENDANCE_RESULT"]));
@@ -299,16 +299,6 @@ namespace HomeASP.DataSet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ST_GRADE_SUBJECT_DETAILDataTable ST_GRADE_SUBJECT_DETAIL {
-            get {
-                return this.tableST_GRADE_SUBJECT_DETAIL;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public ST_MENU_MSTDataTable ST_MENU_MST {
             get {
                 return this.tableST_MENU_MST;
@@ -322,16 +312,6 @@ namespace HomeASP.DataSet {
         public ST_STAFF_DATADataTable ST_STAFF_DATA {
             get {
                 return this.tableST_STAFF_DATA;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ST_SUBJECT_MSTDataTable ST_SUBJECT_MST {
-            get {
-                return this.tableST_SUBJECT_MST;
             }
         }
         
@@ -499,6 +479,26 @@ namespace HomeASP.DataSet {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ST_GRADE_SUBJECT_DETAILDataTable ST_GRADE_SUBJECT_DETAIL {
+            get {
+                return this.tableST_GRADE_SUBJECT_DETAIL;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ST_SUBJECT_MSTDataTable ST_SUBJECT_MST {
+            get {
+                return this.tableST_SUBJECT_MST;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public ATTENDANCE_RESULTDataTable ATTENDANCE_RESULT {
             get {
                 return this.tableATTENDANCE_RESULT;
@@ -596,17 +596,11 @@ namespace HomeASP.DataSet {
                 if ((ds.Tables["ST_GRADE_MST"] != null)) {
                     base.Tables.Add(new ST_GRADE_MSTDataTable(ds.Tables["ST_GRADE_MST"]));
                 }
-                if ((ds.Tables["ST_GRADE_SUBJECT_DETAIL"] != null)) {
-                    base.Tables.Add(new ST_GRADE_SUBJECT_DETAILDataTable(ds.Tables["ST_GRADE_SUBJECT_DETAIL"]));
-                }
                 if ((ds.Tables["ST_MENU_MST"] != null)) {
                     base.Tables.Add(new ST_MENU_MSTDataTable(ds.Tables["ST_MENU_MST"]));
                 }
                 if ((ds.Tables["ST_STAFF_DATA"] != null)) {
                     base.Tables.Add(new ST_STAFF_DATADataTable(ds.Tables["ST_STAFF_DATA"]));
-                }
-                if ((ds.Tables["ST_SUBJECT_MST"] != null)) {
-                    base.Tables.Add(new ST_SUBJECT_MSTDataTable(ds.Tables["ST_SUBJECT_MST"]));
                 }
                 if ((ds.Tables["ST_TEACHER_GRADE"] != null)) {
                     base.Tables.Add(new ST_TEACHER_GRADEDataTable(ds.Tables["ST_TEACHER_GRADE"]));
@@ -655,6 +649,12 @@ namespace HomeASP.DataSet {
                 }
                 if ((ds.Tables["ST_STUDENT_CASH"] != null)) {
                     base.Tables.Add(new ST_STUDENT_CASHDataTable(ds.Tables["ST_STUDENT_CASH"]));
+                }
+                if ((ds.Tables["ST_GRADE_SUBJECT_DETAIL"] != null)) {
+                    base.Tables.Add(new ST_GRADE_SUBJECT_DETAILDataTable(ds.Tables["ST_GRADE_SUBJECT_DETAIL"]));
+                }
+                if ((ds.Tables["ST_SUBJECT_MST"] != null)) {
+                    base.Tables.Add(new ST_SUBJECT_MSTDataTable(ds.Tables["ST_SUBJECT_MST"]));
                 }
                 if ((ds.Tables["ATTENDANCE_RESULT"] != null)) {
                     base.Tables.Add(new ATTENDANCE_RESULTDataTable(ds.Tables["ATTENDANCE_RESULT"]));
@@ -740,12 +740,6 @@ namespace HomeASP.DataSet {
                     this.tableST_GRADE_MST.InitVars();
                 }
             }
-            this.tableST_GRADE_SUBJECT_DETAIL = ((ST_GRADE_SUBJECT_DETAILDataTable)(base.Tables["ST_GRADE_SUBJECT_DETAIL"]));
-            if ((initTable == true)) {
-                if ((this.tableST_GRADE_SUBJECT_DETAIL != null)) {
-                    this.tableST_GRADE_SUBJECT_DETAIL.InitVars();
-                }
-            }
             this.tableST_MENU_MST = ((ST_MENU_MSTDataTable)(base.Tables["ST_MENU_MST"]));
             if ((initTable == true)) {
                 if ((this.tableST_MENU_MST != null)) {
@@ -756,12 +750,6 @@ namespace HomeASP.DataSet {
             if ((initTable == true)) {
                 if ((this.tableST_STAFF_DATA != null)) {
                     this.tableST_STAFF_DATA.InitVars();
-                }
-            }
-            this.tableST_SUBJECT_MST = ((ST_SUBJECT_MSTDataTable)(base.Tables["ST_SUBJECT_MST"]));
-            if ((initTable == true)) {
-                if ((this.tableST_SUBJECT_MST != null)) {
-                    this.tableST_SUBJECT_MST.InitVars();
                 }
             }
             this.tableST_TEACHER_GRADE = ((ST_TEACHER_GRADEDataTable)(base.Tables["ST_TEACHER_GRADE"]));
@@ -860,6 +848,18 @@ namespace HomeASP.DataSet {
                     this.tableST_STUDENT_CASH.InitVars();
                 }
             }
+            this.tableST_GRADE_SUBJECT_DETAIL = ((ST_GRADE_SUBJECT_DETAILDataTable)(base.Tables["ST_GRADE_SUBJECT_DETAIL"]));
+            if ((initTable == true)) {
+                if ((this.tableST_GRADE_SUBJECT_DETAIL != null)) {
+                    this.tableST_GRADE_SUBJECT_DETAIL.InitVars();
+                }
+            }
+            this.tableST_SUBJECT_MST = ((ST_SUBJECT_MSTDataTable)(base.Tables["ST_SUBJECT_MST"]));
+            if ((initTable == true)) {
+                if ((this.tableST_SUBJECT_MST != null)) {
+                    this.tableST_SUBJECT_MST.InitVars();
+                }
+            }
             this.tableATTENDANCE_RESULT = ((ATTENDANCE_RESULTDataTable)(base.Tables["ATTENDANCE_RESULT"]));
             if ((initTable == true)) {
                 if ((this.tableATTENDANCE_RESULT != null)) {
@@ -892,14 +892,10 @@ namespace HomeASP.DataSet {
             base.Tables.Add(this.tableST_EVENT_NEWS_HED);
             this.tableST_GRADE_MST = new ST_GRADE_MSTDataTable();
             base.Tables.Add(this.tableST_GRADE_MST);
-            this.tableST_GRADE_SUBJECT_DETAIL = new ST_GRADE_SUBJECT_DETAILDataTable();
-            base.Tables.Add(this.tableST_GRADE_SUBJECT_DETAIL);
             this.tableST_MENU_MST = new ST_MENU_MSTDataTable();
             base.Tables.Add(this.tableST_MENU_MST);
             this.tableST_STAFF_DATA = new ST_STAFF_DATADataTable();
             base.Tables.Add(this.tableST_STAFF_DATA);
-            this.tableST_SUBJECT_MST = new ST_SUBJECT_MSTDataTable();
-            base.Tables.Add(this.tableST_SUBJECT_MST);
             this.tableST_TEACHER_GRADE = new ST_TEACHER_GRADEDataTable();
             base.Tables.Add(this.tableST_TEACHER_GRADE);
             this.tableST_USER_MST = new ST_USER_MSTDataTable();
@@ -932,6 +928,10 @@ namespace HomeASP.DataSet {
             base.Tables.Add(this.tableST_SALARY);
             this.tableST_STUDENT_CASH = new ST_STUDENT_CASHDataTable();
             base.Tables.Add(this.tableST_STUDENT_CASH);
+            this.tableST_GRADE_SUBJECT_DETAIL = new ST_GRADE_SUBJECT_DETAILDataTable();
+            base.Tables.Add(this.tableST_GRADE_SUBJECT_DETAIL);
+            this.tableST_SUBJECT_MST = new ST_SUBJECT_MSTDataTable();
+            base.Tables.Add(this.tableST_SUBJECT_MST);
             this.tableATTENDANCE_RESULT = new ATTENDANCE_RESULTDataTable();
             base.Tables.Add(this.tableATTENDANCE_RESULT);
         }
@@ -986,12 +986,6 @@ namespace HomeASP.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeST_GRADE_SUBJECT_DETAIL() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeST_MENU_MST() {
             return false;
         }
@@ -999,12 +993,6 @@ namespace HomeASP.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeST_STAFF_DATA() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeST_SUBJECT_MST() {
             return false;
         }
         
@@ -1106,6 +1094,18 @@ namespace HomeASP.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeST_GRADE_SUBJECT_DETAIL() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeST_SUBJECT_MST() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeATTENDANCE_RESULT() {
             return false;
         }
@@ -1190,16 +1190,10 @@ namespace HomeASP.DataSet {
         public delegate void ST_GRADE_MSTRowChangeEventHandler(object sender, ST_GRADE_MSTRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ST_GRADE_SUBJECT_DETAILRowChangeEventHandler(object sender, ST_GRADE_SUBJECT_DETAILRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ST_MENU_MSTRowChangeEventHandler(object sender, ST_MENU_MSTRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ST_STAFF_DATARowChangeEventHandler(object sender, ST_STAFF_DATARowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ST_SUBJECT_MSTRowChangeEventHandler(object sender, ST_SUBJECT_MSTRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ST_TEACHER_GRADERowChangeEventHandler(object sender, ST_TEACHER_GRADERowChangeEvent e);
@@ -1248,6 +1242,12 @@ namespace HomeASP.DataSet {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ST_STUDENT_CASHRowChangeEventHandler(object sender, ST_STUDENT_CASHRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ST_GRADE_SUBJECT_DETAILRowChangeEventHandler(object sender, ST_GRADE_SUBJECT_DETAILRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void ST_SUBJECT_MSTRowChangeEventHandler(object sender, ST_SUBJECT_MSTRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ATTENDANCE_RESULTRowChangeEventHandler(object sender, ATTENDANCE_RESULTRowChangeEvent e);
@@ -4178,386 +4178,6 @@ namespace HomeASP.DataSet {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ST_GRADE_SUBJECT_DETAILDataTable : global::System.Data.TypedTableBase<ST_GRADE_SUBJECT_DETAILRow> {
-            
-            private global::System.Data.DataColumn columnEDU_YEAR;
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnGRADE_ID;
-            
-            private global::System.Data.DataColumn columnSUBJECT_ID_LIST;
-            
-            private global::System.Data.DataColumn columnCRT_DT_TM;
-            
-            private global::System.Data.DataColumn columnCRT_USER_ID;
-            
-            private global::System.Data.DataColumn columnUPD_DT_TM;
-            
-            private global::System.Data.DataColumn columnUPD_USER_ID;
-            
-            private global::System.Data.DataColumn columnDEL_FLG;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_GRADE_SUBJECT_DETAILDataTable() {
-                this.TableName = "ST_GRADE_SUBJECT_DETAIL";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ST_GRADE_SUBJECT_DETAILDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected ST_GRADE_SUBJECT_DETAILDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EDU_YEARColumn {
-                get {
-                    return this.columnEDU_YEAR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GRADE_IDColumn {
-                get {
-                    return this.columnGRADE_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SUBJECT_ID_LISTColumn {
-                get {
-                    return this.columnSUBJECT_ID_LIST;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CRT_DT_TMColumn {
-                get {
-                    return this.columnCRT_DT_TM;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CRT_USER_IDColumn {
-                get {
-                    return this.columnCRT_USER_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UPD_DT_TMColumn {
-                get {
-                    return this.columnUPD_DT_TM;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UPD_USER_IDColumn {
-                get {
-                    return this.columnUPD_USER_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DEL_FLGColumn {
-                get {
-                    return this.columnDEL_FLG;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_GRADE_SUBJECT_DETAILRow this[int index] {
-                get {
-                    return ((ST_GRADE_SUBJECT_DETAILRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ST_GRADE_SUBJECT_DETAILRowChangeEventHandler ST_GRADE_SUBJECT_DETAILRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ST_GRADE_SUBJECT_DETAILRowChangeEventHandler ST_GRADE_SUBJECT_DETAILRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ST_GRADE_SUBJECT_DETAILRowChangeEventHandler ST_GRADE_SUBJECT_DETAILRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ST_GRADE_SUBJECT_DETAILRowChangeEventHandler ST_GRADE_SUBJECT_DETAILRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddST_GRADE_SUBJECT_DETAILRow(ST_GRADE_SUBJECT_DETAILRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_GRADE_SUBJECT_DETAILRow AddST_GRADE_SUBJECT_DETAILRow(string EDU_YEAR, string ID, string GRADE_ID, string SUBJECT_ID_LIST, System.DateTime CRT_DT_TM, string CRT_USER_ID, System.DateTime UPD_DT_TM, string UPD_USER_ID, decimal DEL_FLG) {
-                ST_GRADE_SUBJECT_DETAILRow rowST_GRADE_SUBJECT_DETAILRow = ((ST_GRADE_SUBJECT_DETAILRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        EDU_YEAR,
-                        ID,
-                        GRADE_ID,
-                        SUBJECT_ID_LIST,
-                        CRT_DT_TM,
-                        CRT_USER_ID,
-                        UPD_DT_TM,
-                        UPD_USER_ID,
-                        DEL_FLG};
-                rowST_GRADE_SUBJECT_DETAILRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowST_GRADE_SUBJECT_DETAILRow);
-                return rowST_GRADE_SUBJECT_DETAILRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_GRADE_SUBJECT_DETAILRow FindByEDU_YEARID(string EDU_YEAR, string ID) {
-                return ((ST_GRADE_SUBJECT_DETAILRow)(this.Rows.Find(new object[] {
-                            EDU_YEAR,
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ST_GRADE_SUBJECT_DETAILDataTable cln = ((ST_GRADE_SUBJECT_DETAILDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ST_GRADE_SUBJECT_DETAILDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnEDU_YEAR = base.Columns["EDU_YEAR"];
-                this.columnID = base.Columns["ID"];
-                this.columnGRADE_ID = base.Columns["GRADE_ID"];
-                this.columnSUBJECT_ID_LIST = base.Columns["SUBJECT_ID_LIST"];
-                this.columnCRT_DT_TM = base.Columns["CRT_DT_TM"];
-                this.columnCRT_USER_ID = base.Columns["CRT_USER_ID"];
-                this.columnUPD_DT_TM = base.Columns["UPD_DT_TM"];
-                this.columnUPD_USER_ID = base.Columns["UPD_USER_ID"];
-                this.columnDEL_FLG = base.Columns["DEL_FLG"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnEDU_YEAR = new global::System.Data.DataColumn("EDU_YEAR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEDU_YEAR);
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnGRADE_ID = new global::System.Data.DataColumn("GRADE_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGRADE_ID);
-                this.columnSUBJECT_ID_LIST = new global::System.Data.DataColumn("SUBJECT_ID_LIST", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSUBJECT_ID_LIST);
-                this.columnCRT_DT_TM = new global::System.Data.DataColumn("CRT_DT_TM", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCRT_DT_TM);
-                this.columnCRT_USER_ID = new global::System.Data.DataColumn("CRT_USER_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCRT_USER_ID);
-                this.columnUPD_DT_TM = new global::System.Data.DataColumn("UPD_DT_TM", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUPD_DT_TM);
-                this.columnUPD_USER_ID = new global::System.Data.DataColumn("UPD_USER_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUPD_USER_ID);
-                this.columnDEL_FLG = new global::System.Data.DataColumn("DEL_FLG", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDEL_FLG);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnEDU_YEAR,
-                                this.columnID}, true));
-                this.columnEDU_YEAR.AllowDBNull = false;
-                this.columnEDU_YEAR.MaxLength = 20;
-                this.columnID.AllowDBNull = false;
-                this.columnID.MaxLength = 10;
-                this.columnGRADE_ID.AllowDBNull = false;
-                this.columnGRADE_ID.MaxLength = 20;
-                this.columnSUBJECT_ID_LIST.AllowDBNull = false;
-                this.columnSUBJECT_ID_LIST.MaxLength = 50;
-                this.columnCRT_USER_ID.MaxLength = 20;
-                this.columnUPD_USER_ID.MaxLength = 6;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_GRADE_SUBJECT_DETAILRow NewST_GRADE_SUBJECT_DETAILRow() {
-                return ((ST_GRADE_SUBJECT_DETAILRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ST_GRADE_SUBJECT_DETAILRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(ST_GRADE_SUBJECT_DETAILRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.ST_GRADE_SUBJECT_DETAILRowChanged != null)) {
-                    this.ST_GRADE_SUBJECT_DETAILRowChanged(this, new ST_GRADE_SUBJECT_DETAILRowChangeEvent(((ST_GRADE_SUBJECT_DETAILRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.ST_GRADE_SUBJECT_DETAILRowChanging != null)) {
-                    this.ST_GRADE_SUBJECT_DETAILRowChanging(this, new ST_GRADE_SUBJECT_DETAILRowChangeEvent(((ST_GRADE_SUBJECT_DETAILRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.ST_GRADE_SUBJECT_DETAILRowDeleted != null)) {
-                    this.ST_GRADE_SUBJECT_DETAILRowDeleted(this, new ST_GRADE_SUBJECT_DETAILRowChangeEvent(((ST_GRADE_SUBJECT_DETAILRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.ST_GRADE_SUBJECT_DETAILRowDeleting != null)) {
-                    this.ST_GRADE_SUBJECT_DETAILRowDeleting(this, new ST_GRADE_SUBJECT_DETAILRowChangeEvent(((ST_GRADE_SUBJECT_DETAILRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveST_GRADE_SUBJECT_DETAILRow(ST_GRADE_SUBJECT_DETAILRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DsPSMS ds = new DsPSMS();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ST_GRADE_SUBJECT_DETAILDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ST_MENU_MSTDataTable : global::System.Data.TypedTableBase<ST_MENU_MSTRow> {
             
             private global::System.Data.DataColumn columnMENU_CONTROL_ID;
@@ -5405,370 +5025,6 @@ namespace HomeASP.DataSet {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ST_STAFF_DATADataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ST_SUBJECT_MSTDataTable : global::System.Data.TypedTableBase<ST_SUBJECT_MSTRow> {
-            
-            private global::System.Data.DataColumn columnEDU_YEAR;
-            
-            private global::System.Data.DataColumn columnSUBJECT_ID;
-            
-            private global::System.Data.DataColumn columnSUBJECT_NAME;
-            
-            private global::System.Data.DataColumn columnCRT_DT_TM;
-            
-            private global::System.Data.DataColumn columnCRT_USER_ID;
-            
-            private global::System.Data.DataColumn columnUPD_DT_TM;
-            
-            private global::System.Data.DataColumn columnUPD_USER_ID;
-            
-            private global::System.Data.DataColumn columnDEL_FLG;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_SUBJECT_MSTDataTable() {
-                this.TableName = "ST_SUBJECT_MST";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ST_SUBJECT_MSTDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected ST_SUBJECT_MSTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EDU_YEARColumn {
-                get {
-                    return this.columnEDU_YEAR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SUBJECT_IDColumn {
-                get {
-                    return this.columnSUBJECT_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SUBJECT_NAMEColumn {
-                get {
-                    return this.columnSUBJECT_NAME;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CRT_DT_TMColumn {
-                get {
-                    return this.columnCRT_DT_TM;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CRT_USER_IDColumn {
-                get {
-                    return this.columnCRT_USER_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UPD_DT_TMColumn {
-                get {
-                    return this.columnUPD_DT_TM;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UPD_USER_IDColumn {
-                get {
-                    return this.columnUPD_USER_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DEL_FLGColumn {
-                get {
-                    return this.columnDEL_FLG;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_SUBJECT_MSTRow this[int index] {
-                get {
-                    return ((ST_SUBJECT_MSTRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ST_SUBJECT_MSTRowChangeEventHandler ST_SUBJECT_MSTRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ST_SUBJECT_MSTRowChangeEventHandler ST_SUBJECT_MSTRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ST_SUBJECT_MSTRowChangeEventHandler ST_SUBJECT_MSTRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ST_SUBJECT_MSTRowChangeEventHandler ST_SUBJECT_MSTRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddST_SUBJECT_MSTRow(ST_SUBJECT_MSTRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_SUBJECT_MSTRow AddST_SUBJECT_MSTRow(string EDU_YEAR, string SUBJECT_ID, string SUBJECT_NAME, System.DateTime CRT_DT_TM, string CRT_USER_ID, System.DateTime UPD_DT_TM, string UPD_USER_ID, decimal DEL_FLG) {
-                ST_SUBJECT_MSTRow rowST_SUBJECT_MSTRow = ((ST_SUBJECT_MSTRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        EDU_YEAR,
-                        SUBJECT_ID,
-                        SUBJECT_NAME,
-                        CRT_DT_TM,
-                        CRT_USER_ID,
-                        UPD_DT_TM,
-                        UPD_USER_ID,
-                        DEL_FLG};
-                rowST_SUBJECT_MSTRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowST_SUBJECT_MSTRow);
-                return rowST_SUBJECT_MSTRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_SUBJECT_MSTRow FindByEDU_YEARSUBJECT_ID(string EDU_YEAR, string SUBJECT_ID) {
-                return ((ST_SUBJECT_MSTRow)(this.Rows.Find(new object[] {
-                            EDU_YEAR,
-                            SUBJECT_ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ST_SUBJECT_MSTDataTable cln = ((ST_SUBJECT_MSTDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ST_SUBJECT_MSTDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnEDU_YEAR = base.Columns["EDU_YEAR"];
-                this.columnSUBJECT_ID = base.Columns["SUBJECT_ID"];
-                this.columnSUBJECT_NAME = base.Columns["SUBJECT_NAME"];
-                this.columnCRT_DT_TM = base.Columns["CRT_DT_TM"];
-                this.columnCRT_USER_ID = base.Columns["CRT_USER_ID"];
-                this.columnUPD_DT_TM = base.Columns["UPD_DT_TM"];
-                this.columnUPD_USER_ID = base.Columns["UPD_USER_ID"];
-                this.columnDEL_FLG = base.Columns["DEL_FLG"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnEDU_YEAR = new global::System.Data.DataColumn("EDU_YEAR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEDU_YEAR);
-                this.columnSUBJECT_ID = new global::System.Data.DataColumn("SUBJECT_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSUBJECT_ID);
-                this.columnSUBJECT_NAME = new global::System.Data.DataColumn("SUBJECT_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSUBJECT_NAME);
-                this.columnCRT_DT_TM = new global::System.Data.DataColumn("CRT_DT_TM", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCRT_DT_TM);
-                this.columnCRT_USER_ID = new global::System.Data.DataColumn("CRT_USER_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCRT_USER_ID);
-                this.columnUPD_DT_TM = new global::System.Data.DataColumn("UPD_DT_TM", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUPD_DT_TM);
-                this.columnUPD_USER_ID = new global::System.Data.DataColumn("UPD_USER_ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUPD_USER_ID);
-                this.columnDEL_FLG = new global::System.Data.DataColumn("DEL_FLG", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDEL_FLG);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnEDU_YEAR,
-                                this.columnSUBJECT_ID}, true));
-                this.columnEDU_YEAR.AllowDBNull = false;
-                this.columnEDU_YEAR.MaxLength = 20;
-                this.columnSUBJECT_ID.AllowDBNull = false;
-                this.columnSUBJECT_ID.MaxLength = 10;
-                this.columnSUBJECT_NAME.AllowDBNull = false;
-                this.columnSUBJECT_NAME.MaxLength = 20;
-                this.columnCRT_USER_ID.MaxLength = 20;
-                this.columnUPD_USER_ID.MaxLength = 6;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_SUBJECT_MSTRow NewST_SUBJECT_MSTRow() {
-                return ((ST_SUBJECT_MSTRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ST_SUBJECT_MSTRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(ST_SUBJECT_MSTRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.ST_SUBJECT_MSTRowChanged != null)) {
-                    this.ST_SUBJECT_MSTRowChanged(this, new ST_SUBJECT_MSTRowChangeEvent(((ST_SUBJECT_MSTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.ST_SUBJECT_MSTRowChanging != null)) {
-                    this.ST_SUBJECT_MSTRowChanging(this, new ST_SUBJECT_MSTRowChangeEvent(((ST_SUBJECT_MSTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.ST_SUBJECT_MSTRowDeleted != null)) {
-                    this.ST_SUBJECT_MSTRowDeleted(this, new ST_SUBJECT_MSTRowChangeEvent(((ST_SUBJECT_MSTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.ST_SUBJECT_MSTRowDeleting != null)) {
-                    this.ST_SUBJECT_MSTRowDeleting(this, new ST_SUBJECT_MSTRowChangeEvent(((ST_SUBJECT_MSTRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveST_SUBJECT_MSTRow(ST_SUBJECT_MSTRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DsPSMS ds = new DsPSMS();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ST_SUBJECT_MSTDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -12890,6 +12146,748 @@ namespace HomeASP.DataSet {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ST_GRADE_SUBJECT_DETAILDataTable : global::System.Data.TypedTableBase<ST_GRADE_SUBJECT_DETAILRow> {
+            
+            private global::System.Data.DataColumn columnEDU_YEAR;
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnGRADE_ID;
+            
+            private global::System.Data.DataColumn columnSUBJECT_ID_LIST;
+            
+            private global::System.Data.DataColumn columnCRT_DT_TM;
+            
+            private global::System.Data.DataColumn columnCRT_USER_ID;
+            
+            private global::System.Data.DataColumn columnUPD_DT_TM;
+            
+            private global::System.Data.DataColumn columnUPD_USER_ID;
+            
+            private global::System.Data.DataColumn columnDEL_FLG;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_GRADE_SUBJECT_DETAILDataTable() {
+                this.TableName = "ST_GRADE_SUBJECT_DETAIL";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ST_GRADE_SUBJECT_DETAILDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ST_GRADE_SUBJECT_DETAILDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EDU_YEARColumn {
+                get {
+                    return this.columnEDU_YEAR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GRADE_IDColumn {
+                get {
+                    return this.columnGRADE_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUBJECT_ID_LISTColumn {
+                get {
+                    return this.columnSUBJECT_ID_LIST;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CRT_DT_TMColumn {
+                get {
+                    return this.columnCRT_DT_TM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CRT_USER_IDColumn {
+                get {
+                    return this.columnCRT_USER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UPD_DT_TMColumn {
+                get {
+                    return this.columnUPD_DT_TM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UPD_USER_IDColumn {
+                get {
+                    return this.columnUPD_USER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DEL_FLGColumn {
+                get {
+                    return this.columnDEL_FLG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_GRADE_SUBJECT_DETAILRow this[int index] {
+                get {
+                    return ((ST_GRADE_SUBJECT_DETAILRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ST_GRADE_SUBJECT_DETAILRowChangeEventHandler ST_GRADE_SUBJECT_DETAILRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ST_GRADE_SUBJECT_DETAILRowChangeEventHandler ST_GRADE_SUBJECT_DETAILRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ST_GRADE_SUBJECT_DETAILRowChangeEventHandler ST_GRADE_SUBJECT_DETAILRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ST_GRADE_SUBJECT_DETAILRowChangeEventHandler ST_GRADE_SUBJECT_DETAILRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddST_GRADE_SUBJECT_DETAILRow(ST_GRADE_SUBJECT_DETAILRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_GRADE_SUBJECT_DETAILRow AddST_GRADE_SUBJECT_DETAILRow(string EDU_YEAR, int ID, string GRADE_ID, string SUBJECT_ID_LIST, System.DateTime CRT_DT_TM, string CRT_USER_ID, System.DateTime UPD_DT_TM, string UPD_USER_ID, decimal DEL_FLG) {
+                ST_GRADE_SUBJECT_DETAILRow rowST_GRADE_SUBJECT_DETAILRow = ((ST_GRADE_SUBJECT_DETAILRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        EDU_YEAR,
+                        ID,
+                        GRADE_ID,
+                        SUBJECT_ID_LIST,
+                        CRT_DT_TM,
+                        CRT_USER_ID,
+                        UPD_DT_TM,
+                        UPD_USER_ID,
+                        DEL_FLG};
+                rowST_GRADE_SUBJECT_DETAILRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowST_GRADE_SUBJECT_DETAILRow);
+                return rowST_GRADE_SUBJECT_DETAILRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_GRADE_SUBJECT_DETAILRow FindByEDU_YEARID(string EDU_YEAR, int ID) {
+                return ((ST_GRADE_SUBJECT_DETAILRow)(this.Rows.Find(new object[] {
+                            EDU_YEAR,
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ST_GRADE_SUBJECT_DETAILDataTable cln = ((ST_GRADE_SUBJECT_DETAILDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ST_GRADE_SUBJECT_DETAILDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnEDU_YEAR = base.Columns["EDU_YEAR"];
+                this.columnID = base.Columns["ID"];
+                this.columnGRADE_ID = base.Columns["GRADE_ID"];
+                this.columnSUBJECT_ID_LIST = base.Columns["SUBJECT_ID_LIST"];
+                this.columnCRT_DT_TM = base.Columns["CRT_DT_TM"];
+                this.columnCRT_USER_ID = base.Columns["CRT_USER_ID"];
+                this.columnUPD_DT_TM = base.Columns["UPD_DT_TM"];
+                this.columnUPD_USER_ID = base.Columns["UPD_USER_ID"];
+                this.columnDEL_FLG = base.Columns["DEL_FLG"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnEDU_YEAR = new global::System.Data.DataColumn("EDU_YEAR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEDU_YEAR);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnGRADE_ID = new global::System.Data.DataColumn("GRADE_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGRADE_ID);
+                this.columnSUBJECT_ID_LIST = new global::System.Data.DataColumn("SUBJECT_ID_LIST", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUBJECT_ID_LIST);
+                this.columnCRT_DT_TM = new global::System.Data.DataColumn("CRT_DT_TM", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCRT_DT_TM);
+                this.columnCRT_USER_ID = new global::System.Data.DataColumn("CRT_USER_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCRT_USER_ID);
+                this.columnUPD_DT_TM = new global::System.Data.DataColumn("UPD_DT_TM", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUPD_DT_TM);
+                this.columnUPD_USER_ID = new global::System.Data.DataColumn("UPD_USER_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUPD_USER_ID);
+                this.columnDEL_FLG = new global::System.Data.DataColumn("DEL_FLG", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDEL_FLG);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnEDU_YEAR,
+                                this.columnID}, true));
+                this.columnEDU_YEAR.AllowDBNull = false;
+                this.columnEDU_YEAR.MaxLength = 20;
+                this.columnID.AllowDBNull = false;
+                this.columnGRADE_ID.AllowDBNull = false;
+                this.columnGRADE_ID.MaxLength = 20;
+                this.columnSUBJECT_ID_LIST.AllowDBNull = false;
+                this.columnSUBJECT_ID_LIST.MaxLength = 50;
+                this.columnCRT_USER_ID.MaxLength = 20;
+                this.columnUPD_USER_ID.MaxLength = 6;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_GRADE_SUBJECT_DETAILRow NewST_GRADE_SUBJECT_DETAILRow() {
+                return ((ST_GRADE_SUBJECT_DETAILRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ST_GRADE_SUBJECT_DETAILRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ST_GRADE_SUBJECT_DETAILRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ST_GRADE_SUBJECT_DETAILRowChanged != null)) {
+                    this.ST_GRADE_SUBJECT_DETAILRowChanged(this, new ST_GRADE_SUBJECT_DETAILRowChangeEvent(((ST_GRADE_SUBJECT_DETAILRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ST_GRADE_SUBJECT_DETAILRowChanging != null)) {
+                    this.ST_GRADE_SUBJECT_DETAILRowChanging(this, new ST_GRADE_SUBJECT_DETAILRowChangeEvent(((ST_GRADE_SUBJECT_DETAILRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ST_GRADE_SUBJECT_DETAILRowDeleted != null)) {
+                    this.ST_GRADE_SUBJECT_DETAILRowDeleted(this, new ST_GRADE_SUBJECT_DETAILRowChangeEvent(((ST_GRADE_SUBJECT_DETAILRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ST_GRADE_SUBJECT_DETAILRowDeleting != null)) {
+                    this.ST_GRADE_SUBJECT_DETAILRowDeleting(this, new ST_GRADE_SUBJECT_DETAILRowChangeEvent(((ST_GRADE_SUBJECT_DETAILRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveST_GRADE_SUBJECT_DETAILRow(ST_GRADE_SUBJECT_DETAILRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DsPSMS ds = new DsPSMS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ST_GRADE_SUBJECT_DETAILDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ST_SUBJECT_MSTDataTable : global::System.Data.TypedTableBase<ST_SUBJECT_MSTRow> {
+            
+            private global::System.Data.DataColumn columnEDU_YEAR;
+            
+            private global::System.Data.DataColumn columnSUBJECT_ID;
+            
+            private global::System.Data.DataColumn columnSUBJECT_NAME;
+            
+            private global::System.Data.DataColumn columnCRT_DT_TM;
+            
+            private global::System.Data.DataColumn columnCRT_USER_ID;
+            
+            private global::System.Data.DataColumn columnUPD_DT_TM;
+            
+            private global::System.Data.DataColumn columnUPD_USER_ID;
+            
+            private global::System.Data.DataColumn columnDEL_FLG;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_SUBJECT_MSTDataTable() {
+                this.TableName = "ST_SUBJECT_MST";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ST_SUBJECT_MSTDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected ST_SUBJECT_MSTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EDU_YEARColumn {
+                get {
+                    return this.columnEDU_YEAR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUBJECT_IDColumn {
+                get {
+                    return this.columnSUBJECT_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SUBJECT_NAMEColumn {
+                get {
+                    return this.columnSUBJECT_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CRT_DT_TMColumn {
+                get {
+                    return this.columnCRT_DT_TM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CRT_USER_IDColumn {
+                get {
+                    return this.columnCRT_USER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UPD_DT_TMColumn {
+                get {
+                    return this.columnUPD_DT_TM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UPD_USER_IDColumn {
+                get {
+                    return this.columnUPD_USER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DEL_FLGColumn {
+                get {
+                    return this.columnDEL_FLG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_SUBJECT_MSTRow this[int index] {
+                get {
+                    return ((ST_SUBJECT_MSTRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ST_SUBJECT_MSTRowChangeEventHandler ST_SUBJECT_MSTRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ST_SUBJECT_MSTRowChangeEventHandler ST_SUBJECT_MSTRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ST_SUBJECT_MSTRowChangeEventHandler ST_SUBJECT_MSTRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event ST_SUBJECT_MSTRowChangeEventHandler ST_SUBJECT_MSTRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddST_SUBJECT_MSTRow(ST_SUBJECT_MSTRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_SUBJECT_MSTRow AddST_SUBJECT_MSTRow(string EDU_YEAR, int SUBJECT_ID, string SUBJECT_NAME, System.DateTime CRT_DT_TM, string CRT_USER_ID, System.DateTime UPD_DT_TM, string UPD_USER_ID, decimal DEL_FLG) {
+                ST_SUBJECT_MSTRow rowST_SUBJECT_MSTRow = ((ST_SUBJECT_MSTRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        EDU_YEAR,
+                        SUBJECT_ID,
+                        SUBJECT_NAME,
+                        CRT_DT_TM,
+                        CRT_USER_ID,
+                        UPD_DT_TM,
+                        UPD_USER_ID,
+                        DEL_FLG};
+                rowST_SUBJECT_MSTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowST_SUBJECT_MSTRow);
+                return rowST_SUBJECT_MSTRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_SUBJECT_MSTRow FindByEDU_YEARSUBJECT_ID(string EDU_YEAR, int SUBJECT_ID) {
+                return ((ST_SUBJECT_MSTRow)(this.Rows.Find(new object[] {
+                            EDU_YEAR,
+                            SUBJECT_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ST_SUBJECT_MSTDataTable cln = ((ST_SUBJECT_MSTDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ST_SUBJECT_MSTDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnEDU_YEAR = base.Columns["EDU_YEAR"];
+                this.columnSUBJECT_ID = base.Columns["SUBJECT_ID"];
+                this.columnSUBJECT_NAME = base.Columns["SUBJECT_NAME"];
+                this.columnCRT_DT_TM = base.Columns["CRT_DT_TM"];
+                this.columnCRT_USER_ID = base.Columns["CRT_USER_ID"];
+                this.columnUPD_DT_TM = base.Columns["UPD_DT_TM"];
+                this.columnUPD_USER_ID = base.Columns["UPD_USER_ID"];
+                this.columnDEL_FLG = base.Columns["DEL_FLG"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnEDU_YEAR = new global::System.Data.DataColumn("EDU_YEAR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEDU_YEAR);
+                this.columnSUBJECT_ID = new global::System.Data.DataColumn("SUBJECT_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUBJECT_ID);
+                this.columnSUBJECT_NAME = new global::System.Data.DataColumn("SUBJECT_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSUBJECT_NAME);
+                this.columnCRT_DT_TM = new global::System.Data.DataColumn("CRT_DT_TM", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCRT_DT_TM);
+                this.columnCRT_USER_ID = new global::System.Data.DataColumn("CRT_USER_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCRT_USER_ID);
+                this.columnUPD_DT_TM = new global::System.Data.DataColumn("UPD_DT_TM", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUPD_DT_TM);
+                this.columnUPD_USER_ID = new global::System.Data.DataColumn("UPD_USER_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUPD_USER_ID);
+                this.columnDEL_FLG = new global::System.Data.DataColumn("DEL_FLG", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDEL_FLG);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnEDU_YEAR,
+                                this.columnSUBJECT_ID}, true));
+                this.columnEDU_YEAR.AllowDBNull = false;
+                this.columnEDU_YEAR.MaxLength = 20;
+                this.columnSUBJECT_ID.AllowDBNull = false;
+                this.columnSUBJECT_NAME.AllowDBNull = false;
+                this.columnSUBJECT_NAME.MaxLength = 20;
+                this.columnCRT_USER_ID.MaxLength = 20;
+                this.columnUPD_USER_ID.MaxLength = 6;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_SUBJECT_MSTRow NewST_SUBJECT_MSTRow() {
+                return ((ST_SUBJECT_MSTRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ST_SUBJECT_MSTRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ST_SUBJECT_MSTRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ST_SUBJECT_MSTRowChanged != null)) {
+                    this.ST_SUBJECT_MSTRowChanged(this, new ST_SUBJECT_MSTRowChangeEvent(((ST_SUBJECT_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ST_SUBJECT_MSTRowChanging != null)) {
+                    this.ST_SUBJECT_MSTRowChanging(this, new ST_SUBJECT_MSTRowChangeEvent(((ST_SUBJECT_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ST_SUBJECT_MSTRowDeleted != null)) {
+                    this.ST_SUBJECT_MSTRowDeleted(this, new ST_SUBJECT_MSTRowChangeEvent(((ST_SUBJECT_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ST_SUBJECT_MSTRowDeleting != null)) {
+                    this.ST_SUBJECT_MSTRowDeleting(this, new ST_SUBJECT_MSTRowChangeEvent(((ST_SUBJECT_MSTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveST_SUBJECT_MSTRow(ST_SUBJECT_MSTRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DsPSMS ds = new DsPSMS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ST_SUBJECT_MSTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ATTENDANCE_RESULTDataTable : global::System.Data.TypedTableBase<ATTENDANCE_RESULTRow> {
             
             private global::System.Data.DataColumn columnSTUDENT_NAME;
@@ -14734,205 +14732,6 @@ namespace HomeASP.DataSet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ST_GRADE_SUBJECT_DETAILRow : global::System.Data.DataRow {
-            
-            private ST_GRADE_SUBJECT_DETAILDataTable tableST_GRADE_SUBJECT_DETAIL;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ST_GRADE_SUBJECT_DETAILRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableST_GRADE_SUBJECT_DETAIL = ((ST_GRADE_SUBJECT_DETAILDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EDU_YEAR {
-                get {
-                    return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.EDU_YEARColumn]));
-                }
-                set {
-                    this[this.tableST_GRADE_SUBJECT_DETAIL.EDU_YEARColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ID {
-                get {
-                    return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.IDColumn]));
-                }
-                set {
-                    this[this.tableST_GRADE_SUBJECT_DETAIL.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string GRADE_ID {
-                get {
-                    return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.GRADE_IDColumn]));
-                }
-                set {
-                    this[this.tableST_GRADE_SUBJECT_DETAIL.GRADE_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SUBJECT_ID_LIST {
-                get {
-                    return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.SUBJECT_ID_LISTColumn]));
-                }
-                set {
-                    this[this.tableST_GRADE_SUBJECT_DETAIL.SUBJECT_ID_LISTColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime CRT_DT_TM {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_DT_TMColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CRT_DT_TM\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_DT_TMColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CRT_USER_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_USER_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CRT_USER_ID\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_USER_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime UPD_DT_TM {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_DT_TMColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UPD_DT_TM\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_DT_TMColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string UPD_USER_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_USER_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UPD_USER_ID\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_USER_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal DEL_FLG {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableST_GRADE_SUBJECT_DETAIL.DEL_FLGColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DEL_FLG\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_GRADE_SUBJECT_DETAIL.DEL_FLGColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCRT_DT_TMNull() {
-                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.CRT_DT_TMColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCRT_DT_TMNull() {
-                this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_DT_TMColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCRT_USER_IDNull() {
-                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.CRT_USER_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCRT_USER_IDNull() {
-                this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_USER_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUPD_DT_TMNull() {
-                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.UPD_DT_TMColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUPD_DT_TMNull() {
-                this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_DT_TMColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUPD_USER_IDNull() {
-                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.UPD_USER_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUPD_USER_IDNull() {
-                this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_USER_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDEL_FLGNull() {
-                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.DEL_FLGColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDEL_FLGNull() {
-                this[this.tableST_GRADE_SUBJECT_DETAIL.DEL_FLGColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class ST_MENU_MSTRow : global::System.Data.DataRow {
             
             private ST_MENU_MSTDataTable tableST_MENU_MST;
@@ -15600,194 +15399,6 @@ namespace HomeASP.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDEL_FLGNull() {
                 this[this.tableST_STAFF_DATA.DEL_FLGColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class ST_SUBJECT_MSTRow : global::System.Data.DataRow {
-            
-            private ST_SUBJECT_MSTDataTable tableST_SUBJECT_MST;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ST_SUBJECT_MSTRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableST_SUBJECT_MST = ((ST_SUBJECT_MSTDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EDU_YEAR {
-                get {
-                    return ((string)(this[this.tableST_SUBJECT_MST.EDU_YEARColumn]));
-                }
-                set {
-                    this[this.tableST_SUBJECT_MST.EDU_YEARColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SUBJECT_ID {
-                get {
-                    return ((string)(this[this.tableST_SUBJECT_MST.SUBJECT_IDColumn]));
-                }
-                set {
-                    this[this.tableST_SUBJECT_MST.SUBJECT_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SUBJECT_NAME {
-                get {
-                    return ((string)(this[this.tableST_SUBJECT_MST.SUBJECT_NAMEColumn]));
-                }
-                set {
-                    this[this.tableST_SUBJECT_MST.SUBJECT_NAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime CRT_DT_TM {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableST_SUBJECT_MST.CRT_DT_TMColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CRT_DT_TM\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_SUBJECT_MST.CRT_DT_TMColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CRT_USER_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableST_SUBJECT_MST.CRT_USER_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CRT_USER_ID\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_SUBJECT_MST.CRT_USER_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime UPD_DT_TM {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableST_SUBJECT_MST.UPD_DT_TMColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UPD_DT_TM\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_SUBJECT_MST.UPD_DT_TMColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string UPD_USER_ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableST_SUBJECT_MST.UPD_USER_IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UPD_USER_ID\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_SUBJECT_MST.UPD_USER_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal DEL_FLG {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableST_SUBJECT_MST.DEL_FLGColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DEL_FLG\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableST_SUBJECT_MST.DEL_FLGColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCRT_DT_TMNull() {
-                return this.IsNull(this.tableST_SUBJECT_MST.CRT_DT_TMColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCRT_DT_TMNull() {
-                this[this.tableST_SUBJECT_MST.CRT_DT_TMColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCRT_USER_IDNull() {
-                return this.IsNull(this.tableST_SUBJECT_MST.CRT_USER_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCRT_USER_IDNull() {
-                this[this.tableST_SUBJECT_MST.CRT_USER_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUPD_DT_TMNull() {
-                return this.IsNull(this.tableST_SUBJECT_MST.UPD_DT_TMColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUPD_DT_TMNull() {
-                this[this.tableST_SUBJECT_MST.UPD_DT_TMColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUPD_USER_IDNull() {
-                return this.IsNull(this.tableST_SUBJECT_MST.UPD_USER_IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUPD_USER_IDNull() {
-                this[this.tableST_SUBJECT_MST.UPD_USER_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDEL_FLGNull() {
-                return this.IsNull(this.tableST_SUBJECT_MST.DEL_FLGColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDEL_FLGNull() {
-                this[this.tableST_SUBJECT_MST.DEL_FLGColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -20889,6 +20500,393 @@ namespace HomeASP.DataSet {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class ST_GRADE_SUBJECT_DETAILRow : global::System.Data.DataRow {
+            
+            private ST_GRADE_SUBJECT_DETAILDataTable tableST_GRADE_SUBJECT_DETAIL;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ST_GRADE_SUBJECT_DETAILRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableST_GRADE_SUBJECT_DETAIL = ((ST_GRADE_SUBJECT_DETAILDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EDU_YEAR {
+                get {
+                    return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.EDU_YEARColumn]));
+                }
+                set {
+                    this[this.tableST_GRADE_SUBJECT_DETAIL.EDU_YEARColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableST_GRADE_SUBJECT_DETAIL.IDColumn]));
+                }
+                set {
+                    this[this.tableST_GRADE_SUBJECT_DETAIL.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GRADE_ID {
+                get {
+                    return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.GRADE_IDColumn]));
+                }
+                set {
+                    this[this.tableST_GRADE_SUBJECT_DETAIL.GRADE_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SUBJECT_ID_LIST {
+                get {
+                    return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.SUBJECT_ID_LISTColumn]));
+                }
+                set {
+                    this[this.tableST_GRADE_SUBJECT_DETAIL.SUBJECT_ID_LISTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime CRT_DT_TM {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_DT_TMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CRT_DT_TM\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_DT_TMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CRT_USER_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_USER_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CRT_USER_ID\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_USER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime UPD_DT_TM {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_DT_TMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UPD_DT_TM\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_DT_TMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UPD_USER_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_USER_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UPD_USER_ID\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_USER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal DEL_FLG {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableST_GRADE_SUBJECT_DETAIL.DEL_FLGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DEL_FLG\' in table \'ST_GRADE_SUBJECT_DETAIL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_GRADE_SUBJECT_DETAIL.DEL_FLGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCRT_DT_TMNull() {
+                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.CRT_DT_TMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCRT_DT_TMNull() {
+                this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_DT_TMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCRT_USER_IDNull() {
+                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.CRT_USER_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCRT_USER_IDNull() {
+                this[this.tableST_GRADE_SUBJECT_DETAIL.CRT_USER_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUPD_DT_TMNull() {
+                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.UPD_DT_TMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUPD_DT_TMNull() {
+                this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_DT_TMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUPD_USER_IDNull() {
+                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.UPD_USER_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUPD_USER_IDNull() {
+                this[this.tableST_GRADE_SUBJECT_DETAIL.UPD_USER_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDEL_FLGNull() {
+                return this.IsNull(this.tableST_GRADE_SUBJECT_DETAIL.DEL_FLGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDEL_FLGNull() {
+                this[this.tableST_GRADE_SUBJECT_DETAIL.DEL_FLGColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ST_SUBJECT_MSTRow : global::System.Data.DataRow {
+            
+            private ST_SUBJECT_MSTDataTable tableST_SUBJECT_MST;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal ST_SUBJECT_MSTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableST_SUBJECT_MST = ((ST_SUBJECT_MSTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EDU_YEAR {
+                get {
+                    return ((string)(this[this.tableST_SUBJECT_MST.EDU_YEARColumn]));
+                }
+                set {
+                    this[this.tableST_SUBJECT_MST.EDU_YEARColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int SUBJECT_ID {
+                get {
+                    return ((int)(this[this.tableST_SUBJECT_MST.SUBJECT_IDColumn]));
+                }
+                set {
+                    this[this.tableST_SUBJECT_MST.SUBJECT_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SUBJECT_NAME {
+                get {
+                    return ((string)(this[this.tableST_SUBJECT_MST.SUBJECT_NAMEColumn]));
+                }
+                set {
+                    this[this.tableST_SUBJECT_MST.SUBJECT_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime CRT_DT_TM {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableST_SUBJECT_MST.CRT_DT_TMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CRT_DT_TM\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_SUBJECT_MST.CRT_DT_TMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CRT_USER_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableST_SUBJECT_MST.CRT_USER_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CRT_USER_ID\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_SUBJECT_MST.CRT_USER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime UPD_DT_TM {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableST_SUBJECT_MST.UPD_DT_TMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UPD_DT_TM\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_SUBJECT_MST.UPD_DT_TMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UPD_USER_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableST_SUBJECT_MST.UPD_USER_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UPD_USER_ID\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_SUBJECT_MST.UPD_USER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal DEL_FLG {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableST_SUBJECT_MST.DEL_FLGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DEL_FLG\' in table \'ST_SUBJECT_MST\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableST_SUBJECT_MST.DEL_FLGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCRT_DT_TMNull() {
+                return this.IsNull(this.tableST_SUBJECT_MST.CRT_DT_TMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCRT_DT_TMNull() {
+                this[this.tableST_SUBJECT_MST.CRT_DT_TMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCRT_USER_IDNull() {
+                return this.IsNull(this.tableST_SUBJECT_MST.CRT_USER_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCRT_USER_IDNull() {
+                this[this.tableST_SUBJECT_MST.CRT_USER_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUPD_DT_TMNull() {
+                return this.IsNull(this.tableST_SUBJECT_MST.UPD_DT_TMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUPD_DT_TMNull() {
+                this[this.tableST_SUBJECT_MST.UPD_DT_TMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUPD_USER_IDNull() {
+                return this.IsNull(this.tableST_SUBJECT_MST.UPD_USER_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUPD_USER_IDNull() {
+                this[this.tableST_SUBJECT_MST.UPD_USER_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDEL_FLGNull() {
+                return this.IsNull(this.tableST_SUBJECT_MST.DEL_FLGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDEL_FLGNull() {
+                this[this.tableST_SUBJECT_MST.DEL_FLGColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class ATTENDANCE_RESULTRow : global::System.Data.DataRow {
             
             private ATTENDANCE_RESULTDataTable tableATTENDANCE_RESULT;
@@ -21317,40 +21315,6 @@ namespace HomeASP.DataSet {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ST_GRADE_SUBJECT_DETAILRowChangeEvent : global::System.EventArgs {
-            
-            private ST_GRADE_SUBJECT_DETAILRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_GRADE_SUBJECT_DETAILRowChangeEvent(ST_GRADE_SUBJECT_DETAILRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_GRADE_SUBJECT_DETAILRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class ST_MENU_MSTRowChangeEvent : global::System.EventArgs {
             
             private ST_MENU_MSTRow eventRow;
@@ -21401,40 +21365,6 @@ namespace HomeASP.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ST_STAFF_DATARow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ST_SUBJECT_MSTRowChangeEvent : global::System.EventArgs {
-            
-            private ST_SUBJECT_MSTRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_SUBJECT_MSTRowChangeEvent(ST_SUBJECT_MSTRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ST_SUBJECT_MSTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -21979,6 +21909,74 @@ namespace HomeASP.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ST_STUDENT_CASHRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ST_GRADE_SUBJECT_DETAILRowChangeEvent : global::System.EventArgs {
+            
+            private ST_GRADE_SUBJECT_DETAILRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_GRADE_SUBJECT_DETAILRowChangeEvent(ST_GRADE_SUBJECT_DETAILRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_GRADE_SUBJECT_DETAILRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class ST_SUBJECT_MSTRowChangeEvent : global::System.EventArgs {
+            
+            private ST_SUBJECT_MSTRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_SUBJECT_MSTRowChangeEvent(ST_SUBJECT_MSTRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ST_SUBJECT_MSTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -25251,449 +25249,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ST_GRADE_SUBJECT_DETAILTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ST_GRADE_SUBJECT_DETAILTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ST_GRADE_SUBJECT_DETAIL";
-            tableMapping.ColumnMappings.Add("EDU_YEAR", "EDU_YEAR");
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("GRADE_ID", "GRADE_ID");
-            tableMapping.ColumnMappings.Add("SUBJECT_ID_LIST", "SUBJECT_ID_LIST");
-            tableMapping.ColumnMappings.Add("CRT_DT_TM", "CRT_DT_TM");
-            tableMapping.ColumnMappings.Add("CRT_USER_ID", "CRT_USER_ID");
-            tableMapping.ColumnMappings.Add("UPD_DT_TM", "UPD_DT_TM");
-            tableMapping.ColumnMappings.Add("UPD_USER_ID", "UPD_USER_ID");
-            tableMapping.ColumnMappings.Add("DEL_FLG", "DEL_FLG");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ST_GRADE_SUBJECT_DETAIL] WHERE (([EDU_YEAR] = @Original_EDU_YE" +
-                "AR) AND ([ID] = @Original_ID))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ST_GRADE_SUBJECT_DETAIL] ([EDU_YEAR], [ID], [GRADE_ID], [SUBJECT_ID_LIST], [CRT_DT_TM], [CRT_USER_ID], [UPD_DT_TM], [UPD_USER_ID], [DEL_FLG]) VALUES (@EDU_YEAR, @ID, @GRADE_ID, @SUBJECT_ID_LIST, @CRT_DT_TM, @CRT_USER_ID, @UPD_DT_TM, @UPD_USER_ID, @DEL_FLG)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GRADE_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GRADE_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_ID_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEL_FLG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 1, 0, "DEL_FLG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ST_GRADE_SUBJECT_DETAIL] SET [EDU_YEAR] = @EDU_YEAR, [ID] = @ID, [GRADE_ID] = @GRADE_ID, [SUBJECT_ID_LIST] = @SUBJECT_ID_LIST, [CRT_DT_TM] = @CRT_DT_TM, [CRT_USER_ID] = @CRT_USER_ID, [UPD_DT_TM] = @UPD_DT_TM, [UPD_USER_ID] = @UPD_USER_ID, [DEL_FLG] = @DEL_FLG WHERE (([EDU_YEAR] = @Original_EDU_YEAR) AND ([ID] = @Original_ID))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GRADE_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GRADE_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_ID_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEL_FLG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 1, 0, "DEL_FLG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EDU_YEAR, ID, GRADE_ID, SUBJECT_ID_LIST, CRT_DT_TM, CRT_USER_ID, UPD_DT_TM" +
-                ", UPD_USER_ID, DEL_FLG FROM dbo.ST_GRADE_SUBJECT_DETAIL";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable dataTable = new DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsPSMS dataSet) {
-            return this.Adapter.Update(dataSet, "ST_GRADE_SUBJECT_DETAIL");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_EDU_YEAR, string Original_ID) {
-            if ((Original_EDU_YEAR == null)) {
-                throw new global::System.ArgumentNullException("Original_EDU_YEAR");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_EDU_YEAR));
-            }
-            if ((Original_ID == null)) {
-                throw new global::System.ArgumentNullException("Original_ID");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_ID));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string EDU_YEAR, string ID, string GRADE_ID, string SUBJECT_ID_LIST, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG) {
-            if ((EDU_YEAR == null)) {
-                throw new global::System.ArgumentNullException("EDU_YEAR");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(EDU_YEAR));
-            }
-            if ((ID == null)) {
-                throw new global::System.ArgumentNullException("ID");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ID));
-            }
-            if ((GRADE_ID == null)) {
-                throw new global::System.ArgumentNullException("GRADE_ID");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(GRADE_ID));
-            }
-            if ((SUBJECT_ID_LIST == null)) {
-                throw new global::System.ArgumentNullException("SUBJECT_ID_LIST");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SUBJECT_ID_LIST));
-            }
-            if ((CRT_DT_TM.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(CRT_DT_TM.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((CRT_USER_ID == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(CRT_USER_ID));
-            }
-            if ((UPD_DT_TM.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(UPD_DT_TM.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((UPD_USER_ID == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(UPD_USER_ID));
-            }
-            if ((DEL_FLG.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(DEL_FLG.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string EDU_YEAR, string ID, string GRADE_ID, string SUBJECT_ID_LIST, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG, string Original_EDU_YEAR, string Original_ID) {
-            if ((EDU_YEAR == null)) {
-                throw new global::System.ArgumentNullException("EDU_YEAR");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(EDU_YEAR));
-            }
-            if ((ID == null)) {
-                throw new global::System.ArgumentNullException("ID");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ID));
-            }
-            if ((GRADE_ID == null)) {
-                throw new global::System.ArgumentNullException("GRADE_ID");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(GRADE_ID));
-            }
-            if ((SUBJECT_ID_LIST == null)) {
-                throw new global::System.ArgumentNullException("SUBJECT_ID_LIST");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(SUBJECT_ID_LIST));
-            }
-            if ((CRT_DT_TM.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(CRT_DT_TM.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((CRT_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(CRT_USER_ID));
-            }
-            if ((UPD_DT_TM.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(UPD_DT_TM.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((UPD_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(UPD_USER_ID));
-            }
-            if ((DEL_FLG.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(DEL_FLG.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EDU_YEAR == null)) {
-                throw new global::System.ArgumentNullException("Original_EDU_YEAR");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_EDU_YEAR));
-            }
-            if ((Original_ID == null)) {
-                throw new global::System.ArgumentNullException("Original_ID");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_ID));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string GRADE_ID, string SUBJECT_ID_LIST, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG, string Original_EDU_YEAR, string Original_ID) {
-            return this.Update(Original_EDU_YEAR, Original_ID, GRADE_ID, SUBJECT_ID_LIST, CRT_DT_TM, CRT_USER_ID, UPD_DT_TM, UPD_USER_ID, DEL_FLG, Original_EDU_YEAR, Original_ID);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class ST_MENU_MSTTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -26715,437 +26270,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     global::System.Nullable<decimal> DEL_FLG, 
                     string Original_STAFF_ID) {
             return this.Update(EDU_YEAR, Original_STAFF_ID, POSITION_ID, STAFF_NAME, GENDER, PHONE, DOB, NRC_NO, MARRIED_STATUS, ADDRESS, EDUCATION, PHOTO_PATH, SALARY, CRT_DT_TM, CRT_USER_ID, UPD_DT_TM, UPD_USER_ID, DEL_FLG, Original_STAFF_ID);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ST_SUBJECT_MSTTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ST_SUBJECT_MSTTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ST_SUBJECT_MST";
-            tableMapping.ColumnMappings.Add("EDU_YEAR", "EDU_YEAR");
-            tableMapping.ColumnMappings.Add("SUBJECT_ID", "SUBJECT_ID");
-            tableMapping.ColumnMappings.Add("SUBJECT_NAME", "SUBJECT_NAME");
-            tableMapping.ColumnMappings.Add("CRT_DT_TM", "CRT_DT_TM");
-            tableMapping.ColumnMappings.Add("CRT_USER_ID", "CRT_USER_ID");
-            tableMapping.ColumnMappings.Add("UPD_DT_TM", "UPD_DT_TM");
-            tableMapping.ColumnMappings.Add("UPD_USER_ID", "UPD_USER_ID");
-            tableMapping.ColumnMappings.Add("DEL_FLG", "DEL_FLG");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ST_SUBJECT_MST] WHERE (([EDU_YEAR] = @Original_EDU_YEAR) AND (" +
-                "[SUBJECT_ID] = @Original_SUBJECT_ID))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SUBJECT_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ST_SUBJECT_MST] ([EDU_YEAR], [SUBJECT_ID], [SUBJECT_NAME], [CR" +
-                "T_DT_TM], [CRT_USER_ID], [UPD_DT_TM], [UPD_USER_ID], [DEL_FLG]) VALUES (@EDU_YEA" +
-                "R, @SUBJECT_ID, @SUBJECT_NAME, @CRT_DT_TM, @CRT_USER_ID, @UPD_DT_TM, @UPD_USER_I" +
-                "D, @DEL_FLG)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEL_FLG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 1, 0, "DEL_FLG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ST_SUBJECT_MST] SET [EDU_YEAR] = @EDU_YEAR, [SUBJECT_ID] = @SUBJECT_ID, [SUBJECT_NAME] = @SUBJECT_NAME, [CRT_DT_TM] = @CRT_DT_TM, [CRT_USER_ID] = @CRT_USER_ID, [UPD_DT_TM] = @UPD_DT_TM, [UPD_USER_ID] = @UPD_USER_ID, [DEL_FLG] = @DEL_FLG WHERE (([EDU_YEAR] = @Original_EDU_YEAR) AND ([SUBJECT_ID] = @Original_SUBJECT_ID))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEL_FLG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 1, 0, "DEL_FLG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SUBJECT_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EDU_YEAR, SUBJECT_ID, SUBJECT_NAME, CRT_DT_TM, CRT_USER_ID, UPD_DT_TM, UPD" +
-                "_USER_ID, DEL_FLG FROM dbo.ST_SUBJECT_MST";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsPSMS.ST_SUBJECT_MSTDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsPSMS.ST_SUBJECT_MSTDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DsPSMS.ST_SUBJECT_MSTDataTable dataTable = new DsPSMS.ST_SUBJECT_MSTDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsPSMS.ST_SUBJECT_MSTDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsPSMS dataSet) {
-            return this.Adapter.Update(dataSet, "ST_SUBJECT_MST");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_EDU_YEAR, string Original_SUBJECT_ID) {
-            if ((Original_EDU_YEAR == null)) {
-                throw new global::System.ArgumentNullException("Original_EDU_YEAR");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_EDU_YEAR));
-            }
-            if ((Original_SUBJECT_ID == null)) {
-                throw new global::System.ArgumentNullException("Original_SUBJECT_ID");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_SUBJECT_ID));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string EDU_YEAR, string SUBJECT_ID, string SUBJECT_NAME, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG) {
-            if ((EDU_YEAR == null)) {
-                throw new global::System.ArgumentNullException("EDU_YEAR");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(EDU_YEAR));
-            }
-            if ((SUBJECT_ID == null)) {
-                throw new global::System.ArgumentNullException("SUBJECT_ID");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(SUBJECT_ID));
-            }
-            if ((SUBJECT_NAME == null)) {
-                throw new global::System.ArgumentNullException("SUBJECT_NAME");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(SUBJECT_NAME));
-            }
-            if ((CRT_DT_TM.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(CRT_DT_TM.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((CRT_USER_ID == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CRT_USER_ID));
-            }
-            if ((UPD_DT_TM.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(UPD_DT_TM.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((UPD_USER_ID == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(UPD_USER_ID));
-            }
-            if ((DEL_FLG.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(DEL_FLG.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string EDU_YEAR, string SUBJECT_ID, string SUBJECT_NAME, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG, string Original_EDU_YEAR, string Original_SUBJECT_ID) {
-            if ((EDU_YEAR == null)) {
-                throw new global::System.ArgumentNullException("EDU_YEAR");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(EDU_YEAR));
-            }
-            if ((SUBJECT_ID == null)) {
-                throw new global::System.ArgumentNullException("SUBJECT_ID");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(SUBJECT_ID));
-            }
-            if ((SUBJECT_NAME == null)) {
-                throw new global::System.ArgumentNullException("SUBJECT_NAME");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(SUBJECT_NAME));
-            }
-            if ((CRT_DT_TM.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(CRT_DT_TM.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((CRT_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(CRT_USER_ID));
-            }
-            if ((UPD_DT_TM.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(UPD_DT_TM.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((UPD_USER_ID == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(UPD_USER_ID));
-            }
-            if ((DEL_FLG.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(DEL_FLG.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_EDU_YEAR == null)) {
-                throw new global::System.ArgumentNullException("Original_EDU_YEAR");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_EDU_YEAR));
-            }
-            if ((Original_SUBJECT_ID == null)) {
-                throw new global::System.ArgumentNullException("Original_SUBJECT_ID");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_SUBJECT_ID));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string SUBJECT_NAME, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG, string Original_EDU_YEAR, string Original_SUBJECT_ID) {
-            return this.Update(Original_EDU_YEAR, Original_SUBJECT_ID, SUBJECT_NAME, CRT_DT_TM, CRT_USER_ID, UPD_DT_TM, UPD_USER_ID, DEL_FLG, Original_EDU_YEAR, Original_SUBJECT_ID);
         }
     }
     
@@ -34471,6 +33595,840 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ST_GRADE_SUBJECT_DETAILTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ST_GRADE_SUBJECT_DETAILTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ST_GRADE_SUBJECT_DETAIL";
+            tableMapping.ColumnMappings.Add("EDU_YEAR", "EDU_YEAR");
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("GRADE_ID", "GRADE_ID");
+            tableMapping.ColumnMappings.Add("SUBJECT_ID_LIST", "SUBJECT_ID_LIST");
+            tableMapping.ColumnMappings.Add("CRT_DT_TM", "CRT_DT_TM");
+            tableMapping.ColumnMappings.Add("CRT_USER_ID", "CRT_USER_ID");
+            tableMapping.ColumnMappings.Add("UPD_DT_TM", "UPD_DT_TM");
+            tableMapping.ColumnMappings.Add("UPD_USER_ID", "UPD_USER_ID");
+            tableMapping.ColumnMappings.Add("DEL_FLG", "DEL_FLG");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ST_GRADE_SUBJECT_DETAIL] WHERE (([EDU_YEAR] = @Original_EDU_YE" +
+                "AR) AND ([ID] = @Original_ID))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ST_GRADE_SUBJECT_DETAIL] ([EDU_YEAR], [ID], [GRADE_ID], [SUBJECT_ID_LIST], [CRT_DT_TM], [CRT_USER_ID], [UPD_DT_TM], [UPD_USER_ID], [DEL_FLG]) VALUES (@EDU_YEAR, @ID, @GRADE_ID, @SUBJECT_ID_LIST, @CRT_DT_TM, @CRT_USER_ID, @UPD_DT_TM, @UPD_USER_ID, @DEL_FLG)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GRADE_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GRADE_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_ID_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEL_FLG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 1, 0, "DEL_FLG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ST_GRADE_SUBJECT_DETAIL] SET [EDU_YEAR] = @EDU_YEAR, [ID] = @ID, [GRADE_ID] = @GRADE_ID, [SUBJECT_ID_LIST] = @SUBJECT_ID_LIST, [CRT_DT_TM] = @CRT_DT_TM, [CRT_USER_ID] = @CRT_USER_ID, [UPD_DT_TM] = @UPD_DT_TM, [UPD_USER_ID] = @UPD_USER_ID, [DEL_FLG] = @DEL_FLG WHERE (([EDU_YEAR] = @Original_EDU_YEAR) AND ([ID] = @Original_ID))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GRADE_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GRADE_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_ID_LIST", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID_LIST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEL_FLG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 1, 0, "DEL_FLG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT EDU_YEAR, ID, GRADE_ID, SUBJECT_ID_LIST, CRT_DT_TM, CRT_USER_ID, UPD_DT_TM" +
+                ", UPD_USER_ID, DEL_FLG FROM dbo.ST_GRADE_SUBJECT_DETAIL";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable dataTable = new DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DsPSMS dataSet) {
+            return this.Adapter.Update(dataSet, "ST_GRADE_SUBJECT_DETAIL");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_EDU_YEAR, int Original_ID) {
+            if ((Original_EDU_YEAR == null)) {
+                throw new global::System.ArgumentNullException("Original_EDU_YEAR");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_EDU_YEAR));
+            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string EDU_YEAR, int ID, string GRADE_ID, string SUBJECT_ID_LIST, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG) {
+            if ((EDU_YEAR == null)) {
+                throw new global::System.ArgumentNullException("EDU_YEAR");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(EDU_YEAR));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ID));
+            if ((GRADE_ID == null)) {
+                throw new global::System.ArgumentNullException("GRADE_ID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(GRADE_ID));
+            }
+            if ((SUBJECT_ID_LIST == null)) {
+                throw new global::System.ArgumentNullException("SUBJECT_ID_LIST");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SUBJECT_ID_LIST));
+            }
+            if ((CRT_DT_TM.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(CRT_DT_TM.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((CRT_USER_ID == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(CRT_USER_ID));
+            }
+            if ((UPD_DT_TM.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(UPD_DT_TM.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((UPD_USER_ID == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(UPD_USER_ID));
+            }
+            if ((DEL_FLG.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(DEL_FLG.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string EDU_YEAR, int ID, string GRADE_ID, string SUBJECT_ID_LIST, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG, string Original_EDU_YEAR, int Original_ID) {
+            if ((EDU_YEAR == null)) {
+                throw new global::System.ArgumentNullException("EDU_YEAR");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(EDU_YEAR));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID));
+            if ((GRADE_ID == null)) {
+                throw new global::System.ArgumentNullException("GRADE_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(GRADE_ID));
+            }
+            if ((SUBJECT_ID_LIST == null)) {
+                throw new global::System.ArgumentNullException("SUBJECT_ID_LIST");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(SUBJECT_ID_LIST));
+            }
+            if ((CRT_DT_TM.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(CRT_DT_TM.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((CRT_USER_ID == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(CRT_USER_ID));
+            }
+            if ((UPD_DT_TM.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(UPD_DT_TM.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((UPD_USER_ID == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(UPD_USER_ID));
+            }
+            if ((DEL_FLG.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(DEL_FLG.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EDU_YEAR == null)) {
+                throw new global::System.ArgumentNullException("Original_EDU_YEAR");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_EDU_YEAR));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string GRADE_ID, string SUBJECT_ID_LIST, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG, string Original_EDU_YEAR, int Original_ID) {
+            return this.Update(Original_EDU_YEAR, Original_ID, GRADE_ID, SUBJECT_ID_LIST, CRT_DT_TM, CRT_USER_ID, UPD_DT_TM, UPD_USER_ID, DEL_FLG, Original_EDU_YEAR, Original_ID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ST_SUBJECT_MSTTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public ST_SUBJECT_MSTTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ST_SUBJECT_MST";
+            tableMapping.ColumnMappings.Add("EDU_YEAR", "EDU_YEAR");
+            tableMapping.ColumnMappings.Add("SUBJECT_ID", "SUBJECT_ID");
+            tableMapping.ColumnMappings.Add("SUBJECT_NAME", "SUBJECT_NAME");
+            tableMapping.ColumnMappings.Add("CRT_DT_TM", "CRT_DT_TM");
+            tableMapping.ColumnMappings.Add("CRT_USER_ID", "CRT_USER_ID");
+            tableMapping.ColumnMappings.Add("UPD_DT_TM", "UPD_DT_TM");
+            tableMapping.ColumnMappings.Add("UPD_USER_ID", "UPD_USER_ID");
+            tableMapping.ColumnMappings.Add("DEL_FLG", "DEL_FLG");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ST_SUBJECT_MST] WHERE (([EDU_YEAR] = @Original_EDU_YEAR) AND (" +
+                "[SUBJECT_ID] = @Original_SUBJECT_ID))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SUBJECT_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ST_SUBJECT_MST] ([EDU_YEAR], [SUBJECT_ID], [SUBJECT_NAME], [CR" +
+                "T_DT_TM], [CRT_USER_ID], [UPD_DT_TM], [UPD_USER_ID], [DEL_FLG]) VALUES (@EDU_YEA" +
+                "R, @SUBJECT_ID, @SUBJECT_NAME, @CRT_DT_TM, @CRT_USER_ID, @UPD_DT_TM, @UPD_USER_I" +
+                "D, @DEL_FLG)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEL_FLG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 1, 0, "DEL_FLG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ST_SUBJECT_MST] SET [EDU_YEAR] = @EDU_YEAR, [SUBJECT_ID] = @SUBJECT_ID, [SUBJECT_NAME] = @SUBJECT_NAME, [CRT_DT_TM] = @CRT_DT_TM, [CRT_USER_ID] = @CRT_USER_ID, [UPD_DT_TM] = @UPD_DT_TM, [UPD_USER_ID] = @UPD_USER_ID, [DEL_FLG] = @DEL_FLG WHERE (([EDU_YEAR] = @Original_EDU_YEAR) AND ([SUBJECT_ID] = @Original_SUBJECT_ID))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUBJECT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRT_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRT_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_DT_TM", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_DT_TM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UPD_USER_ID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UPD_USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEL_FLG", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 1, 0, "DEL_FLG", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EDU_YEAR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EDU_YEAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SUBJECT_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SUBJECT_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT EDU_YEAR, SUBJECT_ID, SUBJECT_NAME, CRT_DT_TM, CRT_USER_ID, UPD_DT_TM, UPD" +
+                "_USER_ID, DEL_FLG FROM dbo.ST_SUBJECT_MST";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DsPSMS.ST_SUBJECT_MSTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DsPSMS.ST_SUBJECT_MSTDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DsPSMS.ST_SUBJECT_MSTDataTable dataTable = new DsPSMS.ST_SUBJECT_MSTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DsPSMS.ST_SUBJECT_MSTDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DsPSMS dataSet) {
+            return this.Adapter.Update(dataSet, "ST_SUBJECT_MST");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_EDU_YEAR, int Original_SUBJECT_ID) {
+            if ((Original_EDU_YEAR == null)) {
+                throw new global::System.ArgumentNullException("Original_EDU_YEAR");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_EDU_YEAR));
+            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_SUBJECT_ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string EDU_YEAR, int SUBJECT_ID, string SUBJECT_NAME, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG) {
+            if ((EDU_YEAR == null)) {
+                throw new global::System.ArgumentNullException("EDU_YEAR");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(EDU_YEAR));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(SUBJECT_ID));
+            if ((SUBJECT_NAME == null)) {
+                throw new global::System.ArgumentNullException("SUBJECT_NAME");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(SUBJECT_NAME));
+            }
+            if ((CRT_DT_TM.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(CRT_DT_TM.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((CRT_USER_ID == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CRT_USER_ID));
+            }
+            if ((UPD_DT_TM.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(UPD_DT_TM.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((UPD_USER_ID == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(UPD_USER_ID));
+            }
+            if ((DEL_FLG.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(DEL_FLG.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string EDU_YEAR, int SUBJECT_ID, string SUBJECT_NAME, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG, string Original_EDU_YEAR, int Original_SUBJECT_ID) {
+            if ((EDU_YEAR == null)) {
+                throw new global::System.ArgumentNullException("EDU_YEAR");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(EDU_YEAR));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(SUBJECT_ID));
+            if ((SUBJECT_NAME == null)) {
+                throw new global::System.ArgumentNullException("SUBJECT_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(SUBJECT_NAME));
+            }
+            if ((CRT_DT_TM.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(CRT_DT_TM.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((CRT_USER_ID == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(CRT_USER_ID));
+            }
+            if ((UPD_DT_TM.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(UPD_DT_TM.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((UPD_USER_ID == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(UPD_USER_ID));
+            }
+            if ((DEL_FLG.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(DEL_FLG.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_EDU_YEAR == null)) {
+                throw new global::System.ArgumentNullException("Original_EDU_YEAR");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_EDU_YEAR));
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_SUBJECT_ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string SUBJECT_NAME, global::System.Nullable<global::System.DateTime> CRT_DT_TM, string CRT_USER_ID, global::System.Nullable<global::System.DateTime> UPD_DT_TM, string UPD_USER_ID, global::System.Nullable<decimal> DEL_FLG, string Original_EDU_YEAR, int Original_SUBJECT_ID) {
+            return this.Update(Original_EDU_YEAR, Original_SUBJECT_ID, SUBJECT_NAME, CRT_DT_TM, CRT_USER_ID, UPD_DT_TM, UPD_USER_ID, DEL_FLG, Original_EDU_YEAR, Original_SUBJECT_ID);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -34498,13 +34456,9 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
         
         private ST_GRADE_MSTTableAdapter _sT_GRADE_MSTTableAdapter;
         
-        private ST_GRADE_SUBJECT_DETAILTableAdapter _sT_GRADE_SUBJECT_DETAILTableAdapter;
-        
         private ST_MENU_MSTTableAdapter _sT_MENU_MSTTableAdapter;
         
         private ST_STAFF_DATATableAdapter _sT_STAFF_DATATableAdapter;
-        
-        private ST_SUBJECT_MSTTableAdapter _sT_SUBJECT_MSTTableAdapter;
         
         private ST_TEACHER_GRADETableAdapter _sT_TEACHER_GRADETableAdapter;
         
@@ -34537,6 +34491,10 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
         private ST_SALARYTableAdapter _sT_SALARYTableAdapter;
         
         private ST_STUDENT_CASHTableAdapter _sT_STUDENT_CASHTableAdapter;
+        
+        private ST_GRADE_SUBJECT_DETAILTableAdapter _sT_GRADE_SUBJECT_DETAILTableAdapter;
+        
+        private ST_SUBJECT_MSTTableAdapter _sT_SUBJECT_MSTTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -34670,20 +34628,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ST_GRADE_SUBJECT_DETAILTableAdapter ST_GRADE_SUBJECT_DETAILTableAdapter {
-            get {
-                return this._sT_GRADE_SUBJECT_DETAILTableAdapter;
-            }
-            set {
-                this._sT_GRADE_SUBJECT_DETAILTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public ST_MENU_MSTTableAdapter ST_MENU_MSTTableAdapter {
             get {
                 return this._sT_MENU_MSTTableAdapter;
@@ -34704,20 +34648,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
             }
             set {
                 this._sT_STAFF_DATATableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public ST_SUBJECT_MSTTableAdapter ST_SUBJECT_MSTTableAdapter {
-            get {
-                return this._sT_SUBJECT_MSTTableAdapter;
-            }
-            set {
-                this._sT_SUBJECT_MSTTableAdapter = value;
             }
         }
         
@@ -34947,6 +34877,34 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ST_GRADE_SUBJECT_DETAILTableAdapter ST_GRADE_SUBJECT_DETAILTableAdapter {
+            get {
+                return this._sT_GRADE_SUBJECT_DETAILTableAdapter;
+            }
+            set {
+                this._sT_GRADE_SUBJECT_DETAILTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ST_SUBJECT_MSTTableAdapter ST_SUBJECT_MSTTableAdapter {
+            get {
+                return this._sT_SUBJECT_MSTTableAdapter;
+            }
+            set {
+                this._sT_SUBJECT_MSTTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -34996,10 +34954,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                             && (this._sT_GRADE_MSTTableAdapter.Connection != null))) {
                     return this._sT_GRADE_MSTTableAdapter.Connection;
                 }
-                if (((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null) 
-                            && (this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection != null))) {
-                    return this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection;
-                }
                 if (((this._sT_MENU_MSTTableAdapter != null) 
                             && (this._sT_MENU_MSTTableAdapter.Connection != null))) {
                     return this._sT_MENU_MSTTableAdapter.Connection;
@@ -35007,10 +34961,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if (((this._sT_STAFF_DATATableAdapter != null) 
                             && (this._sT_STAFF_DATATableAdapter.Connection != null))) {
                     return this._sT_STAFF_DATATableAdapter.Connection;
-                }
-                if (((this._sT_SUBJECT_MSTTableAdapter != null) 
-                            && (this._sT_SUBJECT_MSTTableAdapter.Connection != null))) {
-                    return this._sT_SUBJECT_MSTTableAdapter.Connection;
                 }
                 if (((this._sT_TEACHER_GRADETableAdapter != null) 
                             && (this._sT_TEACHER_GRADETableAdapter.Connection != null))) {
@@ -35076,6 +35026,14 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                             && (this._sT_STUDENT_CASHTableAdapter.Connection != null))) {
                     return this._sT_STUDENT_CASHTableAdapter.Connection;
                 }
+                if (((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null) 
+                            && (this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection != null))) {
+                    return this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection;
+                }
+                if (((this._sT_SUBJECT_MSTTableAdapter != null) 
+                            && (this._sT_SUBJECT_MSTTableAdapter.Connection != null))) {
+                    return this._sT_SUBJECT_MSTTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -35113,16 +35071,10 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if ((this._sT_GRADE_MSTTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._sT_MENU_MSTTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._sT_STAFF_DATATableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._sT_TEACHER_GRADETableAdapter != null)) {
@@ -35173,6 +35125,12 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if ((this._sT_STUDENT_CASHTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -35190,6 +35148,24 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._sT_EQUIPMENT_MSTTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._sT_STUDENT_CASHTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ST_STUDENT_CASH.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sT_STUDENT_CASHTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._sT_SALARYTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ST_SALARY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sT_SALARYTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -35283,30 +35259,21 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ST_GRADE_SUBJECT_DETAIL.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sT_GRADE_SUBJECT_DETAILTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tBL_RESULTMARKSTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TBL_RESULTMARKS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tBL_RESULTMARKSTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tBL_RESULTGRADETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TBL_RESULTGRADE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tBL_RESULTGRADETableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sT_SALARYTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ST_SALARY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sT_SALARYTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -35319,21 +35286,21 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._sT_USER_MSTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ST_USER_MST.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sT_USER_MSTTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._sT_TEACHER_GRADETableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ST_TEACHER_GRADE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._sT_TEACHER_GRADETableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ST_SUBJECT_MST.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sT_SUBJECT_MSTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -35352,15 +35319,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._sT_MENU_MSTTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ST_GRADE_SUBJECT_DETAIL.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._sT_GRADE_SUBJECT_DETAILTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -35418,21 +35376,21 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._sT_USER_MSTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ST_USER_MST.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tBL_RESULTGRADETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TBL_RESULTGRADE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._sT_USER_MSTTableAdapter.Update(updatedRows));
+                    result = (result + this._tBL_RESULTGRADETableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._sT_STUDENT_CASHTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ST_STUDENT_CASH.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ST_SUBJECT_MST.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._sT_STUDENT_CASHTableAdapter.Update(updatedRows));
+                    result = (result + this._sT_SUBJECT_MSTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -35451,6 +35409,22 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._sT_EQUIPMENT_MSTTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._sT_STUDENT_CASHTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ST_STUDENT_CASH.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sT_STUDENT_CASHTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._sT_SALARYTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ST_SALARY.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sT_SALARYTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -35534,27 +35508,19 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ST_GRADE_SUBJECT_DETAIL.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sT_GRADE_SUBJECT_DETAILTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tBL_RESULTMARKSTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TBL_RESULTMARKS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tBL_RESULTMARKSTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tBL_RESULTGRADETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TBL_RESULTGRADE.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tBL_RESULTGRADETableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._sT_SALARYTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ST_SALARY.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sT_SALARYTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -35566,19 +35532,19 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._sT_USER_MSTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ST_USER_MST.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sT_USER_MSTTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._sT_TEACHER_GRADETableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ST_TEACHER_GRADE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._sT_TEACHER_GRADETableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ST_SUBJECT_MST.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sT_SUBJECT_MSTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -35595,14 +35561,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._sT_MENU_MSTTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ST_GRADE_SUBJECT_DETAIL.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._sT_GRADE_SUBJECT_DETAILTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -35654,19 +35612,19 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sT_USER_MSTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ST_USER_MST.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tBL_RESULTGRADETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TBL_RESULTGRADE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._sT_USER_MSTTableAdapter.Update(addedRows));
+                    result = (result + this._tBL_RESULTGRADETableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sT_STUDENT_CASHTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ST_STUDENT_CASH.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ST_SUBJECT_MST.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._sT_STUDENT_CASHTableAdapter.Update(addedRows));
+                    result = (result + this._sT_SUBJECT_MSTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -35680,19 +35638,19 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(DsPSMS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._sT_STUDENT_CASHTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ST_STUDENT_CASH.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ST_SUBJECT_MST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._sT_STUDENT_CASHTableAdapter.Update(deletedRows));
+                    result = (result + this._sT_SUBJECT_MSTTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._sT_USER_MSTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ST_USER_MST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tBL_RESULTGRADETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TBL_RESULTGRADE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._sT_USER_MSTTableAdapter.Update(deletedRows));
+                    result = (result + this._tBL_RESULTGRADETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -35744,14 +35702,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ST_GRADE_SUBJECT_DETAIL.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sT_GRADE_SUBJECT_DETAILTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._sT_MENU_MSTTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ST_MENU_MST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -35768,19 +35718,19 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ST_SUBJECT_MST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sT_SUBJECT_MSTTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._sT_TEACHER_GRADETableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ST_TEACHER_GRADE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._sT_TEACHER_GRADETableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._sT_USER_MSTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ST_USER_MST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sT_USER_MSTTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -35792,27 +35742,19 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._sT_SALARYTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ST_SALARY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sT_SALARYTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tBL_RESULTGRADETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TBL_RESULTGRADE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tBL_RESULTGRADETableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tBL_RESULTMARKSTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TBL_RESULTMARKS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tBL_RESULTMARKSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ST_GRADE_SUBJECT_DETAIL.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sT_GRADE_SUBJECT_DETAILTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -35893,6 +35835,22 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._sT_STUDENT_DATATableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._sT_SALARYTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ST_SALARY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sT_SALARYTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._sT_STUDENT_CASHTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ST_STUDENT_CASH.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._sT_STUDENT_CASHTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -35983,11 +35941,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._sT_MENU_MSTTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._sT_MENU_MSTTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -35995,11 +35948,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
             }
             if (((this._sT_STAFF_DATATableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._sT_STAFF_DATATableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._sT_SUBJECT_MSTTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._sT_SUBJECT_MSTTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -36080,6 +36028,16 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
             }
             if (((this._sT_STUDENT_CASHTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._sT_STUDENT_CASHTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._sT_SUBJECT_MSTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._sT_SUBJECT_MSTTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -36187,15 +36145,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._sT_GRADE_MSTTableAdapter.Adapter);
                     }
                 }
-                if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
-                    revertConnections.Add(this._sT_GRADE_SUBJECT_DETAILTableAdapter, this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection);
-                    this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._sT_GRADE_SUBJECT_DETAILTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._sT_GRADE_SUBJECT_DETAILTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._sT_GRADE_SUBJECT_DETAILTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._sT_GRADE_SUBJECT_DETAILTableAdapter.Adapter);
-                    }
-                }
                 if ((this._sT_MENU_MSTTableAdapter != null)) {
                     revertConnections.Add(this._sT_MENU_MSTTableAdapter, this._sT_MENU_MSTTableAdapter.Connection);
                     this._sT_MENU_MSTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -36212,15 +36161,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     if (this._sT_STAFF_DATATableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._sT_STAFF_DATATableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._sT_STAFF_DATATableAdapter.Adapter);
-                    }
-                }
-                if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
-                    revertConnections.Add(this._sT_SUBJECT_MSTTableAdapter, this._sT_SUBJECT_MSTTableAdapter.Connection);
-                    this._sT_SUBJECT_MSTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._sT_SUBJECT_MSTTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._sT_SUBJECT_MSTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._sT_SUBJECT_MSTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._sT_SUBJECT_MSTTableAdapter.Adapter);
                     }
                 }
                 if ((this._sT_TEACHER_GRADETableAdapter != null)) {
@@ -36367,6 +36307,24 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._sT_STUDENT_CASHTableAdapter.Adapter);
                     }
                 }
+                if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
+                    revertConnections.Add(this._sT_GRADE_SUBJECT_DETAILTableAdapter, this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection);
+                    this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._sT_GRADE_SUBJECT_DETAILTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._sT_GRADE_SUBJECT_DETAILTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._sT_GRADE_SUBJECT_DETAILTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._sT_GRADE_SUBJECT_DETAILTableAdapter.Adapter);
+                    }
+                }
+                if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
+                    revertConnections.Add(this._sT_SUBJECT_MSTTableAdapter, this._sT_SUBJECT_MSTTableAdapter.Connection);
+                    this._sT_SUBJECT_MSTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._sT_SUBJECT_MSTTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._sT_SUBJECT_MSTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._sT_SUBJECT_MSTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._sT_SUBJECT_MSTTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -36457,10 +36415,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                     this._sT_GRADE_MSTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sT_GRADE_MSTTableAdapter]));
                     this._sT_GRADE_MSTTableAdapter.Transaction = null;
                 }
-                if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
-                    this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sT_GRADE_SUBJECT_DETAILTableAdapter]));
-                    this._sT_GRADE_SUBJECT_DETAILTableAdapter.Transaction = null;
-                }
                 if ((this._sT_MENU_MSTTableAdapter != null)) {
                     this._sT_MENU_MSTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sT_MENU_MSTTableAdapter]));
                     this._sT_MENU_MSTTableAdapter.Transaction = null;
@@ -36468,10 +36422,6 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if ((this._sT_STAFF_DATATableAdapter != null)) {
                     this._sT_STAFF_DATATableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sT_STAFF_DATATableAdapter]));
                     this._sT_STAFF_DATATableAdapter.Transaction = null;
-                }
-                if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
-                    this._sT_SUBJECT_MSTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sT_SUBJECT_MSTTableAdapter]));
-                    this._sT_SUBJECT_MSTTableAdapter.Transaction = null;
                 }
                 if ((this._sT_TEACHER_GRADETableAdapter != null)) {
                     this._sT_TEACHER_GRADETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sT_TEACHER_GRADETableAdapter]));
@@ -36536,6 +36486,14 @@ namespace HomeASP.DataSet.DsPSMSTableAdapters {
                 if ((this._sT_STUDENT_CASHTableAdapter != null)) {
                     this._sT_STUDENT_CASHTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sT_STUDENT_CASHTableAdapter]));
                     this._sT_STUDENT_CASHTableAdapter.Transaction = null;
+                }
+                if ((this._sT_GRADE_SUBJECT_DETAILTableAdapter != null)) {
+                    this._sT_GRADE_SUBJECT_DETAILTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sT_GRADE_SUBJECT_DETAILTableAdapter]));
+                    this._sT_GRADE_SUBJECT_DETAILTableAdapter.Transaction = null;
+                }
+                if ((this._sT_SUBJECT_MSTTableAdapter != null)) {
+                    this._sT_SUBJECT_MSTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sT_SUBJECT_MSTTableAdapter]));
+                    this._sT_SUBJECT_MSTTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
