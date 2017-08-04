@@ -16,10 +16,11 @@ using HomeASP.DataSet;
 
 namespace HomeASP
 {
-    public partial class SMS026 : System.Web.UI.Page
+    public partial class _SMS026 : System.Web.UI.Page
     {
         string msg = "";
         static string EventPhotoPath;
+        static string strFileName;
         EventsAndNewsEntryService service = new EventsAndNewsEntryService();
         DataSet.DsPSMS.ST_EVENT_NEWS_HEDDataTable dt;
         DataSet.DsPSMS.ST_EVENT_NEWS_HEDRow dr = new DataSet.DsPSMS.ST_EVENT_NEWS_HEDDataTable().NewST_EVENT_NEWS_HEDRow();
@@ -27,9 +28,27 @@ namespace HomeASP
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            eventphoto.ImageUrl = "~/Images/" + EventPhotoPath;
-            this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
-            displayEventData();
+            
+            if (!IsPostBack)
+            {
+                displayEventData();
+                this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+                staffpicture.ImageUrl = "~/Images/Profile.png";
+            }
+
+            else
+            {
+                if (FileUpload1.PostedFile != null)
+                {
+                    UploadAndDisplay();
+                    staffpicture.ImageUrl = "~/Images/" + strFileName;
+                    EventPhotoPath =strFileName;
+
+                }
+            }
+            
+            
+            
             if (Session["LOGIN_USER_ID"] != null)
             {
                 userId = (string)(Session["LOGIN_USER_ID"] ?? "  ");
@@ -40,25 +59,25 @@ namespace HomeASP
             Boolean isError = false;
             if (edate.Text.Trim().Length == 0)
             {
-                errDate.Text = "Please enter Date";
-                errDate.Visible = true;
+                 errSmsDa.Text = "Please Choose Date";
+                errSmsDa.Visible = true;
                 isError = true;
             }
             else
             {
-                errDate.Visible = false;
+                errSmsDa.Visible = false;
             }
 
 
             if (name.Text.Trim().Length == 0)
             {
-                errName.Text = "Please enter Name";
-                errName.Visible = true;
+                errSmsDa.Text = "Please Enter name";
+                errSmsDa.Visible = true;
                 isError = true;
             }
             else
             {
-                errName.Visible = false;
+                errSmsDa.Visible = false;
             }
 
 
@@ -75,49 +94,49 @@ namespace HomeASP
 
             if (grade.SelectedIndex == 0)
             {
-                errgrade.Text = "Please Choose Grade";
-                errgrade.Visible = true;
+                errSmsDa.Text = "Please Choose Grade";
+                errSmsDa.Visible = true;
                 isError = true;
             }
             else
             {
-                errgrade.Visible = false;
+                errSmsDa.Visible = false;
             }
 
 
             if (room.SelectedIndex == 0)
             {
-                errRoom.Text = "Please Choose Room ";
-                errRoom.Visible = true;
+                errSmsDa.Text = "Please Choose Room ";
+                errSmsDa.Visible = true;
                 isError = true;
             }
             else
             {
-                errRoom.Visible = false;
+                errSmsDa.Visible = false;
             }
 
             if (enEducation.SelectedIndex == 0)
             {
-                errEduYear.Text = "Please Choose Year";
-                errEduYear.Visible = true;
+                errSmsDa.Text = "Please Choose Year";
+                errSmsDa.Visible = true;
                 isError = true;
             }
             else
             {
-                errEduYear.Visible = false;
+                errSmsDa.Visible = false;
             }
 
-            if (imgUpload.HasFile == false)
-            {
-               // errPhoto.Text = "Please Enter Photo";
-                //errPhoto.Visible = true;
-                isError = true;
-            }
-            else
-            {
-               // errPhoto.Visible = false;
+            //if (imgUpload.HasFile == false)Hwp
+            //{
+            //   // errPhoto.Text = "Please Enter Photo";
+            //    //errPhoto.Visible = true;
+            //    isError = true;
+            //}
+            //else
+            //{
+            //   // errPhoto.Visible = false;
 
-            }
+            //}
            
             return isError;
         }
@@ -165,6 +184,7 @@ namespace HomeASP
             return reFLag;
         }
 
+
         //save data
         protected void add_Click(object sender, EventArgs e)
         {
@@ -179,7 +199,7 @@ namespace HomeASP
                 if (add.Text.Equals("Save"))
                 {
                     dr.EDU_YEAR = enEducation.SelectedItem.Value;
-
+                    
                     dr.DATE = edate.Text;
                     dr.NAME = name.Text;
                     dr.GRADE_ID = grade.SelectedItem.Value;
@@ -194,7 +214,22 @@ namespace HomeASP
                     dr.CRT_DT_TM = DateTime.Now;
                     dr.CRT_USER_ID = this.userId;
                     service.saveEvent(dr, out msg);
-                    alertMsg.Text = msg;
+                    errSmsRe.Text = msg;
+                    add.Text = "Save";
+                    LabelID.Text = "";
+
+                    errSmsRe.Text = "Insert Successful";
+
+                    edate.Text = String.Empty;
+                    name.Text = String.Empty;
+                    grade.SelectedIndex = 0;
+                    room.SelectedIndex = 0;
+                    enEducation.SelectedIndex = 0;
+                    staffpicture.ImageUrl = "";
+                    News.Checked = false;
+                    Event.Checked = false;
+                    displayEventData();
+                   
                     
                 }
                 else if (add.Text.Equals("Edit"))
@@ -217,13 +252,28 @@ namespace HomeASP
                     dr.UPD_DT_TM = DateTime.Now;
                     dr.UPD_USER_ID = this.userId;
                     service.updateEvent(dr, out msg);
-                    alertMsg.Text = msg;
+                    errSmsRe.Text = msg;
+
+                    add.Text = "Save";
+                    LabelID.Text = "";
+
+                    errSmsRe.Text = "Update Successful";
+
+                    edate.Text = String.Empty;
+                    name.Text = String.Empty;
+                    grade.SelectedIndex = 0;
+                    room.SelectedIndex = 0;
+                    enEducation.SelectedIndex = 0;
+                    staffpicture.ImageUrl = "";
+                    News.Checked = false;
+                    Event.Checked = false;
+                    displayEventData();
                     
                 }
 
                 else
 
-                    alertMsg.Text = "Record is already exist!!";
+                    errSmsRe.Text = "Record is already exist!!";
             }
 
                  
@@ -242,14 +292,14 @@ namespace HomeASP
             add.Text = "Save";
             LabelID.Text = "";
            
-            alertMsg.Text = "";
+            errSmsRe.Text = "";
          
             edate.Text = String.Empty;
             name.Text = String.Empty;
             grade.SelectedIndex = 0;
             room.SelectedIndex = 0;
             enEducation.SelectedIndex = 0;
-            eventphoto.ImageUrl = "";
+            staffpicture.ImageUrl = "";
             News.Checked = false;
             Event.Checked = false;
             displayEventData();
@@ -282,7 +332,7 @@ namespace HomeASP
             try
             {
                 int index = Convert.ToInt32(e.CommandArgument);
-                alertMsg.Text = "";
+                errSmsRe.Text = "";
                 if (e.CommandName == "EditCol")
                 {
                     btnConfirm.Enabled = true;
@@ -310,9 +360,25 @@ namespace HomeASP
 
 
                     EventPhotoPath = gridViewEvent.Rows[index].Cells[7].Text;
-                    eventphoto.ImageUrl = "~/Images/" + EventPhotoPath;
-                    add.Text = "Edit";
                     displayEventData();
+                    
+                    staffpicture.ImageUrl = EventPhotoPath;
+                    
+                    EventPhotoPath = staffpicture.ImageUrl;
+                    
+                        //AllErrSMS.Visible = false;
+                        //strFileName = FileUpload1.FileName.ToString();
+                        //string folderPath = Server.MapPath("~/Images/");
+                        //string strPath = folderPath +EventPhotoPath;
+                        //staffpicture.ImageUrl = strPath;
+                        UploadAndDisplay2(EventPhotoPath);
+                    
+                        
+                        
+                       
+                    
+                    add.Text = "Edit";
+                   
                 }
 
                 else if (e.CommandName == "DeleteCol")
@@ -343,73 +409,98 @@ namespace HomeASP
         {
             displayEventData();
         }
-
-        protected void photoUpload_Click(object sender, EventArgs e)
+        public void UploadAndDisplay()
         {
-            EventPhotoPath = imgUpload.FileName;
-            if (imgUpload.PostedFile != null)
+
+            if (FileUpload1.HasFile)
             {
-                string extension = Path.GetExtension(EventPhotoPath);
-                if (extension.ToLower() == ".png" || extension.ToLower() == ".jpg")
-                {
-                    Stream strm = imgUpload.PostedFile.InputStream;
-                    using (var image = System.Drawing.Image.FromStream(strm))
-                    {
-                        //Label2.Text = image.Size.ToString();
-                        int newWidth = 170;
-                        int newHeight = 170;
-
-                        if (image.Width >= newWidth && image.Height >= newHeight)
-                        {
-                            errMessage.Visible = false;
-
-                            int originWidth = image.Width;
-                            int originHeight = image.Height;
-                            //int ratio = originWidth % originHeight;
-                            //int newHeight = newWidth / ratio;
-
-                            if (originWidth > newWidth)
-                            {
-                                Decimal ratio = Math.Abs((Decimal)originWidth / (Decimal)newWidth);
-                                originWidth = newWidth;
-                                originHeight = (int)Math.Round((Decimal)(originHeight / ratio));
-                            }
-
-                            if (originHeight > newHeight)
-                            {
-                                Decimal ratio = Math.Abs((Decimal)originHeight / (Decimal)newHeight);
-                                originHeight = newHeight;
-                                originWidth = (int)Math.Round((Decimal)(originWidth / ratio));
-                            }
-
-                            var thumbImg = new Bitmap(originWidth, originHeight);
-                            var thumbGraph = Graphics.FromImage(thumbImg);
-
-
-                            thumbGraph.CompositingQuality = CompositingQuality.HighQuality;
-                            thumbGraph.SmoothingMode = SmoothingMode.HighQuality;
-                            thumbGraph.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                            var imgRectangle = new Rectangle(0, 0, originWidth, originHeight);
-                            thumbGraph.DrawImage(image, imgRectangle);
-
-                            string targetPath = Server.MapPath(@"~/Images/") + EventPhotoPath;
-                            thumbImg.Save(targetPath, image.RawFormat);
-
-                            //Label3.Text = thumbImg.Size.ToString();
-                            eventphoto.ImageUrl = "~/Images/" + EventPhotoPath;
-                        }
-                        else
-                        {
-                            eventphoto.Visible = true;
-                            //errphotosize.Text = "Input Image is too small. Please try again";
-                        }
-                    }
-
-
-                }
+                //AllErrSMS.Visible = false;
+                strFileName = FileUpload1.FileName.ToString();
+                string folderPath = Server.MapPath("~/Images/");
+                string strPath = folderPath + strFileName;
+                FileUpload1.PostedFile.SaveAs(strPath);
+                staffpicture.ImageUrl = "~/Images/" + strFileName;
+            }
+            else {
+                
             }
 
         }
+        public void UploadAndDisplay2(String path)
+        {
+            strFileName = path;
+            string folderPath = Server.MapPath("~/Images/");
+            string strPath = folderPath + strFileName;
+            //FileUpload1.PostedFile.SaveAs(strPath);
+            staffpicture.ImageUrl = "~/Images/" + strFileName;
+        }
+
+        //protected void photoUpload_Click(object sender, EventArgs e)hwp
+        //{
+        //    EventPhotoPath = imgUpload.FileName;
+        //    if (imgUpload.PostedFile != null)
+        //    {
+        //        string extension = Path.GetExtension(EventPhotoPath);
+        //        if (extension.ToLower() == ".png" || extension.ToLower() == ".jpg")
+        //        {
+        //            Stream strm = imgUpload.PostedFile.InputStream;
+        //            using (var image = System.Drawing.Image.FromStream(strm))
+        //            {
+        //                //Label2.Text = image.Size.ToString();
+        //                int newWidth = 170;
+        //                int newHeight = 170;
+
+        //                if (image.Width >= newWidth && image.Height >= newHeight)
+        //                {
+        //                    errMessage.Visible = false;
+
+        //                    int originWidth = image.Width;
+        //                    int originHeight = image.Height;
+        //                    //int ratio = originWidth % originHeight;
+        //                    //int newHeight = newWidth / ratio;
+
+        //                    if (originWidth > newWidth)
+        //                    {
+        //                        Decimal ratio = Math.Abs((Decimal)originWidth / (Decimal)newWidth);
+        //                        originWidth = newWidth;
+        //                        originHeight = (int)Math.Round((Decimal)(originHeight / ratio));
+        //                    }
+
+        //                    if (originHeight > newHeight)
+        //                    {
+        //                        Decimal ratio = Math.Abs((Decimal)originHeight / (Decimal)newHeight);
+        //                        originHeight = newHeight;
+        //                        originWidth = (int)Math.Round((Decimal)(originWidth / ratio));
+        //                    }
+
+        //                    var thumbImg = new Bitmap(originWidth, originHeight);
+        //                    var thumbGraph = Graphics.FromImage(thumbImg);
+
+
+        //                    thumbGraph.CompositingQuality = CompositingQuality.HighQuality;
+        //                    thumbGraph.SmoothingMode = SmoothingMode.HighQuality;
+        //                    thumbGraph.InterpolationMode = InterpolationMode.HighQualityBicubic;
+        //                    var imgRectangle = new Rectangle(0, 0, originWidth, originHeight);
+        //                    thumbGraph.DrawImage(image, imgRectangle);
+
+        //                    string targetPath = Server.MapPath(@"~/Images/") + EventPhotoPath;
+        //                    thumbImg.Save(targetPath, image.RawFormat);
+
+        //                    //Label3.Text = thumbImg.Size.ToString();
+        //                    eventphoto.ImageUrl = "~/Images/" + EventPhotoPath;
+        //                }
+        //                else
+        //                {
+        //                    eventphoto.Visible = true;
+        //                    //errphotosize.Text = "Input Image is too small. Please try again";
+        //                }
+        //            }
+
+
+        //        }
+        //    }
+
+        //}
 
         protected void EventNews_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -417,6 +508,15 @@ namespace HomeASP
             gridViewEvent.PageIndex = e.NewPageIndex;
             gridViewEvent.DataBind();
         }
+
+        protected void gridViewEvent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        
+
 
         
 

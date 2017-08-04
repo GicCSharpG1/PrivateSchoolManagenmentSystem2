@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SMS026_EventsNewsEntry.aspx.cs" Inherits="HomeASP.SMS026" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SMS026_EventsNewsEntry.aspx.cs" Inherits="HomeASP._SMS026" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -33,7 +33,7 @@
             <!-- content begins-->
             <!-- header ends -->
 
-             <div id="cmcontent">
+            <div id="cmcontent">
                 <div id="cmright">
                     <div class="cmtit_bot" style="background-image: url(Images/form_bg.jpg)">
                         <div class="right_b" style="height: 520px; width: 965px; clear: both">
@@ -41,23 +41,17 @@
                                 <h2>Events And News Entry</h2>
                                 <table style="margin: 0px 0px 0px 50px; border-collapse: separate; border-spacing: 0 10px;">
                                     <tr>
-                                        <td rowspan="3">
-                                            <asp:Image runat="server" ID="eventphoto" Style="margin-left: 20px;" Height="152px" ImageUrl="~/Images/Profile.png" Width="139px" />
+                                        <td rowspan="6">
+                                            <asp:Image runat="server" ID="staffpicture" Style="margin-left: 20px;" Height="152px" ImageUrl="~/Images/Profile.png" Width="139px" /><br />
+                                            <asp:FileUpload ID="FileUpload1" runat="server" Height="32px" Style="margin-left: 25px" onchange="this.form.submit();" />
                                         </td>
-                                        <td rowspan="3">
-                                            <span style="margin-left: 4em" /></td>
-                                        <td rowspan="3" class="auto-style14">
-                                            <span style="margin-left: 4em" /></td>
-                                    </tr>
-                                    <tr>
                                         <td>
                                             <asp:RadioButton ID="News" runat="server" GroupName="Type" Text="News" /></td>
                                         <td>
                                             <asp:RadioButton ID="Event" runat="server" GroupName="Type" Text="Event" /></td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 170px;">&nbsp; Education Year* 
-                                        </td>
+                                        <td align="right">Education Year*</td>
                                         <td>
                                             <asp:DropDownList ID="enEducation" runat="server" ForeColor="Black" CssClass="dropdownlist">
                                                 <asp:ListItem>Choose Education Year</asp:ListItem>
@@ -73,144 +67,55 @@
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
-                                </table>
-                                <div style="">
-                                    <asp:Button ID="upload" runat="server" CssClass="btn" Text="Upload" Style="margin-right: 15px" OnClick="photoUpload_Click" />
-                                    <asp:FileUpload ID="imgUpload" runat="server" onchange="callme(this)" />
-                                    <%--<asp:Label ID="errPhoto" runat="server" Font-Size="Large" ForeColor="Red"></asp:Label>--%>
-                                </div>
-                                <table style="font: 19px Verdana, Helveticaall-petite-caps; color: #074959; margin-left: 10px;">
-
-                                    <%--<tr>
-
-                                    <td></td>
-                                    <td>
-                                        <asp:Label ID="errType" Style="color: red; font-size: large;" runat="server" Font-Size="Large"></asp:Label>
-                                    </td>
-
-
-                                </tr>--%>
                                     <tr>
-                                        <td style="width: 170px;">&nbsp; Date</td>
-                                        <td style="width: 162px; height: 21px;">
-                                            <asp:TextBox CssClass="datepicker textbox" ID="edate" Style="color: black" runat="server" />
+                                        <td>Date*<asp:TextBox CssClass="datepicker textbox" ID="edate" Style="color: black" runat="server" />
                                         </td>
-
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td style="width: 170px;">&nbsp; Grade </td>
-                                        <td style="width: 162px; height: 21px;">
-                                            <asp:DropDownList ID="grade" runat="server" ForeColor="Black" CssClass="dropdownlist">
-                                                <asp:ListItem>Choose Grade</asp:ListItem>
-                                                <asp:ListItem>Grade 1</asp:ListItem>
-                                                <asp:ListItem>Grade 2</asp:ListItem>
-                                                <asp:ListItem>Grade 3</asp:ListItem>
-                                                <asp:ListItem>Grade 4</asp:ListItem>
-                                                <asp:ListItem>Grade 5</asp:ListItem>
-                                                <asp:ListItem>Grade 6</asp:ListItem>
-                                                <asp:ListItem>Grade 7</asp:ListItem>
-                                                <asp:ListItem>Grade 8</asp:ListItem>
-                                                <asp:ListItem>Grade 9</asp:ListItem>
-                                                <asp:ListItem>Grade 10</asp:ListItem>
-                                            </asp:DropDownList>
+                                        <td style="width: 162px; height: 21px;">*<asp:DropDownList ID="grade" runat="server" ForeColor="Black" CssClass="dropdownlist">
+                                            <asp:ListItem>Choose Grade</asp:ListItem>
+                                            <asp:ListItem>Grade 1</asp:ListItem>
+                                            <asp:ListItem>Grade 2</asp:ListItem>
+                                            <asp:ListItem>Grade 3</asp:ListItem>
+                                            <asp:ListItem>Grade 4</asp:ListItem>
+                                            <asp:ListItem>Grade 5</asp:ListItem>
+                                            <asp:ListItem>Grade 6</asp:ListItem>
+                                            <asp:ListItem>Grade 7</asp:ListItem>
+                                            <asp:ListItem>Grade 8</asp:ListItem>
+                                            <asp:ListItem>Grade 9</asp:ListItem>
+                                            <asp:ListItem>Grade 10</asp:ListItem>
+                                        </asp:DropDownList>
                                         </td>
-
                                     </tr>
-
                                     <tr>
-                                        <td></td>
-                                        <td>
-                                            <asp:Label ID="errDate" Style="color: red" runat="server" Font-Size="Large"></asp:Label></td>
 
+                                        <td>Name*<asp:TextBox ID="name" runat="server" ForeColor="Black" CssClass="textbox"></asp:TextBox></td>
 
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <asp:Label ID="errgrade" runat="server" Style="color: red" Font-Size="Large"></asp:Label></td>
-
-                                    </tr>
-
-
-                                    <tr>
-                                        <td style="width: 170px;">&nbsp; Name* </td>
-                                        <td style="width: 162px; height: 21px;">
-                                            <asp:TextBox ID="name" runat="server" ForeColor="Black" CssClass="textbox"></asp:TextBox></td>
-
-                                        <td>
-                                            <asp:Label ID="LabelID" CssClass="label" Visible="false" runat="server">ID</asp:Label></td>
-
-                                        <td style="width: 170px;">&nbsp; Room </td>
-                                        <td style="width: 162px; height: 21px;">
-                                            <asp:DropDownList ID="room" runat="server" ForeColor="Black" OnSelectedIndexChanged="room_SelectedIndexChanged" CssClass="dropdownlist">
-                                                <asp:ListItem>Choose Room</asp:ListItem>
-                                                <asp:ListItem>A</asp:ListItem>
-                                                <asp:ListItem>B</asp:ListItem>
-                                                <asp:ListItem>C</asp:ListItem>
-                                                <asp:ListItem>D</asp:ListItem>
-                                                <asp:ListItem>E</asp:ListItem>
-                                                <asp:ListItem>F</asp:ListItem>
-                                            </asp:DropDownList>
+                                        <td>*<asp:DropDownList ID="room" runat="server" ForeColor="Black" OnSelectedIndexChanged="room_SelectedIndexChanged" CssClass="dropdownlist">
+                                            <asp:ListItem>Choose Room</asp:ListItem>
+                                            <asp:ListItem>A</asp:ListItem>
+                                            <asp:ListItem>B</asp:ListItem>
+                                            <asp:ListItem>C</asp:ListItem>
+                                            <asp:ListItem>D</asp:ListItem>
+                                            <asp:ListItem>E</asp:ListItem>
+                                            <asp:ListItem>F</asp:ListItem>
+                                        </asp:DropDownList>
                                         </td>
-
                                     </tr>
-
-                                    <tr>
-                                        <td></td>
-                                        <td>
-                                            <asp:Label ID="errName" Style="color: red" runat="server" Font-Size="Large"></asp:Label>
-                                        </td>
-
-
-                                        <td></td>
-                                        <td></td>
-                                        <td>
-                                            <asp:Label ID="errRoom" runat="server" Style="color: red" Font-Size="Large"></asp:Label></td>
-
-
-                                    </tr>
-
-
-                                    <tr>
-                                        <td></td>
-                                        <td>
-                                            <asp:Label ID="errEduYear" runat="server" Style="color: red" Font-Size="Large"></asp:Label></td>
-
-                                    </tr>
-                                </table>
-
-                                <div>
-                                    <asp:Label ID="errMessage" runat="server" Font-Names="Arial" Font-Size="Large" ForeColor="Red"></asp:Label>
-                                </div>
-
-                                <br />
-
-
-                                <table style="margin-left: 150px;">
                                     <tr>
                                         <td>
                                             <asp:Button ID="add" runat="server" Text="Save" OnClick="add_Click" Width="100px" CssClass="btn" />
                                         </td>
-
-
-
-                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                         <td>
                                             <asp:Button ID="btnConfirm" ValidationGroup="SaveConfirm" Text="Canel" CssClass="btn" Style="margin-left: 15px" runat="server" OnClick="confirm_Click" />
                                         </td>
-
-
-
-
                                     </tr>
-
                                 </table>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label runat="server" ID="alertMsg" Style="color: red; font-size: large;"></asp:Label>
-                                <br />
+                                <div>
+                                    <asp:Label runat="server" ID="errSmsDa" CssClass="errLabel"></asp:Label>
+                                    <asp:Label runat="server" ID="LabelID" CssClass="errLabel" Visible="false"></asp:Label>
+                                    <asp:Label runat="server" ID="errSmsRe" CssClass="errLabel"></asp:Label>
 
+                                </div>
                                 <div style="margin-left: 20px; height: 270px" class="gridfont ">
-
-
-
                                     <asp:GridView ID="gridViewEvent" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" EmptyDataText="There is no record." AllowPaging="True" PageSize="5" OnPageIndexChanging="EventNews_PageIndexChanging" ReadOnly="false" CssClass="gridview" OnRowCommand="EventNews_RowCommand" runat="server" Width="95%" CellPadding="4" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellSpacing="3" Style="margin-top: 15px">
 
                                         <AlternatingRowStyle Wrap="False" BackColor="White" />
@@ -248,6 +153,9 @@
                                         </Columns>
                                     </asp:GridView>
                                     <br />
+                                     <div>
+                                    
+                                </div>
                                     <br />
                                 </div>
                             </form>
@@ -273,7 +181,7 @@
                 </div>
                 <!-- footer ends -->
             </div>
-    </div>
         </div>
+    </div>
 </body>
 </html>

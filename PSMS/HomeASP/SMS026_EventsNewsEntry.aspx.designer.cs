@@ -10,7 +10,7 @@
 namespace HomeASP {
     
     
-    public partial class SMS026 {
+    public partial class _SMS026 {
         
         /// <summary>
         /// centerForm control.
@@ -22,13 +22,22 @@ namespace HomeASP {
         protected global::System.Web.UI.HtmlControls.HtmlForm centerForm;
         
         /// <summary>
-        /// eventphoto control.
+        /// staffpicture control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image eventphoto;
+        protected global::System.Web.UI.WebControls.Image staffpicture;
+        
+        /// <summary>
+        /// FileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
         /// News control.
@@ -58,24 +67,6 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.DropDownList enEducation;
         
         /// <summary>
-        /// upload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button upload;
-        
-        /// <summary>
-        /// imgUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload imgUpload;
-        
-        /// <summary>
         /// edate control.
         /// </summary>
         /// <remarks>
@@ -94,24 +85,6 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.DropDownList grade;
         
         /// <summary>
-        /// errDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errDate;
-        
-        /// <summary>
-        /// errgrade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errgrade;
-        
-        /// <summary>
         /// name control.
         /// </summary>
         /// <remarks>
@@ -121,15 +94,6 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.TextBox name;
         
         /// <summary>
-        /// LabelID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelID;
-        
-        /// <summary>
         /// room control.
         /// </summary>
         /// <remarks>
@@ -137,42 +101,6 @@ namespace HomeASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList room;
-        
-        /// <summary>
-        /// errName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errName;
-        
-        /// <summary>
-        /// errRoom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errRoom;
-        
-        /// <summary>
-        /// errEduYear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errEduYear;
-        
-        /// <summary>
-        /// errMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errMessage;
         
         /// <summary>
         /// add control.
@@ -193,13 +121,31 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.Button btnConfirm;
         
         /// <summary>
-        /// alertMsg control.
+        /// errSmsDa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label alertMsg;
+        protected global::System.Web.UI.WebControls.Label errSmsDa;
+        
+        /// <summary>
+        /// LabelID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelID;
+        
+        /// <summary>
+        /// errSmsRe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errSmsRe;
         
         /// <summary>
         /// gridViewEvent control.
