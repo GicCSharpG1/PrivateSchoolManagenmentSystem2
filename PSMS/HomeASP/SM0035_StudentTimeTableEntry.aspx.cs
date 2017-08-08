@@ -277,5 +277,10 @@ namespace HomeASP
             gvRoomTeacher.PageIndex = e.NewPageIndex;
             gvRoomTeacher.DataBind();
         }
+
+        protected void gvRoomTeacher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

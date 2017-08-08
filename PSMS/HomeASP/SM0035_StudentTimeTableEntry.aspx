@@ -25,8 +25,8 @@
             <div id="cmcontent">
                 <div id="cmright">
                     <div class="cmtit_bot" style="background-image: url(Images/form_bg.jpg)">
-                        <div class="right_b" style="height: 585px; width: 965px; clear: both">
-                            <form id="centerForm" runat="server" style="height: 545px;">
+                        <div class="right_b" style="height: 500px; width: 965px; clear: both">
+                            <form id="centerForm" runat="server" style="height: 480px;">
                                      <h2>Class Timetable Entry</h2>
 
                                 <table  style="margin:31px 50px 50px 50px">
@@ -35,23 +35,27 @@
                                     </tr>
                                     <tr>
                                         <td class="stutd_width"><asp:Label ID="Label4" CssClass="label" runat="server" Text="EDU Year"></asp:Label></td>
-                                        <td><asp:DropDownList CssClass="dropdownlist" ID="ddleduyearlist" runat="server">
-                                                <asp:ListItem>Choose Education Year</asp:ListItem>
-                                                <asp:ListItem>2015 - 2016</asp:ListItem>
-                                                <asp:ListItem>2016 - 2017</asp:ListItem>
-                                                <asp:ListItem>2017 - 2018</asp:ListItem>
-                                                <asp:ListItem>2018 - 2019</asp:ListItem>
-                                                <asp:ListItem>2019 - 2020</asp:ListItem>
-                                                <asp:ListItem></asp:ListItem>
+                                        <td><asp:DropDownList ID="ddleduyearlist" CssClass="dropdownlist" runat="server" Width="150px"  >
+                                                 <asp:ListItem Text="Select Year" Value="Select Year" />
+                                                <asp:ListItem Text="2011 - 2012" Value="2011 - 2012" />
+                                                <asp:ListItem Text="2012 - 2013" Value="2012 - 2013" />
+                                                <asp:ListItem Text="2013 - 2014" Value="2013 - 2014" />
+                                                <asp:ListItem Text="2014 - 2015" Value="2014 - 2015" />
+                                                <asp:ListItem Text="2015 - 2016" Value="2015 - 2016" />
+                                                <asp:ListItem Text="2016 - 2017" Value="2016 - 2017" />
+                                                <asp:ListItem Text="2017 - 2018" Value="2017 - 2018" />
+                                                <asp:ListItem Text="2018 - 2019" Value="2018 - 2019" />
+                                                <asp:ListItem Text="2019 - 2020" Value="2019 - 2020" />
+                                                <asp:ListItem Text="2020 - 2021" Value="2020 - 2021" />
                                             </asp:DropDownList>
-                                        </td>
+                                            
                                         <td>
                                              <asp:Label ID="errmsgeduyear" runat="server" Text="Please select required field !"  CssClass="errlable1" Visible="False" ForeColor="red"></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="stutd_width"><asp:Label ID="Label3" CssClass="label" runat="server" Text="Grade*"></asp:Label></td>
-                                        <td><asp:DropDownList CssClass="dropdownlist" ID="ddlentrygradelist" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+                                        <td><asp:DropDownList CssClass="dropdownlist" ID="ddlentrygradelist" runat="server" AppendDataBoundItems="True" AutoPostBack="True" Width="150px">
                                             </asp:DropDownList></td>
                                         <td class="auto-style1">
                                             <asp:Label ID="errmsggradelist" runat="server" Text="Please select grade !"  CssClass="errlable1" Visible="False" ForeColor="red"></asp:Label>
@@ -59,13 +63,13 @@
                                     </tr>
                                     <tr>
                                         <td class="stutd_width"><asp:Label ID="Label1" CssClass="label" runat="server" Text="Class*"></asp:Label></td>
-                                        <td><asp:DropDownList CssClass="dropdownlist" ID="ddlentryclasslist" runat="server" AppendDataBoundItems="True">
+                                        <td><asp:DropDownList CssClass="dropdownlist" ID="ddlentryclasslist" runat="server" AppendDataBoundItems="True" Width="150px">
                                         </asp:DropDownList></td>
                                         <td class="auto-style1"><asp:Label ID="errmsgclasslist" runat="server" Text="Please select class!"  CssClass="errlable1" Visible="False" ForeColor="red"></asp:Label></td>
                                     </tr>
                                     <tr>
                                         <td class="stutd_width"><asp:Label ID="Label2" CssClass="label" runat="server" Text="Room Teacher*"></asp:Label></td>
-                                        <td><asp:DropDownList CssClass="dropdownlist" ID="ddlentryteacherlist" runat="server" AppendDataBoundItems="True">
+                                        <td><asp:DropDownList CssClass="dropdownlist" ID="ddlentryteacherlist" runat="server" AppendDataBoundItems="True" Width="150px">
                                         </asp:DropDownList></td>
                                         <td class="auto-style1"><asp:Label ID="errmsgteaacherlist" runat="server" Text="Please select Room Teacher !" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label></td>
                                     </tr>
