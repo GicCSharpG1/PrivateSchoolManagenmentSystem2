@@ -73,7 +73,7 @@
                                 </asp:Panel>
                                 <%--<asp:Label ID="lblNodata" runat="server" Font-Size="Medium" ForeColor="White"></asp:Label>--%>
                                 <br />
-                                <asp:GridView ID="gvStuTimetable" runat="server" CellPadding="4" AutoGenerateColumns="False" PageSize="7" ShowHeaderWhenEmpty="True" EmptyDataText="There is no record.">
+                                <asp:GridView ID="gvStuTimetable" runat="server" CellPadding="4" AutoGenerateColumns="False" PageSize="7" ShowHeaderWhenEmpty="True" EmptyDataText="There is no record." Font-Size="Medium" Width="1000px">
                                     <EditRowStyle BackColor="#7C6F57" />
                                     <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
