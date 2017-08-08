@@ -420,5 +420,33 @@ namespace HomeASP.DbAccess
            da.Fill(dt);
            return dt;
        }
+
+      public DataSet.DsPSMS.ST_TIMETABLE_DETAILDataTable isExitTimeHedData1(DataSet.DsPSMS.ST_TIMETABLE_DETAILRow dr)
+      {
+          if (dr == null)
+              return null;
+          string query = "SELECT * FROM ST_TIMETABLE_DETAIL ";
+          string where = "";
+          if (dr.TIMETABLE_ID != null)
+          {
+              where += " TIMETABLE_ID = '" + dr.TIMETABLE_ID + "'";
+          }
+
+          if (dr.TIMETABLE_TIME != null)
+          {
+              if (where.Length > 0)
+                  where += " AND TIMETABLE_TIME= '" + dr.TIMETABLE_TIME + "'";
+          }
+         
+
+          if (where.Length > 0)
+              query += " WHERE " + where;
+
+          SqlCommand cmd = new SqlCommand(query, conn);
+          SqlDataAdapter da = new SqlDataAdapter(cmd);
+          DataSet.DsPSMS.ST_TIMETABLE_DETAILDataTable dt = new DataSet.DsPSMS.ST_TIMETABLE_DETAILDataTable();
+          da.Fill(dt);
+          return dt;
+      }
     }
 }

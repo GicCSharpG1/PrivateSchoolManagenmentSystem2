@@ -38,11 +38,7 @@
                         <div class="right_b" style="height: 1140px; width: 965px; clear: both">
                             <form id="centerForm" runat="server" style="height: 1100px;" autocomplete="off">
                                 <h2>Grade And Subject Entry</h2>
-                                    <asp:ValidationSummary id="errSum" 
-                                         DisplayMode="List"
-                                         EnableClientScript="true"
-                                         HeaderText=""
-                                         runat="server" Visible="false" ForeColor="Red"/>
+                                   
                                 <table style="border-collapse:separate; border-spacing:0 10px;">
                                     <tr>
                                         <td class="column">
@@ -70,7 +66,7 @@
                                             <asp:TextBox ID="gradeId" CssClass="textbox" runat="server" onkeypress="return allowOnlyNumber(event);"></asp:TextBox>
                                         </td>
                                         <td>
-<asp:Label ID="Lbl" CssClass="label" runat="server" Text="ID" ForeColor="Red" ></asp:Label>
+ <%--<asp:Label runat="server" ID="alertMsg" Font-Size="Medium" style="margin-left:10px;color:red"></asp:Label>--%>
                                         </td>
                                     </tr>
                                    <%-- <tr>
@@ -92,7 +88,7 @@
                                             <asp:Label ID="lblPrice" CssClass="label" runat="server" Text="Price"></asp:Label>
                                         </td>
                                         <td class="column">
-                                            <asp:TextBox ID="price" CssClass="textbox" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="price" CssClass="textbox" runat="server" onkeypress="return allowOnlyNumber(event);"></asp:TextBox>
                                         </td>
                                         <td></td>
                                     </tr>
@@ -110,6 +106,12 @@
                                         </td>
                                         <td class="column">
                                             <asp:Button class="btn" ID="btnShowAll" runat="server" Text="Show All" OnClick="btnSelect_Click" />
+                                        </td>
+                                           <td class="auto-style1">
+                                            <asp:Label ID="errgrade1" runat="server" Text="Please input required field!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
+                                        </td>
+                                         <td class="auto-style1">
+                                            <asp:Label ID="Label1" runat="server" Text="This ID is already saved!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
                                     </tr>
                                 </table>
@@ -202,6 +204,13 @@
                                         </td>
                                         <td class="column">
                                             <asp:Button class="btn" ID="subjectShowAll" runat="server" Text="Show All" OnClick="btnSelectSubject_Click" />
+                                        </td>
+                                       </td>
+                                           <td class="auto-style1">
+                                            <asp:Label ID="Label5" runat="server" Text="Please input required field!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
+                                        </td>
+                                         <td class="auto-style1">
+                                            <asp:Label ID="Label6" runat="server" Text="This ID is already saved!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
                                     </tr>
                                 </table>
@@ -297,6 +306,12 @@
                                         <td class="column">
                                             <asp:Button class="btn" ID="gradeSubjectShowAll" runat="server" Text="Show All" OnClick="btnSelectGradeSubject_Click"  />
                                         </td>
+                                        <td class="auto-style1">
+                                            <asp:Label ID="errorSubandGrade" runat="server" Text="Please input required field!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
+                                        </td>
+                                          <td class="auto-style1">
+                                            <asp:Label ID="Label8" runat="server" Text="This ID is already saved!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
+                                        </td>
                                     </tr>
                                 </table>
                                 <div class="selectSubject" style="padding-left: 20px;height:100px">
@@ -322,7 +337,7 @@
 
                                 </div>
                                 <div class="GSgridview" style="padding-left: 20px">
-                                    <asp:GridView ID="gradeSubjectGridView" AutoGenerateColumns="False" runat="server" class="GSgridview" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gridViewGradeSubject_PageIndexChanging" >
+                                    <asp:GridView ID="gradeSubjectGridView" AutoGenerateColumns="False" runat="server" class="GSgridview" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gridViewGradeSubject_PageIndexChanging" OnSelectedIndexChanged="gradeSubjectGridView_SelectedIndexChanged1" >
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
                                             <asp:BoundField ReadOnly="True"

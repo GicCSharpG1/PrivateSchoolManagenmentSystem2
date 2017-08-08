@@ -53,49 +53,22 @@ namespace HomeASP
                 gradeSubjectGridView.DataSource = new DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable();
                 gradeSubjectGridView.DataBind();
             }
-            errSum.Visible = false;
+           
         }
 
         private Boolean checkValidationForGrade()
         {
             Boolean isError = false;
-            if (gradeId.Text.Trim().Length == 0)
+            if (gradeId.Text.Trim().Length == 0 || gradeName.Text.Trim().Length == 0 || eduYearGrade.SelectedIndex == 0 || price.Text.Trim().Length == 0)
             {
-                Lbl.Text = "Please Enter required field";
-                Lbl.Visible = true;
+                errgrade1.Visible = true;
                 isError = true;
             }
             else
             {
-                Lbl.Visible = false;
+                errgrade1.Visible = false;
             }
-            if (gradeName.Text.Trim().Length == 0)
-            {
-                //errGradeName.Visible = true;
-                isError = true;
-            }
-            else
-            {
-                //errGradeName.Visible = false;
-            }
-            if (eduYearGrade.SelectedIndex == 0)
-            {
-                //errEduYear1.Visible = true;
-                isError = true;
-            }
-            else
-            {
-                //errEduYear1.Visible = false;
-            }
-            if (price.Text.Trim().Length == 0)
-            {
-                //errPrice.Visible = true;
-                isError = true;
-            }
-            else
-            {
-                //errPrice.Visible = false;
-            }
+            
             return isError;
         }
 
@@ -141,14 +114,14 @@ namespace HomeASP
                     {
 
                         //  ModelState.AddModelError(string.Empty, "Data already exists for this Grade!");
-                        string script = "alert(\"Data already exists for this ID!\");";
-                        ScriptManager.RegisterStartupScript(this, GetType(),
-                                              "ServerControlScript", script, true);
-                        errSum.Visible = true;
+                        //string script = "alert(\"Data already exists for this ID!\");";
+                        //ScriptManager.RegisterStartupScript(this, GetType(),
+                        //                      "ServerControlScript", script, true);
+                        Label1.Visible = true;
                     }
                     else
                     {
-                        errSum.HeaderText = " ";
+                       
                         service.saveGrade(gradeRow, out msg);
 
                         //Response.Write("<script>alert('Save Successfully!')</script>");
@@ -253,33 +226,16 @@ namespace HomeASP
         private Boolean checkValidationForSubject()
         {
             Boolean isError = false;
-            if (subjectId.Text.Trim().Length == 0)
+            if (subjectId.Text.Trim().Length == 0 || subjectName.Text.Trim().Length == 0 || eduYearSubject.SelectedIndex == 0)
             {
-                errSum.Visible = true;
+                Label5.Visible = true;
                 isError = true;
             }
             else
             {
-                errSum.Visible = false;
+                Label5.Visible = false;
             }
-            if (subjectName.Text.Trim().Length == 0)
-            {
-                //  errSubjectName.Visible = true;
-                isError = true;
-            }
-            else
-            {
-                //  errSubjectName.Visible = false;
-            }
-            if (eduYearSubject.SelectedIndex == 0)
-            {
-                //  errEduYear2.Visible = true;
-                isError = true;
-            }
-            else
-            {
-                //  errEduYear2.Visible = false;
-            }
+          
             return isError;
         }
 
@@ -302,10 +258,10 @@ namespace HomeASP
                     if (subjectData != null && subjectData.Rows.Count > 0)
                     {
                         //ModelState.AddModelError(string.Empty, "Data already exists for this Subject!");
-                        string script = "alert(\"Data already exists for this ID!\");";
-                        ScriptManager.RegisterStartupScript(this, GetType(),
-                                              "ServerControlScript", script, true);
-                        errSum.Visible = true;
+                        //string script = "alert(\"Data already exists for this ID!\");";
+                        //ScriptManager.RegisterStartupScript(this, GetType(),
+                        //                      "ServerControlScript", script, true);
+                        Label6.Visible = true;
                     }
                     else
                     {
@@ -423,10 +379,13 @@ namespace HomeASP
                     if (resultDt != null && resultDt.Rows.Count > 0)
                     {
                         // ModelState.AddModelError(string.Empty, "Data already exists for this Grade and Subject!");
-                        string script = "alert(\"Data already exists for this ID!\");";
-                        ScriptManager.RegisterStartupScript(this, GetType(),
-                                              "ServerControlScript", script, true);
-                        errSum.Visible = true;
+                        //string script = "alert(\"Data already exists for this ID!\");";
+                        //ScriptManager.RegisterStartupScript(this, GetType(),
+                        //                      "ServerControlScript", script, true);
+                        Label8.Visible = true;
+                        errorSubandGrade.Visible = false;
+                        errSubjectList.Visible = false;
+                      
                     }
                     else
                     {
@@ -468,21 +427,12 @@ namespace HomeASP
         private Boolean checkValidationForGradeSubject()
         {
             Boolean isError = false;
-            if (gradeSubjectId.Text.Trim().Length == 0)
+            if (gradeSubjectId.Text.Trim().Length == 0 || gradeList.SelectedIndex == 0 || eduYearGradeSubject.SelectedIndex == 0)
             {
-                //   errGradeSubjectId.Visible = true;
+                  errorSubandGrade.Visible = true;
                 isError = true;
             }
-            if (gradeList.SelectedIndex == 0)
-            {
-                //  errGradeList.Visible = true;
-                isError = true;
-            }
-            if (eduYearGradeSubject.SelectedIndex == 0)
-            {
-                //   errEduYear3.Visible = true;
-                isError = true;
-            }
+           
             int count = 0;
             foreach (GridViewRow row in subjectGridView.Rows)
             {
@@ -553,9 +503,9 @@ namespace HomeASP
                         row.SUBJECT_ID_LIST = subjectName;
 
                         DataSet.DsPSMS.ST_GRADE_MSTRow grade = new DataSet.DsPSMS.ST_GRADE_MSTDataTable().NewST_GRADE_MSTRow();
-                        //grade.GRADE_ID = int.Parse(row.GRADE_ID);
-                        //DataSet.DsPSMS.ST_GRADE_MSTDataTable result = service.selectGradeByID(grade, out msg);
-                        //row.GRADE_ID = result.Rows[0]["GRADE_NAME"].ToString();
+                      grade.GRADE_ID = int.Parse(row.GRADE_ID);
+                        DataSet.DsPSMS.ST_GRADE_MSTDataTable result = service.selectGradeByID(grade, out msg);
+                        row.GRADE_ID = result.Rows[0]["GRADE_NAME"].ToString();
                     }
                 }
                 gradeSubjectGridView.DataSource = resultDt;
@@ -567,6 +517,10 @@ namespace HomeASP
 
         protected void btnUpdateGradeSubject_Click(object sender, EventArgs e)
         {
+            int j = 0;
+            string[] values = new string[6];
+            string inSubId = "";
+            string[] inSubIdArr = new string[30];
             LinkButton btn = (LinkButton)(sender);
             string editId = btn.CommandName;
             gradeSubjectId.Text = editId;
@@ -577,17 +531,55 @@ namespace HomeASP
                 gradeSubjectRow.ID = Convert.ToInt32(editId);
             DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable subjectGradeData = service.selectGradeSubjectByID(gradeSubjectRow, out msg);
             eduYearGradeSubject.Text = subjectGradeData.Rows[0]["EDU_YEAR"].ToString();
-            gradeSubjectAdd.Text = "Update";
-            gradeSubjectShowAll.Enabled = false;
-        }
+            gradeList.Text = subjectGradeData.Rows[0]["GRADE_ID"].ToString();
+            // dgv3.Text = dgv4.Rows[rowindex].Cells[2].Value.ToString();
+            for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
+            {
+               
+          Boolean value=  Convert.ToBoolean(subjectGridView.Rows[j].Cells[0].Text) ;
+            }
 
+            if (gradeSubjectGridView.Rows.Count == 0)
+            {
+                string script = "alert(\"Data does not exit!\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                                "ServerControlScript", script, true);
+
+            }
+            else
+            {
+
+                int index = gradeSubjectGridView.SelectedIndex;
+                string allSub = gradeSubjectGridView.Rows[index].Cells[3].Text.ToString();
+
+
+                values = allSub.Split(',');
+                // for(int x =0 ; x <= values.Length ; x++) 
+                //{
+                //MessageBox.Show("TTTTTTTTTTTTest !!!!!!!" + values[x]);
+                //}
+                for (int i = 0; i <= values.Length - 1; i++)
+                {
+                    for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
+                    {
+                        String ss = values[i];
+                        if (subjectGridView.Rows[j].Cells[1].Text.ToString() == ss) { }
+                        
+                    }
+
+                }
+            }
+                gradeSubjectAdd.Text = "Update";
+                gradeSubjectShowAll.Enabled = false;
+            
+        }
         protected void btnSelectGradeSubject_Click(object sender, EventArgs e)
         {
             displayGradeSubjectData();
             //  errEduYear3.Visible = false;
             //  errGradeSubjectId.Visible = false;
             //  errGradeList.Visible = false;
-            errSubjectList.Visible = false;
+           
         }
 
         protected void btnDeleteGradeSubject_Click(object sender, EventArgs e)
@@ -608,6 +600,11 @@ namespace HomeASP
         }
 
         protected void gradeSubjectGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gradeSubjectGridView_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
         }
