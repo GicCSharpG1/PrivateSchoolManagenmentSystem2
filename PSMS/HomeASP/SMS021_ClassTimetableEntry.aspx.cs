@@ -344,5 +344,10 @@ namespace HomeASP
                 ddlsubjectlist.Enabled = true;
             }
         }
+
+        protected void ddlclass5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

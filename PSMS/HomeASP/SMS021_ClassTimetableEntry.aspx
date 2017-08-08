@@ -34,9 +34,9 @@
             <div id="cmcontent">
                 <div id="cmright">
                     <div class="cmtit_bot" style="background-image: url(Images/form_bg.jpg)">
-                        <div class="right_b" style="height: 520px; width: 965px; clear: both">
-                            <form id="centerForm" runat="server" style="height: 485px;">
-                                 <h2>Teacher Timetable Entry</h2>
+                         <div class="right_b" style="height: 580px; width: 965px; clear: both">
+                            <form id="centerForm" runat="server" style="height: 560px;">
+                                <h2>Teacher Timetable Entry</h2>
                                 <table class="table_style" style="margin:15px">
                                     <%--<tr>
                                         <td colspan="2" class="td_width">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:RequiredFieldValidator ID="validatorgrade" runat="server" ControlToValidate="ddltimegradelist" ErrorMessage="Please select grade !" InitialValue="0" CssClass="errlabel"></asp:RequiredFieldValidator></td>
@@ -48,13 +48,13 @@
                                             <asp:Label ID="Label3" CssClass="label" runat="server" Text="Grade*" Width="100px"></asp:Label></td>
                                        
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddltimegradelist" runat="server" AppendDataBoundItems="True" ForeColor="#003300" OnSelectedIndexChanged="ddltimegradelist_SelectedIndexChanged" AutoPostBack="True">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddltimegradelist" runat="server" AppendDataBoundItems="True" ForeColor="#003300" OnSelectedIndexChanged="ddltimegradelist_SelectedIndexChanged" AutoPostBack="True" Width="142px">
                                             </asp:DropDownList></td>
                                         <td><span style="margin-left: 5em"></span></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label1" CssClass="label" runat="server" Text="Teacher*"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlTeacherList" runat="server" ForeColor="Black" AppendDataBoundItems="True">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlTeacherList" runat="server" ForeColor="Black" AppendDataBoundItems="True" Width="142px">
                                             </asp:DropDownList></td>
 
                                     </tr>
@@ -67,13 +67,13 @@
                                         <td class="td_width">
                                             <asp:Label ID="Label2" CssClass="label" runat="server" Text="Subject*"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlsubjectlist" runat="server" AutoPostBack="True" Enabled="False" ForeColor="Black">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlsubjectlist" runat="server" AutoPostBack="True" Enabled="False" ForeColor="Black" Width="142px">
                                             </asp:DropDownList></td>
                                         <td><span style="margin-left: 5em"></span></td>
                                         <td class="edutd_width">
                                             <asp:Label ID="Label5" CssClass="label" runat="server" Text="Education Year*"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddleduyearlist" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddleduyearlist" runat="server" Width="142px">
                                                 <asp:ListItem>Select Edu Year</asp:ListItem>
                                                 <asp:ListItem>2011 - 2012</asp:ListItem>
                                                 <asp:ListItem>2012 - 2013</asp:ListItem>
@@ -96,7 +96,7 @@
                                         <td class="td_width">
                                             <asp:Label ID="Label4" CssClass="label" runat="server" Text="Date"></asp:Label></td>
                                         <td>
-                                            <asp:TextBox CssClass="textbox" ID="txttimetabledate" Style="color: black" runat="server" AutoPostBack="true" />
+                                            <asp:TextBox CssClass="textbox" ID="txttimetabledate" Style="color: black" runat="server" AutoPostBack="true" Width="140px" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -110,7 +110,7 @@
                                         <td class="td_width">
                                             <asp:Label ID="Label6" CssClass="label" runat="server" Text="Period 1"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass1" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass1" runat="server" Width="142px">
                                                 <asp:ListItem>Select Class</asp:ListItem>
                                                 <asp:ListItem>Class A</asp:ListItem>
                                                 <asp:ListItem>Class B</asp:ListItem>
@@ -122,7 +122,7 @@
                                         <td class="td_width">
                                             <asp:Label ID="Label10" CssClass="label" runat="server" Text="Period 5" Width="130px"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass5" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass5" runat="server" OnSelectedIndexChanged="ddlclass5_SelectedIndexChanged" Width="142px">
                                                 <asp:ListItem>Select Class</asp:ListItem>
                                                 <asp:ListItem>Class A</asp:ListItem>
                                                 <asp:ListItem>Class B</asp:ListItem>
@@ -136,7 +136,7 @@
                                         <td class="td_width">
                                             <asp:Label ID="Label7" CssClass="label" runat="server" Text="Period 2"></asp:Label></td>
                                         <td class="auto-style1">
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass2" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass2" runat="server" Width="142px">
                                                 <asp:ListItem>Select Class</asp:ListItem>
                                                 <asp:ListItem>Class A</asp:ListItem>
                                                 <asp:ListItem>Class B</asp:ListItem>
@@ -148,7 +148,7 @@
                                         <td class="td_width">
                                             <asp:Label ID="Label11" CssClass="label" runat="server" Text="Period 6"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass6" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass6" runat="server" Width="142px">
                                                 <asp:ListItem>Select Class</asp:ListItem>
                                                 <asp:ListItem>Class A</asp:ListItem>
                                                 <asp:ListItem>Class B</asp:ListItem>
@@ -162,7 +162,7 @@
                                         <td class="td_width">
                                             <asp:Label ID="Label8" CssClass="label" runat="server" Text="Period 3"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass3" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass3" runat="server" Width="142px">
                                                 <asp:ListItem>Select Class</asp:ListItem>
                                                 <asp:ListItem>Class A</asp:ListItem>
                                                 <asp:ListItem>Class B</asp:ListItem>
@@ -174,7 +174,7 @@
                                         <td class="td_width">
                                             <asp:Label ID="Label12" CssClass="label" runat="server" Text="Period 7"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass7" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass7" runat="server" Width="142px">
                                                 <asp:ListItem>Select Class</asp:ListItem>
                                                 <asp:ListItem>Class A</asp:ListItem>
                                                 <asp:ListItem>Class B</asp:ListItem>
@@ -188,7 +188,7 @@
                                         <td class="td_width">
                                             <asp:Label ID="Label9" CssClass="label" runat="server" Text="Period 4"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass4" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlclass4" runat="server" Width="142px">
                                                 <asp:ListItem>Select Class</asp:ListItem>
                                                 <asp:ListItem>Class A</asp:ListItem>
                                                 <asp:ListItem>Class B</asp:ListItem>
