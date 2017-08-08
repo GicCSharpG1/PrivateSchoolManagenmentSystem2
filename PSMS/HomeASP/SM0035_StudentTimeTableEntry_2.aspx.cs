@@ -22,6 +22,7 @@ namespace HomeASP
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Labe.Visible = false;
             this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
 
             if (Session["LOGIN_USER_ID"] != null)
@@ -119,6 +120,7 @@ namespace HomeASP
 
         protected void btntimedetailAdd_Click(object sender, EventArgs e)
         {
+            Labe.Visible = false;
             bool isOK = true;
             if (checkValidation())
             {
@@ -134,7 +136,16 @@ namespace HomeASP
                     timedetail.CRT_DT_TM = DateTime.Now;
                     timedetail.CRT_USER_ID = this.userId;
                     timedetail.DEL_FLG = 0;
-                    isOK = timeService.saveTimetableDetailData(timedetail, out msg);
+                    if (checkAldyRecord(timedetail))
+                    {
+                        Labe.Visible=true;
+                        isOK = false;
+                    }
+                    else
+                    {
+                       
+                        isOK = timeService.saveTimetableDetailData(timedetail, out msg);
+                    }
                 }
                 else if (btntimedetailAdd.Text.Equals("Edit"))
                 {
@@ -147,7 +158,10 @@ namespace HomeASP
                     timedetail.FRIDAY = ddlfrisublist.SelectedItem.Value;
                     timedetail.UPD_DT_TM = DateTime.Now;
                     timedetail.UPD_USER_ID = this.userId;
-                    isOK = timeService.updateTimeTableDetail(timedetail, timeDetailId, out msg);
+                  
+                        isOK = timeService.updateTimeTableDetail(timedetail, timeDetailId, out msg);
+                    
+
                 }
 
                 if (isOK)
@@ -158,14 +172,34 @@ namespace HomeASP
             }
         }
 
+        private bool checkAldyRecord(DataSet.DsPSMS.ST_TIMETABLE_DETAILRow drr)
+        {
+            bool alreadyExist = false;
+            for (int i = 0; i < gvtimedetail.Rows.Count; i++)
+            {
+                DataSet.DsPSMS.ST_TIMETABLE_DETAILDataTable result = timeService.isExistTimeHed1(drr);
+                if (result != null && result.Rows.Count > 0)
+                {
+                    alreadyExist = true;
+                }
+                else
+                {
+                    alreadyExist = false;
+                }
+            }
+            return alreadyExist;
+        }
+
         protected void resetForm()
         {
+            ddlperiodlist.SelectedIndex = 0;
             ddlmonsublist.SelectedIndex = 0;
             ddltuesublist.SelectedIndex = 0;
             ddlwedsublist.SelectedIndex = 0;
             ddlthusublist.SelectedIndex = 0;
             ddlfrisublist.SelectedIndex = 0;
             btntimedetailAdd.Text = "Save";
+            ddlperiodlist.Enabled = true;
         }
 
         protected void btntimedetailcancel_Click(object sender, EventArgs e)
@@ -188,12 +222,14 @@ namespace HomeASP
             {
                 timeDetailId = int.Parse(detailId);
                 DataSet.DsPSMS.ST_TIMETABLE_DETAILRow timetableDetail= timeService.getTimetableDetailByid(timeDetailId);
+                ddlperiodlist.SelectedIndex = ddlperiodlist.Items.IndexOf(ddlperiodlist.Items.FindByValue(timetableDetail.TIMETABLE_TIME));
                 ddlmonsublist.SelectedIndex = ddlmonsublist.Items.IndexOf(ddlmonsublist.Items.FindByValue(timetableDetail.MONDAY));
                 ddltuesublist.SelectedIndex = ddltuesublist.Items.IndexOf(ddltuesublist.Items.FindByValue(timetableDetail.TUESDAY));
                 ddlwedsublist.SelectedIndex = ddlwedsublist.Items.IndexOf(ddlwedsublist.Items.FindByValue(timetableDetail.WEDNESDAY));
                 ddlthusublist.SelectedIndex = ddlthusublist.Items.IndexOf(ddlthusublist.Items.FindByValue(timetableDetail.THURSDAY));
                 ddlfrisublist.SelectedIndex = ddlfrisublist.Items.IndexOf(ddlthusublist.Items.FindByValue(timetableDetail.FRIDAY));
                 btntimedetailAdd.Text = "Edit";
+                ddlperiodlist.Enabled = false;
             }
         }
 
@@ -274,8 +310,7 @@ namespace HomeASP
         public bool checkValidation()
         {
             bool chkFlag = true;
-
-            if (ddlmonsublist.SelectedIndex == 0)
+            if (ddlperiodlist.SelectedIndex == 0 || ddlmonsublist.SelectedIndex == 0 || ddltuesublist.SelectedIndex == 0 || ddlwedsublist.SelectedIndex == 0 || ddlthusublist.SelectedIndex == 0 || ddlfrisublist.SelectedIndex == 0)
             {
                 errmonlist.Visible = true;
                 chkFlag = false;
@@ -285,42 +320,8 @@ namespace HomeASP
                 errmonlist.Visible = false;
             }
 
-            if (ddltuesublist.SelectedIndex == 0)
-            {
-                errtuelist.Visible = true;
-                chkFlag = false;
-            }
-            else
-            {
-                errtuelist.Visible = false;
-            }
-            if (ddlwedsublist.SelectedIndex == 0)
-            {
-                errwedlist.Visible = true;
-                chkFlag = false;
-            }
-            else
-            {
-                errwedlist.Visible = false;
-            }
-            if (ddlthusublist.SelectedIndex == 0)
-            {
-                errthulist.Visible = true;
-                chkFlag = false;
-            }
-            else
-            {
-                errthulist.Visible = false;
-            }
-            if (ddlfrisublist.SelectedIndex == 0)
-            {
-                errfrilist.Visible = true;
-                chkFlag = false;
-            }
-            else
-            {
-                errfrilist.Visible = false;
-            }
+
+          
 
             return chkFlag;
         }
@@ -343,6 +344,16 @@ namespace HomeASP
         {
             gvtimedetail.PageIndex = e.NewPageIndex;
             gvtimedetail.DataBind();
+        }
+
+        protected void ddlperiodlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void ddlperiodlist_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

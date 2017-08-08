@@ -13,13 +13,13 @@ namespace HomeASP {
     public partial class SM_StudentTimeTableEntry_2 {
         
         /// <summary>
-        /// timetable control.
+        /// centerForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm timetable;
+        protected global::System.Web.UI.HtmlControls.HtmlForm centerForm;
         
         /// <summary>
         /// lbltimegrade control.
@@ -58,6 +58,15 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.DropDownList ddlperiodlist;
         
         /// <summary>
+        /// Labe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Labe;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,13 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.DropDownList ddlmonsublist;
         
         /// <summary>
-        /// errmonlist control.
+        /// errmonlist1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errmonlist;
+        protected global::System.Web.UI.WebControls.Label errmonlist1;
         
         /// <summary>
         /// Label3 control.
@@ -209,6 +218,15 @@ namespace HomeASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// errmonlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label errmonlist;
         
         /// <summary>
         /// gvtimedetail control.

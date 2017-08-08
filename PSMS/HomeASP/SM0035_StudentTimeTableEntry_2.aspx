@@ -11,6 +11,17 @@
     <link href="styles/classtimetable.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
     <link href="styles/CommonStyles.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
     <link href="styles/LoginStyles.css" rel="stylesheet" title="Default Styles" media="screen" type="text/css" />
+
+    <style type="text/css">
+        .auto-style1 {
+            height: 26px;
+        }
+    </style>
+   <%-- <script type="text/javascript">
+        function hideLabel(sender, e) {
+            document.getElementById('<%=Labe.ClientID%>').style.display = 'none';
+      }
+     </script>--%>
 </head>
 <body style="background-image: url(Images/bg.jpg)">
     <div id="main_bot" style="background-image: url(Images/bottom.gif)">
@@ -21,12 +32,12 @@
 
             <div id="cmcontent">
                 <div id="cmright">
-                    <div class="stutimeentry_bot" style="background-image: url(Images/form_bg.jpg)">
-                        <div class="right_b" style="height: 360px; width: 600px;">
-                            <form id="timetable" runat="server">
+                    <div class="cmtit_bot" style="background-image: url(Images/form_bg.jpg)">
+                        <div class="right_b" style="height: 520px; width: 965px; clear: both">
+                            <form id="centerForm" runat="server" style="height: 485px;">
                                 <h2>Class Timetable Entry</h2>
-                                <table id="table_style">
-                                    <tr>
+                                <table id="table_style" >
+                                    <tr><td><span style="margin-left: 5em"></span></td>
                                         <td>
                                             <asp:Label ID="lbltimegrade" CssClass="label" runat="server"></asp:Label></td>
                                         <td>
@@ -35,11 +46,12 @@
                                     <tr>
                                         <td></td>
                                     </tr>
-                                    <tr>
-                                        <td class="td_width">
+                                    <tr><td><span style="margin-left: 3em"></span></td>
+                                        <td class="td_width" >
                                             <asp:Label ID="Label1" CssClass="label" runat="server" Text="Period"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlperiodlist" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlperiodlist" runat="server"  Width="142px" OnSelectedIndexChanged="ddlperiodlist_SelectedIndexChanged" OnTextChanged="ddlperiodlist_TextChanged">
+                                                <asp:ListItem>Select Period</asp:ListItem>
                                                 <asp:ListItem>Period 1</asp:ListItem>
                                                 <asp:ListItem>Period 2</asp:ListItem>
                                                 <asp:ListItem>Period 3</asp:ListItem>
@@ -49,82 +61,86 @@
                                                 <asp:ListItem>Period 7</asp:ListItem>
                                             </asp:DropDownList>
                                         </td>
+                                         <td class="auto-style1">
+                                            <asp:Label ID="Labe" runat="server" Text="Selected period is already recorded !" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
+                                        </td>
                                         <td></td>
 
                                     </tr>
-                                    <tr>
-                                        <td class="td_width">
+                                    <tr><td><span style="margin-left: 5em"></span></td>
+                                        <td class="auto-style1">
                                             <asp:Label ID="Label2" CssClass="label" runat="server" Text="MON"></asp:Label></td>
-                                        <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlmonsublist" runat="server">
+                                        <td class="auto-style1">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlmonsublist" runat="server" Width="142px">
                                             </asp:DropDownList>
                                         </td>
                                         <td class="auto-style1">
-                                            <asp:Label ID="errmonlist" runat="server" Text="Please select subject !" CssClass="errlable1" Visible="False"></asp:Label>
+                                            <asp:Label ID="errmonlist1" runat="server" Text="Please select all field!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr><td><span style="margin-left: 3em"></span></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label3" CssClass="label" runat="server" Text="TUE"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddltuesublist" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddltuesublist" runat="server" Width="142px">
                                             </asp:DropDownList>
                                         </td>
                                         <td class="auto-style1">
-                                            <asp:Label ID="errtuelist" runat="server" Text="Please select subject !" CssClass="errlable1" Visible="False"></asp:Label>
+                                            <asp:Label ID="errtuelist" runat="server" Text="Please select subject !" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr><td><span style="margin-left: 3em"></span></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label4" CssClass="label" runat="server" Text="WED"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlwedsublist" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlwedsublist" runat="server" Width="142px">
                                             </asp:DropDownList>
                                         </td>
                                         <td class="auto-style1">
-                                            <asp:Label ID="errwedlist" runat="server" Text="Please select subject !" CssClass="errlable1" Visible="False"></asp:Label>
+                                            <asp:Label ID="errwedlist" runat="server" Text="Please select subject !" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr><td><span style="margin-left: 5em"></span></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label5" CssClass="label" runat="server" Text="THU"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlthusublist" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlthusublist" runat="server" Width="142px">
                                             </asp:DropDownList>
                                         </td>
                                         <td class="auto-style1">
-                                            <asp:Label ID="errthulist" runat="server" Text="Please select subject !" CssClass="errlable1" Visible="False"></asp:Label>
+                                            <asp:Label ID="errthulist" runat="server" Text="Please select subject !" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr><td><span style="margin-left: 3em"></span></td>
                                         <td class="td_width">
                                             <asp:Label ID="Label6" CssClass="label" runat="server" Text="FRI"></asp:Label></td>
                                         <td>
-                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlfrisublist" runat="server">
+                                            <asp:DropDownList CssClass="dropdownlist" ID="ddlfrisublist" runat="server" Width="142px">
                                             </asp:DropDownList>
                                         </td>
                                         <td class="auto-style1">
-                                            <asp:Label ID="errfrilist" runat="server" Text="Please select subject !" CssClass="errlable1" Visible="False"></asp:Label>
+                                            <asp:Label ID="errfrilist" runat="server" Text="Please select subject !" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td></td>
                                     </tr>
                                     <tr>
+                                        <td><span style="margin-left: 5em"></span></td>
                                         <td>
                                             <asp:Button ID="btntimedetailAdd" runat="server" OnClick="btntimedetailAdd_Click" Text="Save" CssClass="btn" /></td>
                                         <td>
                                             <asp:Button ID="Button2" runat="server" OnClick="btntimedetailcancel_Click" Text="Cancel" CssClass="btn" /></td>
 
-
+                                         <td class="auto-style1">
+                                            <asp:Label ID="errmonlist" runat="server" Text="Please select all field!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
+                                        </td>
 
                                     </tr>
                                 </table>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;
-                                <br />
-                                <asp:GridView ID="gvtimedetail" runat="server" CellPadding="4" AutoGenerateColumns="False" GridLines="None"
-                                    ShowHeaderWhenEmpty="True" EmptyDataText="There is no record." AllowPaging="True" PageSize="4" OnPageIndexChanging="gvtimedetail_PageIndexChanging">
+                                &nbsp;<asp:GridView ID="gvtimedetail" runat="server"  CellPadding="4" AutoGenerateColumns="False" 
+                                    ShowHeaderWhenEmpty="True" EmptyDataText="There is no record." AllowPaging="True" PageSize="5" OnPageIndexChanging="gvtimedetail_PageIndexChanging" Width="950px" Font-Size="Medium">
                                     <EditRowStyle BackColor="#7C6F57" />
                                     <FooterStyle BackColor="#1C5E55" ForeColor="White" Font-Bold="True" />
                                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -177,6 +193,9 @@
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
+                                   
+                                &nbsp;<br />
+                                
                                 <br />
                             </form>
                         </div>
