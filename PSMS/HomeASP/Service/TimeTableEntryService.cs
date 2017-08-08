@@ -997,6 +997,27 @@ namespace HomeASP.Service
                  timedb.Close();
              }
          }
-
+         public DataSet.DsPSMS.ST_TIMETABLE_DETAILDataTable isExistTimeHed1(DataSet.DsPSMS.ST_TIMETABLE_DETAILRow dr)
+         {
+             if (dr == null)
+                 return null;
+             try
+             {
+                 timedb.Open();
+                 DataSet.DsPSMS.ST_TIMETABLE_DETAILDataTable dt = timedb.isExitTimeHedData1(dr);
+                 if (dt != null && (dt.Rows.Count > 0))
+                     return dt;
+                 else
+                     return null;
+             }
+             catch
+             {
+                 return null;
+             }
+             finally
+             {
+                 timedb.Close();
+             }
+         }
     }
 }
