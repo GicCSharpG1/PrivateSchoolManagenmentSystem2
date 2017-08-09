@@ -48,6 +48,99 @@ namespace HomeASP.Service
             return result;
         }
 
+        public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceEdu(string edu, out string msg)
+        {
+            DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+           
+            try
+            {
+                db.Open();
+                result = db.selectAttendanceEdu(edu);
+                if (result != null)
+                {
+                    msg = result.Rows.Count + " day found";
+                }
+                else
+                {
+                    result = null;
+                    msg = "attendance not found";
+                }
+            }
+            catch
+            {
+                msg = "error has occure when insert data";
+                return null;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return result;
+        }
+
+        public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceDate(DateTime datee, out string msg)
+        {
+            DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+
+            try
+            {
+                db.Open();
+                result = db.selectAttendanceDate(datee);
+                if (result != null)
+                {
+                    msg = result.Rows.Count + " day found";
+                }
+                else
+                {
+                    result = null;
+                    msg = "attendance not found";
+                }
+            }
+            catch
+            {
+                msg = "error has occure when insert data";
+                return null;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return result;
+        }
+
+        public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceMonth(string month, out string msg)
+        {
+            DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+
+            try
+            {
+                db.Open();
+                result = db.selectAttendanceMonth(month);
+                if (result != null)
+                {
+                    msg = result.Rows.Count + " day found";
+                }
+                else
+                {
+                    result = null;
+                    msg = "attendance not found";
+                }
+            }
+            catch
+            {
+                msg = "error has occure when insert data";
+                return null;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return result;
+        }
+
         public DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable selectAllAttendance()
         {
             DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable result = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();

@@ -27,6 +27,39 @@ namespace HomeASP.DbAccess
             return st;
         }
 
+        public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceEdu(string edu)
+        {
+            string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (ST_ATTENDANCE_DATA.EDU_YEAR = '" + edu + "');";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();
+            da.Fill(st);
+            return st;
+        }
+
+        public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceDate(DateTime datee)
+        {
+            string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (ST_ATTENDANCE_DATA.ATTENDANCE_DATE = '" + datee.Date.ToString("dd-MM-yyyy") + "');";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();
+            da.Fill(st);
+            return st;
+        }
+
+        public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceMonth(string month)
+        {
+            string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (DAY(ST_ATTENDANCE_DATA.ATTENDANCE_DATE) = '" + month + "');";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();
+            da.Fill(st);
+            return st;
+        }
+
         public int insertAttendanceRecord(DsPSMS.ST_ATTENDANCE_DATARow adr)
         {
             if (adr == null)
@@ -44,7 +77,7 @@ namespace HomeASP.DbAccess
             query += ", EVENING";
             data += ",'" + adr.EVENING + "'";
             query += ", ATTENDANCE_DATE";
-            data += ",'" + adr.ATTENDANCE_DATE.ToString() + "'";
+            data += ",'" + adr.ATTENDANCE_DATE + "'";
 
             if (!adr.IsREMARKNull())
             {
