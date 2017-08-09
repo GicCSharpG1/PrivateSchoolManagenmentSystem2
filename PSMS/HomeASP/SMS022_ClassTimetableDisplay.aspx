@@ -39,7 +39,7 @@
                                 <table id="table_style">
                                     <tr>
                                         <td colspan="2">
-                                            <asp:Label ID="errTeacherSearch" runat="server" Text=" * Please enter date or select Teacher !" class="errlable1" Visible="False"></asp:Label></td>
+                                            <asp:Label ID="errTeacherSearch" runat="server" Text=" * Please enter date or select Teacher !" class="errlable1" Visible="False" ForeColor="Red"></asp:Label></td>
                                     </tr>
                                     <tr>
                                         <td class="td_width">
