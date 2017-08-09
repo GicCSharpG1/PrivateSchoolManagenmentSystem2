@@ -37,7 +37,8 @@
                                 <table id="table_style">
                                     <tr>
                                         <td colspan="2" style="color:red;visibility:visible;" >
-                                            <asp:Label ID="errSelectGrade" runat="server" CssClass="errlabel2" Text="Please select Grade !" Visible="False"></asp:Label></td>
+
+                                            <asp:Label ID="errSelectGrade" runat="server" CssClass="errlabel2" Text="Please select all field !" Visible="False"></asp:Label></td>
                                         <td><span style="margin-left: 3em"></span></td>
                                         <td colspan="2" style="color:red;visibility:visible;" >
                                             <asp:Label ID="errSelectRoom" runat="server" CssClass="errlabel2" Text="Please select Room !" Visible="False"></asp:Label></td>

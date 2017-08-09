@@ -158,7 +158,7 @@ namespace HomeASP
         {
             bool chkFlag = true;
 
-            if (ddlstugradelist.SelectedIndex == 0)
+            if (ddlstugradelist.SelectedIndex == 0 || ddlstuclasslist.SelectedIndex == 0)
             {
                 errSelectGrade.Visible = true;
                 chkFlag = false;
@@ -168,16 +168,7 @@ namespace HomeASP
                 errSelectGrade.Visible = false;
             }
 
-            if (ddlstuclasslist.SelectedIndex == 0)
-            {
-                errSelectRoom.Visible = true;
-                chkFlag = false;
-            }
-            else
-            {
-                errSelectRoom.Visible = false;
-            }
-
+            
             return chkFlag;
         }
     }
