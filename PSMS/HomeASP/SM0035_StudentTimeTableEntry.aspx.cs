@@ -144,6 +144,7 @@ namespace HomeASP
                     if (checkAldyRecord(timetablehed))
                     {
                         errmsgexist.Visible = true;
+                        errmsgeduyear.Visible = false;
                         isOK = false;
                     }
                     else
@@ -175,6 +176,7 @@ namespace HomeASP
 
         protected void resetForm()
         {
+            errmsgeduyear.Visible = false;
             ddleduyearlist.SelectedIndex = 0;
             ddlentrygradelist.SelectedIndex = 0;
             ddlentryclasslist.SelectedIndex = 0;
@@ -222,9 +224,9 @@ namespace HomeASP
         {
             bool chkFlag = true;
 
-            if (ddlentrygradelist.SelectedIndex == 0)
+            if (ddleduyearlist.SelectedIndex == 0 || ddlentrygradelist.SelectedIndex == 0 || ddlentryclasslist.SelectedIndex == 0 || ddlentryteacherlist.SelectedIndex == 0)
             {
-                errmsggradelist.Visible = true;
+                errmsgeduyear.Visible = true;
                 chkFlag = false;
             }
             else
@@ -232,25 +234,7 @@ namespace HomeASP
                 errmsggradelist.Visible = false;
             }
 
-            if (ddlentryclasslist.SelectedIndex == 0)
-            {
-                errmsgclasslist.Visible = true;
-                chkFlag = false;
-            }
-            else
-            {
-                errmsgclasslist.Visible = false;
-            }
-            if (ddlentryteacherlist.SelectedIndex == 0)
-            {
-                errmsgteaacherlist.Visible = true;
-                chkFlag = false;
-            }
-            else
-            {
-                errmsgteaacherlist.Visible = false;
-            }
-
+         
             return chkFlag;
         }
 
