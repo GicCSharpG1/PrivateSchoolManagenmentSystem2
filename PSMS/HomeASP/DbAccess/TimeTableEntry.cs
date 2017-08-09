@@ -437,8 +437,8 @@ namespace HomeASP.DbAccess
               if (where.Length > 0)
                   where += " AND TIMETABLE_TIME= '" + dr.TIMETABLE_TIME + "'";
           }
-         
 
+          where += " AND DEL_FLG= '" + 0 + "'";
           if (where.Length > 0)
               query += " WHERE " + where;
 
