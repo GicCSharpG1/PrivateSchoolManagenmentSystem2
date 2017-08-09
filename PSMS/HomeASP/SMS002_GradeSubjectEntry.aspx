@@ -100,7 +100,10 @@
                                         <td>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label runat="server" ID="errPrice" Visible="false" Text="Please Enter Price!" ForeColor="Red" />
                                         </td>
                                     </tr>--%>
+                                    </table>
+                                <table>
                                     <tr>
+                                        <td width="30"></td>
                                         <td class="column">
                                             <asp:Button class="btn" ID="btnAdd" runat="server" Text="Save" OnClick="btnAdd_Click" />
                                         </td>
@@ -154,6 +157,7 @@
                                         <SortedDescendingHeaderStyle BackColor="#15524A" />
                                     </asp:GridView>
                                 </div>
+                                <%-- <hr style="width:auto"/>--%>
                                 <table style="border-collapse:separate; border-spacing:0 10px;">
                                     <tr>
                                         <td class="column">
@@ -198,16 +202,18 @@
                                         <td>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label runat="server" ID="errSubjectName" Visible="false" Text="Please enter Subject Name!" ForeColor="Red" />
                                         </td>
                                     </tr>--%>
-                                    <tr>
+                                    </table>
+                                    <Table>
+                                    <tr><td width="30"></td>
                                         <td class="column">
                                             <asp:Button class="btn" ID="subjectAdd" runat="server" Text="Save" OnClick="btnAddSubject_Click" />
                                         </td>
                                         <td class="column">
                                             <asp:Button class="btn" ID="subjectShowAll" runat="server" Text="Show All" OnClick="btnSelectSubject_Click" />
                                         </td>
-                                       </td>
-                                           <td class="auto-style1">
-                                            <asp:Label ID="Label5" runat="server" Text="Please input required field!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
+                                       
+                                           <td >
+                                            <asp:Label ID="Label5" runat="server" Text="Please input required field!"  Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
                                          <td class="auto-style1">
                                             <asp:Label ID="Label6" runat="server" Text="This ID is already saved!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
@@ -255,6 +261,7 @@
 
 
                                 </div >
+                                
                                 <table style="border-collapse:separate; border-spacing:0 10px;">
                                     <tr>
                                         <td class="column">
@@ -299,7 +306,9 @@
                                         <td>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label runat="server" ID="errGradeList" Visible="false" Text="Please Choose Grade!" ForeColor="Red" />
                                         </td>
                                     </tr>--%>
-                                    <tr>
+                                   </table>
+                                <table>
+                                    <tr><td style="width:30px;height:60px;"></td>
                                         <td class="column">
                                             <asp:Button class="btn" ID="gradeSubjectAdd" runat="server" Text="Save" OnClick="btnAddGradeSubject_Click" />
                                         </td>
@@ -307,13 +316,15 @@
                                             <asp:Button class="btn" ID="gradeSubjectShowAll" runat="server" Text="Show All" OnClick="btnSelectGradeSubject_Click"  />
                                         </td>
                                         <td class="auto-style1">
-                                            <asp:Label ID="errorSubandGrade" runat="server" Text="Please input required field!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
+                                            <asp:Label ID="errorSubandGrade" runat="server" Text="Please input required field!"  Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
                                           <td class="auto-style1">
                                             <asp:Label ID="Label8" runat="server" Text="This ID is already saved!" CssClass="errlable1" Visible="False" ForeColor="Red"></asp:Label>
                                         </td>
+                                     
                                     </tr>
                                 </table>
+                               
                                 <div class="selectSubject" style="padding-left: 20px;height:100px">
                                     <asp:Label runat="server" ID="errSubjectList" Visible="false" ForeColor="Red" Text="Please Choose Subject!" Font-Size="12px" />
                                     

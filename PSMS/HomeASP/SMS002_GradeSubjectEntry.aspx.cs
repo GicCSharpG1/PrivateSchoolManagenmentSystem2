@@ -161,6 +161,8 @@ namespace HomeASP
                 gridViewGrade.DataSource = resultDt;
                 gridViewGrade.DataBind();
             }
+            errgrade1.Visible = false;
+            Label1.Visible = false;
         }
 
         void FillGradeListCombo()
@@ -312,6 +314,8 @@ namespace HomeASP
                 subjectGridView.DataSource = resultDt;
                 subjectGridView.DataBind();
             }
+            Label5.Visible = false;
+            Label6.Visible = false;
         }
 
         protected void btnUpdateSubject_Click(object sender, EventArgs e)
@@ -444,7 +448,7 @@ namespace HomeASP
             }
             if (count == subjectGridView.Rows.Count)
             {
-                errSubjectList.Visible = true;
+                errorSubandGrade.Visible = true;
             }
             return isError;
         }
@@ -513,6 +517,8 @@ namespace HomeASP
                 gradeSubjectGridView.DataBind();
 
             }
+            errorSubandGrade.Visible = false;
+            Label8.Visible = false;
         }
 
         protected void btnUpdateGradeSubject_Click(object sender, EventArgs e)
@@ -533,42 +539,42 @@ namespace HomeASP
             eduYearGradeSubject.Text = subjectGradeData.Rows[0]["EDU_YEAR"].ToString();
             gradeList.Text = subjectGradeData.Rows[0]["GRADE_ID"].ToString();
             // dgv3.Text = dgv4.Rows[rowindex].Cells[2].Value.ToString();
-            for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
-            {
+          //  for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
+          //  {
                
-          Boolean value=  Convert.ToBoolean(subjectGridView.Rows[j].Cells[0].Text) ;
-            }
+          //Boolean value=  Convert.ToBoolean(subjectGridView.Rows[j].Cells[0].Text) ;
+          //  }
 
-            if (gradeSubjectGridView.Rows.Count == 0)
-            {
-                string script = "alert(\"Data does not exit!\");";
-                ScriptManager.RegisterStartupScript(this, GetType(),
-                                                "ServerControlScript", script, true);
+          //  if (gradeSubjectGridView.Rows.Count == 0)
+          //  {
+          //      string script = "alert(\"Data does not exit!\");";
+          //      ScriptManager.RegisterStartupScript(this, GetType(),
+          //                                      "ServerControlScript", script, true);
 
-            }
-            else
-            {
+          //  }
+          //  else
+          //  {
 
-                int index = gradeSubjectGridView.SelectedIndex;
-                string allSub = gradeSubjectGridView.Rows[index].Cells[3].Text.ToString();
+          //      int index = gradeSubjectGridView.SelectedIndex;
+          //      string allSub = gradeSubjectGridView.Rows[index].Cells[3].Text.ToString();
 
 
-                values = allSub.Split(',');
-                // for(int x =0 ; x <= values.Length ; x++) 
-                //{
-                //MessageBox.Show("TTTTTTTTTTTTest !!!!!!!" + values[x]);
-                //}
-                for (int i = 0; i <= values.Length - 1; i++)
-                {
-                    for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
-                    {
-                        String ss = values[i];
-                        if (subjectGridView.Rows[j].Cells[1].Text.ToString() == ss) { }
+          //      values = allSub.Split(',');
+          //      // for(int x =0 ; x <= values.Length ; x++) 
+          //      //{
+          //      //MessageBox.Show("TTTTTTTTTTTTest !!!!!!!" + values[x]);
+          //      //}
+          //      for (int i = 0; i <= values.Length - 1; i++)
+          //      {
+          //          for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
+          //          {
+          //              String ss = values[i];
+          //              if (subjectGridView.Rows[j].Cells[1].Text.ToString() == ss) { }
                         
-                    }
+          //          }
 
-                }
-            }
+          //      }
+          //  }
                 gradeSubjectAdd.Text = "Update";
                 gradeSubjectShowAll.Enabled = false;
             
