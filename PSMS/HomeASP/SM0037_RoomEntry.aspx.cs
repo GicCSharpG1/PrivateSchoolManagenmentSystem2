@@ -53,11 +53,14 @@ namespace HomeASP
         {
             try
             {
+                alertMsg.Text = "";
+
                 RoomErrorMessage.Visible = false;
                 YearErrorMessage.Visible = false;
                 int index = Convert.ToInt32(e.CommandArgument);
                 if (e.CommandName == "EditCol")
                 {
+
                     RoomErrorMessage.Visible = false;
                     YearErrorMessage.Visible = false;
                     BtnRoomSave.Text = "Edit";
@@ -97,6 +100,7 @@ namespace HomeASP
         {
             RoomErrorMessage.Visible = false;
             YearErrorMessage.Visible = false;
+            alertMsg.Visible = false;
             ResetForm();
         }
 
