@@ -11,7 +11,7 @@ namespace HomeASP.DbAccess
 {
     public class dbAccess
     {
-        private string path = @"C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\ConStrPSMS.txt";
+        private string path = @"C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\ConStrPSMS.txt";
         private string conStr = "";
         public SqlConnection conn = new SqlConnection();
 

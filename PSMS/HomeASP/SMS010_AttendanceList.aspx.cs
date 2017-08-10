@@ -41,7 +41,7 @@ namespace HomeASP
                 string EduYr = nowYr + " - " + nexYr;
                 ddlEduyr.Text = EduYr;
 
-                attResDt = attService.selectAttendanceEdu(EduYr, out msg);
+             //   attResDt = attService.selectAttendanceEdu(EduYr, out msg);
                 if (attResDt != null && attResDt.Rows.Count != 0)
                 {
                     gvAttendanceList.DataSource = attResDt;
@@ -117,7 +117,7 @@ namespace HomeASP
                     dpDay.Visible = true;
 
                     DateTime datee = Convert.ToDateTime(dpDay.Text);
-                    attResDt = attService.selectAttendanceDate(datee, out msg);
+               //     attResDt = attService.selectAttendanceDate(datee, out msg);
                     if (attResDt != null && attResDt.Rows.Count != 0)
                     {
                         gvAttendanceList.DataSource = attResDt;
@@ -142,7 +142,7 @@ namespace HomeASP
                     lbMon.Visible = true;
                     ddlMonth.Visible = true;
                     string month = ddlMonth.SelectedValue;
-                    attResDt = attService.selectAttendanceMonth(month, out msg);
+                   // attResDt = attService.selectAttendanceMonth(month, out msg);
                     if (attResDt != null && attResDt.Rows.Count != 0)
                     {
                         gvAttendanceList.DataSource = attResDt;

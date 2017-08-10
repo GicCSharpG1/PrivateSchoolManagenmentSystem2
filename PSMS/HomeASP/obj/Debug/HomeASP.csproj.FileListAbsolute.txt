@@ -444,3 +444,63 @@ C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\bin\DotNetOpenAuth.A
 C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\obj\Debug\HomeASP.dll
 C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\obj\Debug\HomeASP.pdb
 C:\Users\USER\Desktop\PSMS20170705\PSMS_Final\trunk\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\HomeASP.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\HomeASP.pdb
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\EntityFramework.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\System.Web.Providers.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\WebGrease.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\EntityFramework.xml
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\obj\Debug\HomeASP.pdb
+C:\Users\E5-574G\Desktop\YKW\New folder\trunk\PSMS\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\HomeASP.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\HomeASP.pdb
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\Antlr3.Runtime.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.Core.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\EntityFramework.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\System.Web.Optimization.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\System.Web.Providers.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\WebGrease.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\EntityFramework.xml
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.Core.xml
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\obj\Debug\HomeASP.csprojResolveAssemblyReference.cache
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\obj\Debug\HomeASP.dll
+C:\Users\E5-574G\Desktop\PrivateSchoolManagenmentSystem2\trunk\PSMS\HomeASP\obj\Debug\HomeASP.pdb
