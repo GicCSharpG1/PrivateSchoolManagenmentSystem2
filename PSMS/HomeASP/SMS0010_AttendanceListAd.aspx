@@ -19,6 +19,25 @@
             $(".datepicker").datepicker();
         });
     </script>
+
+    <script type="text/javascript">
+        function ShowHide(val) {
+            if (val == 1) {
+                lblDay.Visible = true;
+                dpDay.Visible = true;
+
+            }
+            else {
+                lbMon.Visible = true;
+                ddlMonth.Visible = true;
+            }
+        }
+    </script>
+    <style type="text/css">
+        .auto-style1 {
+            height: 26px;
+        }
+    </style>
 </head>
 
 <body style="background-image: url(Images/bg.jpg)">
@@ -26,7 +45,9 @@
         <div id="main" style="background-image: url(Images/top.gif)">
 
             <!-- header begins -->
+            
             <!-- #include file="~/HtmlPages/AdminHeader.html" -->
+           
             <!-- header ends -->
 
             <!-- content begins -->
@@ -37,142 +58,89 @@
                             <form id="centerForm" runat="server" style="height: 485px;">
                                 <h2>Attendance List</h2>
                                 <table>
-                                    <tr >
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:Label ID="lblDay" runat="server" Text="Day" CssClass="label"></asp:Label></td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:DropDownList ID="ddlDay" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseDay" AutoPostBack="true">
-                                            </asp:DropDownList></td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:Label ID="lblClass" runat="server" Text="Class" CssClass="label"></asp:Label></td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:DropDownList ID="ddlClass" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist">
-                                            </asp:DropDownList></td>
-                                        <td><span style="margin-left: 3em"></span></td>
-                                        <td>
-                                            <asp:Label ID="lblEduYear1" CssClass="label" runat="server" Text="Education Year"></asp:Label></td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:DropDownList ID="eduYearGrade" CssClass="dropdownlist" runat="server">
+                                    <tr>
+                                        <td class="auto-style1"><span style="margin-left: 2em"></span></td>
+                                        <td class="auto-style1">
+                                            <asp:RadioButton runat="server" ID="day" GroupName="DM" Text="Show Day" OnCheckedChanged="day_CheckedChanged" onclick="ShowHide('1');" Font-Size="Medium"/></td>
+                                        <td class="auto-style1"><span style="margin-left: 1em"></span></td>
+                                        <td class="auto-style1">
+                                            <asp:RadioButton runat="server" ID="Month" GroupName="DM" Text="Show Month" OnCheckedChanged="Month_CheckedChanged" onclick="ShowHide('2');" Font-Size="Medium"/></td>
+                                        <td class="auto-style1"><span style="margin-left: 2em"></span></td>
+                                        <td class="auto-style1">
+                                            <asp:Label ID="lbEduYe" runat="server" Text="Education Year" CssClass="label" /></td>
+                                        <td class="auto-style1"><span style="margin-left: 1em"></span></td>
+                                        <td class="auto-style1">
+                                            <asp:DropDownList ID="ddlEduyr" CssClass="dropdownlist" runat="server" Height="21px">
                                                 <asp:ListItem Text="2016 - 2017" Value="2016 - 2017" />
                                                 <asp:ListItem Text="2017 - 2018" Value="2017 - 2018" />
                                                 <asp:ListItem Text="2018 - 2019" Value="2018 - 2019" />
                                                 <asp:ListItem Text="2019 - 2020" Value="2019 - 2020" />
                                                 <asp:ListItem Text="2020 - 2021" Value="2020 - 2021" />
-                                                <asp:ListItem Text="2021 - 2022" Value="2021 - 2022"/>
+                                                <asp:ListItem Text="2021 - 2022" Value="2021 - 2022" />
                                             </asp:DropDownList></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="12" style="border-top: 0.5em solid transparent; border-bottom: 0.5em solid transparent;"></td>
+                                        <td class="auto-style1"><span style="margin-left: 2em"></span></td>
+                                        <td>
+                                            <asp:Label ID="lblDay" runat="server" Text="Day *" CssClass="label" />
+                                        </td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:TextBox CssClass="datepicker textbox" ID="dpDay" Style="color: black; margin-left: 0px" runat="server" /></td>
+                                        <td><span style="margin-left: 2em"></span></td>
+                                        <td>
+                                            <asp:Label ID="lbStudId" runat="server" Text="Student Id" CssClass="label" />
+                                        </td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:TextBox CssClass="textbox" ID="txtStudId" Style="color: black; margin-left: 0px" runat="server" /></td>
                                     </tr>
-                                    <tr >
+                                    <tr>
+                                        <td class="auto-style1"><span style="margin-left: 2em"></span></td>
+                                        <td>
+                                            <asp:Label ID="lbMon" runat="server" Text="Month*" CssClass="label" />
+                                        </td>
                                         <td><span style="margin-left: 1em"></span></td>
-                                        <td><asp:Label ID="lblMonth" runat="server" Text="Month" CssClass="label"></asp:Label></td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td><asp:DropDownList ID="ddlMonth" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseMonthYear" AutoPostBack="true">
+                                        <td>
+                                            <asp:DropDownList ID="ddlMonth" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseMonthYear" AutoPostBack="true">
                                                 <Items>
                                                     <asp:ListItem Text="Select Month" Value="" />
-                                                    <asp:ListItem Text="01" Value="01" />
-                                                    <asp:ListItem Text="02" Value="02" />
-                                                    <asp:ListItem Text="03" Value="03" />
-                                                    <asp:ListItem Text="04" Value="04" />
-                                                    <asp:ListItem Text="05" Value="05" />
-                                                    <asp:ListItem Text="06" Value="06" />
-                                                    <asp:ListItem Text="07" Value="07" />
-                                                    <asp:ListItem Text="08" Value="08" />
-                                                    <asp:ListItem Text="09" Value="09" />
-                                                    <asp:ListItem Text="10" Value="10" />
-                                                    <asp:ListItem Text="11" Value="11" />
-                                                    <asp:ListItem Text="12" Value="12" />
+                                                    <asp:ListItem Text="January" Value="01" />
+                                                    <asp:ListItem Text="Feburay" Value="02" />
+                                                    <asp:ListItem Text="March" Value="03" />
+                                                    <asp:ListItem Text="April" Value="04" />
+                                                    <asp:ListItem Text="May" Value="05" />
+                                                    <asp:ListItem Text="June" Value="06" />
+                                                    <asp:ListItem Text="July" Value="07" />
+                                                    <asp:ListItem Text="August" Value="08" />
+                                                    <asp:ListItem Text="Semptember" Value="09" />
+                                                    <asp:ListItem Text="October" Value="10" />
+                                                    <asp:ListItem Text="novenber" Value="11" />
+                                                    <asp:ListItem Text="December" Value="12" />
                                                 </Items>
                                             </asp:DropDownList></td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        
+                                        <td><span style="margin-left: 2em"></span></td>
                                         <td>
-                                            <asp:Label ID="lblgrade" runat="server" Text="Grade" CssClass="label"></asp:Label></td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:DropDownList ID="ddlGrade" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist">
-                                            </asp:DropDownList></td>
-                                         
-                                        <td><span style="margin-left: 3em"></span></td>
-                                        <td>
-                                            <asp:Label ID="lblName" runat="server" Text="Name" CssClass="label"></asp:Label></td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:TextBox ID="txtName" runat="server" CssClass="textbox"></asp:TextBox></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="12" style="border-top: 0.5em solid transparent; border-bottom: 0.5em solid transparent;"></td>
-                                    </tr>
-                                    <tr >
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:Label ID="lblYear" runat="server" Text="Year" CssClass="label"></asp:Label>
+                                            <asp:Label ID="Label2" runat="server" Text="Student Name*" CssClass="label" />
                                         </td>
-                                        <td><span style="margin-left: 3em"></span></td>
-                                        <td><asp:DropDownList ID="ddlYear" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseMonthYear" AutoPostBack="true">
-                                                <Items>
-                                                    <asp:ListItem Text="Select Year" Value="" />
-                                                    <asp:ListItem Text="2016" Value="2016" />
-                                                    <asp:ListItem Text="2017" Value="2017" />
-                                                    <asp:ListItem Text="2018" Value="2018" />
-                                                    <asp:ListItem Text="2019" Value="2019" />
-                                                    <asp:ListItem Text="2020" Value="2020" />
-                                                    <asp:ListItem Text="2021" Value="2021" />
-                                                    <asp:ListItem Text="2022" Value="2022" />
-                                                    <asp:ListItem Text="2023" Value="2023" />
-                                                    <asp:ListItem Text="2024" Value="2024" />
-                                                    <asp:ListItem Text="2025" Value="2025" />
-                                                </Items>
-                                            </asp:DropDownList></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="12" style="border-top: 0.5em solid transparent; border-bottom: 0.5em solid transparent;"></td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:TextBox CssClass="textbox" ID="txtStuName" Style="color: black; margin-left: 0px" runat="server" /></td>
                                     </tr>
                                 </table>
-                                <div style="float:left; margin-bottom:15px">
+
+                                <div style="float: left; margin-bottom: 15px">
                                     <asp:Label ID="errSer" runat="server" ForeColor="Red" CssClass="errLabel"></asp:Label>
                                 </div>
-                                <div style="float:right; margin-bottom:15px">
+                                <div style="float: right; margin-bottom: 15px">
                                     <asp:Button ID="btnSearch" CssClass="btn" runat="server" Text="Search" Style="margin-right: 35px" OnClick="btnSearch_Click" Width="76px" />
-                                    <asp:Button ID="btnShoAll" CssClass="btn"  runat="server" Text="Show All" Style="margin-right: 35px" OnClick="btnShoAll_Click"/>
+                                    <%--<asp:Button ID="btnShoAll" CssClass="btn" runat="server" Text="Show All" Style="margin-right: 35px" OnClick="btnShoAll_Click" />--%>
                                     <asp:Button ID="btnClear" CssClass="btn" runat="server" Text="Clear" OnClick="btnClear_Click" Style="margin-right: 25px" />
                                 </div>
-                                
+
                                 <div class="table-responsive">
                                     <asp:GridView ID="gvAttendanceList" AutoGenerateColumns="False" runat="server" CssClass="gridview" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="True" EmptyDataText="There is no record." OnPageIndexChanging="gvAttendance_PageIndexChanging">
                                         <AlternatingRowStyle BackColor="White" />
-                                        <Columns>
-                                            <asp:BoundField HeaderText="ID"
-                                                DataField="STUDENT_ID"
-                                                SortExpression="STUDENT_ID"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Name"
-                                                DataField="STUDENT_NAME"
-                                                SortExpression="STUDENT_NAME"></asp:BoundField>
-                                            <asp:BoundField HeaderText="Roll no"
-                                                DataField="ROLL_NO"
-                                                SortExpression="ROLL_NO"></asp:BoundField>
-                                            <asp:TemplateField HeaderText="AM" ItemStyle-CssClass="template-checkbox">
-                                                <ItemTemplate>
-                                                    <asp:CheckBox ID="AM" runat="server"></asp:CheckBox>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="PM" ItemStyle-CssClass="template-checkbox">
-                                                <ItemTemplate>
-                                                    <asp:CheckBox ID="PM" runat="server"></asp:CheckBox>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <%--<asp:TemplateField HeaderText="Date">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="date" runat="server"></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>--%>
-                                        </Columns>
                                         <EditRowStyle BackColor="#7C6F57" />
                                         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -183,7 +151,43 @@
                                         <SortedAscendingHeaderStyle BackColor="#246B61" />
                                         <SortedDescendingCellStyle BackColor="#D4DFE1" />
                                         <SortedDescendingHeaderStyle BackColor="#15524A" />
+                                        <Columns>
+                                            <%--<asp:BoundField HeaderText="Year"
+                                                DataField="EDU_YEAR"
+                                                SortExpression="EDU_YEAR"></asp:BoundField>--%>
+                                            <%--<asp:BoundField HeaderText="Student ID"
+                                                DataField="STUDENT_ID"
+                                                SortExpression="STUDENT_ID"></asp:BoundField>--%>
+                                            <%--<asp:BoundField HeaderText="Attendance ID"
+                                                DataField="ATTENDANCE_ID"
+                                                SortExpression="ATTENDANCE_ID"></asp:BoundField>--%>
+                                            <asp:BoundField HeaderText="Date"
+                                                DataField="ATTENDANCE_DATE"
+                                                SortExpression="ATTENDANCE_DATE"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Morning"
+                                                DataField="MORNING"
+                                                SortExpression="MORNING"></asp:BoundField>
+                                            <asp:BoundField HeaderText="Evening"
+                                                DataField="EVENING"
+                                                SortExpression="EVENING"></asp:BoundField>
+                                            <%--<asp:BoundField HeaderText="Remark"
+                                                DataField="REMARK"
+                                                SortExpression="REMARK"></asp:BoundField>--%>
+                                            <asp:TemplateField HeaderText="AM" ItemStyle-CssClass="template-checkbox">
+                                                <ItemTemplate>
+                                                    <asp:CheckBox ID="AM" runat="server"></asp:CheckBox>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="PM" ItemStyle-CssClass="template-checkbox">
+                                                <ItemTemplate>
+                                                    <asp:CheckBox ID="PM" runat="server"></asp:CheckBox>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
                                     </asp:GridView>
+                                </div>
+                                <div>
+                                    <asp:Button runat="server" ID="updbtn" Text="Update" CssClass="btn" OnClick="updbtn_Click" />
                                 </div>
                             </form>
                         </div>

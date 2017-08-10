@@ -147,7 +147,6 @@
                                     <div style="float:left">
                                         <asp:Label runat="server" ID="errSms" CssClass="errLabel" ForeColor="Red" Height="20px" />
                                     </div>
-                                
                             </form>
                         </div>
                     </div>

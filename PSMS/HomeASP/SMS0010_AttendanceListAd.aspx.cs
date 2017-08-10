@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using HomeASP.Service;
 using HomeASP.DataSet;
 using HomeASP.DbAccess;
+using System.Drawing;
 
 namespace HomeASP
 {
@@ -20,136 +21,96 @@ namespace HomeASP
         DataSet.DsPSMS.ST_ATTENDANCE_DATARow attRow = null;
         DataSet.DsPSMS.ST_STUDENT_DATADataTable stdResult = null;
         DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable attResult = null;
+
         static DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable attResultList = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
         String msg = null;
+        string loginUserId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (ddlGrade.Items.Count == 0)
-            {
-                getGrade();
-            }
-            if (ddlClass.Items.Count == 0)
-            {
-                bindStudentRoom();
-                ddlClass.Items.Insert(0, new ListItem("Select Room", "0"));
-            }
-            if (ddlDay.Items.Count == 0)
-            {
-                getDay();
-            }
-            if (gvAttendanceList.Rows.Count == 0)
-            {
-                gvAttendanceList.DataSource = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
-                gvAttendanceList.DataBind();
-                studentRow = new DataSet.DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
-                studentRow.EDU_YEAR = eduYearGrade.Text;
-                studentRow.GRADE_ID = Convert.ToInt16(ddlGrade.SelectedValue);
-                studentRow.ROOM_ID = ddlClass.SelectedValue;
-                studentRow.ROLL_NO = "";
-                studentRow.STUDENT_NAME = "";
+            DataSet.DsPSMS.ATTENDANCE_RESULTDataTable attResDt = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+            //day_CheckedChanged(sender, e);
+            //Month_CheckedChanged(sender, e);
 
-                DataSet.DsPSMS.ST_STUDENT_DATADataTable resultDt = stuentry.getDataOption(studentRow);
-                if (resultDt == null || resultDt.Count == 0)
+            if (Session["LOGIN_USER_ID"] != null)
+            {
+                loginUserId = (string)(Session["LOGIN_USER_ID"] ?? "  ");
+            }
+
+            if (!IsPostBack)
+            {
+                //lblDay.Visible = false;
+                //lbMon.Visible = false;
+                //dpDay.Visible = false;
+                //ddlMonth.Visible = false;
+
+                int nowYr = Convert.ToInt16(System.DateTime.Now.Year);
+                int nexYr = nowYr + 1;
+                string EduYr = nowYr + " - " + nexYr;
+                ddlEduyr.Text = EduYr;
+
+                attResDt = attService.selectAttendanceEdu(EduYr, out msg);
+                if (attResDt != null && attResDt.Rows.Count != 0)
                 {
-                    gvAttendanceList.DataSource = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
+                    gvAttendanceList.DataSource = attResDt;
                     gvAttendanceList.DataBind();
-                }
-                else
-                {
-                    gvAttendanceList.DataSource = resultDt;
-                    gvAttendanceList.DataBind();
-                    for (int i = 0; i < resultDt.Count; i++)
+                    for (int i = 0; i < gvAttendanceList.Rows.Count; i++)
                     {
-                        CheckBox chkAM = (CheckBox)gvAttendanceList.Rows[i].FindControl("AM");
-                        if (chkAM != null && chkAM.Checked == true)
+                        if (gvAttendanceList.Rows[i].Cells[1].Text == "0")
                         {
-                            chkAM.Checked = false;
+                            
+                            gvAttendanceList.Rows[i].Cells[1].ForeColor = Color.Red;
                         }
-                        CheckBox chkPM = (CheckBox)gvAttendanceList.Rows[i].FindControl("PM");
-                        if (chkPM != null && chkPM.Checked == true)
+                        else
                         {
-                            chkPM.Checked = false;
+                            CheckBox chkAM = (CheckBox)gvAttendanceList.Rows[i].FindControl("AM");
+                            chkAM.Checked = true;
+                        }
+                        if (gvAttendanceList.Rows[i].Cells[2].Text == "0")
+                        {
+                            gvAttendanceList.Rows[i].Cells[2].ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            CheckBox chkPM = (CheckBox)gvAttendanceList.Rows[i].FindControl("PM");
+                            chkPM.Checked = true;
                         }
                     }
-                    //showAllButton();
-                    //Label0.Text = "";
-
+                    gvAttendanceList.Columns[1].Visible = false;
+                    gvAttendanceList.Columns[2].Visible = false;
                 }
             }
         }
 
-
-        public void bindStudentRoom()
-        {
-            ddlClass.Items.Clear();
-            DataSet.DsPSMS.ST_ROOM_MSTDataTable stuRoom = smSer.getAllRoomMST();
-            ddlClass.DataSource = stuRoom;
-            ddlClass.DataTextField = "ROOM_NAME";
-            ddlClass.DataValueField = "ROOM_ID";
-            ddlClass.DataBind();
-        }
-
-        protected void getGrade()
-        {
-            ddlGrade.Items.Clear();
-            DataSet.DsPSMS.ST_GRADE_MSTDataTable gradeResult = gradeService.getAllGradeData(out msg);
-            if (gradeResult != null)
-            {
-                ddlGrade.DataSource = gradeResult.OrderBy(item => item.GRADE_ID);
-                ddlGrade.DataTextField = "GRADE_NAME";
-                ddlGrade.DataValueField = "GRADE_ID";
-                ddlGrade.DataBind();
-                ddlGrade.Items.Insert(0, "Select Grade");
-            }
-        }
-
-        protected void getDay()
-        {
-            ddlDay.Items.Clear();
-            for (int i = 1; i <= 31; i++)
-            {
-                if (i < 10)
-                {
-                    ddlDay.Items.Add("0" + i);
-                }
-                else
-                {
-                    ddlDay.Items.Add("" + i);
-                }
-            }
-            ddlDay.Items.Insert(0, "Select Day");
-        }
-
-        protected void setDayByMonthYear()
-        {
-            if (ddlMonth.SelectedIndex != 0)
-            {
-                int month = Convert.ToInt16(ddlMonth.Text);
-                if (month == 2)
-                {
-                    ddlDay.Items.Remove("30");
-                    ddlDay.Items.Remove("31");
-                    if (ddlYear.SelectedIndex != 0)
-                    {
-                        int year = Convert.ToInt16(ddlYear.Text);
-                        bool isLeapYear = ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0));
-                        if (!isLeapYear)
-                        {
-                            ddlDay.Items.Remove("29");
-                        }
-                    }
-                }
-                if (month == 4 || month == 6 || month == 9 || month == 11)
-                {
-                    ddlDay.Items.Remove("31");
-                }
-            }
-        }
+        //protected void setDayByMonthYear()
+        //{
+        //    //if (ddlMonth.SelectedIndex != 0)
+        //    //{
+        //    //    int month = Convert.ToInt16(ddlMonth.Text);
+        //    //    if (month == 2)
+        //    //    {
+        //    //        ddlDay.Items.Remove("30");
+        //    //        ddlDay.Items.Remove("31");
+        //    //        if (ddlYear.SelectedIndex != 0)
+        //    //        {
+        //    //            int year = Convert.ToInt16(ddlYear.Text);
+        //    //            bool isLeapYear = ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0));
+        //    //            if (!isLeapYear)
+        //    //            {
+        //    //                ddlDay.Items.Remove("29");
+        //    //            }
+        //    //        }
+        //    //    }
+        //    //    if (month == 4 || month == 6 || month == 9 || month == 11)
+        //    //    {
+        //    //        ddlDay.Items.Remove("31");
+        //    //    }
+        //    //}
+        //}
 
         protected void chooseMonthYear(object sender, EventArgs e)
         {
-            setDayByMonthYear();
+            // setDayByMonthYear();
             btnSearch_Click(sender, e);
         }
 
@@ -168,10 +129,65 @@ namespace HomeASP
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-        }
+            DataSet.DsPSMS.ATTENDANCE_RESULTDataTable attResDt = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+            if (day.Checked == true || Month.Checked == true)
+            {
+                if (day.Checked == true)
+                {
+                    lblDay.Visible = true;
+                    dpDay.Visible = true;
 
-        protected void btnShoAll_Click(object sender, EventArgs e)
-        {
+                    DateTime datee = Convert.ToDateTime(dpDay.Text);
+                    attResDt = attService.selectAttendanceDate(datee, out msg);
+                    if (attResDt != null && attResDt.Rows.Count != 0)
+                    {
+                        gvAttendanceList.DataSource = attResDt;
+                        gvAttendanceList.DataBind();
+                        for (int i = 0; i < gvAttendanceList.Rows.Count; i++)
+                        {
+                            if (gvAttendanceList.Rows[i].Cells[1].Text == "0")
+                            {
+                                gvAttendanceList.Rows[i].Cells[1].Text = "Absent";
+                                gvAttendanceList.Rows[i].Cells[1].ForeColor = Color.Red;
+                            }
+                            if (gvAttendanceList.Rows[i].Cells[2].Text == "0")
+                            {
+                                gvAttendanceList.Rows[i].Cells[2].Text = "Absent";
+                                gvAttendanceList.Rows[i].Cells[2].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    lbMon.Visible = true;
+                    ddlMonth.Visible = true;
+                    string month = ddlMonth.SelectedValue;
+                    attResDt = attService.selectAttendanceMonth(month, out msg);
+                    if (attResDt != null && attResDt.Rows.Count != 0)
+                    {
+                        gvAttendanceList.DataSource = attResDt;
+                        gvAttendanceList.DataBind();
+                        for (int i = 0; i < gvAttendanceList.Rows.Count; i++)
+                        {
+                            if (gvAttendanceList.Rows[i].Cells[1].Text == "0")
+                            {
+                                gvAttendanceList.Rows[i].Cells[1].Text = "Absent";
+                                gvAttendanceList.Rows[i].Cells[1].ForeColor = Color.Red;
+                            }
+                            if (gvAttendanceList.Rows[i].Cells[2].Text == "0")
+                            {
+                                gvAttendanceList.Rows[i].Cells[2].Text = "Absent";
+                                gvAttendanceList.Rows[i].Cells[2].ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+
+            }
 
         }
 
@@ -180,9 +196,68 @@ namespace HomeASP
 
         }
 
+        protected void btnShoAll_Click(object sender, EventArgs e)
+        {
+            attResult = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
+            attResult = attService.selectAllAttendance();
+            gvAttendanceList.DataSource = attResult;
+            gvAttendanceList.DataBind();
+        }
 
+        protected void day_CheckedChanged(object sender, EventArgs e)
+        {
+            if (day.Checked == true)
+            {
+                lblDay.Visible = true;
+                dpDay.Visible = true;
+            }
 
+        }
 
+        protected void Month_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Month.Checked == true)
+            {
+                lbMon.Visible = true;
+                ddlMonth.Visible = true;
+            }
+        }
 
+        protected void updbtn_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < gvAttendanceList.Rows.Count; i++)
+            {
+                int resultDt = 0;
+                DataSet.DsPSMS.ST_ATTENDANCE_DATARow row = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
+                row.STUDENT_ID = gvAttendanceList.Rows[i].Cells[0].Text;
+                row.EDU_YEAR = ddlEduyr.Text;
+                row.ATTENDANCE_DATE = dpDay.Text;
+                row.CRT_USER_ID = loginUserId;
+                row.CRT_DT_TM = DateTime.Now;
+                row.DEL_FLG = 0;
+
+                CheckBox chkAM = (CheckBox)gvAttendanceList.Rows[i].FindControl("AM");
+                if (chkAM != null && chkAM.Checked == false)
+                {
+                    row.MORNING = "0";
+                }
+                else
+                {
+                    row.MORNING = "1";
+                }
+                CheckBox chkPM = (CheckBox)gvAttendanceList.Rows[i].FindControl("PM");
+                if (chkPM != null && chkPM.Checked == false)
+                {
+                    row.EVENING = "0";
+                }
+                else
+                {
+                    row.EVENING = "1";
+                }
+                resultDt = attService.updateAttendanceRecord(row, out msg);
+               // errSms.Text = msg;
+                //showAllButton();
+            }
+        }
     }
 }
