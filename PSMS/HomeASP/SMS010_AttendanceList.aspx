@@ -45,14 +45,9 @@
         <div id="main" style="background-image: url(Images/top.gif)">
 
             <!-- header begins -->
-            <% if (Session["LOGIN_USER_LEVEL"].ToString().Equals("Admin"))
-               { %>
-            <!-- #include file="~/HtmlPages/AdminHeader.html" -->
-            <% }
-               else
-               { %>
+            
             <!-- #include file="~/HtmlPages/UserHeader.html" -->
-            <% } %>
+           
             <!-- header ends -->
 
             <!-- content begins -->

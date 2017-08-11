@@ -14,11 +14,43 @@ namespace HomeASP.DbAccess
 {
     class AttendanceDb : dbAccess
     {
-        public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceData(DsPSMS.ST_STUDENT_DATARow sr, DsPSMS.ST_ATTENDANCE_DATARow dr)
+        //public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceData(DsPSMS.ST_STUDENT_DATARow sr, DsPSMS.ST_ATTENDANCE_DATARow dr)
+        //{
+        //    if (dr == null)
+        //        return null;
+        //    string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (ST_STUDENT_DATA.GRADE_ID = '" + sr.GRADE_ID + "' AND ST_STUDENT_DATA.ROOM_ID= '" + sr.ROOM_ID + "' AND ST_ATTENDANCE_DATA.ATTENDANCE_DATE = '" + dr.ATTENDANCE_DATE + "');";
+
+        //    SqlCommand cmd = new SqlCommand(query, conn);
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();
+        //    da.Fill(st);
+        //    return st;
+        //}
+
+        //public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceEdu(string edu)
+        //{
+        //    string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (ST_ATTENDANCE_DATA.EDU_YEAR = '" + edu + "');";
+
+        //    SqlCommand cmd = new SqlCommand(query, conn);
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();
+        //    da.Fill(st);
+        //    return st;
+        //}
+
+        public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceOption(DsPSMS.ST_STUDENT_DATARow stuDr,DsPSMS.ST_ATTENDANCE_DATARow attDr, string month)
         {
-            if (dr == null)
-                return null;
-            string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (ST_STUDENT_DATA.GRADE_ID = '" + sr.GRADE_ID + "' AND ST_STUDENT_DATA.ROOM_ID= '" + sr.ROOM_ID + "' AND ST_ATTENDANCE_DATA.ATTENDANCE_DATE = '" + dr.ATTENDANCE_DATE + "');";
+            string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (ST_ATTENDANCE_DATA.EDU_YEAR = '" + attDr.EDU_YEAR +"'"; 
+           if(!attDr.IsATTENDANCE_DATENull())
+            query += " AND ST_ATTENDANCE_DATA.ATTENDANCE_DATE = '" + attDr.ATTENDANCE_DATE + "'";
+           if (!stuDr.IsGRADE_IDNull())
+               query += " AND ST_STUDENT_DATA.GRADE_ID = '" + stuDr.GRADE_ID + "'";
+           if (!stuDr.IsROOM_IDNull())
+               query += " AND ST_STUDENT_DATA.ROOM_ID = '" + stuDr.ROOM_ID + "'";
+           if (!stuDr.IsSTUDENT_NAMENull())
+               query += " AND ST_STUDENT_DATA.STUDENT_NAME = '" + stuDr.STUDENT_NAME + "'";
+            if(month.Length != 0)
+                query += " AND DAY(ST_ATTENDANCE_DATA.ATTENDANCE_DATE) = '" + month + "'";
 
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -27,38 +59,16 @@ namespace HomeASP.DbAccess
             return st;
         }
 
-        public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceEdu(string edu)
-        {
-            string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (ST_ATTENDANCE_DATA.EDU_YEAR = '" + edu + "');";
+        //public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceMonth(string month)
+        //{
+        //    string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (;
 
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();
-            da.Fill(st);
-            return st;
-        }
-
-        public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceDate(DateTime datee)
-        {
-            string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (ST_ATTENDANCE_DATA.ATTENDANCE_DATE = '" + datee.Date.ToString("dd-MM-yyyy") + "');";
-
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();
-            da.Fill(st);
-            return st;
-        }
-
-        public DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceMonth(string month)
-        {
-            string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (DAY(ST_ATTENDANCE_DATA.ATTENDANCE_DATE) = '" + month + "');";
-
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();
-            da.Fill(st);
-            return st;
-        }
+        //    SqlCommand cmd = new SqlCommand(query, conn);
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();
+        //    da.Fill(st);
+        //    return st;
+        //}
         
         public int insertAttendanceRecord(DsPSMS.ST_ATTENDANCE_DATARow adr)
         {
@@ -170,27 +180,27 @@ namespace HomeASP.DbAccess
             return result;
         }
 
-        public DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable selectAttendanceList(DataSet.DsPSMS.ST_ATTENDANCE_DATARow dr)
-        {
-            string query = "SELECT * FROM ST_ATTENDANCE_DATA WHERE STUDENT_ID IN (" + dr.STUDENT_ID + ")";
-            if (dr.ATTENDANCE_DATE.Substring(0, 2) != "00")
-            {
-                query += " AND DAY(ATTENDANCE_DATE) LIKE " + dr.ATTENDANCE_DATE.Substring(0, 2);
-            }
-            if (dr.ATTENDANCE_DATE.Substring(3, 2) != "00")
-            {
-                query += " AND MONTH(ATTENDANCE_DATE) LIKE " + dr.ATTENDANCE_DATE.Substring(3, 2);
-            }
-            if (dr.ATTENDANCE_DATE.Substring(6, 4) != "0000")
-            {
-                query += " AND YEAR(ATTENDANCE_DATE) LIKE " + dr.ATTENDANCE_DATE.Substring(6, 4);
-            }
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable dt = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
-            da.Fill(dt);
-            return dt;
-        }
+        //public DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable selectAttendanceList(DataSet.DsPSMS.ST_ATTENDANCE_DATARow dr)
+        //{
+        //    string query = "SELECT * FROM ST_ATTENDANCE_DATA WHERE STUDENT_ID IN (" + dr.STUDENT_ID + ")";
+        //    if (dr.ATTENDANCE_DATE.Substring(0, 2) != "00")
+        //    {
+        //        query += " AND DAY(ATTENDANCE_DATE) LIKE " + dr.ATTENDANCE_DATE.Substring(0, 2);
+        //    }
+        //    if (dr.ATTENDANCE_DATE.Substring(3, 2) != "00")
+        //    {
+        //        query += " AND MONTH(ATTENDANCE_DATE) LIKE " + dr.ATTENDANCE_DATE.Substring(3, 2);
+        //    }
+        //    if (dr.ATTENDANCE_DATE.Substring(6, 4) != "0000")
+        //    {
+        //        query += " AND YEAR(ATTENDANCE_DATE) LIKE " + dr.ATTENDANCE_DATE.Substring(6, 4);
+        //    }
+        //    SqlCommand cmd = new SqlCommand(query, conn);
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable dt = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
+        //    da.Fill(dt);
+        //    return dt;
+        //}
     }
 }
    

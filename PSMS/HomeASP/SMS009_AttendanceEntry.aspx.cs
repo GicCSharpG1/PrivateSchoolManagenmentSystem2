@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using HomeASP.Service;
 using System.Data;
+using HomeASP.DataSet;
 
 namespace HomeASP
 {    
@@ -16,8 +17,10 @@ namespace HomeASP
         GradeSubjectService gradeService = new GradeSubjectService();
         AttendanceService attService = new AttendanceService();
         RoomService roSer = new RoomService();
-        DataSet.DsPSMS.ST_STUDENT_DATARow studentRow = null;
+        DsPSMS.ST_STUDENT_DATARow studentRow = null;
+        DsPSMS.ST_ATTENDANCE_DATARow attDr = new DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
         static DataSet.DsPSMS.ATTENDANCE_RESULTDataTable attResultList = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+        
         static int pageIndex = 0;
         string msg = null;
         static string loginUserId = "";
@@ -86,6 +89,8 @@ namespace HomeASP
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             DataSet.DsPSMS.ST_STUDENT_DATARow studentRow = new DataSet.DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
+
+
             if (eduYearGrade.SelectedIndex <= 0 || gradeList.SelectedIndex <= 0 || roomList.SelectedIndex <= 0)
             {
                 errReqData.Text = "Please Enter Required Data !!";
@@ -189,7 +194,7 @@ namespace HomeASP
                     DataSet.DsPSMS.ST_ATTENDANCE_DATARow row = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
                     row.STUDENT_ID = gridViewAttendance.Rows[i].Cells[0].Text;
                     row.EDU_YEAR = eduYearGrade.Text;
-                    row.ATTENDANCE_DATE = attendDate.Text;
+                    row.ATTENDANCE_DATE = Convert.ToDateTime(attendDate.Text);
                     row.CRT_USER_ID = loginUserId;
                     row.CRT_DT_TM = DateTime.Now;
                     row.DEL_FLG = 0;
@@ -240,7 +245,7 @@ namespace HomeASP
                 }
                 else
                 {
-                    drr.ATTENDANCE_DATE = attendDate.Text;
+                    drr.ATTENDANCE_DATE = Convert.ToDateTime(attendDate.Text);
                     result = attService.getAttendanceByDate(drr);
                     if (result != null && result.Rows.Count > 0)
                     {

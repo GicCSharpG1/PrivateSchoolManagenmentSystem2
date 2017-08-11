@@ -22,22 +22,22 @@ namespace HomeASP {
         protected global::System.Web.UI.HtmlControls.HtmlForm centerForm;
         
         /// <summary>
-        /// day control.
+        /// lblDay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton day;
+        protected global::System.Web.UI.WebControls.Label lblDay;
         
         /// <summary>
-        /// Month control.
+        /// dpDay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Month;
+        protected global::System.Web.UI.WebControls.TextBox dpDay;
         
         /// <summary>
         /// lbEduYe control.
@@ -58,42 +58,6 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.DropDownList ddlEduyr;
         
         /// <summary>
-        /// lblDay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDay;
-        
-        /// <summary>
-        /// dpDay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dpDay;
-        
-        /// <summary>
-        /// lbStudId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbStudId;
-        
-        /// <summary>
-        /// txtStudId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStudId;
-        
-        /// <summary>
         /// lbMon control.
         /// </summary>
         /// <remarks>
@@ -112,6 +76,42 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.DropDownList ddlMonth;
         
         /// <summary>
+        /// lbStudId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbStudId;
+        
+        /// <summary>
+        /// dlRoom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dlRoom;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// dlGrade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dlGrade;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -121,13 +121,13 @@ namespace HomeASP {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// txtStuName control.
+        /// dlStuName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStuName;
+        protected global::System.Web.UI.WebControls.DropDownList dlStuName;
         
         /// <summary>
         /// errSer control.

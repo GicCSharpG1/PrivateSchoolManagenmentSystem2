@@ -60,17 +60,18 @@
                                 <table>
                                     <tr>
                                         <td class="auto-style1"><span style="margin-left: 2em"></span></td>
-                                        <td class="auto-style1">
-                                            <asp:RadioButton runat="server" ID="day" GroupName="DM" Text="Show Day" OnCheckedChanged="day_CheckedChanged" onclick="ShowHide('1');" Font-Size="Medium"/></td>
-                                        <td class="auto-style1"><span style="margin-left: 1em"></span></td>
-                                        <td class="auto-style1">
-                                            <asp:RadioButton runat="server" ID="Month" GroupName="DM" Text="Show Month" OnCheckedChanged="Month_CheckedChanged" onclick="ShowHide('2');" Font-Size="Medium"/></td>
+                                        <td>
+                                            <asp:Label ID="lblDay" runat="server" Text="Day *" CssClass="label" />
+                                        </td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:TextBox CssClass="datepicker textbox" ID="dpDay" Style="color: black; margin-left: 0px" runat="server" /></td>
                                         <td class="auto-style1"><span style="margin-left: 2em"></span></td>
                                         <td class="auto-style1">
                                             <asp:Label ID="lbEduYe" runat="server" Text="Education Year" CssClass="label" /></td>
                                         <td class="auto-style1"><span style="margin-left: 1em"></span></td>
                                         <td class="auto-style1">
-                                            <asp:DropDownList ID="ddlEduyr" CssClass="dropdownlist" runat="server" Height="21px">
+                                            <asp:DropDownList ID="ddlEduyr" CssClass="dropdownlist" runat="server" >
                                                 <asp:ListItem Text="2016 - 2017" Value="2016 - 2017" />
                                                 <asp:ListItem Text="2017 - 2018" Value="2017 - 2018" />
                                                 <asp:ListItem Text="2018 - 2019" Value="2018 - 2019" />
@@ -82,29 +83,13 @@
                                     <tr>
                                         <td class="auto-style1"><span style="margin-left: 2em"></span></td>
                                         <td>
-                                            <asp:Label ID="lblDay" runat="server" Text="Day *" CssClass="label" />
-                                        </td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:TextBox CssClass="datepicker textbox" ID="dpDay" Style="color: black; margin-left: 0px" runat="server" /></td>
-                                        <td><span style="margin-left: 2em"></span></td>
-                                        <td>
-                                            <asp:Label ID="lbStudId" runat="server" Text="Student Id" CssClass="label" />
-                                        </td>
-                                        <td><span style="margin-left: 1em"></span></td>
-                                        <td>
-                                            <asp:TextBox CssClass="textbox" ID="txtStudId" Style="color: black; margin-left: 0px" runat="server" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="auto-style1"><span style="margin-left: 2em"></span></td>
-                                        <td>
                                             <asp:Label ID="lbMon" runat="server" Text="Month*" CssClass="label" />
                                         </td>
                                         <td><span style="margin-left: 1em"></span></td>
                                         <td>
                                             <asp:DropDownList ID="ddlMonth" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseMonthYear" AutoPostBack="true">
                                                 <Items>
-                                                    <asp:ListItem Text="Select Month" Value="" />
+                                                    <asp:ListItem Text="  " Value="" />
                                                     <asp:ListItem Text="January" Value="01" />
                                                     <asp:ListItem Text="Feburay" Value="02" />
                                                     <asp:ListItem Text="March" Value="03" />
@@ -121,11 +106,31 @@
                                             </asp:DropDownList></td>
                                         <td><span style="margin-left: 2em"></span></td>
                                         <td>
+                                            <asp:Label ID="lbStudId" runat="server" Text="Room" CssClass="label" />
+                                        </td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:DropDownList ID="dlRoom" runat="server" CssClass="dropdownlist" OnTextChanged="dlRoom_TextChanged">
+                                            </asp:DropDownList></td>
+                                    </tr>
+                                    <tr>
+                                         <td><span style="margin-left: 2em"></span></td>
+                                        <td>
+                                            <asp:Label ID="Label1" runat="server" Text="Grade*" CssClass="label" />
+                                        </td>
+                                        <td><span style="margin-left: 1em"></span></td>
+                                        <td>
+                                            <asp:DropDownList ID="dlGrade" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnTextChanged="dlGrade_TextChanged">
+                                            </asp:DropDownList></td>
+                                    
+                                        <td><span style="margin-left: 2em"></span></td>
+                                        <td>
                                             <asp:Label ID="Label2" runat="server" Text="Student Name*" CssClass="label" />
                                         </td>
                                         <td><span style="margin-left: 1em"></span></td>
                                         <td>
-                                            <asp:TextBox CssClass="textbox" ID="txtStuName" Style="color: black; margin-left: 0px" runat="server" /></td>
+                                            <asp:DropDownList ID="dlStuName" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist">
+                                            </asp:DropDownList></td>
                                     </tr>
                                 </table>
 
@@ -134,7 +139,6 @@
                                 </div>
                                 <div style="float: right; margin-bottom: 15px">
                                     <asp:Button ID="btnSearch" CssClass="btn" runat="server" Text="Search" Style="margin-right: 35px" OnClick="btnSearch_Click" Width="76px" />
-                                    <%--<asp:Button ID="btnShoAll" CssClass="btn" runat="server" Text="Show All" Style="margin-right: 35px" OnClick="btnShoAll_Click" />--%>
                                     <asp:Button ID="btnClear" CssClass="btn" runat="server" Text="Clear" OnClick="btnClear_Click" Style="margin-right: 25px" />
                                 </div>
 
