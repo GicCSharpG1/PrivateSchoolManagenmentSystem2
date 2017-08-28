@@ -47,7 +47,7 @@ namespace HomeASP
                 gridViewAttendance.DataSource = new DataSet.DsPSMS.ST_STUDENT_DATADataTable();
                 gridViewAttendance.DataBind();
             }
-            attendDate.Text = System.DateTime.Now.ToString("dd-MM-yyyy");
+            attendDate.Text = System.DateTime.Now.ToString("MM-dd-yyyy");
             if (!IsPostBack)
             {
                 btnAdd.Visible = false;

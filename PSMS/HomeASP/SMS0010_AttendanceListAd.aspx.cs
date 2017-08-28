@@ -37,13 +37,13 @@ namespace HomeASP
             if (dlGrade.Items.Count == 0)
             {
                 bindGrade();
-                dlGrade.Items.Insert(0, new ListItem("Select Room", "0"));
+               // dlGrade.Items.Insert(0, new ListItem("Select Room", "0"));
             }
 
             if (dlRoom.Items.Count == 0)
             {
                 bindRoom();
-                dlRoom.Items.Insert(0, new ListItem("Select Room", "0"));
+               // dlRoom.Items.Insert(0, new ListItem("Select Room", "0"));
             }
 
             if (!IsPostBack)
@@ -126,35 +126,43 @@ namespace HomeASP
             attDr = new DsPSMS.ST_ATTENDANCE_DATADataTable().NewST_ATTENDANCE_DATARow();
             stdDr = new DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
 
-            if (dpDay.Text.Trim().Length != 0)
-                attDr.ATTENDANCE_DATE = Convert.ToDateTime(dpDay.Text);
-            if(ddlMonth.SelectedIndex >0)
-                mon = ddlMonth.SelectedValue;
-            if (dlGrade.SelectedIndex > 0)
-                stdDr.GRADE_ID = Convert.ToInt16(dlGrade.SelectedValue);
-            if (dlRoom.SelectedIndex > 0)
-                stdDr.ROOM_ID = dlRoom.SelectedValue;
-            if (dlStuName.SelectedIndex > 0)
-                attDr.STUDENT_ID = dlStuName.SelectedValue;
-
-            attResDt = attService.selectAttendanceOption(stdDr, attDr, mon, out msg);
-            if (attResDt != null && attResDt.Rows.Count != 0)
+            if (ShDay.Checked == true || ShMonth.Checked == true)
             {
-                gvAttendanceList.DataSource = attDt;
-                gvAttendanceList.DataBind();
-                for (int i = 0; i < gvAttendanceList.Rows.Count; i++)
+                attDr.EDU_YEAR = ddlEduyr.Text;
+                if (dpDay.Text.Trim().Length != 0)
+                    attDr.ATTENDANCE_DATE = Convert.ToDateTime(dpDay.Text);
+                if (ddlMonth.SelectedIndex > 0)
+                    mon = ddlMonth.SelectedValue;
+                if (dlGrade.SelectedIndex > 0)
+                    stdDr.GRADE_ID = Convert.ToInt16(dlGrade.SelectedValue);
+                if (dlRoom.SelectedIndex > 0)
+                    stdDr.ROOM_ID = dlRoom.SelectedValue;
+                if (dlStuName.SelectedIndex > 0)
+                    attDr.STUDENT_ID = dlStuName.SelectedValue;
+
+                attResDt = attService.selectAttendanceOption(stdDr, attDr, mon, out msg);
+                if (attResDt != null && attResDt.Rows.Count != 0)
                 {
-                    if (gvAttendanceList.Rows[i].Cells[1].Text == "0")
+                    gvAttendanceList.DataSource = attDt;
+                    gvAttendanceList.DataBind();
+                    for (int i = 0; i < gvAttendanceList.Rows.Count; i++)
                     {
-                        gvAttendanceList.Rows[i].Cells[1].Text = "Absent";
-                        gvAttendanceList.Rows[i].Cells[1].ForeColor = Color.Red;
-                    }
-                    if (gvAttendanceList.Rows[i].Cells[2].Text == "0")
-                    {
-                        gvAttendanceList.Rows[i].Cells[2].Text = "Absent";
-                        gvAttendanceList.Rows[i].Cells[2].ForeColor = Color.Red;
+                        if (gvAttendanceList.Rows[i].Cells[1].Text == "0")
+                        {
+                            gvAttendanceList.Rows[i].Cells[1].Text = "Absent";
+                            gvAttendanceList.Rows[i].Cells[1].ForeColor = Color.Red;
+                        }
+                        if (gvAttendanceList.Rows[i].Cells[2].Text == "0")
+                        {
+                            gvAttendanceList.Rows[i].Cells[2].Text = "Absent";
+                            gvAttendanceList.Rows[i].Cells[2].ForeColor = Color.Red;
+                        }
                     }
                 }
+            }
+            else
+            {
+                errSer.Text = "Please Check One of the Day and Month";
             }
         }
 
@@ -206,7 +214,25 @@ namespace HomeASP
             }
         }
 
-        protected void dlRoom_TextChanged(object sender, EventArgs e)
+        protected void dlGrade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            stdDt = new DsPSMS.ST_STUDENT_DATADataTable();
+            stdDr = new DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
+            if (dlRoom.SelectedIndex > 0)
+            {
+                stdDr.EDU_YEAR = ddlEduyr.Text;
+                stdDr.GRADE_ID = Convert.ToInt16(dlGrade.SelectedValue);
+                stdDr.ROOM_ID = dlRoom.SelectedValue;
+                stdDt = stuSer.getDataOption(stdDr);
+                dlStuName.DataSource = stdDt;
+                dlStuName.DataTextField = "STUDENT_NAME";
+                dlStuName.DataValueField = "STUDENT_ID";
+                dlStuName.DataBind();
+                dlStuName.Items.Insert(0, "  ");
+            }
+        }
+
+        protected void dlRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
             stdDt = new DsPSMS.ST_STUDENT_DATADataTable();
             stdDr = new DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
@@ -228,22 +254,9 @@ namespace HomeASP
             }
         }
 
-        protected void dlGrade_TextChanged(object sender, EventArgs e)
+        protected void dlStuName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            stdDt = new DsPSMS.ST_STUDENT_DATADataTable();
-            stdDr = new DsPSMS.ST_STUDENT_DATADataTable().NewST_STUDENT_DATARow();
-            if (dlRoom.SelectedIndex > 0)
-            {
-                stdDr.EDU_YEAR = ddlEduyr.Text;
-                stdDr.GRADE_ID = Convert.ToInt16(dlGrade.SelectedValue);
-                stdDr.ROOM_ID = dlRoom.SelectedValue;
-                stdDt = stuSer.getDataOption(stdDr);
-                dlStuName.DataSource = stdDt;
-                dlStuName.DataTextField = "STUDENT_NAME";
-                dlStuName.DataValueField = "STUDENT_ID";
-                dlStuName.DataBind();
-                dlStuName.Items.Insert(0, "  ");
-            }
+
         }
     }
 }

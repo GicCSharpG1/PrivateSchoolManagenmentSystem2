@@ -42,7 +42,7 @@ namespace HomeASP.DbAccess
         {
             string query = "SELECT ST_STUDENT_DATA.STUDENT_ID, ST_STUDENT_DATA.STUDENT_NAME,  ST_STUDENT_DATA.ROLL_NO, ST_ATTENDANCE_DATA.MORNING,  ST_ATTENDANCE_DATA.EVENING,  ST_ATTENDANCE_DATA.ATTENDANCE_DATE  FROM ST_STUDENT_DATA INNER JOIN ST_ATTENDANCE_DATA ON ST_STUDENT_DATA.STUDENT_ID = ST_ATTENDANCE_DATA.STUDENT_ID WHERE (ST_ATTENDANCE_DATA.EDU_YEAR = '" + attDr.EDU_YEAR +"'"; 
            if(!attDr.IsATTENDANCE_DATENull())
-            query += " AND ST_ATTENDANCE_DATA.ATTENDANCE_DATE = '" + attDr.ATTENDANCE_DATE + "'";
+            query += " AND DATE(ST_ATTENDANCE_DATA.ATTENDANCE_DATE) = '" + attDr.ATTENDANCE_DATE.Date + "'";
            if (!stuDr.IsGRADE_IDNull())
                query += " AND ST_STUDENT_DATA.GRADE_ID = '" + stuDr.GRADE_ID + "'";
            if (!stuDr.IsROOM_IDNull())
@@ -51,7 +51,7 @@ namespace HomeASP.DbAccess
                query += " AND ST_STUDENT_DATA.STUDENT_NAME = '" + stuDr.STUDENT_NAME + "'";
             if(month.Length != 0)
                 query += " AND DAY(ST_ATTENDANCE_DATA.ATTENDANCE_DATE) = '" + month + "'";
-
+            query += ")";
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DsPSMS.ATTENDANCE_RESULTDataTable st = new DsPSMS.ATTENDANCE_RESULTDataTable();

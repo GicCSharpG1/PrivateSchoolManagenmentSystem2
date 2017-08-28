@@ -21,18 +21,24 @@
     </script>
 
     <script type="text/javascript">
-        function ShowHide(val) {
-            if (val == 1) {
-                lblDay.Visible = true;
-                dpDay.Visible = true;
+        function isOneorRound() {
+            if (document.getElementById('ShDay').checked) {
+                document.getElementById('lblDay').style.display = 'block';
+                document.getElementById('dpDay').style.display = 'block';
 
+                document.getElementById('lbMon').style.display = 'none';
+                document.getElementById('ddlMonth').style.display = 'none';
             }
             else {
-                lbMon.Visible = true;
-                ddlMonth.Visible = true;
+                document.getElementById('lbMon').style.display = 'block';
+                document.getElementById('ddlMonth').style.display = 'block';
+
+                document.getElementById('lblDay').style.display = 'none';
+                document.getElementById('dpDay').style.display = 'none';
             }
         }
-    </script>
+</script>
+
     <style type="text/css">
         .auto-style1 {
             height: 26px;
@@ -61,10 +67,10 @@
                                     <tr>
                                         <td class="auto-style1"><span style="margin-left: 2em"></span></td>
                                         <td class="auto-style1">
-                                            <asp:RadioButton runat="server" ID="day" GroupName="DM" Text="Show Day" OnCheckedChanged="day_CheckedChanged" onclick="ShowHide('1');" Font-Size="Medium"/></td>
+                                            <asp:RadioButton runat="server" ID="ShDay" GroupName="DM" Text="Show Day" onclick="isOneorRound()" Font-Size="Medium"/></td>
                                         <td class="auto-style1"><span style="margin-left: 1em"></span></td>
                                         <td class="auto-style1">
-                                            <asp:RadioButton runat="server" ID="Month" GroupName="DM" Text="Show Month" OnCheckedChanged="Month_CheckedChanged" onclick="ShowHide('2');" Font-Size="Medium"/></td>
+                                            <asp:RadioButton runat="server" ID="ShMonth" GroupName="DM" Text="Show Month" onclick="isOneorRound()" Font-Size="Medium"/></td>
                                         <td class="auto-style1"><span style="margin-left: 2em"></span></td>
                                         <td class="auto-style1">
                                             <asp:Label ID="lbEduYe" runat="server" Text="Education Year" CssClass="label" /></td>

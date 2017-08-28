@@ -179,6 +179,7 @@ namespace HomeASP
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
+            alert.Text = "";
             TxtStudID.Text = "";
             TxtStuName.Text = "";
             CoboGrade.SelectedIndex = -1;

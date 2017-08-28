@@ -109,9 +109,9 @@ namespace HomeASP
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             DataSet.DsPSMS.ATTENDANCE_RESULTDataTable attResDt = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
-            if (day.Checked == true || Month.Checked == true)
+            if (ShDay.Checked == true || ShMonth.Checked == true)
             {
-                if (day.Checked == true)
+                if (ShDay.Checked == true)
                 {
                     lblDay.Visible = true;
                     dpDay.Visible = true;
@@ -185,7 +185,7 @@ namespace HomeASP
 
         protected void day_CheckedChanged(object sender, EventArgs e)
         {
-            if (day.Checked == true)
+            if (ShDay.Checked == true)
             {
                 lblDay.Visible = true;
                 dpDay.Visible = true;
@@ -195,7 +195,7 @@ namespace HomeASP
 
         protected void Month_CheckedChanged(object sender, EventArgs e)
         {
-            if (Month.Checked == true)
+            if (ShMonth.Checked == true)
             {
                 lbMon.Visible = true;
                 ddlMonth.Visible = true;

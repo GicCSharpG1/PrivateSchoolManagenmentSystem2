@@ -21,18 +21,23 @@
     </script>
 
     <script type="text/javascript">
-        function ShowHide(val) {
-            if (val == 1) {
-                lblDay.Visible = true;
-                dpDay.Visible = true;
+        function isOneorRound() {
+            if (document.getElementById('ShDay').checked) {
+                document.getElementById('lblDay').style.display = 'block';
+                document.getElementById('dpDay').style.display = 'block';
 
+                document.getElementById('lbMon').style.display = 'none';
+                document.getElementById('ddlMonth').style.display = 'none';
             }
             else {
-                lbMon.Visible = true;
-                ddlMonth.Visible = true;
+                document.getElementById('lbMon').style.display = 'block';
+                document.getElementById('ddlMonth').style.display = 'block';
+
+                document.getElementById('lblDay').style.display = 'none';
+                document.getElementById('dpDay').style.display = 'none';
             }
         }
-    </script>
+</script>
     <style type="text/css">
         .auto-style1 {
             height: 26px;
@@ -60,12 +65,21 @@
                                 <table>
                                     <tr>
                                         <td class="auto-style1"><span style="margin-left: 2em"></span></td>
+                                        <td class="auto-style1">
+                                            <asp:RadioButton runat="server" ID="ShDay" GroupName="DM" Text="Show Day" onclick="isOneorRound()" Font-Size="Medium"/></td>
+                                        <td class="auto-style1"><span style="margin-left: 1em"></span></td>
+                                        <td class="auto-style1">
+                                            <asp:RadioButton runat="server" ID="ShMonth" GroupName="DM" Text="Show Month" onclick="isOneorRound()" Font-Size="Medium"/></td>
+                                        <td class="auto-style1"><span style="margin-left: 2em"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="auto-style1"><span style="margin-left: 2em"></span></td>
                                         <td>
-                                            <asp:Label ID="lblDay" runat="server" Text="Day *" CssClass="label" />
+                                            <asp:Label ID="lblDay" runat="server" Text="Day *" CssClass="label" style="display:none" />
                                         </td>
                                         <td><span style="margin-left: 1em"></span></td>
                                         <td>
-                                            <asp:TextBox CssClass="datepicker textbox" ID="dpDay" Style="color: black; margin-left: 0px" runat="server" /></td>
+                                            <asp:TextBox CssClass="datepicker textbox" ID="dpDay" Style="color: black; margin-left: 0px;display:none" runat="server" /></td>
                                         <td class="auto-style1"><span style="margin-left: 2em"></span></td>
                                         <td class="auto-style1">
                                             <asp:Label ID="lbEduYe" runat="server" Text="Education Year" CssClass="label" /></td>
@@ -83,11 +97,11 @@
                                     <tr>
                                         <td class="auto-style1"><span style="margin-left: 2em"></span></td>
                                         <td>
-                                            <asp:Label ID="lbMon" runat="server" Text="Month*" CssClass="label" />
+                                            <asp:Label ID="lbMon" runat="server" Text="Month*" CssClass="label" style="display:none"/>
                                         </td>
                                         <td><span style="margin-left: 1em"></span></td>
                                         <td>
-                                            <asp:DropDownList ID="ddlMonth" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="chooseMonthYear" AutoPostBack="true">
+                                            <asp:DropDownList ID="ddlMonth" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" AutoPostBack="true" style="display:none">
                                                 <Items>
                                                     <asp:ListItem Text="  " Value="" />
                                                     <asp:ListItem Text="January" Value="01" />
@@ -110,7 +124,7 @@
                                         </td>
                                         <td><span style="margin-left: 1em"></span></td>
                                         <td>
-                                            <asp:DropDownList ID="dlRoom" runat="server" CssClass="dropdownlist" OnTextChanged="dlRoom_TextChanged">
+                                            <asp:DropDownList ID="dlRoom" runat="server" AutoPostBack="true" CssClass="dropdownlist" OnSelectedIndexChanged="dlRoom_SelectedIndexChanged">
                                             </asp:DropDownList></td>
                                     </tr>
                                     <tr>
@@ -120,7 +134,7 @@
                                         </td>
                                         <td><span style="margin-left: 1em"></span></td>
                                         <td>
-                                            <asp:DropDownList ID="dlGrade" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist" OnTextChanged="dlGrade_TextChanged">
+                                            <asp:DropDownList ID="dlGrade" runat="server" AutoPostBack="true" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="dlGrade_SelectedIndexChanged">
                                             </asp:DropDownList></td>
                                     
                                         <td><span style="margin-left: 2em"></span></td>
@@ -129,7 +143,7 @@
                                         </td>
                                         <td><span style="margin-left: 1em"></span></td>
                                         <td>
-                                            <asp:DropDownList ID="dlStuName" runat="server" AppendDataBoundItems="true" CssClass="dropdownlist">
+                                            <asp:DropDownList ID="dlStuName" runat="server" AutoPostBack="true" AppendDataBoundItems="true" CssClass="dropdownlist" OnSelectedIndexChanged="dlStuName_SelectedIndexChanged">
                                             </asp:DropDownList></td>
                                     </tr>
                                 </table>

@@ -22,22 +22,22 @@ namespace HomeASP {
         protected global::System.Web.UI.HtmlControls.HtmlForm centerForm;
         
         /// <summary>
-        /// day control.
+        /// ShDay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton day;
+        protected global::System.Web.UI.WebControls.RadioButton ShDay;
         
         /// <summary>
-        /// Month control.
+        /// ShMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton Month;
+        protected global::System.Web.UI.WebControls.RadioButton ShMonth;
         
         /// <summary>
         /// lbEduYe control.

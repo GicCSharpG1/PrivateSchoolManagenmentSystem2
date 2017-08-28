@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using HomeASP.DbAccess;
+using HomeASP.DataSet;
 
 
 namespace HomeASP.Service
@@ -12,88 +13,90 @@ namespace HomeASP.Service
     class AttendanceService : dbAccess
     {
         AttendanceDb db = new AttendanceDb();
+        DsPSMS.ATTENDANCE_RESULTDataTable attResDt = null;
+        DsPSMS.ST_ATTENDANCE_DATADataTable attDt = null;
 
-        public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceData(DataSet.DsPSMS.ST_STUDENT_DATARow sr, DataSet.DsPSMS.ST_ATTENDANCE_DATARow dr, out string msg)
-        {
-            DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
-            if (dr == null)
-            {
-                msg = "data is empty";
-                return null;
-            }
-            try
-            {
-                db.Open();
-                result = db.selectAttendanceData(sr, dr);
-                if (result != null)
-                {
-                    msg = result.Rows.Count + " day found";
-                }
-                else
-                {
-                    result = null;
-                    msg = "attendance not found";
-                }
-            }
-            catch
-            {
-                msg = "error has occure when insert data";
-                return null;
-            }
-            finally
-            {
-                db.Close();
-            }
+        //public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceData(DataSet.DsPSMS.ST_STUDENT_DATARow sr, DataSet.DsPSMS.ST_ATTENDANCE_DATARow dr, out string msg)
+        //{
+        //    DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+        //    if (dr == null)
+        //    {
+        //        msg = "data is empty";
+        //        return null;
+        //    }
+        //    try
+        //    {
+        //        db.Open();
+        //        result = db.selectAttendanceData(sr, dr);
+        //        if (result != null)
+        //        {
+        //            msg = result.Rows.Count + " day found";
+        //        }
+        //        else
+        //        {
+        //            result = null;
+        //            msg = "attendance not found";
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        msg = "error has occure when insert data";
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        db.Close();
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
 
-        public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceEdu(string edu, out string msg)
-        {
-            DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+        //public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceEdu(string edu, out string msg)
+        //{
+        //    DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
            
-            try
-            {
-                db.Open();
-                result = db.selectAttendanceEdu(edu);
-                if (result != null)
-                {
-                    msg = result.Rows.Count + " day found";
-                }
-                else
-                {
-                    result = null;
-                    msg = "attendance not found";
-                }
-            }
-            catch
-            {
-                msg = "error has occure when insert data";
-                return null;
-            }
-            finally
-            {
-                db.Close();
-            }
+        //    try
+        //    {
+        //        db.Open();
+        //        result = db.selectAttendanceEdu(edu);
+        //        if (result != null)
+        //        {
+        //            msg = result.Rows.Count + " day found";
+        //        }
+        //        else
+        //        {
+        //            result = null;
+        //            msg = "attendance not found";
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        msg = "error has occure when insert data";
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        db.Close();
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
 
-        public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceDate(DateTime datee, out string msg)
+        public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceOption(DataSet.DsPSMS.ST_STUDENT_DATARow stuDr, DataSet.DsPSMS.ST_ATTENDANCE_DATARow attDr, string month, out string msg)
         {
-            DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+            attResDt = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
 
             try
             {
                 db.Open();
-                result = db.selectAttendanceDate(datee);
-                if (result != null)
+                attResDt = db.selectAttendanceOption(stuDr, attDr, month);
+                if (attResDt != null)
                 {
-                    msg = result.Rows.Count + " day found";
+                    msg = attResDt.Rows.Count + " day found";
                 }
                 else
                 {
-                    result = null;
+                    attResDt = null;
                     msg = "attendance not found";
                 }
             }
@@ -107,55 +110,55 @@ namespace HomeASP.Service
                 db.Close();
             }
 
-            return result;
+            return attResDt;
         }
 
-        public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceMonth(string month, out string msg)
-        {
-            DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
+        //public DataSet.DsPSMS.ATTENDANCE_RESULTDataTable selectAttendanceMonth(string month, out string msg)
+        //{
+        //    DataSet.DsPSMS.ATTENDANCE_RESULTDataTable result = new DataSet.DsPSMS.ATTENDANCE_RESULTDataTable();
 
-            try
-            {
-                db.Open();
-                result = db.selectAttendanceMonth(month);
-                if (result != null)
-                {
-                    msg = result.Rows.Count + " day found";
-                }
-                else
-                {
-                    result = null;
-                    msg = "attendance not found";
-                }
-            }
-            catch
-            {
-                msg = "error has occure when insert data";
-                return null;
-            }
-            finally
-            {
-                db.Close();
-            }
+        //    try
+        //    {
+        //        db.Open();
+        //        result = db.selectAttendanceMonth(month);
+        //        if (result != null)
+        //        {
+        //            msg = result.Rows.Count + " day found";
+        //        }
+        //        else
+        //        {
+        //            result = null;
+        //            msg = "attendance not found";
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        msg = "error has occure when insert data";
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        db.Close();
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
 
         public DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable selectAllAttendance()
         {
-            DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable result = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
+            attDt = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();
            
             try
             {
                 db.Open();
-                result = db.selectAllAttendance();
-                if (result != null)
+                attDt = db.selectAllAttendance();
+                if (attDt != null)
                 {
-                    return result;
+                    return attDt;
                 }
                 else
                 {
-                    result = null;
+                    attDt = null;
                 }
             }
             catch
@@ -167,7 +170,7 @@ namespace HomeASP.Service
                 db.Close();
             }
 
-            return result;
+            return attDt;
         }
 
 
@@ -199,14 +202,16 @@ namespace HomeASP.Service
 
         public DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable getAttendanceByDate(DataSet.DsPSMS.ST_ATTENDANCE_DATARow dr)
         {
+            attDt = new DsPSMS.ST_ATTENDANCE_DATADataTable();
+
             if (dr == null)
                 return null;
             try
             {
                 db.Open();
-                DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable dt = db.selectAttendanceByDate(dr);
-                if (dt != null && (dt.Rows.Count > 0))
-                    return dt;
+                attDt = db.selectAttendanceByDate(dr);
+                if (attDt != null && (attDt.Rows.Count > 0))
+                    return attDt;
                 else
                     return null;
             }
@@ -246,23 +251,23 @@ namespace HomeASP.Service
             }
         }
 
-        public DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable selectAttendanceList(DataSet.DsPSMS.ST_ATTENDANCE_DATARow dr)
-        {
-            DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable result = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();            
-            try
-            {
-                db.Open();
-                result = db.selectAttendanceList(dr);                
-            }
-            catch
-            {
-                return null;
-            }
-            finally
-            {
-                db.Close();
-            }
-            return result;
-        }
+        //public DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable selectAttendanceList(DataSet.DsPSMS.ST_ATTENDANCE_DATARow dr)
+        //{
+        //    DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable result = new DataSet.DsPSMS.ST_ATTENDANCE_DATADataTable();            
+        //    try
+        //    {
+        //        db.Open();
+        //        result = db.selectAttendanceList(dr);                
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        db.Close();
+        //    }
+        //    return result;
+        //}
     }
 }
