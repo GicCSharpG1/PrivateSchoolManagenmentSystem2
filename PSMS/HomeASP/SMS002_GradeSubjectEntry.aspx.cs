@@ -18,6 +18,8 @@ namespace HomeASP
 {
     public partial class SMS002 : System.Web.UI.Page
     {
+        string editId;
+        string subjectIdList = null;
         private string msg = "";
         GradeSubjectService service = new GradeSubjectService();
         DataSet.DsPSMS.ST_GRADE_MSTRow gradeRow = null;
@@ -487,7 +489,7 @@ namespace HomeASP
 
                 foreach (DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILRow row in resultDt.Rows)
                 {
-                    string subjectIdList = null;
+                    //string subjectIdList = null;
                     string subjectName = null;
                     if (row.SUBJECT_ID_LIST != null)
                     {
@@ -521,63 +523,206 @@ namespace HomeASP
             Label8.Visible = false;
         }
 
-        protected void btnUpdateGradeSubject_Click(object sender, EventArgs e)
-        {
-            int j = 0;
-            string[] values = new string[6];
-            string inSubId = "";
-            string[] inSubIdArr = new string[30];
-            LinkButton btn = (LinkButton)(sender);
-            string editId = btn.CommandName;
-            gradeSubjectId.Text = editId;
-            gradeSubjectId.Enabled = false;
+        //protected void btnUpdateGradeSubject_Click(object sender, EventArgs e)
+        //{
+        //    int j = 0;
+        //    string[] values = new string[6];
+        //    string inSubId = "";
+        //    string[] inSubIdArr = new string[30];
+        //    LinkButton btn = (LinkButton)(sender);
+        //     editId = btn.CommandName; 
+        //    gradeSubjectId.Text = editId;
+        //    gradeSubjectId.Enabled = false;
 
-            gradeSubjectRow = new DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable().NewST_GRADE_SUBJECT_DETAILRow();
-            if (editId != null)
-                gradeSubjectRow.ID = Convert.ToInt32(editId);
-            DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable subjectGradeData = service.selectGradeSubjectByID(gradeSubjectRow, out msg);
-            eduYearGradeSubject.Text = subjectGradeData.Rows[0]["EDU_YEAR"].ToString();
-            gradeList.Text = subjectGradeData.Rows[0]["GRADE_ID"].ToString();
-            // dgv3.Text = dgv4.Rows[rowindex].Cells[2].Value.ToString();
-          //  for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
-          //  {
-               
-          //Boolean value=  Convert.ToBoolean(subjectGridView.Rows[j].Cells[0].Text) ;
-          //  }
-
-          //  if (gradeSubjectGridView.Rows.Count == 0)
-          //  {
-          //      string script = "alert(\"Data does not exit!\");";
-          //      ScriptManager.RegisterStartupScript(this, GetType(),
-          //                                      "ServerControlScript", script, true);
-
-          //  }
-          //  else
-          //  {
-
-          //      int index = gradeSubjectGridView.SelectedIndex;
-          //      string allSub = gradeSubjectGridView.Rows[index].Cells[3].Text.ToString();
-
-
-          //      values = allSub.Split(',');
-          //      // for(int x =0 ; x <= values.Length ; x++) 
-          //      //{
-          //      //MessageBox.Show("TTTTTTTTTTTTest !!!!!!!" + values[x]);
-          //      //}
-          //      for (int i = 0; i <= values.Length - 1; i++)
-          //      {
-          //          for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
-          //          {
-          //              String ss = values[i];
-          //              if (subjectGridView.Rows[j].Cells[1].Text.ToString() == ss) { }
-                        
-          //          }
-
-          //      }
-          //  }
-                gradeSubjectAdd.Text = "Update";
-                gradeSubjectShowAll.Enabled = false;
+        //    gradeSubjectRow = new DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable().NewST_GRADE_SUBJECT_DETAILRow();
+        //    if (editId != null)
+        //        gradeSubjectRow.ID = Convert.ToInt32(editId);
+        //    DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable subjectGradeData = service.selectGradeSubjectByID(gradeSubjectRow, out msg);
+        //    eduYearGradeSubject.Text = subjectGradeData.Rows[0]["EDU_YEAR"].ToString();
+        //    gradeList.Text = subjectGradeData.Rows[0]["GRADE_ID"].ToString();
             
+        //    // dgv3.Text = dgv4.Rows[rowindex].Cells[2].Value.ToString();
+        //  //  for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
+        //  //  {
+               
+        //  //Boolean value=  Convert.ToBoolean(subjectGridView.Rows[j].Cells[0].Text) ;
+        //  //  }
+
+        //  //  if (gradeSubjectGridView.Rows.Count == 0)
+        //  //  {
+        //  //      string script = "alert(\"Data does not exit!\");";
+        //  //      ScriptManager.RegisterStartupScript(this, GetType(),
+        //  //                                      "ServerControlScript", script, true);
+
+        //  //  }
+        //  //  else
+        //  //  {
+
+        //  //      int index = gradeSubjectGridView.SelectedIndex;
+        //  //      string allSub = gradeSubjectGridView.Rows[index].Cells[3].Text.ToString();
+
+
+        //  //      values = allSub.Split(',');
+        //  //      // for(int x =0 ; x <= values.Length ; x++) 
+        //  //      //{
+        //  //      //MessageBox.Show("TTTTTTTTTTTTest !!!!!!!" + values[x]);
+        //  //      //}
+        //  //      for (int i = 0; i <= values.Length - 1; i++)
+        //  //      {
+        //  //          for (j = 0; j <= subjectGridView.Rows.Count - 2; j++)
+        //  //          {
+        //  //              String ss = values[i];
+        //  //              if (subjectGridView.Rows[j].Cells[1].Text.ToString() == ss) { }
+                        
+        //  //          }
+
+        //  //      }
+        //  //  }
+
+        //          int editID = Convert.ToInt32(editId);
+        //          int index = Convert.ToInt32(gradeSubjectGridView.SelectedIndex.ToString());
+        //          Label lblSubjectList = (Label)gradeSubjectGridView.Rows[].FindControl("lblSubjectIDList");
+              
+        //        String subjectIDList = lblSubjectList.Text;
+
+        //        string[] value = subjectIDList.Split(',');
+        //        for (int x = 0; x < value.Length; x++)
+        //        {
+        //            values[x] = value[x].Trim();
+        //            String subName = value[x];
+
+        //            DataTable dtSubID = service.selectSubIDBySubName(subName);
+        //            String subID = dtSubID.Rows[0]["SUBJECT_ID"].ToString();
+
+
+        //            if (subID == "1")
+        //            {
+        //                (subjectGridView.Rows[0].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+        //            else if (subID == "2")
+        //            {
+        //                (subjectGridView.Rows[1].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+        //            else if (subID == "3")
+        //            {
+        //                (subjectGridView.Rows[2].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+        //            else if (subID == "4")
+        //            {
+        //                (subjectGridView.Rows[3].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+        //            else if (subID == "5")
+        //            {
+        //                (subjectGridView.Rows[4].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+        //            else if (subID == "6")
+        //            {
+        //                (subjectGridView.Rows[5].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+        //            else if (subID == "7")
+        //            {
+        //                (subjectGridView.Rows[6].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+        //            else if (subID == "8")
+        //            {
+        //                (subjectGridView.Rows[7].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+        //            else if (subID == "9")
+        //            {
+        //                (subjectGridView.Rows[8].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+        //            else
+        //            {
+        //                (subjectGridView.Rows[9].FindControl("selectedSubject") as CheckBox).Checked = true;
+        //            }
+
+                    
+        //        }
+            
+        //        gradeSubjectAdd.Text = "Update";
+        //        gradeSubjectShowAll.Enabled = false;
+            
+        //}
+        protected void gradeSubjectGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "EditCol")
+            {
+                int j = 0;
+                string[] values = new string[6];
+                string inSubId = "";
+                string[] inSubIdArr = new string[30];
+                //LinkButton btn = (LinkButton)(sender);
+                //editId = btn.CommandName;
+                Label btn = (Label)gradeSubjectGridView.Rows[index].FindControl("lblID");
+                editId = btn.Text;
+                gradeSubjectId.Text = editId;
+                gradeSubjectId.Enabled = false;
+
+                gradeSubjectRow = new DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable().NewST_GRADE_SUBJECT_DETAILRow();
+                 if (editId != null)
+                  gradeSubjectRow.ID = Convert.ToInt32(editId);
+                DataSet.DsPSMS.ST_GRADE_SUBJECT_DETAILDataTable subjectGradeData = service.selectGradeSubjectByID(gradeSubjectRow, out msg);
+                eduYearGradeSubject.Text = subjectGradeData.Rows[0]["EDU_YEAR"].ToString();
+                gradeList.Text = subjectGradeData.Rows[0]["GRADE_ID"].ToString();
+
+                Label lblSubjectList = (Label)gradeSubjectGridView.Rows[index].FindControl("lblSubjectIDList");
+
+                String subjectIDList = lblSubjectList.Text;
+
+                string[] value = subjectIDList.Split(',');
+                for (int x = 0; x < value.Length; x++)
+                {
+                    values[x] = value[x].Trim();
+                    String subName = value[x];
+
+                    DataTable dtSubID = service.selectSubIDBySubName(subName);
+                    String subID = dtSubID.Rows[0]["SUBJECT_ID"].ToString();
+
+
+                    if (subID == "1")
+                    {
+                        (subjectGridView.Rows[0].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+                    else if (subID == "2")
+                    {
+                        (subjectGridView.Rows[1].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+                    else if (subID == "3")
+                    {
+                        (subjectGridView.Rows[2].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+                    else if (subID == "4")
+                    {
+                        (subjectGridView.Rows[3].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+                    else if (subID == "5")
+                    {
+                        (subjectGridView.Rows[4].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+                    else if (subID == "6")
+                    {
+                        (subjectGridView.Rows[5].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+                    else if (subID == "7")
+                    {
+                        (subjectGridView.Rows[6].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+                    else if (subID == "8")
+                    {
+                        (subjectGridView.Rows[7].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+                    else if (subID == "9")
+                    {
+                        (subjectGridView.Rows[8].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+                    else
+                    {
+                        (subjectGridView.Rows[9].FindControl("selectedSubject") as CheckBox).Checked = true;
+                    }
+
+                }
+            }
         }
         protected void btnSelectGradeSubject_Click(object sender, EventArgs e)
         {

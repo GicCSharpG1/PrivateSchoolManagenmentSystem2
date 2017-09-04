@@ -348,7 +348,7 @@
 
                                 </div>
                                 <div class="GSgridview" style="padding-left: 20px">
-                                    <asp:GridView ID="gradeSubjectGridView" AutoGenerateColumns="False" runat="server" class="GSgridview" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gridViewGradeSubject_PageIndexChanging" OnSelectedIndexChanged="gradeSubjectGridView_SelectedIndexChanged1" >
+                                    <asp:GridView ID="gradeSubjectGridView" AutoGenerateColumns="False" runat="server" class="GSgridview" AllowPaging="True" PageSize="5" ShowHeaderWhenEmpty="true" EmptyDataText="There is no data" OnPageIndexChanging="gridViewGradeSubject_PageIndexChanging" OnSelectedIndexChanged="gradeSubjectGridView_SelectedIndexChanged1" OnRowCommand="gradeSubjectGridView_RowCommand">
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
                                             <asp:BoundField ReadOnly="True"
@@ -361,9 +361,16 @@
                                                 DataField="GRADE_ID" SortExpression="GRADE_ID"></asp:BoundField>
                                             <asp:BoundField HeaderText="Subject"
                                                 DataField="SUBJECT_ID_LIST" SortExpression="SUBJECT_ID_LIST"></asp:BoundField>
+                                            <asp:TemplateField Visible="false">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblSubjectIDList" runat="server" Text='<%# Eval("SUBJECT_ID_LIST") %>' Visible="false"></asp:Label>
+                                                    <asp:Label ID="lblID" runat="server" Text='<%# Eval("ID") %>' Visible="false"></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
                                             <asp:TemplateField>
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="btnGradeSubjectEdit" runat="server" Text="Edit" CommandName='<%# Eval("ID") %>' OnClick="btnUpdateGradeSubject_Click"></asp:LinkButton>
+                                                   <%-- <asp:LinkButton ID="btnGradeSubjectEdit" runat="server" Text="Edit" CommandName='<%# Eval("ID") %>' OnClick="btnUpdateGradeSubject_Click"></asp:LinkButton>--%>
+                                                    <asp:LinkButton ID="btnGradeSubjectEdit" runat="server" Text="Edit" CommandName="EditCol" CommandArgument="<%#((GridViewRow)Container).RowIndex%>"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField>
